@@ -1,0 +1,56 @@
+[category]
+title = "Real-time systems"
+order = 12
+blurb = "When a late answer is a wrong answer: deadlines, worst-case timing, and the scheduling policies that can prove every deadline is met."
+
+[[concept]]
+slug = "real_time_system"
+title = "Real-time system"
+summary = "A system whose correctness depends on when results arrive as well as on what they are: a hard real-time system must never miss a deadline, a soft one should rarely."
+aliases = ["hard real-time", "soft real-time", "mission-critical system"]
+related = ["priority_inversion", "wcet"]
+notes = [
+  ["Real-time systems - mission-critical applications - real-time processing", "https://docs.google.com/document/d/1Yz-VeK0_FKg1JSwXPg4iLpbATBv_Z6SLG2TxozCqHvw/edit?tab=t.0"],
+  ["mission-critical systems", "https://docs.google.com/document/d/1Zxa9uwKIHR_RfZoWVMvM_aAiYt4PAIS-tKXwJVeWzpM/edit?tab=t.0"],
+  ["Embedded systems - Raspberry Pi Pico", "https://docs.google.com/document/d/1CPx6OlSkYbOKRMLNuW0hs-lrKYGhk4JQ8hQa4z94b_Q/edit"],
+]
+reference = [["Wikipedia: Real-time computing", "https://en.wikipedia.org/wiki/Real-time_computing"]]
+[concept.languages]
+c = "POSIX [`sched_setscheduler`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/sched_setscheduler.html) for a real-time policy, and [`clock_nanosleep`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/clock_nanosleep.html) with `TIMER_ABSTIME` for periodic work"
+os = "[`sched(7)`](https://man7.org/linux/man-pages/man7/sched.7.html): Linux's real-time policies `SCHED_FIFO`, `SCHED_RR` and `SCHED_DEADLINE`"
+other = "Ada's [Real-Time Systems annex](http://www.ada-auth.org/standards/22rm/html/RM-D.html) (Annex D) specifies what a real-time Ada implementation provides"
+
+[[concept]]
+slug = "wcet"
+title = "Worst-case execution time"
+summary = "The longest a piece of code can take on given hardware; real-time schedules are built from this bound, never from typical timings."
+aliases = ["WCET"]
+notes = [["Worst Case Execution Time (WCET)", "https://docs.google.com/document/d/16EDUR3TaGOAsCS87e_PFdIvamgoZyUB9AMvC1NtSZJE/edit?tab=t.0"]]
+reference = [["Wikipedia: Worst-case execution time", "https://en.wikipedia.org/wiki/Worst-case_execution_time"]]
+
+[[concept]]
+slug = "rate_monotonic_scheduling"
+title = "Rate-monotonic scheduling"
+summary = "Fixed priorities by period: the task that runs most often gets the highest priority, which is optimal among fixed-priority policies for periodic tasks."
+aliases = ["RMS"]
+is_a = ["preemptive_scheduling"]
+uses = ["wcet"]
+contrasts = ["earliest_deadline_first"]
+notes = [["Rate Monotonic Scheduling (RMS)", "https://docs.google.com/document/d/1QSYQtP0ek0yjilYnEYaB-6Y30DXoHEJ8mBQHTK3rUA0/edit?tab=t.0"]]
+reference = [["Wikipedia: Rate-monotonic scheduling", "https://en.wikipedia.org/wiki/Rate-monotonic_scheduling"]]
+[concept.languages]
+os = "Assign [`SCHED_FIFO`](https://man7.org/linux/man-pages/man7/sched.7.html) priorities by period; the kernel then always runs the highest-priority ready thread"
+other = "Ada's [`FIFO_Within_Priorities`](http://www.ada-auth.org/standards/22rm/html/RM-D-2-3.html) dispatching policy"
+
+[[concept]]
+slug = "earliest_deadline_first"
+title = "Earliest deadline first"
+summary = "Dynamic priorities: whichever ready task has the nearest deadline runs next."
+aliases = ["EDF", "deadline scheduling"]
+is_a = ["preemptive_scheduling"]
+uses = ["wcet"]
+notes = [["Earliest Deadline First (EDF)", "https://docs.google.com/document/d/1Uvz4Cz3L1OSg1Ccla41i5hYqiCNKGV5cX4eLKEx3r1Y/edit?tab=t.0"]]
+reference = [["Wikipedia: Earliest deadline first scheduling", "https://en.wikipedia.org/wiki/Earliest_deadline_first_scheduling"]]
+[concept.languages]
+os = "Linux's [`SCHED_DEADLINE`](https://man7.org/linux/man-pages/man7/sched.7.html), global EDF combined with a constant bandwidth server"
+other = "Ada's [Earliest Deadline First dispatching](http://www.ada-auth.org/standards/22rm/html/RM-D-2-6.html) policy and its `Dispatching.EDF` package"

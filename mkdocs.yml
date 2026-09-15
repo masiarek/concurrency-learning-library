@@ -93,7 +93,13 @@ markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
   - pymdownx.inlinehilite
-  - pymdownx.superfences
+  # The concept pages draw their connections as Mermaid diagrams; GitHub renders
+  # the same fences natively.
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   # Lets index.md inline README.md, so the repo front page and the site homepage
   # share one source and cannot drift.
   - pymdownx.snippets:

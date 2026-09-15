@@ -1,0 +1,3176 @@
+# Where each book covers a concept: chapter and section titles only.
+
+[[ref]]
+concept = "aba_problem"
+book = "herlihy_shavit_art_of_multiprocessor_programming"
+where = "ch. 10, 'Concurrent Queues and the ABA Problem'"
+
+[[ref]]
+concept = "aba_problem"
+book = "grimm_concurrency_with_modern_cpp"
+where = "ch. 13, 'Challenges' → 'ABA Problem'"
+
+[[ref]]
+concept = "actor_model"
+book = "flitton_morton_async_rust"
+where = "ch. 8, 'The Actor Model'"
+
+[[ref]]
+concept = "actor_model"
+book = "prokopec_learning_concurrent_programming_in_scala"
+where = "ch. 8, 'Actors'"
+
+[[ref]]
+concept = "actor_model"
+book = "babic_srivastava_kotlin_coroutines_by_tutorials"
+where = "ch. 13, 'Producer & Actors'"
+
+[[ref]]
+concept = "actor_model"
+book = "butcher_seven_concurrency_models"
+where = "ch. 5, 'Actors'"
+
+[[ref]]
+concept = "actor_model"
+book = "subramaniam_programming_concurrency_on_the_jvm"
+where = "ch. 8, 'Favoring Isolated Mutability' → 'Isolating Mutability Using Actors'"
+
+[[ref]]
+concept = "actor_model"
+book = "tan_little_elixir_otp_guidebook"
+where = "ch. 3, 'Processes 101' → 'Actor concurrency model'"
+
+[[ref]]
+concept = "async_await"
+book = "samson_asynchronous_programming_in_rust"
+where = "ch. 7, 'Coroutines and async/await'"
+
+[[ref]]
+concept = "async_await"
+book = "blewett_clymer_pro_asynchronous_programming_dotnet"
+where = "ch. 7, 'async and await'"
+
+[[ref]]
+concept = "async_await"
+book = "tahrioui_asyncio_recipes"
+where = "ch. 3, 'Working with Coroutines and Async/Await'"
+
+[[ref]]
+concept = "async_await"
+book = "babic_srivastava_kotlin_coroutines_by_tutorials"
+where = "ch. 5, 'Async/Await'"
+
+[[ref]]
+concept = "async_await"
+book = "burnham_async_javascript"
+where = "ch. 1, 'Understanding JavaScript Events' → 'Types of Async Functions'"
+
+[[ref]]
+concept = "async_await"
+book = "kodeco_combine_asynchronous_programming_swift"
+where = "ch. 2, 'Publishers & Subscribers' → 'Bridging Combine publishers to async/await'"
+
+[[ref]]
+concept = "async_runtime"
+book = "cox_buday_concurrency_in_go"
+where = "ch. 6, 'Goroutines and the Go Runtime'"
+
+[[ref]]
+concept = "async_runtime"
+book = "samson_asynchronous_programming_in_rust"
+where = "ch. 6, 'Futures in Rust' → 'A mental model of an async runtime'"
+
+[[ref]]
+concept = "async_runtime"
+book = "flitton_morton_async_rust"
+where = "ch. 3, 'Building Our Own Async Queues' → 'Configuring Our Runtime'"
+
+[[ref]]
+concept = "async_runtime"
+book = "gomez_boucher_rust_programming_by_example"
+where = "ch. 9, 'Implementing an Asynchronous FTP Server' → 'Using Tokio'"
+
+[[ref]]
+concept = "async_runtime"
+book = "harmouch_ultimate_rust_for_systems_programming"
+where = "ch. 14, 'Asynchronous Programming' → 'Utilizing the tokio Library'"
+
+[[ref]]
+concept = "async_state_machine"
+book = "samson_asynchronous_programming_in_rust"
+where = "ch. 7, 'Coroutines and async/await' → 'Introduction to stackless coroutines'"
+
+[[ref]]
+concept = "async_state_machine"
+book = "tahrioui_asyncio_recipes"
+where = "ch. 4, 'Working with Async Generators' → 'Writing a State Machine with an Async Generator'"
+
+[[ref]]
+concept = "async_state_machine"
+book = "flitton_morton_async_rust"
+where = "ch. 9, 'Design Patterns' → 'The State Machine Pattern'"
+
+[[ref]]
+concept = "async_state_machine"
+book = "cesarini_thompson_erlang_programming"
+where = "ch. 5, 'Process Design Patterns' → 'Finite State Machines'"
+
+[[ref]]
+concept = "async_stream"
+book = "pai_abraham_cpp_reactive_programming"
+where = "ch. 6, 'Introduction to Event Stream Programming Using C++'"
+
+[[ref]]
+concept = "async_stream"
+book = "cleary_concurrency_in_csharp_cookbook"
+where = "ch. 3, 'Asynchronous Streams'"
+
+[[ref]]
+concept = "async_stream"
+book = "tahrioui_asyncio_recipes"
+where = "ch. 4, 'Working with Async Generators'"
+
+[[ref]]
+concept = "async_stream"
+book = "babic_srivastava_kotlin_coroutines_by_tutorials"
+where = "ch. 14, 'Beginning with Coroutines Flow'"
+
+[[ref]]
+concept = "async_stream"
+book = "serdar_effective_concurrency_in_go"
+where = "ch. 8, 'Handling Requests Concurrently' → 'Streaming data'"
+
+[[ref]]
+concept = "async_stream"
+book = "prokopec_learning_concurrent_programming_in_scala"
+where = "ch. 10, 'Reactors' → 'Event streams'"
+
+[[ref]]
+concept = "async_task"
+book = "terrell_concurrency_in_dotnet"
+where = "ch. 7, 'Task-based functional parallelism'"
+
+[[ref]]
+concept = "async_task"
+book = "brownlee_python_asyncio_jump_start"
+where = "ch. 2, 'Coroutines and Tasks'"
+
+[[ref]]
+concept = "async_task"
+book = "blewett_clymer_pro_asynchronous_programming_dotnet"
+where = "ch. 3, 'Tasks'"
+
+[[ref]]
+concept = "async_task"
+book = "flitton_morton_async_rust"
+where = "ch. 2, 'Basic Async Rust' → 'Understanding Tasks'"
+
+[[ref]]
+concept = "async_task"
+book = "grimm_concurrency_with_modern_cpp"
+where = "ch. 3, 'Multithreading' → 'Tasks'"
+
+[[ref]]
+concept = "async_task"
+book = "pai_abraham_cpp_reactive_programming"
+where = "ch. 4, 'Asynchronous and Lock-Free Programming in C++' → 'Task-based parallelism in C++'"
+
+[[ref]]
+concept = "asynchrony"
+book = "flitton_morton_async_rust"
+where = "ch. 1, 'Introduction to Async'"
+
+[[ref]]
+concept = "asynchrony"
+book = "prokopec_learning_concurrent_programming_in_scala"
+where = "ch. 4, 'Asynchronous Programming with Futures and Promises'"
+
+[[ref]]
+concept = "asynchrony"
+book = "duffy_concurrent_programming_on_windows"
+where = "ch. 8, 'Asynchronous Programming Models'"
+
+[[ref]]
+concept = "asynchrony"
+book = "hattingh_using_asyncio_in_python"
+where = "ch. 1, 'Introducing Asyncio'"
+
+[[ref]]
+concept = "asynchrony"
+book = "babic_srivastava_kotlin_coroutines_by_tutorials"
+where = "ch. 1, 'What Is Asynchronous Programming'"
+
+[[ref]]
+concept = "asynchrony"
+book = "edet_asynchronous_programming"
+where = "ch. 1, 'Introduction to Asynchronous Programming'"
+
+[[ref]]
+concept = "atomic_variable"
+book = "cutajar_learn_concurrent_programming_with_go"
+where = "ch. 12, 'Atomics, spin locks, and futexes'"
+
+[[ref]]
+concept = "atomic_variable"
+book = "bos_rust_atomics_and_locks"
+where = "ch. 2, 'Atomics'"
+
+[[ref]]
+concept = "atomic_variable"
+book = "williams_cpp_concurrency_in_action"
+where = "ch. 5, 'The C++ memory model and operations on atomic types'"
+
+[[ref]]
+concept = "atomic_variable"
+book = "goetz_java_concurrency_in_practice"
+where = "ch. 15, 'Atomic Variables and Nonblocking Synchronization'"
+
+[[ref]]
+concept = "atomic_variable"
+book = "serdar_effective_concurrency_in_go"
+where = "ch. 9, 'Atomic Memory Operations'"
+
+[[ref]]
+concept = "atomic_variable"
+book = "troutwine_hands_on_concurrency_with_rust"
+where = "ch. 6, 'Atomics – the Primitives of Synchronization'"
+
+[[ref]]
+concept = "backpressure"
+book = "kodeco_combine_asynchronous_programming_swift"
+where = "ch. 18, 'Custom Publishers & Handling Backpressure'"
+
+[[ref]]
+concept = "backpressure"
+book = "cox_buday_concurrency_in_go"
+where = "ch. 5, 'Concurrency at Scale' → 'Rate Limiting'"
+
+[[ref]]
+concept = "backpressure"
+book = "serdar_effective_concurrency_in_go"
+where = "ch. 4, 'Some Well-Known Concurrency Problems' → 'Rate limiting'"
+
+[[ref]]
+concept = "barrier"
+book = "cutajar_learn_concurrent_programming_with_go"
+where = "ch. 6, 'Synchronizing with waitgroups and barriers'"
+
+[[ref]]
+concept = "barrier"
+book = "troutwine_hands_on_concurrency_with_rust"
+where = "ch. 5, 'Locks – Mutex, Condvar, Barriers and RWLock'"
+
+[[ref]]
+concept = "barrier"
+book = "herlihy_shavit_art_of_multiprocessor_programming"
+where = "ch. 17, 'Barriers'"
+
+[[ref]]
+concept = "barrier"
+book = "grimm_concurrency_with_modern_cpp"
+where = "ch. 6, 'The Future: C++20/23' → 'Latches and Barriers'"
+
+[[ref]]
+concept = "barrier"
+book = "blewett_clymer_pro_asynchronous_programming_dotnet"
+where = "ch. 4, 'Basic Thread Safety' → 'Barrier: Rendezvous-Based Synchronization'"
+
+[[ref]]
+concept = "barrier"
+book = "reinders_data_parallel_cpp"
+where = "ch. 9, 'Communication and Synchronization' → 'Using Work-Group Barriers and Local Memory'"
+
+[[ref]]
+concept = "blocking_and_nonblocking"
+book = "goetz_java_concurrency_in_practice"
+where = "ch. 15, 'Atomic Variables and Nonblocking Synchronization'"
+
+[[ref]]
+concept = "blocking_and_nonblocking"
+book = "bobrov_grokking_concurrency"
+where = "ch. 10, 'Nonblocking I/O'"
+
+[[ref]]
+concept = "blocking_and_nonblocking"
+book = "bos_rust_atomics_and_locks"
+where = "ch. 5, 'Building Our Own Channels' → 'Blocking'"
+
+[[ref]]
+concept = "blocking_and_nonblocking"
+book = "marlow_parallel_and_concurrent_programming_in_haskell"
+where = "ch. 10, 'Software Transactional Memory' → 'Blocking'"
+
+[[ref]]
+concept = "blocking_and_nonblocking"
+book = "terrell_concurrency_in_dotnet"
+where = "ch. 13, 'Recipes and design patterns for successful concurrent programming' → 'Non-blocking synchronous message-passing model'"
+
+[[ref]]
+concept = "blocking_and_nonblocking"
+book = "fowler_python_concurrency_with_asyncio"
+where = "ch. 3, 'A first asyncio application' → 'Working with non-blocking sockets'"
+
+[[ref]]
+concept = "blocking_the_event_loop"
+book = "ashcraft_parallel_programming_concurrency_csharp10"
+where = "ch. 4, 'User Interface Responsiveness and Threading'"
+
+[[ref]]
+concept = "blocking_the_event_loop"
+book = "fowler_python_concurrency_with_asyncio"
+where = "ch. 6, 'Handling CPU-bound work'"
+
+[[ref]]
+concept = "blocking_the_event_loop"
+book = "tahrioui_asyncio_recipes"
+where = "ch. 10, 'Preventing Common Asyncio Mistakes'"
+
+[[ref]]
+concept = "blocking_the_event_loop"
+book = "zakas_high_performance_javascript"
+where = "ch. 6, 'Responsive Interfaces'"
+
+[[ref]]
+concept = "bounded_channel"
+book = "flitton_morton_async_rust"
+where = "ch. 11, 'Testing' → 'Testing Channel Capacity'"
+
+[[ref]]
+concept = "bounded_channel"
+book = "marlow_parallel_and_concurrent_programming_in_haskell"
+where = "ch. 7, 'Basic Concurrency: Threads and MVars' → 'MVar as a Building Block: Unbounded Channels'"
+
+[[ref]]
+concept = "bounded_channel"
+book = "herlihy_shavit_art_of_multiprocessor_programming"
+where = "ch. 10, 'Concurrent Queues and the ABA Problem' → 'A Bounded Partial Queue'"
+
+[[ref]]
+concept = "bounded_channel"
+book = "tsoukalos_go_systems_programming"
+where = "ch. 10, 'Goroutines — Advanced Features' → 'Buffered channels'"
+
+[[ref]]
+concept = "busy_waiting"
+book = "cutajar_learn_concurrent_programming_with_go"
+where = "ch. 12, 'Atomics, spin locks, and futexes' → 'Improving on spin locking'"
+
+[[ref]]
+concept = "callback"
+book = "samson_asynchronous_programming_in_rust"
+where = "ch. 2, 'How Programming Languages Model Asynchronous Program Flow' → 'Callback based approaches'"
+
+[[ref]]
+concept = "callback"
+book = "tahrioui_asyncio_recipes"
+where = "ch. 2, 'Working with Event Loops' → 'Scheduling Callbacks on a Loop'"
+
+[[ref]]
+concept = "callback"
+book = "boduch_javascript_concurrency"
+where = "ch. 3, 'Synchronizing with Promises' → 'Building callback chains'"
+
+[[ref]]
+concept = "callback"
+book = "kodeco_combine_asynchronous_programming_swift"
+where = "ch. 8, 'In Practice: Project \"Collage Neue\"' → 'Wrapping a callback function as a future'"
+
+[[ref]]
+concept = "callback"
+book = "babic_srivastava_kotlin_coroutines_by_tutorials"
+where = "ch. 1, 'What Is Asynchronous Programming' → 'Handling work completion using callbacks'"
+
+[[ref]]
+concept = "callback"
+book = "bobrov_grokking_concurrency"
+where = "ch. 11, 'Event-based concurrency' → 'Callbacks'"
+
+[[ref]]
+concept = "cancellation"
+book = "voss_pro_tbb"
+where = "ch. 15, 'Cancellation and Exception Handling'"
+
+[[ref]]
+concept = "cancellation"
+book = "goetz_java_concurrency_in_practice"
+where = "ch. 7, 'Cancellation and Shutdown'"
+
+[[ref]]
+concept = "cancellation"
+book = "marlow_parallel_and_concurrent_programming_in_haskell"
+where = "ch. 9, 'Cancellation and Timeouts'"
+
+[[ref]]
+concept = "cancellation"
+book = "cox_buday_concurrency_in_go"
+where = "ch. 5, 'Concurrency at Scale' → 'Timeouts and Cancellation'"
+
+[[ref]]
+concept = "cancellation"
+book = "nichols_pthreads_programming"
+where = "ch. 4, 'Managing Pthreads' → 'Cancellation'"
+
+[[ref]]
+concept = "cancellation"
+book = "cleary_concurrency_in_csharp_cookbook"
+where = "ch. 3, 'Asynchronous Streams' → 'Asynchronous Streams and Cancellation'"
+
+[[ref]]
+concept = "channel"
+book = "bos_rust_atomics_and_locks"
+where = "ch. 5, 'Building Our Own Channels'"
+
+[[ref]]
+concept = "channel"
+book = "babic_srivastava_kotlin_coroutines_by_tutorials"
+where = "ch. 11, 'Channels'"
+
+[[ref]]
+concept = "channel"
+book = "cox_buday_concurrency_in_go"
+where = "ch. 3, 'Go’s Concurrency Building Blocks' → 'Channels'"
+
+[[ref]]
+concept = "channel"
+book = "walmsley_multithreaded_programming_in_cpp"
+where = "ch. 10, 'Distributed Computing' → 'The CHANNEL Class'"
+
+[[ref]]
+concept = "channel"
+book = "marlow_parallel_and_concurrent_programming_in_haskell"
+where = "ch. 7, 'Basic Concurrency: Threads and MVars' → 'MVar as a Simple Channel: A Logging Service'"
+
+[[ref]]
+concept = "channel"
+book = "butcher_seven_concurrency_models"
+where = "ch. 6, 'Communicating Sequential Processes' → 'Day 1: Channels and Go Blocks'"
+
+[[ref]]
+concept = "clock_skew"
+book = "duffy_concurrent_programming_on_windows"
+where = "ch. 2, 'Synchronization and Time'"
+
+[[ref]]
+concept = "clock_skew"
+book = "kshemkalyani_singhal_distributed_computing"
+where = "ch. 3, 'Logical Time' → 'Physical Clock Synchronization: NTP'"
+
+[[ref]]
+concept = "clock_skew"
+book = "carver_tai_modern_multithreading"
+where = "ch. 6, 'Message Passing in Distributed Programs' → 'Timestamps and Event Ordering'"
+
+[[ref]]
+concept = "clock_skew"
+book = "kleppmann_designing_data_intensive_applications"
+where = "ch. 8, 'The Trouble with Distributed Systems' → 'Unreliable Clocks'"
+
+[[ref]]
+concept = "compare_and_swap"
+book = "serdar_effective_concurrency_in_go"
+where = "ch. 9, 'Atomic Memory Operations' → 'Compare and swap'"
+
+[[ref]]
+concept = "compare_and_swap"
+book = "bos_rust_atomics_and_locks"
+where = "ch. 2, 'Atomics' → 'Compare-and-Exchange Operations'"
+
+[[ref]]
+concept = "compare_and_swap"
+book = "raynal_concurrent_programming_algorithms"
+where = "ch. 17, 'The Alpha(s) and Omega of Consensus: Failure Detector-Based Consensus' → 'De-constructing Compare&Swap'"
+
+[[ref]]
+concept = "compare_and_swap"
+book = "herlihy_shavit_art_of_multiprocessor_programming"
+where = "ch. 5, 'The Relative Power of Primitive Synchronization Operations' → 'The compareAndSet() Operation'"
+
+[[ref]]
+concept = "concurrency"
+book = "cox_buday_concurrency_in_go"
+where = "ch. 1, 'An Introduction to Concurrency'"
+
+[[ref]]
+concept = "concurrency"
+book = "williams_cpp_concurrency_in_action"
+where = "ch. 1, 'Hello, world of concurrency in C++!'"
+
+[[ref]]
+concept = "concurrency"
+book = "subramaniam_programming_concurrency_on_the_jvm"
+where = "ch. 1, 'The Power and Perils of Concurrency'"
+
+[[ref]]
+concept = "concurrency"
+book = "cleary_concurrency_in_csharp_cookbook"
+where = "ch. 1, 'Concurrency: An Overview'"
+
+[[ref]]
+concept = "concurrency"
+book = "bobrov_grokking_concurrency"
+where = "ch. 1, 'Introducing concurrency'"
+
+[[ref]]
+concept = "concurrency"
+book = "prokopec_learning_concurrent_programming_in_scala"
+where = "ch. 1, 'Introduction' → 'Concurrent programming'"
+
+[[ref]]
+concept = "concurrency_debugging"
+book = "serdar_effective_concurrency_in_go"
+where = "ch. 10, 'Troubleshooting Concurrency Issues'"
+
+[[ref]]
+concept = "concurrency_debugging"
+book = "butenhof_programming_with_posix_threads"
+where = "ch. 8, 'Hints to Avoid Debugging'"
+
+[[ref]]
+concept = "concurrency_debugging"
+book = "williams_cpp_concurrency_in_action"
+where = "ch. 11, 'Testing and debugging multithreaded applications'"
+
+[[ref]]
+concept = "concurrency_debugging"
+book = "duffy_concurrent_programming_on_windows"
+where = "ch. 11, 'Concurrency Hazards'"
+
+[[ref]]
+concept = "concurrency_debugging"
+book = "posch_mastering_cpp_multithreading"
+where = "ch. 6, 'Debugging Multithreaded Code'"
+
+[[ref]]
+concept = "concurrency_debugging"
+book = "prokopec_learning_concurrent_programming_in_scala"
+where = "ch. 9, 'Concurrency in Practice' → 'Debugging concurrent programs'"
+
+[[ref]]
+concept = "concurrency_models"
+book = "samson_asynchronous_programming_in_rust"
+where = "ch. 2, 'How Programming Languages Model Asynchronous Program Flow'"
+
+[[ref]]
+concept = "concurrency_models"
+book = "tan_little_elixir_otp_guidebook"
+where = "ch. 3, 'Processes 101' → 'Actor concurrency model'"
+
+[[ref]]
+concept = "concurrency_models"
+book = "ramalho_fluent_python"
+where = "ch. 19, 'Concurrency Models in Python'"
+
+[[ref]]
+concept = "concurrency_models"
+book = "butcher_farina_go_in_practice"
+where = "ch. 5, 'Concurrency in Go' → 'Understanding Go's concurrency model'"
+
+[[ref]]
+concept = "concurrency_models"
+book = "kerrisk_linux_programming_interface"
+where = "ch. 33, 'Threads: Further Details' → 'Thread Implementation Models'"
+
+[[ref]]
+concept = "concurrency_models"
+book = "gjengset_rust_for_rustaceans"
+where = "ch. 10, 'Concurrency (and Parallelism)' → 'Concurrency Models'"
+
+[[ref]]
+concept = "condition_variable"
+book = "cutajar_learn_concurrent_programming_with_go"
+where = "ch. 5, 'Condition variables and semaphores'"
+
+[[ref]]
+concept = "condition_variable"
+book = "troutwine_hands_on_concurrency_with_rust"
+where = "ch. 5, 'Locks – Mutex, Condvar, Barriers and RWLock'"
+
+[[ref]]
+concept = "condition_variable"
+book = "nichols_pthreads_programming"
+where = "ch. 3, 'Synchronizing Pthreads' → 'Condition Variables'"
+
+[[ref]]
+concept = "condition_variable"
+book = "grimm_concurrency_with_modern_cpp"
+where = "ch. 3, 'Multithreading' → 'Condition Variables'"
+
+[[ref]]
+concept = "condition_variable"
+book = "duffy_concurrent_programming_on_windows"
+where = "ch. 6, 'Data and Control Synchronization' → 'Condition Variables'"
+
+[[ref]]
+concept = "condition_variable"
+book = "brownlee_python_asyncio_jump_start"
+where = "ch. 5, 'Queues and Synchronization Primitives' → 'How to Coordinate Using a Condition Variable'"
+
+[[ref]]
+concept = "consensus"
+book = "raynal_concurrent_programming_algorithms"
+where = "ch. 14, 'Universality of Consensus'"
+
+[[ref]]
+concept = "consensus"
+book = "kshemkalyani_singhal_distributed_computing"
+where = "ch. 14, 'Consensus and Agreement Algorithms'"
+
+[[ref]]
+concept = "consensus"
+book = "herlihy_shavit_art_of_multiprocessor_programming"
+where = "ch. 5, 'The Relative Power of Primitive Synchronization Operations' → 'Consensus Numbers'"
+
+[[ref]]
+concept = "consensus"
+book = "kleppmann_designing_data_intensive_applications"
+where = "ch. 9, 'Consistency and Consensus'"
+
+[[ref]]
+concept = "consensus"
+book = "petrov_database_internals"
+where = "ch. 14, 'Consensus'"
+
+[[ref]]
+concept = "consistency_models"
+book = "duffy_concurrent_programming_on_windows"
+where = "ch. 10, 'Memory Models and Lock Freedom' → 'Memory Consistency Models'"
+
+[[ref]]
+concept = "consistency_models"
+book = "raynal_concurrent_programming_algorithms"
+where = "ch. 4, 'Atomicity: Formal Definition and Properties' → 'Alternatives to Atomicity'"
+
+[[ref]]
+concept = "consistency_models"
+book = "kshemkalyani_singhal_distributed_computing"
+where = "ch. 12, 'Distributed Shared Memory' → 'Memory Consistency Models'"
+
+[[ref]]
+concept = "consistency_models"
+book = "kleppmann_designing_data_intensive_applications"
+where = "ch. 9, 'Consistency and Consensus'"
+
+[[ref]]
+concept = "consistency_models"
+book = "petrov_database_internals"
+where = "ch. 11, 'Replication and Consistency'"
+
+[[ref]]
+concept = "contention"
+book = "herlihy_shavit_art_of_multiprocessor_programming"
+where = "ch. 7, 'Spin Locks and Contention'"
+
+[[ref]]
+concept = "contention"
+book = "goetz_java_concurrency_in_practice"
+where = "ch. 11, 'Performance and Scalability' → 'Reducing Lock Contention'"
+
+[[ref]]
+concept = "contention"
+book = "raynal_concurrent_programming_algorithms"
+where = "ch. 6, 'Hybrid Concurrent Objects' → 'Contention-Sensitive Implementations'"
+
+[[ref]]
+concept = "context_switch"
+book = "goetz_java_concurrency_in_practice"
+where = "ch. 11, 'Performance and Scalability' → 'Reducing Context Switch Overhead'"
+
+[[ref]]
+concept = "cooperative_scheduling"
+book = "babic_srivastava_kotlin_coroutines_by_tutorials"
+where = "ch. 10, 'Building Sequences & Iterators with Yield'"
+
+[[ref]]
+concept = "cooperative_scheduling"
+book = "voss_pro_tbb"
+where = "ch. 14, 'Using Task Priorities' → 'Support for Non-Preemptive Priorities in the TBB Task Class'"
+
+[[ref]]
+concept = "cooperative_scheduling"
+book = "boduch_javascript_concurrency"
+where = "ch. 4, 'Lazy Evaluation with Generators' → 'Creating generators and yielding values'"
+
+[[ref]]
+concept = "cooperative_scheduling"
+book = "bobrov_grokking_concurrency"
+where = "ch. 12, 'Asynchronous communication' → 'Cooperative multitasking'"
+
+[[ref]]
+concept = "cooperative_scheduling"
+book = "zakas_high_performance_javascript"
+where = "ch. 6, 'Responsive Interfaces' → 'Yielding with Timers'"
+
+[[ref]]
+concept = "coroutine"
+book = "flitton_morton_async_rust"
+where = "ch. 5, 'Coroutines'"
+
+[[ref]]
+concept = "coroutine"
+book = "grimm_concurrency_with_modern_cpp"
+where = "ch. 6, 'The Future: C++20/23' → 'Coroutines'"
+
+[[ref]]
+concept = "coroutine"
+book = "fowler_python_concurrency_with_asyncio"
+where = "ch. 2, 'asyncio basics' → 'Introducing coroutines'"
+
+[[ref]]
+concept = "coroutine"
+book = "boduch_javascript_concurrency"
+where = "ch. 4, 'Lazy Evaluation with Generators' → 'Coroutines'"
+
+[[ref]]
+concept = "coroutine"
+book = "babic_srivastava_kotlin_coroutines_by_tutorials"
+where = "ch. 1, 'What Is Asynchronous Programming' → 'Explaining coroutines: The inner works'"
+
+[[ref]]
+concept = "coroutine"
+book = "samson_asynchronous_programming_in_rust"
+where = "ch. 2, 'How Programming Languages Model Asynchronous Program Flow' → 'Coroutines: promises and futures'"
+
+[[ref]]
+concept = "critical_section"
+book = "carver_tai_modern_multithreading"
+where = "ch. 2, 'The Critical Section Problem'"
+
+[[ref]]
+concept = "critical_section"
+book = "cutajar_learn_concurrent_programming_with_go"
+where = "ch. 4, 'Synchronization with mutexes' → 'Protecting critical sections with mutexes'"
+
+[[ref]]
+concept = "critical_section"
+book = "butenhof_programming_with_posix_threads"
+where = "ch. 3, 'Synchronization' → 'Invariants, critical sections, and predicates'"
+
+[[ref]]
+concept = "critical_section"
+book = "brownlee_python_asyncio_jump_start"
+where = "ch. 5, 'Queues and Synchronization Primitives' → 'How to Protect Critical Sections with a Mutex Lock'"
+
+[[ref]]
+concept = "critical_section"
+book = "breshears_art_of_concurrency"
+where = "ch. 3, 'Proving Correctness and Measuring Performance' → 'Example: The Critical Section Problem'"
+
+[[ref]]
+concept = "critical_section"
+book = "herlihy_shavit_art_of_multiprocessor_programming"
+where = "ch. 2, 'Mutual Exclusion' → 'Critical Sections'"
+
+[[ref]]
+concept = "csp"
+book = "cox_buday_concurrency_in_go"
+where = "ch. 2, 'Modeling Your Code: Communicating Sequential Processes'"
+
+[[ref]]
+concept = "csp"
+book = "butcher_seven_concurrency_models"
+where = "ch. 6, 'Communicating Sequential Processes'"
+
+[[ref]]
+concept = "csp"
+book = "zaccone_python_parallel_programming_cookbook"
+where = "ch. 5, 'Distributed Python' → 'Communicating sequential processes with PyCSP'"
+
+[[ref]]
+concept = "csp"
+book = "cutajar_learn_concurrent_programming_with_go"
+where = "ch. 9, 'Programming with channels' → 'Communicating sequential processes'"
+
+[[ref]]
+concept = "csp"
+book = "chisnall_go_phrasebook"
+where = "ch. 10, 'Concurrency Design Patterns' → 'Share Memory by Communicating'"
+
+[[ref]]
+concept = "daemon_thread"
+book = "flitton_morton_async_rust"
+where = "ch. 3, 'Building Our Own Async Queues' → 'Running Background Processes'"
+
+[[ref]]
+concept = "daemon_thread"
+book = "ashcraft_parallel_programming_concurrency_csharp10"
+where = "ch. 4, 'User Interface Responsiveness and Threading' → 'Leveraging background threads'"
+
+[[ref]]
+concept = "daemon_thread"
+book = "chisnall_go_phrasebook"
+where = "ch. 9, 'Goroutines' → 'Performing Actions in the Background'"
+
+[[ref]]
+concept = "daemon_thread"
+book = "kerrisk_linux_programming_interface"
+where = "ch. 29, 'Threads: Introduction' → 'Detaching a Thread'"
+
+[[ref]]
+concept = "daemon_thread"
+book = "nichols_pthreads_programming"
+where = "ch. B, 'Pthreads Draft 4 vs. the Final Standard' → 'Detaching a Thread'"
+
+[[ref]]
+concept = "data_parallelism"
+book = "reinders_data_parallel_cpp"
+where = "ch. 4, 'Expressing Parallelism'"
+
+[[ref]]
+concept = "data_parallelism"
+book = "prokopec_learning_concurrent_programming_in_scala"
+where = "ch. 5, 'Data-Parallel Collections'"
+
+[[ref]]
+concept = "data_parallelism"
+book = "marlow_parallel_and_concurrent_programming_in_haskell"
+where = "ch. 4, 'Dataflow Parallelism: The Par Monad'"
+
+[[ref]]
+concept = "data_parallelism"
+book = "terrell_concurrency_in_dotnet"
+where = "ch. 4, 'The basics of processing big data: data parallelism, part 1'"
+
+[[ref]]
+concept = "data_parallelism"
+book = "butcher_seven_concurrency_models"
+where = "ch. 7, 'Data Parallelism'"
+
+[[ref]]
+concept = "data_parallelism"
+book = "williams_cpp_concurrency_in_action"
+where = "ch. 10, 'Parallel algorithms' → 'Parallelizing the standard library algorithms'"
+
+[[ref]]
+concept = "data_race"
+book = "bos_rust_atomics_and_locks"
+where = "ch. 1, 'Basics of Rust Concurrency' → 'Borrowing and Data Races'"
+
+[[ref]]
+concept = "data_race"
+book = "grimm_concurrency_with_modern_cpp"
+where = "ch. 13, 'Challenges' → 'Data Races'"
+
+[[ref]]
+concept = "data_race"
+book = "posch_mastering_cpp_multithreading"
+where = "ch. 7, 'Best Practices' → 'Being careless - data races'"
+
+[[ref]]
+concept = "data_race"
+book = "blair_chappell_intel_parallel_studio_xe"
+where = "ch. 8, 'Checking for Errors' → 'Detecting Data Races'"
+
+[[ref]]
+concept = "data_race"
+book = "slatkin_effective_python"
+where = "ch. 7, 'Concurrency and Parallelism' → 'Item 54: Use Lock to Prevent Data Races in Threads'"
+
+[[ref]]
+concept = "data_race_freedom"
+book = "bos_rust_atomics_and_locks"
+where = "ch. 1, 'Basics of Rust Concurrency' → 'Borrowing and Data Races'"
+
+[[ref]]
+concept = "data_race_freedom"
+book = "klabnik_nichols_rust_programming_language"
+where = "ch. 16, 'Fearless Concurrency'"
+
+[[ref]]
+concept = "data_race_freedom"
+book = "gjengset_rust_for_rustaceans"
+where = "ch. 10, 'Concurrency (and Parallelism)' → 'Sane Concurrency'"
+
+[[ref]]
+concept = "deadlock"
+book = "cutajar_learn_concurrent_programming_with_go"
+where = "ch. 11, 'Avoiding deadlocks'"
+
+[[ref]]
+concept = "deadlock"
+book = "bobrov_grokking_concurrency"
+where = "ch. 9, 'Solving concurrency problems: Deadlocks and starvation'"
+
+[[ref]]
+concept = "deadlock"
+book = "flitton_morton_async_rust"
+where = "ch. 11, 'Testing' → 'Testing For Deadlocks'"
+
+[[ref]]
+concept = "deadlock"
+book = "grimm_concurrency_with_modern_cpp"
+where = "ch. 13, 'Challenges' → 'Deadlocks'"
+
+[[ref]]
+concept = "deadlock"
+book = "goetz_java_concurrency_in_practice"
+where = "ch. 10, 'Avoiding Liveness Hazards' → 'Deadlock'"
+
+[[ref]]
+concept = "deadlock"
+book = "ashcraft_parallel_programming_concurrency_csharp10"
+where = "ch. 3, 'Best Practices for Managed Threading' → 'Managing deadlocks and race conditions'"
+
+[[ref]]
+concept = "deterministic_testing"
+book = "flitton_morton_async_rust"
+where = "ch. 11, 'Testing' → 'Mocking Async Code'"
+
+[[ref]]
+concept = "deterministic_testing"
+book = "carver_tai_modern_multithreading"
+where = "ch. 2, 'The Critical Section Problem' → 'Tracing and Replay for Shared Variables'"
+
+[[ref]]
+concept = "event_loop"
+book = "samson_asynchronous_programming_in_rust"
+where = "ch. 3, 'Understanding OS-Backed Event Queues, System Calls, and Cross-Platform Abstractions'"
+
+[[ref]]
+concept = "event_loop"
+book = "tahrioui_asyncio_recipes"
+where = "ch. 2, 'Working with Event Loops'"
+
+[[ref]]
+concept = "event_loop"
+book = "boduch_javascript_concurrency"
+where = "ch. 8, 'Evented IO with NodeJS'"
+
+[[ref]]
+concept = "event_loop"
+book = "bobrov_grokking_concurrency"
+where = "ch. 11, 'Event-based concurrency' → 'Event loop'"
+
+[[ref]]
+concept = "event_loop"
+book = "fowler_python_concurrency_with_asyncio"
+where = "ch. 1, 'Getting to know asyncio' → 'How an event loop works'"
+
+[[ref]]
+concept = "event_loop"
+book = "hattingh_using_asyncio_in_python"
+where = "ch. 3, 'Asyncio Walk-Through' → 'Event Loop'"
+
+[[ref]]
+concept = "false_sharing"
+book = "grimm_concurrency_with_modern_cpp"
+where = "ch. 13, 'Challenges' → 'False Sharing'"
+
+[[ref]]
+concept = "fan_out_fan_in"
+book = "cox_buday_concurrency_in_go"
+where = "ch. 4, 'Concurrency Patterns in Go' → 'Fan-Out, Fan-In'"
+
+[[ref]]
+concept = "fan_out_fan_in"
+book = "serdar_effective_concurrency_in_go"
+where = "ch. 5, 'Worker Pools and Pipelines' → 'Pipelines, fan-out, and fan-in'"
+
+[[ref]]
+concept = "fan_out_fan_in"
+book = "burns_designing_distributed_systems"
+where = "ch. 7, 'Scatter/Gather'"
+
+[[ref]]
+concept = "fan_out_fan_in"
+book = "slatkin_effective_python"
+where = "ch. 7, 'Concurrency and Parallelism' → 'Item 57: Avoid Creating New Thread Instances for On-demand Fan-out'"
+
+[[ref]]
+concept = "fiber"
+book = "duffy_concurrent_programming_on_windows"
+where = "ch. 9, 'Fibers'"
+
+[[ref]]
+concept = "fiber"
+book = "samson_asynchronous_programming_in_rust"
+where = "ch. 2, 'How Programming Languages Model Asynchronous Program Flow' → 'Fibers and green threads'"
+
+[[ref]]
+concept = "fiber"
+book = "burnham_async_javascript"
+where = "ch. A1, 'Tools for Taming JavaScript' → 'Node-Fibers'"
+
+[[ref]]
+concept = "futex"
+book = "cutajar_learn_concurrent_programming_with_go"
+where = "ch. 12, 'Atomics, spin locks, and futexes'"
+
+[[ref]]
+concept = "future_and_promise"
+book = "prokopec_learning_concurrent_programming_in_scala"
+where = "ch. 4, 'Asynchronous Programming with Futures and Promises'"
+
+[[ref]]
+concept = "future_and_promise"
+book = "palach_parallel_programming_with_python"
+where = "ch. 4, 'Using the threading and concurrent.futures Modules'"
+
+[[ref]]
+concept = "future_and_promise"
+book = "boduch_javascript_concurrency"
+where = "ch. 3, 'Synchronizing with Promises'"
+
+[[ref]]
+concept = "future_and_promise"
+book = "herlihy_shavit_art_of_multiprocessor_programming"
+where = "ch. 16, 'Futures, Scheduling, and Work Distribution'"
+
+[[ref]]
+concept = "future_and_promise"
+book = "samson_asynchronous_programming_in_rust"
+where = "ch. 2, 'How Programming Languages Model Asynchronous Program Flow' → 'Coroutines: promises and futures'"
+
+[[ref]]
+concept = "future_and_promise"
+book = "williams_cpp_concurrency_in_action"
+where = "ch. 4, 'Synchronizing concurrent operations' → 'Waiting for one-off events with futures'"
+
+[[ref]]
+concept = "gil"
+book = "fowler_python_concurrency_with_asyncio"
+where = "ch. 1, 'Getting to know asyncio' → 'Understanding the global interpreter lock'"
+
+[[ref]]
+concept = "gil"
+book = "palach_parallel_programming_with_python"
+where = "ch. 1, 'Contextualizing Parallel, Concurrent, and Distributed Programming' → 'Taking care of Python GIL'"
+
+[[ref]]
+concept = "gil"
+book = "nguyen_advanced_python_programming"
+where = "ch. 15, 'The Global Interpreter Lock'"
+
+[[ref]]
+concept = "gil"
+book = "ramalho_fluent_python"
+where = "ch. 19, 'Concurrency Models in Python' → 'The Real Impact of the GIL'"
+
+[[ref]]
+concept = "gil"
+book = "beazley_jones_python_cookbook"
+where = "ch. 12, 'Concurrency' → 'Dealing with the GIL (and How to Stop Worrying About It)'"
+
+[[ref]]
+concept = "goroutine"
+book = "cox_buday_concurrency_in_go"
+where = "ch. 3, 'Go’s Concurrency Building Blocks' → 'Goroutines'"
+
+[[ref]]
+concept = "goroutine"
+book = "cutajar_learn_concurrent_programming_with_go"
+where = "ch. 2, 'Dealing with threads' → 'What’s so special about goroutines?'"
+
+[[ref]]
+concept = "goroutine"
+book = "serdar_effective_concurrency_in_go"
+where = "ch. 2, 'Go Concurrency Primitives' → 'Goroutines'"
+
+[[ref]]
+concept = "goroutine"
+book = "donovan_kernighan_go_programming_language"
+where = "ch. 8, 'Goroutines and Channels'"
+
+[[ref]]
+concept = "goroutine"
+book = "chisnall_go_phrasebook"
+where = "ch. 9, 'Goroutines'"
+
+[[ref]]
+concept = "goroutine"
+book = "tsoukalos_go_systems_programming"
+where = "ch. 9, 'Goroutines — Basic Features'"
+
+[[ref]]
+concept = "gpu_computing"
+book = "voss_pro_tbb"
+where = "ch. 19, 'Flow Graphs on Steroids: OpenCL Nodes'"
+
+[[ref]]
+concept = "gpu_computing"
+book = "marlow_parallel_and_concurrent_programming_in_haskell"
+where = "ch. 6, 'GPU Programming with Accelerate'"
+
+[[ref]]
+concept = "gpu_computing"
+book = "zaccone_python_parallel_programming_cookbook"
+where = "ch. 6, 'GPU Programming with Python'"
+
+[[ref]]
+concept = "gpu_computing"
+book = "posch_mastering_cpp_multithreading"
+where = "ch. 10, 'Multithreading with GPGPU'"
+
+[[ref]]
+concept = "gpu_computing"
+book = "butcher_seven_concurrency_models"
+where = "ch. 7, 'Data Parallelism' → 'Day 1: GPGPU Programming'"
+
+[[ref]]
+concept = "gpu_computing"
+book = "reinders_data_parallel_cpp"
+where = "ch. 2, 'Where Code Executes' → 'Method#3: Using a GPU (or Other Accelerators)'"
+
+[[ref]]
+concept = "granularity"
+book = "voss_pro_tbb"
+where = "ch. 16, 'Tuning TBB Algorithms: Granularity, Locality, Parallelism, and Determinism'"
+
+[[ref]]
+concept = "granularity"
+book = "bobrov_grokking_concurrency"
+where = "ch. 7, 'Decomposition' → 'Granularity'"
+
+[[ref]]
+concept = "green_thread"
+book = "samson_asynchronous_programming_in_rust"
+where = "ch. 2, 'How Programming Languages Model Asynchronous Program Flow' → 'Fibers and green threads'"
+
+[[ref]]
+concept = "green_thread"
+book = "wang_systems_programming_unix_linux"
+where = "ch. 4, 'Concurrent Programming' → 'Programming Project: User-Level Threads'"
+
+[[ref]]
+concept = "happens_before"
+book = "serdar_effective_concurrency_in_go"
+where = "ch. 3, 'The Go Memory Model' → 'The happened-before relationship between memory operations'"
+
+[[ref]]
+concept = "happens_before"
+book = "bos_rust_atomics_and_locks"
+where = "ch. 3, 'Memory Ordering' → 'Happens-Before Relationship'"
+
+[[ref]]
+concept = "happens_before"
+book = "troutwine_hands_on_concurrency_with_rust"
+where = "ch. 6, 'Atomics – the Primitives of Synchronization' → 'Memory ordering – happens-before and synchronizes-with'"
+
+[[ref]]
+concept = "hazard_pointers"
+book = "troutwine_hands_on_concurrency_with_rust"
+where = "ch. 7, 'Atomics – Safely Reclaiming Memory'"
+
+[[ref]]
+concept = "hazard_pointers"
+book = "herlihy_shavit_art_of_multiprocessor_programming"
+where = "ch. 10, 'Concurrent Queues and the ABA Problem' → 'Memory Reclamation and the ABA Problem'"
+
+[[ref]]
+concept = "idempotency"
+book = "cox_buday_concurrency_in_go"
+where = "ch. 5, 'Concurrency at Scale' → 'Replicated Requests'"
+
+[[ref]]
+concept = "idempotency"
+book = "flitton_morton_async_rust"
+where = "ch. 9, 'Design Patterns' → 'The Retry Pattern'"
+
+[[ref]]
+concept = "idempotency"
+book = "hunter_distributed_systems_with_nodejs"
+where = "ch. 8, 'Resilience' → 'Idempotency and Messaging Resilience'"
+
+[[ref]]
+concept = "immutability"
+book = "terrell_concurrency_in_dotnet"
+where = "ch. 3, 'Functional data structures and immutability'"
+
+[[ref]]
+concept = "immutability"
+book = "goetz_java_concurrency_in_practice"
+where = "ch. 3, 'Sharing Objects' → 'Immutability'"
+
+[[ref]]
+concept = "immutability"
+book = "subramaniam_programming_concurrency_on_the_jvm"
+where = "ch. 3, 'Design Approaches' → 'Purely Immutable Design'"
+
+[[ref]]
+concept = "immutability"
+book = "cleary_concurrency_in_csharp_cookbook"
+where = "ch. 9, 'Collections' → 'Immutable Stacks and Queues'"
+
+[[ref]]
+concept = "immutability"
+book = "charpentier_functional_and_concurrent_programming"
+where = "ch. 19, 'Thread-Safe Objects' → 'Immutable Objects'"
+
+[[ref]]
+concept = "interior_mutability"
+book = "subramaniam_programming_concurrency_on_the_jvm"
+where = "ch. 5, 'Taming Shared Mutability'"
+
+[[ref]]
+concept = "interior_mutability"
+book = "bos_rust_atomics_and_locks"
+where = "ch. 1, 'Basics of Rust Concurrency' → 'Interior Mutability'"
+
+[[ref]]
+concept = "interior_mutability"
+book = "sajanikar_haskell_cookbook"
+where = "ch. 12, 'Concurrent and Distributed Programming in Haskell' → 'Working with IORef'"
+
+[[ref]]
+concept = "io_bound_and_cpu_bound"
+book = "samson_asynchronous_programming_in_rust"
+where = "ch. 6, 'Futures in Rust' → 'I/O vs CPU-intensive tasks'"
+
+[[ref]]
+concept = "io_bound_and_cpu_bound"
+book = "fowler_python_concurrency_with_asyncio"
+where = "ch. 1, 'Getting to know asyncio' → 'What is I/O-bound and what is CPU-bound?'"
+
+[[ref]]
+concept = "io_bound_and_cpu_bound"
+book = "bobrov_grokking_concurrency"
+where = "ch. 6, 'Multitasking' → 'CPU-bound and I/O-bound applications'"
+
+[[ref]]
+concept = "io_bound_and_cpu_bound"
+book = "summerfield_python_in_practice"
+where = "ch. 4, 'High-Level Concurrency in Python' → 'CPU-Bound Concurrency'"
+
+[[ref]]
+concept = "io_multiplexing"
+book = "samson_asynchronous_programming_in_rust"
+where = "ch. 3, 'Understanding OS-Backed Event Queues, System Calls, and Cross-Platform Abstractions'"
+
+[[ref]]
+concept = "io_multiplexing"
+book = "fowler_python_concurrency_with_asyncio"
+where = "ch. 3, 'A first asyncio application' → 'Using the selectors module to build a socket event loop'"
+
+[[ref]]
+concept = "io_multiplexing"
+book = "bobrov_grokking_concurrency"
+where = "ch. 11, 'Event-based concurrency' → 'I/O multiplexing'"
+
+[[ref]]
+concept = "io_multiplexing"
+book = "kerrisk_linux_programming_interface"
+where = "ch. 63, 'Alternative I/O Models'"
+
+[[ref]]
+concept = "io_multiplexing"
+book = "donovan_kernighan_go_programming_language"
+where = "ch. 8, 'Goroutines and Channels' → 'Multiplexing with select'"
+
+[[ref]]
+concept = "io_multiplexing"
+book = "stevens_rago_apue"
+where = "ch. 14, 'Advanced I/O' → 'I/O Multiplexing'"
+
+[[ref]]
+concept = "ipc"
+book = "bobrov_grokking_concurrency"
+where = "ch. 5, 'Interprocess communication'"
+
+[[ref]]
+concept = "ipc"
+book = "palach_parallel_programming_with_python"
+where = "ch. 6, 'Utilizing Parallel Python' → 'Understanding interprocess communication'"
+
+[[ref]]
+concept = "ipc"
+book = "erciyes_distributed_graph_algorithms"
+where = "ch. 18, 'ASSIST: A Simulator to Develop Distributed Algorithms' → 'Interprocess Communication'"
+
+[[ref]]
+concept = "ipc"
+book = "stevens_rago_apue"
+where = "ch. 15, 'Interprocess Communication'"
+
+[[ref]]
+concept = "ipc"
+book = "silberschatz_operating_system_concepts"
+where = "ch. 3, 'Processes' → 'Interprocess Communication'"
+
+[[ref]]
+concept = "ipc"
+book = "gorelick_ozsvald_high_performance_python"
+where = "ch. 9, 'The multiprocessing Module' → 'Verifying Primes Using Interprocess Communication'"
+
+[[ref]]
+concept = "join"
+book = "cutajar_learn_concurrent_programming_with_go"
+where = "ch. 6, 'Synchronizing with waitgroups and barriers'"
+
+[[ref]]
+concept = "join"
+book = "flitton_morton_async_rust"
+where = "ch. 3, 'Building Our Own Async Queues' → 'Creating Our Own Join Macro'"
+
+[[ref]]
+concept = "join"
+book = "grimm_concurrency_with_modern_cpp"
+where = "ch. 6, 'The Future: C++20/23' → 'A Cooperatively Interruptible Joining Thread'"
+
+[[ref]]
+concept = "join"
+book = "blewett_clymer_pro_asynchronous_programming_dotnet"
+where = "ch. 4, 'Basic Thread Safety' → 'CountdownEvent: Simplifying Fork and Join'"
+
+[[ref]]
+concept = "join"
+book = "serdar_effective_concurrency_in_go"
+where = "ch. 2, 'Go Concurrency Primitives' → 'Wait groups'"
+
+[[ref]]
+concept = "join"
+book = "kerrisk_linux_programming_interface"
+where = "ch. 29, 'Threads: Introduction' → 'Joining with a Terminated Thread'"
+
+[[ref]]
+concept = "latch"
+book = "grimm_concurrency_with_modern_cpp"
+where = "ch. 6, 'The Future: C++20/23' → 'Latches and Barriers'"
+
+[[ref]]
+concept = "latch"
+book = "charpentier_functional_and_concurrent_programming"
+where = "ch. 23, 'Common Synchronizers' → 'Latches and Barriers'"
+
+[[ref]]
+concept = "linearizability"
+book = "troutwine_hands_on_concurrency_with_rust"
+where = "ch. 6, 'Atomics – the Primitives of Synchronization' → 'Linearizability'"
+
+[[ref]]
+concept = "linearizability"
+book = "herlihy_shavit_art_of_multiprocessor_programming"
+where = "ch. 3, 'Concurrent Objects' → 'Linearizability'"
+
+[[ref]]
+concept = "linearizability"
+book = "kleppmann_designing_data_intensive_applications"
+where = "ch. 9, 'Consistency and Consensus' → 'Linearizability'"
+
+[[ref]]
+concept = "livelock"
+book = "bobrov_grokking_concurrency"
+where = "ch. 9, 'Solving concurrency problems: Deadlocks and starvation' → 'Livelocks'"
+
+[[ref]]
+concept = "livelock"
+book = "carver_tai_modern_multithreading"
+where = "ch. 2, 'The Critical Section Problem' → 'Deadlock, Livelock, and Starvation'"
+
+[[ref]]
+concept = "livelock"
+book = "nguyen_advanced_python_programming"
+where = "ch. 12, 'Deadlocks' → 'The concept of livelocks'"
+
+[[ref]]
+concept = "lock_free"
+book = "williams_cpp_concurrency_in_action"
+where = "ch. 7, 'Designing lock-free concurrent data structures'"
+
+[[ref]]
+concept = "lock_free"
+book = "goetz_java_concurrency_in_practice"
+where = "ch. 15, 'Atomic Variables and Nonblocking Synchronization'"
+
+[[ref]]
+concept = "lock_free"
+book = "duffy_concurrent_programming_on_windows"
+where = "ch. 10, 'Memory Models and Lock Freedom'"
+
+[[ref]]
+concept = "lock_free"
+book = "fowler_python_concurrency_with_asyncio"
+where = "ch. 5, 'Non-blocking database drivers'"
+
+[[ref]]
+concept = "lock_free"
+book = "raynal_concurrent_programming_algorithms"
+where = "ch. 5, 'Mutex-Free Concurrent Objects'"
+
+[[ref]]
+concept = "lock_free"
+book = "cutajar_learn_concurrent_programming_with_go"
+where = "ch. 12, 'Atomics, spin locks, and futexes' → 'Lock-free synchronization with atomic variables'"
+
+[[ref]]
+concept = "lock_ordering"
+book = "cutajar_learn_concurrent_programming_with_go"
+where = "ch. 11, 'Avoiding deadlocks'"
+
+[[ref]]
+concept = "lock_ordering"
+book = "walmsley_multithreaded_programming_in_cpp"
+where = "ch. 8, 'Multiple Mutexes'"
+
+[[ref]]
+concept = "lock_ordering"
+book = "zaccone_python_parallel_programming_cookbook"
+where = "ch. 3, 'Process-based Parallelism' → 'Avoiding deadlock problems'"
+
+[[ref]]
+concept = "lock_ordering"
+book = "herlihy_shavit_art_of_multiprocessor_programming"
+where = "ch. 7, 'Spin Locks and Contention' → 'Hierarchical Locks'"
+
+[[ref]]
+concept = "lock_ordering"
+book = "stevens_rago_apue"
+where = "ch. 11, 'Threads' → 'Deadlock Avoidance'"
+
+[[ref]]
+concept = "lock_ordering"
+book = "silberschatz_operating_system_concepts"
+where = "ch. 8, 'Deadlocks' → 'Deadlock Prevention'"
+
+[[ref]]
+concept = "map_reduce"
+book = "terrell_concurrency_in_dotnet"
+where = "ch. 5, 'PLINQ and MapReduce: data parallelism, part 2'"
+
+[[ref]]
+concept = "map_reduce"
+book = "breshears_art_of_concurrency"
+where = "ch. 7, 'MapReduce'"
+
+[[ref]]
+concept = "map_reduce"
+book = "fowler_python_concurrency_with_asyncio"
+where = "ch. 6, 'Handling CPU-bound work' → 'Solving a problem with MapReduce using asyncio'"
+
+[[ref]]
+concept = "map_reduce"
+book = "zaccone_python_parallel_programming_cookbook"
+where = "ch. 5, 'Distributed Python' → 'Using MapReduce with Disco'"
+
+[[ref]]
+concept = "map_reduce"
+book = "butcher_seven_concurrency_models"
+where = "ch. 8, 'The Lambda Architecture' → 'Day 1: MapReduce'"
+
+[[ref]]
+concept = "map_reduce"
+book = "chisnall_go_phrasebook"
+where = "ch. 10, 'Concurrency Design Patterns' → 'Map Reduce, Go Style'"
+
+[[ref]]
+concept = "message_passing"
+book = "cutajar_learn_concurrent_programming_with_go"
+where = "ch. 7, 'Communication using message passing'"
+
+[[ref]]
+concept = "message_passing"
+book = "carver_tai_modern_multithreading"
+where = "ch. 5, 'Message Passing'"
+
+[[ref]]
+concept = "message_passing"
+book = "duffy_concurrent_programming_on_windows"
+where = "ch. 13, 'Data and Task Parallelism' → 'Message-Based Parallelism'"
+
+[[ref]]
+concept = "message_passing"
+book = "hunter_english_multithreaded_javascript"
+where = "ch. 2, 'Browsers' → 'Message Passing Abstractions'"
+
+[[ref]]
+concept = "message_passing"
+book = "erciyes_distributed_graph_algorithms"
+where = "ch. 3, 'The Computational Model' → 'Message Passing'"
+
+[[ref]]
+concept = "message_passing"
+book = "klabnik_nichols_rust_programming_language"
+where = "ch. 16, 'Fearless Concurrency' → 'Using Message Passing to Transfer Data Between Threads'"
+
+[[ref]]
+concept = "model_checking"
+book = "breshears_art_of_concurrency"
+where = "ch. 3, 'Proving Correctness and Measuring Performance'"
+
+[[ref]]
+concept = "monitor"
+book = "herlihy_shavit_art_of_multiprocessor_programming"
+where = "ch. 8, 'Monitors and Blocking Synchronization'"
+
+[[ref]]
+concept = "monitor"
+book = "carver_tai_modern_multithreading"
+where = "ch. 4, 'Monitors'"
+
+[[ref]]
+concept = "monitor"
+book = "grimm_concurrency_with_modern_cpp"
+where = "ch. 9, 'Concurrent Architecture' → 'Monitor Object'"
+
+[[ref]]
+concept = "monitor"
+book = "prokopec_learning_concurrent_programming_in_scala"
+where = "ch. 2, 'Concurrency on the JVM and the Java Memory Model' → 'Monitors and synchronization'"
+
+[[ref]]
+concept = "monitor"
+book = "blewett_clymer_pro_asynchronous_programming_dotnet"
+where = "ch. 4, 'Basic Thread Safety' → 'Monitor: The Workhorse of .NET Synchronization'"
+
+[[ref]]
+concept = "monitor"
+book = "raynal_concurrent_programming_algorithms"
+where = "ch. 3, 'Lock-Based Concurrent Objects' → 'A Construct for Imperative Languages: the Monitor'"
+
+[[ref]]
+concept = "mpi"
+book = "posch_mastering_cpp_multithreading"
+where = "ch. 9, 'Multithreading with Distributed Computing' → 'Installing Open MPI'"
+
+[[ref]]
+concept = "mpi"
+book = "zomaya_parallel_computing_bioinformatics"
+where = "ch. 2, 'Parallel Monte Carlo Simulation of HIV Molecular Evolution in Response to Immune Surveillance' → 'Parallelization with MPI'"
+
+[[ref]]
+concept = "multiprocessing"
+book = "brownlee_parallel_loops_in_python"
+where = "ch. 5, 'Parallel Loop with the Process Class'"
+
+[[ref]]
+concept = "multiprocessing"
+book = "zaccone_python_parallel_programming_cookbook"
+where = "ch. 3, 'Process-based Parallelism'"
+
+[[ref]]
+concept = "multiprocessing"
+book = "palach_parallel_programming_with_python"
+where = "ch. 5, 'Using Multiprocessing and ProcessPoolExecutor'"
+
+[[ref]]
+concept = "multiprocessing"
+book = "cutajar_learn_concurrent_programming_with_go"
+where = "ch. 2, 'Dealing with threads' → 'Multiprocessing in operating systems'"
+
+[[ref]]
+concept = "multiprocessing"
+book = "walmsley_multithreaded_programming_in_cpp"
+where = "ch. 5, 'Semaphores' → 'The POOL Class'"
+
+[[ref]]
+concept = "multiprocessing"
+book = "fowler_python_concurrency_with_asyncio"
+where = "ch. 1, 'Getting to know asyncio' → 'Understanding processes, threads, multithreading, and multiprocessing'"
+
+[[ref]]
+concept = "multitasking"
+book = "bobrov_grokking_concurrency"
+where = "ch. 6, 'Multitasking'"
+
+[[ref]]
+concept = "multitasking"
+book = "samson_asynchronous_programming_in_rust"
+where = "ch. 1, 'Concurrency and Asynchronous Programming: a Detailed Overview' → 'An evolutionary journey of multitasking'"
+
+[[ref]]
+concept = "multitasking"
+book = "fowler_python_concurrency_with_asyncio"
+where = "ch. 1, 'Getting to know asyncio' → 'Understanding concurrency, parallelism, and multitasking'"
+
+[[ref]]
+concept = "multitasking"
+book = "wang_systems_programming_unix_linux"
+where = "ch. 3, 'Process Management in Unix/Linux' → 'Multitasking'"
+
+[[ref]]
+concept = "mutex"
+book = "cutajar_learn_concurrent_programming_with_go"
+where = "ch. 4, 'Synchronization with mutexes'"
+
+[[ref]]
+concept = "mutex"
+book = "troutwine_hands_on_concurrency_with_rust"
+where = "ch. 5, 'Locks – Mutex, Condvar, Barriers and RWLock'"
+
+[[ref]]
+concept = "mutex"
+book = "walmsley_multithreaded_programming_in_cpp"
+where = "ch. 3, 'Mutexes'"
+
+[[ref]]
+concept = "mutex"
+book = "nichols_pthreads_programming"
+where = "ch. 3, 'Synchronizing Pthreads' → 'Mutex Variables'"
+
+[[ref]]
+concept = "mutex"
+book = "brownlee_python_asyncio_jump_start"
+where = "ch. 5, 'Queues and Synchronization Primitives' → 'How to Protect Critical Sections with a Mutex Lock'"
+
+[[ref]]
+concept = "mutex"
+book = "hunter_english_multithreaded_javascript"
+where = "ch. 6, 'Multithreaded Patterns' → 'Mutex: A Basic Lock'"
+
+[[ref]]
+concept = "mutual_exclusion"
+book = "raynal_concurrent_programming_algorithms"
+where = "ch. 1, 'The Mutual Exclusion Problem'"
+
+[[ref]]
+concept = "mutual_exclusion"
+book = "herlihy_shavit_art_of_multiprocessor_programming"
+where = "ch. 2, 'Mutual Exclusion'"
+
+[[ref]]
+concept = "mutual_exclusion"
+book = "kshemkalyani_singhal_distributed_computing"
+where = "ch. 9, 'Distributed Mutual Exclusion Algorithms'"
+
+[[ref]]
+concept = "mutual_exclusion"
+book = "posch_mastering_cpp_multithreading"
+where = "ch. 2, 'Multithreading Implementation on the Processor and OS' → 'Mutual exclusion implementations'"
+
+[[ref]]
+concept = "mutual_exclusion"
+book = "duffy_concurrent_programming_on_windows"
+where = "ch. 6, 'Data and Control Synchronization' → 'Mutual Exclusion'"
+
+[[ref]]
+concept = "mutual_exclusion"
+book = "erciyes_distributed_graph_algorithms"
+where = "ch. 8, 'Self-Stabilization' → 'Dijkstra’s Self-Stabilizing Mutual Exclusion Algorithm'"
+
+[[ref]]
+concept = "nondeterminism"
+book = "hunter_english_multithreaded_javascript"
+where = "ch. 5, 'Advanced Shared Memory' → 'Timing and Nondeterminism'"
+
+[[ref]]
+concept = "nondeterminism"
+book = "downey_little_book_of_semaphores"
+where = "ch. 1, 'Introduction' → 'Non-determinism'"
+
+[[ref]]
+concept = "nondeterminism"
+book = "charpentier_functional_and_concurrent_programming"
+where = "ch. 17, 'Threads and Nondeterminism'"
+
+[[ref]]
+concept = "numa"
+book = "voss_pro_tbb"
+where = "ch. 20, 'TBB on NUMA Architectures'"
+
+[[ref]]
+concept = "once_initialization"
+book = "butenhof_programming_with_posix_threads"
+where = "ch. 5, 'Advanced Threaded Programming' → 'One-time initialization'"
+
+[[ref]]
+concept = "once_initialization"
+book = "walmsley_multithreaded_programming_in_cpp"
+where = "ch. 7, 'Keys' → 'One-Time Initialization'"
+
+[[ref]]
+concept = "once_initialization"
+book = "donovan_kernighan_go_programming_language"
+where = "ch. 9, 'Concurrency with Shared Variables' → 'Lazy Initialization: sync.Once'"
+
+[[ref]]
+concept = "once_initialization"
+book = "bloch_effective_java"
+where = "ch. 11, 'Concurrency' → 'Item 83: Use lazy initialization judiciously'"
+
+[[ref]]
+concept = "once_initialization"
+book = "albahari_csharp_in_a_nutshell"
+where = "ch. 21, 'Advanced Threading' → 'Lazy Initialization'"
+
+[[ref]]
+concept = "once_initialization"
+book = "chisnall_go_phrasebook"
+where = "ch. 9, 'Goroutines' → 'Performing Thread-Safe Initialization'"
+
+[[ref]]
+concept = "openmp"
+book = "blair_chappell_intel_parallel_studio_xe"
+where = "ch. 3, 'Parallel Studio XE for the Impatient' → 'Example 2: Working with OpenMP'"
+
+[[ref]]
+concept = "openmp"
+book = "nguyen_advanced_python_programming"
+where = "ch. 8, 'Parallel Processing' → 'Parallel Cython with OpenMP'"
+
+[[ref]]
+concept = "oversubscription"
+book = "voss_pro_tbb"
+where = "ch. 11, 'Controlling the Number of Threads Used for Execution'"
+
+[[ref]]
+concept = "oversubscription"
+book = "williams_cpp_concurrency_in_action"
+where = "ch. 2, 'Managing threads' → 'Choosing the number of threads at runtime'"
+
+[[ref]]
+concept = "oversubscription"
+book = "charpentier_functional_and_concurrent_programming"
+where = "ch. 24, 'Case Study: Parallel Execution' → 'Bounded Number of Threads'"
+
+[[ref]]
+concept = "parallel_iterators"
+book = "troutwine_hands_on_concurrency_with_rust"
+where = "ch. 8, 'High-Level Parallelism – Threadpools, Parallel Iterators and Processes'"
+
+[[ref]]
+concept = "parallel_iterators"
+book = "terrell_concurrency_in_dotnet"
+where = "ch. 5, 'PLINQ and MapReduce: data parallelism, part 2'"
+
+[[ref]]
+concept = "parallel_iterators"
+book = "brownlee_parallel_loops_in_python"
+where = "ch. 2, 'Parallel Loop with the Thread Class'"
+
+[[ref]]
+concept = "parallel_iterators"
+book = "cleary_concurrency_in_csharp_cookbook"
+where = "ch. 4, 'Parallel Basics' → 'Parallel LINQ'"
+
+[[ref]]
+concept = "parallel_iterators"
+book = "ashcraft_parallel_programming_concurrency_csharp10"
+where = "ch. 6, 'Parallel Programming Concepts' → 'Parallel loops in .NET'"
+
+[[ref]]
+concept = "parallel_iterators"
+book = "urma_modern_java_in_action"
+where = "ch. 7, 'Parallel data processing and performance'"
+
+[[ref]]
+concept = "parallel_prefix_sum"
+book = "breshears_art_of_concurrency"
+where = "ch. 6, 'Parallel Sum and Prefix Scan'"
+
+[[ref]]
+concept = "parallelism"
+book = "troutwine_hands_on_concurrency_with_rust"
+where = "ch. 8, 'High-Level Parallelism – Threadpools, Parallel Iterators and Processes'"
+
+[[ref]]
+concept = "parallelism"
+book = "blair_chappell_intel_parallel_studio_xe"
+where = "ch. 1, 'Parallelism Today'"
+
+[[ref]]
+concept = "parallelism"
+book = "marlow_parallel_and_concurrent_programming_in_haskell"
+where = "ch. 2, 'Basic Parallelism: The Eval Monad'"
+
+[[ref]]
+concept = "parallelism"
+book = "blewett_clymer_pro_asynchronous_programming_dotnet"
+where = "ch. 11, 'Parallel Programming'"
+
+[[ref]]
+concept = "parallelism"
+book = "zaccone_python_parallel_programming_cookbook"
+where = "ch. 1, 'Getting Started with Parallel Computing and Python'"
+
+[[ref]]
+concept = "parallelism"
+book = "bobrov_grokking_concurrency"
+where = "ch. 2, 'Serial and parallel execution' → 'Parallel computing requirements'"
+
+[[ref]]
+concept = "pinning"
+book = "samson_asynchronous_programming_in_rust"
+where = "ch. 9, 'Coroutines, Self-Referential Structs, and Pinning'"
+
+[[ref]]
+concept = "pinning"
+book = "blandy_programming_rust"
+where = "ch. 20, 'Asynchronous Programming' → 'Pinning'"
+
+[[ref]]
+concept = "pipeline"
+book = "serdar_effective_concurrency_in_go"
+where = "ch. 5, 'Worker Pools and Pipelines'"
+
+[[ref]]
+concept = "pipeline"
+book = "butenhof_programming_with_posix_threads"
+where = "ch. 4, 'A Few Ways to Use Threads' → 'Pipeline'"
+
+[[ref]]
+concept = "pipeline"
+book = "voss_pro_tbb"
+where = "ch. 2, 'Generic Parallel Algorithms' → 'Cook Until Done: parallel_do and parallel_pipeline'"
+
+[[ref]]
+concept = "pipeline"
+book = "marlow_parallel_and_concurrent_programming_in_haskell"
+where = "ch. 4, 'Dataflow Parallelism: The Par Monad' → 'Pipeline Parallelism'"
+
+[[ref]]
+concept = "pipeline"
+book = "ashcraft_parallel_programming_concurrency_csharp10"
+where = "ch. 7, 'Task Parallel Library (TPL) and Dataflow' → 'Creating a data pipeline with multiple blocks'"
+
+[[ref]]
+concept = "pipeline"
+book = "palach_parallel_programming_with_python"
+where = "ch. 2, 'Designing Parallel Algorithms' → 'Decomposing tasks with pipeline'"
+
+[[ref]]
+concept = "polling"
+book = "samson_asynchronous_programming_in_rust"
+where = "ch. 4, 'Create Your Own Event Queue' → 'The Poll module'"
+
+[[ref]]
+concept = "polling"
+book = "cleary_concurrency_in_csharp_cookbook"
+where = "ch. 10, 'Cancellation' → 'Responding to Cancellation Requests by Polling'"
+
+[[ref]]
+concept = "polling"
+book = "babic_srivastava_kotlin_coroutines_by_tutorials"
+where = "ch. 11, 'Channels' → 'Comparing receive and poll'"
+
+[[ref]]
+concept = "polling"
+book = "stevens_rago_apue"
+where = "ch. 14, 'Advanced I/O' → 'poll Function'"
+
+[[ref]]
+concept = "polling"
+book = "beazley_jones_python_cookbook"
+where = "ch. 12, 'Concurrency' → 'Polling Multiple Thread Queues'"
+
+[[ref]]
+concept = "polling"
+book = "blandy_programming_rust"
+where = "ch. 20, 'Asynchronous Programming' → 'Primitive Futures and Executors: When Is a Future Worth Polling Again?'"
+
+[[ref]]
+concept = "preemptive_scheduling"
+book = "voss_pro_tbb"
+where = "ch. 14, 'Using Task Priorities' → 'Support for Non-Preemptive Priorities in the TBB Task Class'"
+
+[[ref]]
+concept = "process"
+book = "tan_little_elixir_otp_guidebook"
+where = "ch. 3, 'Processes 101'"
+
+[[ref]]
+concept = "process"
+book = "cutajar_learn_concurrent_programming_with_go"
+where = "ch. 2, 'Dealing with threads' → 'Abstracting concurrency with processes and threads'"
+
+[[ref]]
+concept = "process"
+book = "flitton_morton_async_rust"
+where = "ch. 1, 'Introduction to Async' → 'Introduction to Processes'"
+
+[[ref]]
+concept = "process"
+book = "posch_mastering_cpp_multithreading"
+where = "ch. 2, 'Multithreading Implementation on the Processor and OS' → 'Defining processes and threads'"
+
+[[ref]]
+concept = "process"
+book = "prokopec_learning_concurrent_programming_in_scala"
+where = "ch. 2, 'Concurrency on the JVM and the Java Memory Model' → 'Processes and threads'"
+
+[[ref]]
+concept = "process"
+book = "fowler_python_concurrency_with_asyncio"
+where = "ch. 1, 'Getting to know asyncio' → 'Understanding processes, threads, multithreading, and multiprocessing'"
+
+[[ref]]
+concept = "producer_consumer"
+book = "babic_srivastava_kotlin_coroutines_by_tutorials"
+where = "ch. 13, 'Producer & Actors'"
+
+[[ref]]
+concept = "producer_consumer"
+book = "serdar_effective_concurrency_in_go"
+where = "ch. 4, 'Some Well-Known Concurrency Problems' → 'The producer-consumer problem'"
+
+[[ref]]
+concept = "producer_consumer"
+book = "goetz_java_concurrency_in_practice"
+where = "ch. 5, 'Building Blocks' → 'Blocking Queues and the Producer-consumer Pattern'"
+
+[[ref]]
+concept = "producer_consumer"
+book = "blewett_clymer_pro_asynchronous_programming_dotnet"
+where = "ch. 10, 'TPL Dataflow' → 'Producer and Consumer Revisited'"
+
+[[ref]]
+concept = "producer_consumer"
+book = "herlihy_shavit_art_of_multiprocessor_programming"
+where = "ch. 1, 'Introduction' → 'The Producer-Consumer Problem'"
+
+[[ref]]
+concept = "producer_consumer"
+book = "downey_little_book_of_semaphores"
+where = "ch. 4, 'Classical synchronization problems' → 'Producer-consumer problem'"
+
+[[ref]]
+concept = "publish_subscribe"
+book = "burnham_async_javascript"
+where = "ch. 2, 'Distributing Events'"
+
+[[ref]]
+concept = "publish_subscribe"
+book = "kodeco_combine_asynchronous_programming_swift"
+where = "ch. 2, 'Publishers & Subscribers'"
+
+[[ref]]
+concept = "publish_subscribe"
+book = "babic_srivastava_kotlin_coroutines_by_tutorials"
+where = "ch. 12, 'Broadcast Channels'"
+
+[[ref]]
+concept = "publish_subscribe"
+book = "flitton_morton_async_rust"
+where = "ch. 6, 'Reactive Programming' → 'Enabling Broadcasting with an Event Bus'"
+
+[[ref]]
+concept = "publish_subscribe"
+book = "pai_abraham_cpp_reactive_programming"
+where = "ch. 11, 'Design Patterns and Idioms for C++ Rx Programming' → 'The Event bus pattern'"
+
+[[ref]]
+concept = "publish_subscribe"
+book = "zaccone_python_parallel_programming_cookbook"
+where = "ch. 3, 'Process-based Parallelism' → 'Collective communication using broadcast'"
+
+[[ref]]
+concept = "race_condition"
+book = "bobrov_grokking_concurrency"
+where = "ch. 8, 'Solving concurrency problems: Race conditions and synchronization'"
+
+[[ref]]
+concept = "race_condition"
+book = "cutajar_learn_concurrent_programming_with_go"
+where = "ch. 3, 'Thread communication using memory sharing' → 'Race conditions'"
+
+[[ref]]
+concept = "race_condition"
+book = "flitton_morton_async_rust"
+where = "ch. 11, 'Testing' → 'Testing for Race Conditions'"
+
+[[ref]]
+concept = "race_condition"
+book = "grimm_concurrency_with_modern_cpp"
+where = "ch. 13, 'Challenges' → 'Race Conditions'"
+
+[[ref]]
+concept = "race_condition"
+book = "ashcraft_parallel_programming_concurrency_csharp10"
+where = "ch. 3, 'Best Practices for Managed Threading' → 'Managing deadlocks and race conditions'"
+
+[[ref]]
+concept = "race_condition"
+book = "tahrioui_asyncio_recipes"
+where = "ch. 7, 'Synchronization Between Asyncio Components' → 'Detecting Asyncio Code That Might Have Race Conditions'"
+
+[[ref]]
+concept = "race_detector"
+book = "flitton_morton_async_rust"
+where = "ch. 11, 'Testing' → 'Testing for Race Conditions'"
+
+[[ref]]
+concept = "race_detector"
+book = "donovan_kernighan_go_programming_language"
+where = "ch. 9, 'Concurrency with Shared Variables' → 'The Race Detector'"
+
+[[ref]]
+concept = "race_detector"
+book = "tsoukalos_go_systems_programming"
+where = "ch. 10, 'Goroutines — Advanced Features' → 'Detecting race conditions'"
+
+[[ref]]
+concept = "race_detector"
+book = "cox_buday_concurrency_in_go"
+where = "ch. A, 'Appendix' → 'Race Detection'"
+
+[[ref]]
+concept = "rcu"
+book = "bos_rust_atomics_and_locks"
+where = "ch. 10, 'Ideas and Inspiration' → 'RCU'"
+
+[[ref]]
+concept = "reactive_programming"
+book = "flitton_morton_async_rust"
+where = "ch. 6, 'Reactive Programming'"
+
+[[ref]]
+concept = "reactive_programming"
+book = "pai_abraham_cpp_reactive_programming"
+where = "ch. 1, 'Reactive Programming Model – Overview and History'"
+
+[[ref]]
+concept = "reactive_programming"
+book = "prokopec_learning_concurrent_programming_in_scala"
+where = "ch. 6, 'Concurrent Programming with Reactive Extensions'"
+
+[[ref]]
+concept = "reactive_programming"
+book = "terrell_concurrency_in_dotnet"
+where = "ch. 6, 'Real-time event streams: functional reactive programming'"
+
+[[ref]]
+concept = "reactive_programming"
+book = "kodeco_combine_asynchronous_programming_swift"
+where = "ch. 1, 'Hello, Combine!'"
+
+[[ref]]
+concept = "reactive_programming"
+book = "babic_srivastava_kotlin_coroutines_by_tutorials"
+where = "ch. 1, 'What Is Asynchronous Programming' → 'Using reactive extensions for background work'"
+
+[[ref]]
+concept = "read_write_lock"
+book = "troutwine_hands_on_concurrency_with_rust"
+where = "ch. 5, 'Locks – Mutex, Condvar, Barriers and RWLock'"
+
+[[ref]]
+concept = "read_write_lock"
+book = "cutajar_learn_concurrent_programming_with_go"
+where = "ch. 4, 'Synchronization with mutexes' → 'Improving performance with readers–writer mutexes'"
+
+[[ref]]
+concept = "read_write_lock"
+book = "nichols_pthreads_programming"
+where = "ch. 3, 'Synchronizing Pthreads' → 'Reader/Writer Locks'"
+
+[[ref]]
+concept = "read_write_lock"
+book = "duffy_concurrent_programming_on_windows"
+where = "ch. 6, 'Data and Control Synchronization' → 'Reader/Writer Locks (RWLs)'"
+
+[[ref]]
+concept = "read_write_lock"
+book = "downey_little_book_of_semaphores"
+where = "ch. 4, 'Classical synchronization problems' → 'Readers-writers problem'"
+
+[[ref]]
+concept = "read_write_lock"
+book = "bos_rust_atomics_and_locks"
+where = "ch. 1, 'Basics of Rust Concurrency' → 'Locking: Mutexes and RwLocks'"
+
+[[ref]]
+concept = "reentrant_lock"
+book = "walmsley_multithreaded_programming_in_cpp"
+where = "ch. 8, 'Multiple Mutexes' → 'The RECURSIVE MUTEX Class'"
+
+[[ref]]
+concept = "reentrant_lock"
+book = "goetz_java_concurrency_in_practice"
+where = "ch. 13, 'Explicit Locks' → 'Lock and ReentrantLock'"
+
+[[ref]]
+concept = "reentrant_lock"
+book = "herlihy_shavit_art_of_multiprocessor_programming"
+where = "ch. 8, 'Monitors and Blocking Synchronization' → 'Our Own Reentrant Lock'"
+
+[[ref]]
+concept = "safety_and_liveness"
+book = "goetz_java_concurrency_in_practice"
+where = "ch. 2, 'Thread Safety' → 'Liveness and Performance'"
+
+[[ref]]
+concept = "safety_and_liveness"
+book = "duffy_concurrent_programming_on_windows"
+where = "ch. 11, 'Concurrency Hazards' → 'Liveness Hazards'"
+
+[[ref]]
+concept = "safety_and_liveness"
+book = "raynal_concurrent_programming_algorithms"
+where = "ch. 5, 'Mutex-Free Concurrent Objects' → 'Mutex-Freedom and Progress Conditions'"
+
+[[ref]]
+concept = "safety_and_liveness"
+book = "silberschatz_operating_system_concepts"
+where = "ch. 6, 'Synchronization Tools' → 'Liveness'"
+
+[[ref]]
+concept = "scheduler"
+book = "cleary_concurrency_in_csharp_cookbook"
+where = "ch. 13, 'Scheduling'"
+
+[[ref]]
+concept = "scheduler"
+book = "kodeco_combine_asynchronous_programming_swift"
+where = "ch. 17, 'Schedulers'"
+
+[[ref]]
+concept = "scheduler"
+book = "butenhof_programming_with_posix_threads"
+where = "ch. 5, 'Advanced Threaded Programming' → 'Realtime scheduling'"
+
+[[ref]]
+concept = "scheduler"
+book = "voss_pro_tbb"
+where = "ch. 11, 'Controlling the Number of Threads Used for Execution' → 'A Brief Recap of the TBB Scheduler Architecture'"
+
+[[ref]]
+concept = "scheduler"
+book = "prokopec_learning_concurrent_programming_in_scala"
+where = "ch. 6, 'Concurrent Programming with Reactive Extensions' → 'Rx schedulers'"
+
+[[ref]]
+concept = "scheduler"
+book = "marlow_parallel_and_concurrent_programming_in_haskell"
+where = "ch. 4, 'Dataflow Parallelism: The Par Monad' → 'Using Different Schedulers'"
+
+[[ref]]
+concept = "scoped_lock"
+book = "bos_rust_atomics_and_locks"
+where = "ch. 4, 'Building Our Own Spin Lock' → 'A Safe Interface Using a Lock Guard'"
+
+[[ref]]
+concept = "select"
+book = "cutajar_learn_concurrent_programming_with_go"
+where = "ch. 8, 'Selecting channels'"
+
+[[ref]]
+concept = "select"
+book = "carver_tai_modern_multithreading"
+where = "ch. 5, 'Message Passing' → 'Selective Wait'"
+
+[[ref]]
+concept = "select"
+book = "cox_buday_concurrency_in_go"
+where = "ch. 3, 'Go’s Concurrency Building Blocks' → 'The select Statement'"
+
+[[ref]]
+concept = "select"
+book = "stevens_rago_apue"
+where = "ch. 14, 'Advanced I/O' → 'select and pselect Functions'"
+
+[[ref]]
+concept = "select"
+book = "bodner_learning_go"
+where = "ch. 12, 'Concurrency in Go' → 'select'"
+
+[[ref]]
+concept = "select"
+book = "donovan_kernighan_go_programming_language"
+where = "ch. 8, 'Goroutines and Channels' → 'Multiplexing with select'"
+
+[[ref]]
+concept = "semaphore"
+book = "cutajar_learn_concurrent_programming_with_go"
+where = "ch. 5, 'Condition variables and semaphores'"
+
+[[ref]]
+concept = "semaphore"
+book = "walmsley_multithreaded_programming_in_cpp"
+where = "ch. 5, 'Semaphores'"
+
+[[ref]]
+concept = "semaphore"
+book = "downey_little_book_of_semaphores"
+where = "ch. 2, 'Semaphores'"
+
+[[ref]]
+concept = "semaphore"
+book = "bos_rust_atomics_and_locks"
+where = "ch. 10, 'Ideas and Inspiration' → 'Semaphore'"
+
+[[ref]]
+concept = "semaphore"
+book = "blewett_clymer_pro_asynchronous_programming_dotnet"
+where = "ch. 4, 'Basic Thread Safety' → 'A Semaphore Out of the Box'"
+
+[[ref]]
+concept = "semaphore"
+book = "fowler_python_concurrency_with_asyncio"
+where = "ch. 11, 'Synchronization' → 'Limiting concurrency with semaphores'"
+
+[[ref]]
+concept = "send_and_sync"
+book = "troutwine_hands_on_concurrency_with_rust"
+where = "ch. 4, 'Sync and Send – the Foundation of Rust Concurrency'"
+
+[[ref]]
+concept = "send_and_sync"
+book = "bos_rust_atomics_and_locks"
+where = "ch. 1, 'Basics of Rust Concurrency' → 'Thread Safety: Send and Sync'"
+
+[[ref]]
+concept = "send_and_sync"
+book = "klabnik_nichols_rust_programming_language"
+where = "ch. 16, 'Fearless Concurrency' → 'Extensible Concurrency with the Sync and Send Traits'"
+
+[[ref]]
+concept = "sequential_consistency"
+book = "bos_rust_atomics_and_locks"
+where = "ch. 3, 'Memory Ordering' → 'Sequentially Consistent Ordering'"
+
+[[ref]]
+concept = "sequential_consistency"
+book = "herlihy_shavit_art_of_multiprocessor_programming"
+where = "ch. 3, 'Concurrent Objects' → 'Sequential Consistency'"
+
+[[ref]]
+concept = "sequential_execution"
+book = "troutwine_hands_on_concurrency_with_rust"
+where = "ch. 2, 'Sequential Rust Performance and Testing'"
+
+[[ref]]
+concept = "sequential_execution"
+book = "bobrov_grokking_concurrency"
+where = "ch. 2, 'Serial and parallel execution'"
+
+[[ref]]
+concept = "sequential_execution"
+book = "walmsley_multithreaded_programming_in_cpp"
+where = "ch. 1, 'Introduction' → 'Single Threaded Programming'"
+
+[[ref]]
+concept = "sequential_execution"
+book = "goetz_java_concurrency_in_practice"
+where = "ch. 9, 'GUI Applications' → 'Why are GUIs Single-threaded?'"
+
+[[ref]]
+concept = "sequential_execution"
+book = "fowler_python_concurrency_with_asyncio"
+where = "ch. 1, 'Getting to know asyncio' → 'How single-threaded concurrency works'"
+
+[[ref]]
+concept = "sequential_execution"
+book = "hunter_english_multithreaded_javascript"
+where = "ch. 1, 'Introduction' → 'Single-Threaded JavaScript'"
+
+[[ref]]
+concept = "shared_memory"
+book = "cutajar_learn_concurrent_programming_with_go"
+where = "ch. 3, 'Thread communication using memory sharing'"
+
+[[ref]]
+concept = "shared_memory"
+book = "williams_cpp_concurrency_in_action"
+where = "ch. 3, 'Sharing data between threads'"
+
+[[ref]]
+concept = "shared_memory"
+book = "goetz_java_concurrency_in_practice"
+where = "ch. 3, 'Sharing Objects'"
+
+[[ref]]
+concept = "shared_memory"
+book = "hunter_english_multithreaded_javascript"
+where = "ch. 4, 'Shared Memory'"
+
+[[ref]]
+concept = "shared_memory"
+book = "herlihy_shavit_art_of_multiprocessor_programming"
+where = "ch. 4, 'Foundations of Shared Memory'"
+
+[[ref]]
+concept = "shared_memory"
+book = "flitton_morton_async_rust"
+where = "ch. 2, 'Basic Async Rust' → 'Sharing Data Between Futures'"
+
+[[ref]]
+concept = "simd"
+book = "kusswurm_modern_parallel_programming_cpp_assembly"
+where = "ch. 1, 'SIMD Fundamentals'"
+
+[[ref]]
+concept = "simd"
+book = "voss_pro_tbb"
+where = "ch. 4, 'TBB and the Parallel Algorithms of the C++ Standard Template Library' → 'Other Ways to Introduce SIMD Parallelism'"
+
+[[ref]]
+concept = "simd"
+book = "reinders_data_parallel_cpp"
+where = "ch. 16, 'Programming for CPUs' → 'The Basics of SIMD Hardware'"
+
+[[ref]]
+concept = "simd"
+book = "blair_chappell_intel_parallel_studio_xe"
+where = "ch. 4, 'Producing Optimized Code' → 'More on Auto-Vectorization'"
+
+[[ref]]
+concept = "speedup_and_amdahls_law"
+book = "breshears_art_of_concurrency"
+where = "ch. 1, 'Want to Go Faster? Raise Your Hands if You Want to Go Faster!'"
+
+[[ref]]
+concept = "speedup_and_amdahls_law"
+book = "cutajar_learn_concurrent_programming_with_go"
+where = "ch. 1, 'Stepping into concurrent programming' → 'Increasing throughput'"
+
+[[ref]]
+concept = "speedup_and_amdahls_law"
+book = "troutwine_hands_on_concurrency_with_rust"
+where = "ch. 2, 'Sequential Rust Performance and Testing' → 'Diminishing returns'"
+
+[[ref]]
+concept = "speedup_and_amdahls_law"
+book = "goetz_java_concurrency_in_practice"
+where = "ch. 11, 'Performance and Scalability' → 'Amdahl’s Law'"
+
+[[ref]]
+concept = "speedup_and_amdahls_law"
+book = "duffy_concurrent_programming_on_windows"
+where = "ch. 14, 'Performance and Scalability' → 'Speedup: Parallel vs. Sequential Code'"
+
+[[ref]]
+concept = "speedup_and_amdahls_law"
+book = "subramaniam_programming_concurrency_on_the_jvm"
+where = "ch. 2, 'Division of Labor' → 'Speedup for the IO-Intensive App'"
+
+[[ref]]
+concept = "spinlock"
+book = "cutajar_learn_concurrent_programming_with_go"
+where = "ch. 12, 'Atomics, spin locks, and futexes'"
+
+[[ref]]
+concept = "spinlock"
+book = "bos_rust_atomics_and_locks"
+where = "ch. 4, 'Building Our Own Spin Lock'"
+
+[[ref]]
+concept = "spinlock"
+book = "herlihy_shavit_art_of_multiprocessor_programming"
+where = "ch. 7, 'Spin Locks and Contention'"
+
+[[ref]]
+concept = "spinlock"
+book = "stevens_rago_apue"
+where = "ch. 11, 'Threads' → 'Spin Locks'"
+
+[[ref]]
+concept = "starvation"
+book = "bobrov_grokking_concurrency"
+where = "ch. 9, 'Solving concurrency problems: Deadlocks and starvation'"
+
+[[ref]]
+concept = "starvation"
+book = "serdar_effective_concurrency_in_go"
+where = "ch. 1, 'Concurrency – A High-Level Overview' → 'Atomicity, race, deadlocks, and starvation'"
+
+[[ref]]
+concept = "starvation"
+book = "carver_tai_modern_multithreading"
+where = "ch. 2, 'The Critical Section Problem' → 'Deadlock, Livelock, and Starvation'"
+
+[[ref]]
+concept = "starvation"
+book = "nguyen_advanced_python_programming"
+where = "ch. 13, 'Starvation'"
+
+[[ref]]
+concept = "starvation"
+book = "cesarini_thompson_erlang_programming"
+where = "ch. 4, 'Concurrent Programming' → 'Race Conditions, Deadlocks, and Process Starvation'"
+
+[[ref]]
+concept = "stress_testing"
+book = "hunter_distributed_systems_with_nodejs"
+where = "ch. 8, 'Resilience' → 'Resilience Testing'"
+
+[[ref]]
+concept = "structured_concurrency"
+book = "babic_srivastava_kotlin_coroutines_by_tutorials"
+where = "ch. 6, 'Coroutine Context'"
+
+[[ref]]
+concept = "structured_concurrency"
+book = "bos_rust_atomics_and_locks"
+where = "ch. 1, 'Basics of Rust Concurrency' → 'Scoped Threads'"
+
+[[ref]]
+concept = "supervision"
+book = "tan_little_elixir_otp_guidebook"
+where = "ch. 5, 'Concurrent error-handling and fault tolerance with links, monitors, and processes'"
+
+[[ref]]
+concept = "supervision"
+book = "cox_buday_concurrency_in_go"
+where = "ch. 5, 'Concurrency at Scale' → 'Healing Unhealthy Goroutines'"
+
+[[ref]]
+concept = "supervision"
+book = "flitton_morton_async_rust"
+where = "ch. 8, 'The Actor Model' → 'Creating Actor Supervision'"
+
+[[ref]]
+concept = "supervision"
+book = "prokopec_learning_concurrent_programming_in_scala"
+where = "ch. 8, 'Actors' → 'Actor supervision'"
+
+[[ref]]
+concept = "supervision"
+book = "serdar_effective_concurrency_in_go"
+where = "ch. 10, 'Troubleshooting Concurrency Issues' → 'Detecting failures and healing'"
+
+[[ref]]
+concept = "supervision"
+book = "logan_erlang_and_otp_in_action"
+where = "ch. 1, 'The foundations of Erlang/OTP' → '– Erlang’s fault tolerance infrastructure'"
+
+[[ref]]
+concept = "suspension_point"
+book = "babic_srivastava_kotlin_coroutines_by_tutorials"
+where = "ch. 4, 'Suspending Functions'"
+
+[[ref]]
+concept = "suspension_point"
+book = "fertig_programming_with_cpp20"
+where = "ch. 2, 'Coroutines: Suspending functions'"
+
+[[ref]]
+concept = "task_leak"
+book = "cox_buday_concurrency_in_go"
+where = "ch. 4, 'Concurrency Patterns in Go' → 'Preventing Goroutine Leaks'"
+
+[[ref]]
+concept = "task_leak"
+book = "marlow_parallel_and_concurrent_programming_in_haskell"
+where = "ch. 11, 'Higher-Level Concurrency Abstractions' → 'Avoiding Thread Leakage'"
+
+[[ref]]
+concept = "task_parallelism"
+book = "duffy_concurrent_programming_on_windows"
+where = "ch. 13, 'Data and Task Parallelism'"
+
+[[ref]]
+concept = "task_parallelism"
+book = "blewett_clymer_pro_asynchronous_programming_dotnet"
+where = "ch. 10, 'TPL Dataflow'"
+
+[[ref]]
+concept = "task_parallelism"
+book = "voss_pro_tbb"
+where = "ch. 2, 'Generic Parallel Algorithms' → 'Functional / Task Parallelism'"
+
+[[ref]]
+concept = "task_parallelism"
+book = "subramaniam_programming_concurrency_on_the_jvm"
+where = "ch. 4, 'Scalability and Thread Safety' → 'Java 7 Fork-Join API'"
+
+[[ref]]
+concept = "task_parallelism"
+book = "ashcraft_parallel_programming_concurrency_csharp10"
+where = "ch. 6, 'Parallel Programming Concepts' → 'Getting started with the TPL'"
+
+[[ref]]
+concept = "task_parallelism"
+book = "terrell_concurrency_in_dotnet"
+where = "ch. 7, 'Task-based functional parallelism' → 'The .NET Task Parallel Library'"
+
+[[ref]]
+concept = "thread"
+book = "cutajar_learn_concurrent_programming_with_go"
+where = "ch. 2, 'Dealing with threads'"
+
+[[ref]]
+concept = "thread"
+book = "nichols_pthreads_programming"
+where = "ch. 1, 'Why Threads'"
+
+[[ref]]
+concept = "thread"
+book = "williams_cpp_concurrency_in_action"
+where = "ch. 2, 'Managing threads'"
+
+[[ref]]
+concept = "thread"
+book = "marlow_parallel_and_concurrent_programming_in_haskell"
+where = "ch. 7, 'Basic Concurrency: Threads and MVars'"
+
+[[ref]]
+concept = "thread"
+book = "duffy_concurrent_programming_on_windows"
+where = "ch. 3, 'Threads'"
+
+[[ref]]
+concept = "thread"
+book = "hattingh_using_asyncio_in_python"
+where = "ch. 2, 'The Truth About Threads'"
+
+[[ref]]
+concept = "thread_confinement"
+book = "voss_pro_tbb"
+where = "ch. 12, 'Using Work Isolation for Correctness and Performance'"
+
+[[ref]]
+concept = "thread_confinement"
+book = "subramaniam_programming_concurrency_on_the_jvm"
+where = "ch. 8, 'Favoring Isolated Mutability'"
+
+[[ref]]
+concept = "thread_confinement"
+book = "cox_buday_concurrency_in_go"
+where = "ch. 4, 'Concurrency Patterns in Go' → 'Confinement'"
+
+[[ref]]
+concept = "thread_confinement"
+book = "goetz_java_concurrency_in_practice"
+where = "ch. 3, 'Sharing Objects' → 'Thread Confinement'"
+
+[[ref]]
+concept = "thread_confinement"
+book = "chisnall_go_phrasebook"
+where = "ch. 10, 'Concurrency Design Patterns' → 'Aliased xor Mutable'"
+
+[[ref]]
+concept = "thread_local_storage"
+book = "flitton_morton_async_rust"
+where = "ch. 7, 'Customizing Tokio' → 'Getting Unsafe with Thread Data'"
+
+[[ref]]
+concept = "thread_local_storage"
+book = "nichols_pthreads_programming"
+where = "ch. 4, 'Managing Pthreads' → 'Keys: Using Thread-Specific Data'"
+
+[[ref]]
+concept = "thread_local_storage"
+book = "grimm_concurrency_with_modern_cpp"
+where = "ch. 3, 'Multithreading' → 'Thread-Local Data'"
+
+[[ref]]
+concept = "thread_local_storage"
+book = "breshears_art_of_concurrency"
+where = "ch. 4, 'Eight Simple Rules for Designing Multithreaded Applications' → 'Rule 7: Use Thread-Local Storage Whenever Possible or Associate Locks to Specific Data'"
+
+[[ref]]
+concept = "thread_local_storage"
+book = "butenhof_programming_with_posix_threads"
+where = "ch. 5, 'Advanced Threaded Programming' → 'Thread-specific data'"
+
+[[ref]]
+concept = "thread_local_storage"
+book = "walmsley_multithreaded_programming_in_cpp"
+where = "ch. 7, 'Keys' → 'Thread-Specific Storage'"
+
+[[ref]]
+concept = "thread_pool"
+book = "troutwine_hands_on_concurrency_with_rust"
+where = "ch. 8, 'High-Level Parallelism – Threadpools, Parallel Iterators and Processes'"
+
+[[ref]]
+concept = "thread_pool"
+book = "goetz_java_concurrency_in_practice"
+where = "ch. 8, 'Applying Thread Pools'"
+
+[[ref]]
+concept = "thread_pool"
+book = "duffy_concurrent_programming_on_windows"
+where = "ch. 7, 'Thread Pools'"
+
+[[ref]]
+concept = "thread_pool"
+book = "brownlee_parallel_loops_in_python"
+where = "ch. 3, 'Parallel Loop with the ThreadPool Class'"
+
+[[ref]]
+concept = "thread_pool"
+book = "nichols_pthreads_programming"
+where = "ch. 3, 'Synchronizing Pthreads' → 'Thread Pools'"
+
+[[ref]]
+concept = "thread_pool"
+book = "williams_cpp_concurrency_in_action"
+where = "ch. 9, 'Advanced thread management' → 'Thread pools'"
+
+[[ref]]
+concept = "thread_safety"
+book = "goetz_java_concurrency_in_practice"
+where = "ch. 2, 'Thread Safety'"
+
+[[ref]]
+concept = "thread_safety"
+book = "blewett_clymer_pro_asynchronous_programming_dotnet"
+where = "ch. 4, 'Basic Thread Safety'"
+
+[[ref]]
+concept = "thread_safety"
+book = "bos_rust_atomics_and_locks"
+where = "ch. 1, 'Basics of Rust Concurrency' → 'Thread Safety: Send and Sync'"
+
+[[ref]]
+concept = "thread_safety"
+book = "butenhof_programming_with_posix_threads"
+where = "ch. 6, 'POSIX Adjusts to Threads' → 'Thread-safe functions'"
+
+[[ref]]
+concept = "thread_safety"
+book = "grimm_concurrency_with_modern_cpp"
+where = "ch. 5, 'Case Studies' → 'Thread-Safe Initialisation of a Singleton'"
+
+[[ref]]
+concept = "thread_safety"
+book = "breshears_art_of_concurrency"
+where = "ch. 4, 'Eight Simple Rules for Designing Multithreaded Applications' → 'Rule 4: Make Use of Thread-Safe Libraries Wherever Possible'"
+
+[[ref]]
+concept = "timeout"
+book = "marlow_parallel_and_concurrent_programming_in_haskell"
+where = "ch. 9, 'Cancellation and Timeouts'"
+
+[[ref]]
+concept = "timeout"
+book = "cox_buday_concurrency_in_go"
+where = "ch. 5, 'Concurrency at Scale' → 'Timeouts and Cancellation'"
+
+[[ref]]
+concept = "timeout"
+book = "williams_cpp_concurrency_in_action"
+where = "ch. 4, 'Synchronizing concurrent operations' → 'Waiting with a time limit'"
+
+[[ref]]
+concept = "timeout"
+book = "cleary_concurrency_in_csharp_cookbook"
+where = "ch. 6, 'System.Reactive Basics' → 'Timeouts'"
+
+[[ref]]
+concept = "timeout"
+book = "fowler_python_concurrency_with_asyncio"
+where = "ch. 2, 'asyncio basics' → 'Canceling tasks and setting timeouts'"
+
+[[ref]]
+concept = "timeout"
+book = "kodeco_combine_asynchronous_programming_swift"
+where = "ch. 6, 'Time Manipulation Operators' → 'Timing out'"
+
+[[ref]]
+concept = "transactional_memory"
+book = "subramaniam_programming_concurrency_on_the_jvm"
+where = "ch. 6, 'Introduction to Software Transactional Memory'"
+
+[[ref]]
+concept = "transactional_memory"
+book = "prokopec_learning_concurrent_programming_in_scala"
+where = "ch. 7, 'Software Transactional Memory'"
+
+[[ref]]
+concept = "transactional_memory"
+book = "marlow_parallel_and_concurrent_programming_in_haskell"
+where = "ch. 10, 'Software Transactional Memory'"
+
+[[ref]]
+concept = "transactional_memory"
+book = "raynal_concurrent_programming_algorithms"
+where = "ch. 10, 'Transactional Memory'"
+
+[[ref]]
+concept = "transactional_memory"
+book = "herlihy_shavit_art_of_multiprocessor_programming"
+where = "ch. 18, 'Transactional Memory'"
+
+[[ref]]
+concept = "transactional_memory"
+book = "grimm_concurrency_with_modern_cpp"
+where = "ch. 6, 'The Future: C++20/23' → 'Transactional Memory'"
+
+[[ref]]
+concept = "unbuffered_channel"
+book = "blewett_clymer_pro_asynchronous_programming_dotnet"
+where = "ch. 4, 'Basic Thread Safety' → 'Barrier: Rendezvous-Based Synchronization'"
+
+[[ref]]
+concept = "unbuffered_channel"
+book = "downey_little_book_of_semaphores"
+where = "ch. 3, 'Basic synchronization patterns' → 'Rendezvous'"
+
+[[ref]]
+concept = "unbuffered_channel"
+book = "carver_tai_modern_multithreading"
+where = "ch. 5, 'Message Passing' → 'Rendezvous'"
+
+[[ref]]
+concept = "wait_free"
+book = "raynal_concurrent_programming_algorithms"
+where = "ch. 7, 'Wait-Free Objects from Read/Write Registers Only'"
+
+[[ref]]
+concept = "wait_free"
+book = "herlihy_shavit_art_of_multiprocessor_programming"
+where = "ch. 6, 'Universality of Consensus' → 'A Wait-Free Universal Construction'"
+
+[[ref]]
+concept = "wait_free"
+book = "kshemkalyani_singhal_distributed_computing"
+where = "ch. 12, 'Distributed Shared Memory' → 'Wait-freedom'"
+
+[[ref]]
+concept = "weak_memory_model"
+book = "serdar_effective_concurrency_in_go"
+where = "ch. 3, 'The Go Memory Model'"
+
+[[ref]]
+concept = "weak_memory_model"
+book = "bos_rust_atomics_and_locks"
+where = "ch. 3, 'Memory Ordering'"
+
+[[ref]]
+concept = "weak_memory_model"
+book = "williams_cpp_concurrency_in_action"
+where = "ch. 5, 'The C++ memory model and operations on atomic types'"
+
+[[ref]]
+concept = "weak_memory_model"
+book = "goetz_java_concurrency_in_practice"
+where = "ch. 16, 'The Java Memory Model'"
+
+[[ref]]
+concept = "weak_memory_model"
+book = "prokopec_learning_concurrent_programming_in_scala"
+where = "ch. 2, 'Concurrency on the JVM and the Java Memory Model'"
+
+[[ref]]
+concept = "weak_memory_model"
+book = "duffy_concurrent_programming_on_windows"
+where = "ch. 10, 'Memory Models and Lock Freedom'"
+
+[[ref]]
+concept = "work_stealing"
+book = "cox_buday_concurrency_in_go"
+where = "ch. 6, 'Goroutines and the Go Runtime' → 'Work Stealing'"
+
+[[ref]]
+concept = "work_stealing"
+book = "flitton_morton_async_rust"
+where = "ch. 3, 'Building Our Own Async Queues' → 'Task Stealing'"
+
+[[ref]]
+concept = "work_stealing"
+book = "herlihy_shavit_art_of_multiprocessor_programming"
+where = "ch. 16, 'Futures, Scheduling, and Work Distribution' → 'Work-Stealing Dequeues'"
+
+[[ref]]
+concept = "worker_pool"
+book = "serdar_effective_concurrency_in_go"
+where = "ch. 5, 'Worker Pools and Pipelines'"
+
+[[ref]]
+concept = "worker_pool"
+book = "flitton_morton_async_rust"
+where = "ch. 3, 'Building Our Own Async Queues' → 'Increasing Workers and Queues'"
+
+[[ref]]
+concept = "worker_pool"
+book = "butenhof_programming_with_posix_threads"
+where = "ch. 4, 'A Few Ways to Use Threads' → 'Work crew'"
+
+[[ref]]
+concept = "worker_pool"
+book = "tan_little_elixir_otp_guidebook"
+where = "ch. 6, 'Fault tolerance with Supervisors' → 'Implementing Pooly: a worker-pool application'"
+
+[[ref]]
+concept = "worker_pool"
+book = "tahrioui_asyncio_recipes"
+where = "ch. 5, 'Working with Async Context Manager' → 'Writing a Loop Worker Pool Async Context Manager'"
+
+[[ref]]
+concept = "worker_pool"
+book = "boduch_javascript_concurrency"
+where = "ch. 7, 'Abstracting Concurrency' → 'Worker pools'"
+
+[[ref]]
+concept = "ui_thread"
+book = "goetz_java_concurrency_in_practice"
+where = "ch. 9, 'GUI Applications'"
+
+[[ref]]
+concept = "ui_thread"
+book = "duffy_concurrent_programming_on_windows"
+where = "ch. 16, 'Graphical User Interfaces'"
+
+[[ref]]
+concept = "ui_thread"
+book = "ashcraft_parallel_programming_concurrency_csharp10"
+where = "ch. 4, 'User Interface Responsiveness and Threading'"
+
+[[ref]]
+concept = "ui_thread"
+book = "blewett_clymer_pro_asynchronous_programming_dotnet"
+where = "ch. 6, 'Asynchronous UI'"
+
+[[ref]]
+concept = "ui_thread"
+book = "babic_srivastava_kotlin_coroutines_by_tutorials"
+where = "ch. 1, 'What Is Asynchronous Programming' → 'Interacting with the UI thread from the background'"
+
+[[ref]]
+concept = "ui_thread"
+book = "pai_abraham_cpp_reactive_programming"
+where = "ch. 9, 'Reactive GUI Programming Using Qt/C++'"
+
+[[ref]]
+concept = "parallel_algorithms"
+book = "williams_cpp_concurrency_in_action"
+where = "ch. 10, 'Parallel algorithms'"
+
+[[ref]]
+concept = "parallel_algorithms"
+book = "voss_pro_tbb"
+where = "ch. 2, 'Generic Parallel Algorithms'"
+
+[[ref]]
+concept = "parallel_algorithms"
+book = "grimm_concurrency_with_modern_cpp"
+where = "ch. 1, 'Concurrency with Modern C++' → 'C++17: Parallel Algorithms of the Standard Template Library'"
+
+[[ref]]
+concept = "parallel_algorithms"
+book = "cormen_introduction_to_algorithms"
+where = "ch. 26, 'Parallel Algorithms'"
+
+[[ref]]
+concept = "parallel_algorithms"
+book = "herlihy_shavit_art_of_multiprocessor_programming"
+where = "ch. 12, 'Counting, Sorting, and Distributed Coordination' → 'Sorting Networks'"
+
+[[ref]]
+concept = "parallel_algorithms"
+book = "palach_parallel_programming_with_python"
+where = "ch. 2, 'Designing Parallel Algorithms'"
+
+[[ref]]
+concept = "thread_pool"
+book = "ramalho_fluent_python"
+where = "ch. 20, 'Concurrent Executors'"
+
+[[ref]]
+concept = "thread_pool"
+book = "bloch_effective_java"
+where = "ch. 11, 'Concurrency' → 'Item 80: Prefer executors, tasks, and streams to threads'"
+
+[[ref]]
+concept = "thread_pool"
+book = "prokopec_learning_concurrent_programming_in_scala"
+where = "ch. 3, 'Traditional Building Blocks of Concurrency' → 'The Executor and ExecutionContext objects'"
+
+[[ref]]
+concept = "async_runtime"
+book = "blandy_programming_rust"
+where = "ch. 20, 'Asynchronous Programming' → 'Primitive Futures and Executors: When Is a Future Worth Polling Again?'"
+
+[[ref]]
+concept = "task_queue"
+book = "butenhof_programming_with_posix_threads"
+where = "ch. 7, '\"Real Code\"' → 'Work queue manager'"
+
+[[ref]]
+concept = "task_queue"
+book = "fowler_python_concurrency_with_asyncio"
+where = "ch. 12, 'Asynchronous queues'"
+
+[[ref]]
+concept = "task_queue"
+book = "palach_parallel_programming_with_python"
+where = "ch. 7, 'Distributing Tasks with Celery'"
+
+[[ref]]
+concept = "task_queue"
+book = "burns_designing_distributed_systems"
+where = "ch. 10, 'Work Queue Systems'"
+
+[[ref]]
+concept = "task_queue"
+book = "gorelick_ozsvald_high_performance_python"
+where = "ch. 10, 'Clusters and Job Queues'"
+
+[[ref]]
+concept = "task_queue"
+book = "zaccone_python_parallel_programming_cookbook"
+where = "ch. 5, 'Distributed Python' → 'Using Celery to distribute tasks'"
+
+[[ref]]
+concept = "signals"
+book = "nichols_pthreads_programming"
+where = "ch. 5, 'Pthreads and UNIX' → 'Threads and Signals'"
+
+[[ref]]
+concept = "signals"
+book = "butenhof_programming_with_posix_threads"
+where = "ch. 6, 'POSIX Adjusts to Threads' → 'Signals'"
+
+[[ref]]
+concept = "signals"
+book = "kerrisk_linux_programming_interface"
+where = "ch. 33, 'Threads: Further Details' → 'Threads and Signals'"
+
+[[ref]]
+concept = "signals"
+book = "stevens_rago_apue"
+where = "ch. 12, 'Thread Control' → 'Threads and Signals'"
+
+[[ref]]
+concept = "signals"
+book = "tahrioui_asyncio_recipes"
+where = "ch. 2, 'Working with Event Loops' → 'Adding a Loop Signal Handler'"
+
+[[ref]]
+concept = "timers"
+book = "serdar_effective_concurrency_in_go"
+where = "ch. 7, 'Timers and Tickers'"
+
+[[ref]]
+concept = "timers"
+book = "kodeco_combine_asynchronous_programming_swift"
+where = "ch. 11, 'Timers'"
+
+[[ref]]
+concept = "timers"
+book = "blewett_clymer_pro_asynchronous_programming_dotnet"
+where = "ch. 6, 'Asynchronous UI' → 'UI Timers'"
+
+[[ref]]
+concept = "timers"
+book = "boduch_javascript_concurrency"
+where = "ch. 2, 'The JavaScript Execution Model' → 'Creating tasks using timers'"
+
+[[ref]]
+concept = "timers"
+book = "amos_hands_on_rtos"
+where = "ch. 8, 'Protecting Data and Synchronizing Tasks' → 'Using software timers'"
+
+[[ref]]
+concept = "timers"
+book = "albahari_csharp_in_a_nutshell"
+where = "ch. 21, 'Advanced Threading' → 'Timers'"
+
+[[ref]]
+concept = "event_driven_programming"
+book = "bobrov_grokking_concurrency"
+where = "ch. 11, 'Event-based concurrency'"
+
+[[ref]]
+concept = "event_driven_programming"
+book = "boduch_javascript_concurrency"
+where = "ch. 8, 'Evented IO with NodeJS'"
+
+[[ref]]
+concept = "event_driven_programming"
+book = "edet_asynchronous_programming"
+where = "ch. 5, 'Real-time Applications and Event-driven Architectures'"
+
+[[ref]]
+concept = "event_driven_programming"
+book = "pai_abraham_cpp_reactive_programming"
+where = "ch. 1, 'Reactive Programming Model – Overview and History' → 'Event-driven programming model'"
+
+[[ref]]
+concept = "event_driven_programming"
+book = "burnham_async_javascript"
+where = "ch. 2, 'Distributing Events' → 'Evented Models'"
+
+[[ref]]
+concept = "event_driven_programming"
+book = "burns_designing_distributed_systems"
+where = "ch. 8, 'Functions and Event-Driven Processing'"
+
+[[ref]]
+concept = "reactive_programming"
+book = "cleary_concurrency_in_csharp_cookbook"
+where = "ch. 1, 'Concurrency: An Overview' → 'Introduction to Reactive Programming (Rx)'"
+
+[[ref]]
+concept = "reactive_programming"
+book = "griffiths_programming_csharp"
+where = "ch. 11, 'Rx: Reactive Extensions'"
+
+[[ref]]
+concept = "subprocess"
+book = "fowler_python_concurrency_with_asyncio"
+where = "ch. 13, 'Managing subprocesses'"
+
+[[ref]]
+concept = "subprocess"
+book = "brownlee_python_asyncio_jump_start"
+where = "ch. 6, 'Subprocesses and Streams'"
+
+[[ref]]
+concept = "subprocess"
+book = "boduch_javascript_concurrency"
+where = "ch. 9, 'Advanced NodeJS Concurrency' → 'Child Processes'"
+
+[[ref]]
+concept = "subprocess"
+book = "slatkin_effective_python"
+where = "ch. 7, 'Concurrency and Parallelism' → 'Item 52: Use subprocess to Manage Child Processes'"
+
+[[ref]]
+concept = "subprocess"
+book = "martelli_python_in_a_nutshell"
+where = "ch. 14, 'Threads and Processes' → 'Running Other Programs'"
+
+[[ref]]
+concept = "fork_join"
+book = "voss_pro_tbb"
+where = "ch. 8, 'Mapping Parallel Patterns to TBB' → 'Fork-Join Pattern'"
+
+[[ref]]
+concept = "fork_join"
+book = "subramaniam_programming_concurrency_on_the_jvm"
+where = "ch. 4, 'Scalability and Thread Safety' → 'Java 7 Fork-Join API'"
+
+[[ref]]
+concept = "fork_join"
+book = "blandy_programming_rust"
+where = "ch. 19, 'Concurrency' → 'Fork-Join Parallelism'"
+
+[[ref]]
+concept = "fork_join"
+book = "urma_modern_java_in_action"
+where = "ch. 7, 'Parallel data processing and performance' → 'The fork/join framework'"
+
+[[ref]]
+concept = "fork_join"
+book = "charpentier_functional_and_concurrent_programming"
+where = "ch. 27, 'Minimizing Thread Blocking' → 'Fork/Join Pools'"
+
+[[ref]]
+concept = "fork_join"
+book = "cormen_introduction_to_algorithms"
+where = "ch. 26, 'Parallel Algorithms' → 'The basics of fork-join parallelism'"
+
+[[ref]]
+concept = "otp_behaviours"
+book = "cesarini_thompson_erlang_programming"
+where = "ch. 12, 'OTP Behaviors'"
+
+[[ref]]
+concept = "otp_behaviours"
+book = "thomas_programming_elixir"
+where = "ch. 17, 'OTP: Servers'"
+
+[[ref]]
+concept = "otp_behaviours"
+book = "armstrong_programming_erlang"
+where = "ch. 22, 'Introducing OTP'"
+
+[[ref]]
+concept = "otp_behaviours"
+book = "logan_erlang_and_otp_in_action"
+where = "ch. 1, 'The foundations of Erlang/OTP'"
+
+[[ref]]
+concept = "otp_behaviours"
+book = "st_laurent_introducing_elixir"
+where = "ch. 12, 'Getting Started with OTP'"
+
+[[ref]]
+concept = "dataflow"
+book = "voss_pro_tbb"
+where = "ch. 3, 'Flow Graphs'"
+
+[[ref]]
+concept = "dataflow"
+book = "marlow_parallel_and_concurrent_programming_in_haskell"
+where = "ch. 4, 'Dataflow Parallelism: The Par Monad'"
+
+[[ref]]
+concept = "dataflow"
+book = "ashcraft_parallel_programming_concurrency_csharp10"
+where = "ch. 7, 'Task Parallel Library (TPL) and Dataflow'"
+
+[[ref]]
+concept = "dataflow"
+book = "terrell_concurrency_in_dotnet"
+where = "ch. 12, 'Parallel workflow and agent programming with TPL Dataflow'"
+
+[[ref]]
+concept = "dataflow"
+book = "blewett_clymer_pro_asynchronous_programming_dotnet"
+where = "ch. 10, 'TPL Dataflow'"
+
+[[ref]]
+concept = "dataflow"
+book = "cleary_concurrency_in_csharp_cookbook"
+where = "ch. 1, 'Concurrency: An Overview' → 'Introduction to Dataflows'"
+
+[[ref]]
+concept = "parallel_iterators"
+book = "albahari_csharp_in_a_nutshell"
+where = "ch. 22, 'Parallel Programming' → 'PLINQ'"
+
+[[ref]]
+concept = "concurrent_data_structures"
+book = "williams_cpp_concurrency_in_action"
+where = "ch. 6, 'Designing lock-based concurrent data structures'"
+
+[[ref]]
+concept = "concurrent_data_structures"
+book = "goetz_java_concurrency_in_practice"
+where = "ch. 5, 'Building Blocks' → 'Concurrent Collections'"
+
+[[ref]]
+concept = "concurrent_data_structures"
+book = "herlihy_shavit_art_of_multiprocessor_programming"
+where = "ch. 3, 'Concurrent Objects'"
+
+[[ref]]
+concept = "concurrent_data_structures"
+book = "grimm_concurrency_with_modern_cpp"
+where = "ch. 11, 'Lock-Based Data Structures'"
+
+[[ref]]
+concept = "concurrent_data_structures"
+book = "duffy_concurrent_programming_on_windows"
+where = "ch. 12, 'Parallel Containers'"
+
+[[ref]]
+concept = "concurrent_data_structures"
+book = "bos_rust_atomics_and_locks"
+where = "ch. 10, 'Ideas and Inspiration' → 'Lock-Free Linked List'"
+
+[[ref]]
+concept = "classic_synchronization_problems"
+book = "downey_little_book_of_semaphores"
+where = "ch. 4, 'Classical synchronization problems'"
+
+[[ref]]
+concept = "classic_synchronization_problems"
+book = "serdar_effective_concurrency_in_go"
+where = "ch. 4, 'Some Well-Known Concurrency Problems'"
+
+[[ref]]
+concept = "classic_synchronization_problems"
+book = "bobrov_grokking_concurrency"
+where = "ch. 9, 'Solving concurrency problems: Deadlocks and starvation' → 'Dining philosophers'"
+
+[[ref]]
+concept = "classic_synchronization_problems"
+book = "silberschatz_operating_system_concepts"
+where = "ch. 7, 'Synchronization Examples' → 'Classic Problems of Synchronization'"
+
+[[ref]]
+concept = "classic_synchronization_problems"
+book = "nguyen_advanced_python_programming"
+where = "ch. 13, 'Starvation' → 'Approaching the readers-writers problem'"
+
+[[ref]]
+concept = "profiling_concurrency"
+book = "goetz_java_concurrency_in_practice"
+where = "ch. 11, 'Performance and Scalability'"
+
+[[ref]]
+concept = "profiling_concurrency"
+book = "duffy_concurrent_programming_on_windows"
+where = "ch. 14, 'Performance and Scalability'"
+
+[[ref]]
+concept = "profiling_concurrency"
+book = "williams_cpp_concurrency_in_action"
+where = "ch. 8, 'Designing concurrent code' → 'Factors affecting the performance of concurrent code'"
+
+[[ref]]
+concept = "profiling_concurrency"
+book = "marlow_parallel_and_concurrent_programming_in_haskell"
+where = "ch. 15, 'Debugging, Tuning, and Interfacing with Foreign Code'"
+
+[[ref]]
+concept = "profiling_concurrency"
+book = "tahrioui_asyncio_recipes"
+where = "ch. 8, 'Improving Asyncio Applications' → 'Profiling Asyncio Applications'"
+
+[[ref]]
+concept = "profiling_concurrency"
+book = "logan_erlang_and_otp_in_action"
+where = "ch. 14, 'Optimization and Performance' → '– How to approach performance tuning'"

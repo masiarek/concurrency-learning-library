@@ -1,0 +1,369 @@
+[category]
+title = "Communication"
+order = 7
+blurb = "Tasks that hand data to each other instead of sharing it — channels, queues, actors, processes — and the patterns built from them."
+
+[[concept]]
+slug = "message_passing"
+title = "Message passing"
+summary = "Tasks share nothing and interact only by sending each other values, so that each value has one owner at a time."
+chapter = 5
+alternative = ["shared_memory"]
+notes = [["Broker - sender - receiver - in general", "https://docs.google.com/document/d/1F1NMuTJYTemiALyBsQn6NMQ8ZN9mJvPyUUdCZ0x22e0/edit"]]
+reference = [["Wikipedia: Message passing", "https://en.wikipedia.org/wiki/Message_passing"]]
+[concept.languages]
+rust = "channels from [`std::sync::mpsc`](https://doc.rust-lang.org/std/sync/mpsc/index.html), multi-producer and single-consumer: `Sender`s can be cloned, the `Receiver` cannot"
+go = "goroutines and [channels](https://go.dev/ref/spec#Channel_types); [Effective Go](https://go.dev/doc/effective_go#sharing) puts it as share memory by communicating, instead of communicating by sharing memory"
+java = "no channel type: threads hand objects over through a [`BlockingQueue`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/BlockingQueue.html), designed primarily for producer-consumer queues"
+python = "[`queue.Queue`](https://docs.python.org/3/library/queue.html#queue.Queue) between threads; between processes, [`multiprocessing`](https://docs.python.org/3/library/multiprocessing.html#pipes-and-queues) pipes and queues, whose queues serialize every object put into them"
+csharp = "[`System.Threading.Channels`](https://learn.microsoft.com/en-us/dotnet/core/extensions/channels), for passing data between producers and consumers asynchronously"
+javascript = "a worker gets data through [`postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/postMessage), which copies it with the structured clone algorithm or transfers it"
+kotlin = "[`Channel`](https://kotlinlang.org/docs/channels.html), conceptually a `BlockingQueue` whose `send` and `receive` suspend instead of blocking"
+elixir_erlang = "the whole model: a process sends to another with `!` (Erlang) or `send/2` (Elixir), the message waits in the receiver's mailbox, and `receive` picks messages out by pattern ([Erlang](https://www.erlang.org/doc/system/conc_prog.html), [Elixir](https://hexdocs.pm/elixir/processes.html))"
+haskell = "[`Chan`](https://hackage.haskell.org/package/base/docs/Control-Concurrent-Chan.html), an unbounded channel; an [`MVar`](https://hackage.haskell.org/package/base/docs/Control-Concurrent-MVar.html) can also act as a channel, with `takeMVar` and `putMVar` as receive and send"
+os = "[POSIX message queues](https://man7.org/linux/man-pages/man7/mq_overview.7.html) let processes exchange data as messages, delivered highest priority first"
+
+[[concept]]
+slug = "shared_memory"
+title = "Shared memory"
+summary = "Tasks read and write the same memory directly and coordinate with locks or atomics — the fastest way to share data, and the easiest to get wrong."
+chapter = 2
+causes = ["data_race"]
+related = ["mutual_exclusion"]
+reference = [["Wikipedia: Shared memory", "https://en.wikipedia.org/wiki/Shared_memory"]]
+[concept.languages]
+rust = "an [`Arc`](https://doc.rust-lang.org/std/sync/struct.Arc.html) is a thread-safe reference-counting pointer that does not allow mutation by itself; put a [`Mutex`](https://doc.rust-lang.org/std/sync/struct.Mutex.html) or an atomic inside to mutate"
+go = "[`sync.Mutex`](https://pkg.go.dev/sync#Mutex) and `sync/atomic` exist, but the [`sync`](https://pkg.go.dev/sync) docs say most of them are for low-level library routines and higher-level synchronization is better done via channels"
+c = "threads guard shared data with a mutex, [`pthread_mutex_lock`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_mutex_lock.html)"
+cpp = "[`std::mutex`](https://en.cppreference.com/w/cpp/thread/mutex) and [`std::atomic`](https://en.cppreference.com/w/cpp/atomic/atomic)"
+java = "`synchronized`, [`ReentrantLock`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/locks/ReentrantLock.html), and atomics such as [`AtomicInteger`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/atomic/AtomicInteger.html)"
+python = "threads share objects and guard them with [`threading.Lock`](https://docs.python.org/3/library/threading.html#threading.Lock); processes can share a block of memory through [`multiprocessing.shared_memory`](https://docs.python.org/3/library/multiprocessing.shared_memory.html) (3.8)"
+csharp = "the [`lock`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/lock) statement"
+javascript = "workers can share a [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer), coordinated with [`Atomics`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics)"
+kotlin = "[shared mutable state](https://kotlinlang.org/docs/shared-mutable-state-and-concurrency.html) needs synchronizing as soon as coroutines run on a multi-threaded dispatcher such as `Dispatchers.Default`"
+elixir_erlang = "an [ETS table](https://www.erlang.org/doc/apps/stdlib/ets.html) created `public` can be read and written by any process"
+haskell = "an [`MVar`](https://hackage.haskell.org/package/base/docs/Control-Concurrent-MVar.html), a synchronising variable, or [STM](https://hackage.haskell.org/package/stm/docs/Control-Concurrent-STM.html) transactions"
+os = "[POSIX shared memory](https://man7.org/linux/man-pages/man7/shm_overview.7.html): `shm_open` creates an object that each process maps into its address space with `mmap`"
+
+[[concept]]
+slug = "channel"
+title = "Channel"
+summary = "A typed conduit between tasks: one side sends values, the other receives them, in order."
+aliases = ["queue", "mpsc"]
+chapter = 5
+is_a = ["message_passing"]
+lessons = ["01_Threads/getting_a_result_back"]
+pages = [
+  ["Rust: Channels", "https://masiarek.github.io/rust-learning-library/09_Advanced/channels/index.html"],
+  ["Go: An unbuffered send waits for a receiver", "https://masiarek.github.io/go-learning-library/02_Channels/an_unbuffered_send_waits_for_a_receiver/index.html"],
+  ["Go: Closing a channel ends a range", "https://masiarek.github.io/go-learning-library/02_Channels/closing_a_channel_ends_a_range/index.html"],
+]
+notes = [
+  ["channel", "https://docs.google.com/document/u/0/d/1ZlGpxYxS0Dp1KLNzUDe2YSbVAU-l3GPFgX9y4cPIS9o/edit"],
+  ["Channels - rust", "https://docs.google.com/document/d/1CQBXxKYGBJZMInRx6Ahve8Gzp4C4r0mSL9wngjorf9M/edit?tab=t.0"],
+  ["async-compatible nonblocking channels", "https://docs.google.com/document/u/0/d/1xU0J0ZvRMFv9MlCsy4cR_Jt-k4O3UKZnjDPrbJnewo0/edit"],
+  ["crossbeam", "https://docs.google.com/document/d/1MsXBn3QXmFkV6KuBtv9AUhocfxctyXbfp0TI534Mf6c/edit?tab=t.0"],
+]
+reference = [["Wikipedia: Channel (programming)", "https://en.wikipedia.org/wiki/Channel_(programming)"]]
+[concept.languages]
+rust = "[`mpsc::channel`](https://doc.rust-lang.org/std/sync/mpsc/fn.channel.html) or the bounded [`sync_channel`](https://doc.rust-lang.org/std/sync/mpsc/fn.sync_channel.html); there is no `close`: operations fail once the other half has hung up by being dropped ([module docs](https://doc.rust-lang.org/std/sync/mpsc/index.html))"
+go = "a [`chan T`](https://go.dev/ref/spec#Channel_types) made with `make` and closed explicitly with [`close`](https://go.dev/ref/spec#Close); a nil channel is never ready"
+java = "[`BlockingQueue`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/BlockingQueue.html) with `put` and `take`; it has no close or shutdown operation, so producers signal the end with a poison object"
+python = "[`queue.Queue`](https://docs.python.org/3/library/queue.html#queue.Queue) for threads and [`asyncio.Queue`](https://docs.python.org/3/library/asyncio-queue.html#asyncio.Queue), which is not thread-safe, for coroutines"
+csharp = "[`Channel<T>`](https://learn.microsoft.com/en-us/dotnet/core/extensions/channels), split into a `ChannelWriter` and a `ChannelReader`; `writer.Complete()` ends it"
+kotlin = "[`Channel`](https://kotlinlang.org/docs/channels.html): `send` and `receive` suspend rather than block, and unlike a queue a channel can be closed"
+elixir_erlang = "no channel objects: a message is sent to a process and stored in its [mailbox](https://hexdocs.pm/elixir/processes.html)"
+haskell = "[`Chan`](https://hackage.haskell.org/package/base/docs/Control-Concurrent-Chan.html), unbounded"
+other = "Clojure's [core.async](https://clojure.github.io/core.async/) channels, made with `chan`"
+
+[[concept]]
+slug = "unbuffered_channel"
+title = "Unbuffered channel"
+summary = "A channel with no buffer: a send waits until a receiver takes the value, so every message is also a meeting of the two tasks."
+aliases = ["synchronous channel", "rendezvous channel", "synchronized channel"]
+chapter = 5
+is_a = ["channel"]
+contrasts = ["bounded_channel"]
+pages = [["Go: An unbuffered send waits for a receiver", "https://masiarek.github.io/go-learning-library/02_Channels/an_unbuffered_send_waits_for_a_receiver/index.html"]]
+notes = [["synchronized channels - general", "https://docs.google.com/document/u/0/d/1CKoMXDBi8dCU-4ExIDJhjAnIuNn3lE2TacsKim8Tnp8/edit"]]
+[concept.languages]
+rust = "[`sync_channel(0)`](https://doc.rust-lang.org/std/sync/mpsc/fn.sync_channel.html), a rendezvous channel: each send does not return until a receive is paired with it"
+go = "[`make(chan T)`](https://go.dev/ref/spec#Channel_types): with the capacity zero or absent, communication succeeds only when sender and receiver are both ready"
+java = "[`SynchronousQueue`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/SynchronousQueue.html): every insert waits for a remove, the queue has no capacity at all, and its docs compare it to the rendezvous channels of CSP"
+python = "no rendezvous queue: `maxsize=0` makes a [`queue.Queue`](https://docs.python.org/3/library/queue.html#queue.Queue) infinite, not unbuffered"
+kotlin = "[`Channel.RENDEZVOUS`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/-channel/) (capacity 0): no buffer, so `send` suspends until a `receive` arrives, and vice versa"
+elixir_erlang = "none: [signals between processes are asynchronous](https://www.erlang.org/doc/system/ref_man_processes.html); a synchronous request is built on top, as [`GenServer.call`](https://hexdocs.pm/elixir/GenServer.html) does by waiting for the reply"
+
+[[concept]]
+slug = "bounded_channel"
+title = "Buffered and bounded channels"
+summary = "A channel with a fixed-size buffer: sends succeed until it is full and then wait, which is how a slow receiver pushes back on a fast sender; an unbounded channel never waits and never pushes back."
+aliases = ["buffered channel", "bounded queue", "unbounded channel", "asynchronous channel"]
+chapter = 5
+is_a = ["channel"]
+pages = [["Go: A buffered channel is a bounded queue", "https://masiarek.github.io/go-learning-library/02_Channels/a_buffered_channel_is_a_bounded_queue/index.html"]]
+[concept.languages]
+rust = "[`sync_channel(n)`](https://doc.rust-lang.org/std/sync/mpsc/fn.sync_channel.html) blocks senders when full, while [`channel()`](https://doc.rust-lang.org/std/sync/mpsc/fn.channel.html) has an infinite buffer and never blocks the sender; tokio's [`mpsc`](https://docs.rs/tokio/latest/tokio/sync/mpsc/index.html) offers both for async tasks"
+go = "[`make(chan T, n)`](https://go.dev/ref/spec#Channel_types): a send proceeds without blocking while the buffer is not full"
+java = "[`ArrayBlockingQueue`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ArrayBlockingQueue.html), a classic bounded buffer; [`LinkedBlockingQueue`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/LinkedBlockingQueue.html) is optionally bounded"
+python = "[`queue.Queue(maxsize)`](https://docs.python.org/3/library/queue.html#queue.Queue) and [`asyncio.Queue(maxsize)`](https://docs.python.org/3/library/asyncio-queue.html#asyncio.Queue); a `maxsize` of zero or less means infinite"
+csharp = "[`Channel.CreateBounded`](https://learn.microsoft.com/en-us/dotnet/core/extensions/channels) or `CreateUnbounded`; a [`BoundedChannelFullMode`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.channels.boundedchannelfullmode) says whether a full channel waits, or drops the newest, the oldest or the item being written"
+kotlin = "a capacity passed to [`Channel`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/-channel/), or `Channel.UNLIMITED`; [`BufferOverflow`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/-buffer-overflow/) chooses between suspending the sender and dropping a value"
+os = "a [pipe](https://man7.org/linux/man-pages/man7/pipe.7.html) has a limited capacity, 16 pages by default on Linux: a write to a full pipe blocks, or fails if the pipe is non-blocking"
+
+[[concept]]
+slug = "select"
+title = "Select"
+summary = "Waiting on several channel operations or futures at once, and continuing with whichever becomes ready first."
+aliases = ["select!", "race"]
+chapter = 5
+uses = ["channel"]
+related = ["timeout", "cancellation"]
+pages = [
+  ["Go: `select` waits on many channels", "https://masiarek.github.io/go-learning-library/03_Select/select_waits_on_many/index.html"],
+  ["Go: `select` chooses at random", "https://masiarek.github.io/go-learning-library/03_Select/select_chooses_at_random/index.html"],
+  ["Go: A nil channel disables a case", "https://masiarek.github.io/go-learning-library/03_Select/a_nil_channel_disables_a_case/index.html"],
+]
+[concept.languages]
+rust = "none in std; crossbeam's [`select!`](https://docs.rs/crossbeam/latest/crossbeam/channel/macro.select.html) runs a random one of the ready channel operations, and tokio's [`select!`](https://docs.rs/tokio/latest/tokio/macro.select.html) returns when the first branch completes and cancels the rest"
+go = "the [`select`](https://go.dev/ref/spec#Select_statements) statement: when several cases can proceed, one is chosen by uniform pseudo-random selection; a `default` case makes it non-blocking"
+c = "[`select`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/select.html) and [`poll`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/poll.html) wait on file descriptors, not on in-memory channels"
+java = "[`CompletableFuture.anyOf`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html) completes when any of the given futures does; NIO's [`Selector`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/channels/Selector.html) multiplexes selectable I/O channels"
+python = "[`asyncio.wait`](https://docs.python.org/3/library/asyncio-task.html#asyncio.wait) with `return_when=FIRST_COMPLETED` returns the done and pending sets as soon as any awaitable finishes"
+csharp = "[`Task.WhenAny`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.whenany) completes when any of the supplied tasks has completed"
+javascript = "[`Promise.race`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/race) settles with the eventual state of the first promise to settle"
+kotlin = "the experimental [`select`](https://kotlinlang.org/docs/select-expression.html) expression, which is biased to the first clause when several are ready, unlike Go's random choice"
+elixir_erlang = "[`receive`](https://www.erlang.org/doc/system/expressions.html) takes the first message in the queue that matches any clause, with an optional `after` timeout"
+os = "[epoll](https://man7.org/linux/man-pages/man7/epoll.7.html), like `select` and `poll`, monitors many file descriptors to see which can do I/O"
+other = "Clojure core.async's [`alts!`](https://clojure.github.io/core.async/)"
+
+[[concept]]
+slug = "backpressure"
+title = "Backpressure"
+summary = "Letting a slow consumer slow its producers down — by making sends wait or fail — instead of letting unprocessed work pile up without limit."
+aliases = ["flow control"]
+chapter = 5
+uses = ["bounded_channel"]
+pages = [["Go: A buffered channel is a bounded queue", "https://masiarek.github.io/go-learning-library/02_Channels/a_buffered_channel_is_a_bounded_queue/index.html"]]
+[concept.languages]
+rust = "a bounded [`sync_channel`](https://doc.rust-lang.org/std/sync/mpsc/fn.sync_channel.html): `send` blocks until the buffer has room"
+go = "a buffered channel: a send proceeds without blocking only while the buffer is not full ([spec](https://go.dev/ref/spec#Channel_types))"
+java = "[`Flow`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Flow.html), the reactive-streams interfaces: a subscriber asks for items with `request(n)`, a simple form of flow control"
+python = "[`StreamWriter.drain`](https://docs.python.org/3/library/asyncio-stream.html#asyncio.StreamWriter.drain): once the write buffer reaches the high watermark, it blocks until the buffer drains to the low watermark"
+csharp = "[`BoundedChannelFullMode.Wait`](https://learn.microsoft.com/en-us/dotnet/core/extensions/channels), the default for a bounded channel: `WriteAsync` waits for space"
+javascript = "[streams](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Concepts#backpressure) compare their queue with a high water mark and report `desiredSize`; in Node, `write()` returns `false` until a `'drain'` event ([guide](https://nodejs.org/en/learn/modules/backpressuring-in-streams))"
+kotlin = "[`BufferOverflow.SUSPEND`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/-buffer-overflow/): the sender suspends while the buffer is full"
+os = "a full [pipe](https://man7.org/linux/man-pages/man7/pipe.7.html) blocks the writing process until enough has been read to make room"
+
+[[concept]]
+slug = "producer_consumer"
+title = "Producer-consumer"
+summary = "One or more tasks make work items and one or more take them from a shared queue, each side running at its own speed."
+aliases = ["producer-consumer problem", "bounded-buffer problem"]
+chapter = 5
+uses = ["bounded_channel"]
+pages = [
+  ["Go: A buffered channel is a bounded queue", "https://masiarek.github.io/go-learning-library/02_Channels/a_buffered_channel_is_a_bounded_queue/index.html"],
+  ["Go: A worker pool", "https://masiarek.github.io/go-learning-library/06_Patterns/a_worker_pool/index.html"],
+]
+reference = [["Wikipedia: Producer–consumer problem", "https://en.wikipedia.org/wiki/Producer%E2%80%93consumer_problem"]]
+[concept.languages]
+rust = "threads sharing an [`mpsc`](https://doc.rust-lang.org/std/sync/mpsc/index.html) channel, with a cloned `Sender` for each producer"
+go = "goroutines sharing a buffered [channel](https://go.dev/ref/spec#Channel_types)"
+java = "[`BlockingQueue`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/BlockingQueue.html), which its docs say is designed primarily for producer-consumer queues"
+python = "[`queue.Queue`](https://docs.python.org/3/library/queue.html#queue.Queue); `task_done` and `join` let a producer wait until every item has been processed"
+csharp = "[`System.Threading.Channels`](https://learn.microsoft.com/en-us/dotnet/core/extensions/channels), data structures for passing data between producers and consumers asynchronously"
+kotlin = "a coroutine built with `produce` is a [channel producer](https://kotlinlang.org/docs/channels.html) that consumers iterate over"
+
+[[concept]]
+slug = "publish_subscribe"
+title = "Publish-subscribe and broadcast"
+summary = "A sender publishes to a topic and every subscriber gets its own copy, without the sender knowing who the subscribers are."
+aliases = ["pub/sub", "broadcast channel", "message broker"]
+chapter = 5
+is_a = ["message_passing"]
+notes = [["Broker - Asynchronous - in general", "https://docs.google.com/document/u/0/d/1F1NMuTJYTemiALyBsQn6NMQ8ZN9mJvPyUUdCZ0x22e0/edit"]]
+reference = [["Wikipedia: Publish–subscribe pattern", "https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern"]]
+related = ["reactive_programming"]
+[concept.languages]
+rust = "not in std; tokio's [`broadcast`](https://docs.rs/tokio/latest/tokio/sync/broadcast/index.html) is a multi-producer, multi-consumer queue in which every receiver sees each value"
+java = "[`SubmissionPublisher`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/SubmissionPublisher.html), a `Flow.Publisher` that issues each item to all current subscribers, each with its own buffer"
+csharp = "[`IObservable<T>`](https://learn.microsoft.com/en-us/dotnet/api/system.iobservable-1), a provider for push-based notification in the observer design pattern"
+javascript = "[`BroadcastChannel`](https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel) delivers to every listener of the same origin except the sender; Node's [`EventEmitter`](https://nodejs.org/api/events.html) calls every listener attached to an event, synchronously"
+kotlin = "[`SharedFlow`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-shared-flow/), a hot flow that shares emitted values among all its collectors"
+swift = "Combine's [publishers and subscribers](https://developer.apple.com/documentation/combine)"
+elixir_erlang = "Erlang's [`pg`](https://www.erlang.org/doc/apps/kernel/pg.html), distributed named process groups whose members a sender looks up with `get_members`; Elixir's [`Registry`](https://hexdocs.pm/elixir/Registry.html) can serve as a local PubSub"
+other = "[Redis Pub/Sub](https://redis.io/docs/latest/develop/pubsub/) has at-most-once delivery: a message is delivered once if at all"
+
+[[concept]]
+slug = "pipeline"
+title = "Pipeline"
+summary = "A chain of stages, each a task that reads from the previous stage's channel and writes to the next one's."
+aliases = ["pipes and filters"]
+chapter = 5
+uses = ["channel"]
+related = ["fan_out_fan_in"]
+pages = [
+  ["Go: A pipeline of stages", "https://masiarek.github.io/go-learning-library/06_Patterns/a_pipeline_of_stages/index.html"],
+  ["Rust: Channels", "https://masiarek.github.io/rust-learning-library/09_Advanced/channels/index.html"],
+]
+reference = [["Wikipedia: Pipeline (software)", "https://en.wikipedia.org/wiki/Pipeline_(software)"]]
+[concept.languages]
+rust = "threads joined by [`mpsc`](https://doc.rust-lang.org/std/sync/mpsc/index.html) channels; a stage's receives fail once the stage before it has hung up by dropping its sender"
+go = "goroutines joined by channels, each stage receiving from upstream and sending downstream; the Go blog's [pipelines post](https://go.dev/blog/pipelines) notes there is no formal definition of one in Go"
+csharp = "[TPL Dataflow](https://learn.microsoft.com/en-us/dotnet/standard/parallel-programming/dataflow-task-parallel-library), in-process message passing for dataflow and pipelining tasks"
+javascript = "[`ReadableStream.pipeThrough`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream/pipeThrough) chains transform streams"
+kotlin = "a [pipeline](https://kotlinlang.org/docs/channels.html#pipelines): one coroutine produces a stream of values and others consume, process and pass it on"
+os = "the shell pipeline: processes connected by [pipes](https://man7.org/linux/man-pages/man7/pipe.7.html)"
+
+[[concept]]
+slug = "fan_out_fan_in"
+title = "Fan-out, fan-in"
+summary = "Spreading the items of one channel across several workers, then merging their results back into one channel."
+chapter = 5
+uses = ["channel"]
+related = ["worker_pool"]
+pages = [["Go: Fan-out, fan-in", "https://masiarek.github.io/go-learning-library/06_Patterns/fan_out_fan_in/index.html"]]
+[concept.languages]
+rust = "fan-in comes free, since cloned `Sender`s all feed one [`mpsc`](https://doc.rust-lang.org/std/sync/mpsc/index.html) receiver; fan-out needs that receiver shared, which the Rust Book does with [`Arc<Mutex<T>>`](https://doc.rust-lang.org/book/ch21-02-multithreaded.html)"
+go = "several goroutines reading one channel (fan-out) and a merge copying many channels onto one (fan-in), both named in the Go blog's [pipelines post](https://go.dev/blog/pipelines)"
+java = "[`ExecutorCompletionService`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ExecutorCompletionService.html) puts each task on a queue as it completes, for `take` to collect"
+python = "[`asyncio.gather`](https://docs.python.org/3/library/asyncio-task.html#asyncio.gather) collects results in the order of its arguments, not the order they finish in"
+javascript = "[`Promise.all`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all) collects fulfillment values in the order of the promises passed, regardless of completion order"
+kotlin = "the guide's [fan-out](https://kotlinlang.org/docs/channels.html#fan-out) (several coroutines receive from one channel) and [fan-in](https://kotlinlang.org/docs/channels.html#fan-in) (several coroutines send to one)"
+elixir_erlang = "[`Task.async_stream`](https://hexdocs.pm/elixir/Task.html#async_stream/3) runs a function over a collection with up to `max_concurrency` tasks and returns results in input order unless `ordered: false`"
+
+[[concept]]
+slug = "worker_pool"
+title = "Worker pool"
+summary = "A fixed number of workers take jobs from one shared queue, which bounds how much work runs at once."
+aliases = ["thread pool"]
+chapter = 5
+uses = ["channel"]
+pages = [["Go: A worker pool", "https://masiarek.github.io/go-learning-library/06_Patterns/a_worker_pool/index.html"]]
+related = ["producer_consumer"]
+[concept.languages]
+rust = "no pool in std; the Rust Book [builds a `ThreadPool`](https://doc.rust-lang.org/book/ch21-02-multithreaded.html) whose workers share one receiver behind `Arc<Mutex<T>>`"
+go = "no pool type: a fixed number of goroutines ranging over one jobs channel, the bounded parallelism of the Go blog's [pipelines post](https://go.dev/blog/pipelines)"
+java = "[`Executors.newFixedThreadPool`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executors.html): a fixed number of threads operating off a shared unbounded queue"
+python = "[`ThreadPoolExecutor`](https://docs.python.org/3/library/concurrent.futures.html#concurrent.futures.ThreadPoolExecutor)"
+csharp = "the process-wide [`ThreadPool`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.threadpool), which executes tasks, work items and asynchronous I/O"
+javascript = "Node's [Worker Pool](https://nodejs.org/en/learn/asynchronous-work/dont-block-the-event-loop) handles expensive tasks such as file I/O away from the event loop"
+elixir_erlang = "[`Task.async_stream`](https://hexdocs.pm/elixir/Task.html#async_stream/3) with `max_concurrency`"
+
+[[concept]]
+slug = "csp"
+title = "Communicating sequential processes"
+summary = "Tony Hoare's model of independent processes that interact only through synchronous channels — the idea behind Go's goroutines and channels."
+aliases = ["CSP"]
+chapter = 5
+is_a = ["message_passing"]
+uses = ["unbuffered_channel"]
+contrasts = ["actor_model"]
+notes = [["Communicating Sequential Processes (CSP)", "https://docs.google.com/document/d/1OhlXnA1d1kutRCYhOdN5kLwy9Kfl3ggvl1PB_ixvIuM/edit?tab=t.0"]]
+reference = [["Wikipedia: Communicating sequential processes", "https://en.wikipedia.org/wiki/Communicating_sequential_processes"]]
+[concept.languages]
+go = "goroutines and channels; the [Go FAQ](https://go.dev/doc/faq#csp) explains why Go built its concurrency on the ideas of CSP"
+java = "[`SynchronousQueue`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/SynchronousQueue.html), whose docs compare it to the rendezvous channels of CSP and Ada"
+other = "Clojure's [core.async](https://clojure.github.io/core.async/), with channels and `go` blocks"
+
+[[concept]]
+slug = "actor_model"
+title = "Actor model"
+summary = "Actors are isolated units with a mailbox: each handles one message at a time, and can send messages, create actors and change its own state."
+aliases = ["actors", "mailbox"]
+chapter = 5
+is_a = ["message_passing"]
+notes = [["actors model", "https://docs.google.com/document/d/16H7fnXaNoPx-hEHHK6mY2ugHl1HXBljXvnYrIV-pNIc/edit?tab=t.0"]]
+reference = [["Wikipedia: Actor model", "https://en.wikipedia.org/wiki/Actor_model"]]
+[concept.languages]
+elixir_erlang = "processes are the actors, each with a mailbox it reads with `receive` ([Elixir](https://hexdocs.pm/elixir/processes.html)); a [`GenServer`](https://hexdocs.pm/elixir/GenServer.html) is a process that keeps state and serves calls"
+swift = "an [`actor`](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/) is a reference type that lets only one task at a time access its mutable state"
+kotlin = "the channel-based [`actor`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/actor.html) builder is marked `@ObsoleteCoroutinesApi`"
+csharp = "[Orleans](https://learn.microsoft.com/en-us/dotnet/orleans/overview), whose virtual actors are called grains"
+other = "[Akka](https://doc.akka.io/libraries/akka-core/current/typed/actors.html): an actor processes one message at a time, so its state needs no locks"
+
+[[concept]]
+slug = "supervision"
+title = "Supervision"
+summary = "Letting a failed actor or task crash and having a supervisor restart it, instead of defending against every error inside it — the approach of Erlang and OTP."
+aliases = ["supervision tree", "let it crash"]
+chapter = 5
+uses = ["actor_model"]
+related = ["structured_concurrency"]
+[concept.languages]
+elixir_erlang = "OTP's [`supervisor`](https://www.erlang.org/doc/apps/stdlib/supervisor.html) keeps its children alive by restarting them, with strategies such as `one_for_one`; Elixir's [`Supervisor`](https://hexdocs.pm/elixir/Supervisor.html)"
+kotlin = "[`SupervisorJob` and `supervisorScope`](https://kotlinlang.org/docs/exception-handling.html#supervision): a failing child does not cancel the supervisor or its other children"
+os = "systemd's [`Restart=`](https://man7.org/linux/man-pages/man5/systemd.service.5.html), for example `on-failure`, restarts a service automatically"
+other = "[Akka](https://doc.akka.io/libraries/akka-core/current/typed/fault-tolerance.html): a typed actor that throws is stopped unless a supervision strategy, such as restart, says otherwise"
+
+[[concept]]
+slug = "ipc"
+title = "Inter-process communication"
+summary = "The ways separate processes exchange data: pipes, sockets, shared-memory segments, signals and message queues."
+aliases = ["IPC", "pipes", "signals"]
+chapter = 8
+uses = ["process"]
+related = ["message_passing"]
+pages = [["Linux: head closes the pipe early", "https://masiarek.github.io/linux-learning-library/01_Pipelines/head_closes_the_pipe_early/index.html"]]
+reference = [["Wikipedia: Inter-process communication", "https://en.wikipedia.org/wiki/Inter-process_communication"]]
+[concept.languages]
+rust = "[`Stdio::piped`](https://doc.rust-lang.org/std/process/struct.Stdio.html#method.piped) connects a child process by a pipe; [`UnixStream`](https://doc.rust-lang.org/std/os/unix/net/struct.UnixStream.html) on Unix"
+go = "[`Cmd.StdoutPipe`](https://pkg.go.dev/os/exec#Cmd.StdoutPipe) for a child's output, [`os.Pipe`](https://pkg.go.dev/os#Pipe) for a raw pipe"
+c = "POSIX [`pipe`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/pipe.html), [`mkfifo`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/mkfifo.html), [`socketpair`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/socketpair.html), [`shm_open`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/shm_open.html) and [`mq_open`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/mq_open.html)"
+java = "[`ProcessBuilder`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ProcessBuilder.html) for child processes; [`UnixDomainSocketAddress`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/net/UnixDomainSocketAddress.html) (Java 16) for local sockets"
+python = "[`subprocess`](https://docs.python.org/3/library/subprocess.html) for child processes; [`multiprocessing`](https://docs.python.org/3/library/multiprocessing.html#pipes-and-queues) pipes and queues between Python processes"
+csharp = "[`System.IO.Pipes`](https://learn.microsoft.com/en-us/dotnet/api/system.io.pipes), anonymous and named pipes"
+javascript = "Node's [`child_process`](https://nodejs.org/api/child_process.html) sets up pipes for the child's stdin, stdout and stderr by default"
+elixir_erlang = "[ports](https://www.erlang.org/doc/system/ports.html), the basic mechanism for communicating with the external world; Elixir's [`Port`](https://hexdocs.pm/elixir/Port.html)"
+os = "[pipes](https://man7.org/linux/man-pages/man7/pipe.7.html), [UNIX domain sockets](https://man7.org/linux/man-pages/man7/unix.7.html), [POSIX shared memory](https://man7.org/linux/man-pages/man7/shm_overview.7.html), [message queues](https://man7.org/linux/man-pages/man7/mq_overview.7.html) and [signals](https://man7.org/linux/man-pages/man7/signal.7.html)"
+
+[[concept]]
+slug = "signals"
+title = "Signals"
+summary = "Asynchronous notifications the operating system delivers to a process — an interrupt from the keyboard, a closed pipe, a child that exited — and which, in a threaded program, one thread has to be chosen to receive."
+aliases = ["Unix signals", "SIGINT", "SIGPIPE", "signal handler"]
+chapter = 8
+is_a = ["ipc"]
+pages = [["Linux: head closes the pipe early", "https://masiarek.github.io/linux-learning-library/01_Pipelines/head_closes_the_pipe_early/index.html"]]
+reference = [["Linux man page: signal(7)", "https://man7.org/linux/man-pages/man7/signal.7.html"]]
+[concept.languages]
+go = "[`os/signal`](https://pkg.go.dev/os/signal) delivers signals as values on a channel"
+c = "[`sigaction`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/sigaction.html) installs a handler; [`pthread_sigmask`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_sigmask.html) chooses which threads may receive one"
+python = "[`signal`](https://docs.python.org/3/library/signal.html): handlers always run in the main thread of the main interpreter"
+
+[[concept]]
+slug = "task_queue"
+title = "Task queue"
+summary = "A queue of jobs that workers take and run — within one program, or across processes and machines with a broker in between."
+aliases = ["job queue", "work queue", "Celery"]
+chapter = 5
+uses = ["producer_consumer"]
+related = ["worker_pool", "publish_subscribe"]
+[concept.languages]
+python = "[`queue.Queue`](https://docs.python.org/3/library/queue.html) between threads, [`asyncio.Queue`](https://docs.python.org/3/library/asyncio-queue.html) between tasks"
+java = "[`BlockingQueue`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/BlockingQueue.html), which an `ExecutorService` uses for its waiting tasks"
+other = "[Celery](https://docs.celeryq.dev/en/stable/) runs Python tasks on workers fed through a message broker"
+
+[[concept]]
+slug = "dataflow"
+title = "Dataflow programming"
+summary = "A program as a graph of blocks through which data flows, each block running when its inputs are ready — so the graph, not the programmer, decides what runs in parallel."
+aliases = ["flow graph", "TPL Dataflow"]
+chapter = 5
+related = ["pipeline", "reactive_programming"]
+reference = [["Wikipedia: Dataflow programming", "https://en.wikipedia.org/wiki/Dataflow_programming"]]
+[concept.languages]
+csharp = "[TPL Dataflow](https://learn.microsoft.com/en-us/dotnet/standard/parallel-programming/dataflow-task-parallel-library): linked blocks that buffer, transform and join messages"
+haskell = "the [`monad-par`](https://hackage.haskell.org/package/monad-par) package's `Par` monad builds a dataflow graph of parallel computations"
+
+[[concept]]
+slug = "otp_behaviours"
+title = "OTP behaviours"
+summary = "Erlang/OTP's reusable process patterns — a generic server, a supervisor, an application — where the library owns the concurrency and your module supplies the callbacks."
+aliases = ["gen_server", "GenServer", "OTP"]
+chapter = 5
+uses = ["actor_model", "supervision"]
+reference = [["Erlang/OTP: Design Principles", "https://www.erlang.org/doc/system/design_principles.html"]]
+[concept.languages]
+elixir_erlang = "[`gen_server`](https://www.erlang.org/doc/apps/stdlib/gen_server.html) in Erlang and [`GenServer`](https://hexdocs.pm/elixir/GenServer.html) in Elixir"

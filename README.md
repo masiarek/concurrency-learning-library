@@ -27,7 +27,12 @@
 | 07 | Parallelism | CPU-bound speedup, the GIL and free-threaded Python, Amdahl's law | planned |
 | 08 | Processes | `fork`, `multiprocessing`, pipes, signals | planned |
 | 09 | Testing and tools | ThreadSanitizer, Go's race detector, stress tests, deterministic schedulers | planned |
-| 10 | [Resources](10_Resources/README.md) | the documentation, the books, and the crosswalk to the sibling libraries | |
+| 10 | [Resources](10_Resources/README.md) | the documentation, the books by language, and the crosswalk to the sibling libraries | |
+| 11 | [Concepts](11_Concepts/README.md) | the map: over 150 concepts in 13 categories — an ontology, a schema of how they connect, abbreviations, and a page per concept with its name in each language | stubs |
+
+## The concept map
+
+The numbered chapters teach by question. [**Chapter 11**](11_Concepts/README.md) names things: [the ontology](11_Concepts/README.md) arranges concurrency's vocabulary into categories — foundations, units of execution, scheduling, hazards, synchronization, lock-free, communication, async, parallelism, safety in languages, distributed systems, real-time systems, testing and tools — with each concept under what it is a kind of; [the schema](11_Concepts/schema/README.md) draws what uses, prevents, causes or is confused with what. Every concept has a short page that names its construct in each language, with a link to that language's documentation, and links to the lessons here, the sibling libraries, the books and the notes it came from.
 
 ## Running the examples
 

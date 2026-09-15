@@ -53,3 +53,5 @@ jobs:
         run: python3 tools/run_examples.py --check
       - name: Check that every external link is marked as external
         run: python3 tools/check_link_style.py
+      - name: Check the concept pages against the data they are generated from
+        run: python3 tools/build_concepts.py --check

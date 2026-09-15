@@ -1,0 +1,149 @@
+[category]
+title = "Distributed systems"
+order = 11
+blurb = "When the tasks are on different machines: partial failure, no shared clock, and the protocols that reach agreement anyway."
+
+[[concept]]
+slug = "distributed_computing"
+title = "Distributed computing"
+summary = "Tasks on separate machines that communicate over a network: their events are only partially ordered, and one part can fail while the rest keeps running."
+aliases = ["distributed systems", "distributed platform"]
+contrasts = ["concurrency"]
+related = ["partial_failure", "rpc"]
+notes = [
+  ["Distributed Systems - main", "https://docs.google.com/document/d/1YlfP2Lu-Wep_E_gzJqM3BzxdFW0bSpIAtkE04vmkdCo/edit?tab=t.0"],
+  ["distributed async and await - distributed platform", "https://docs.google.com/document/d/16iIMo9Rtp_BFFnUHh8wgww6z7Rc5EN-zmAPnBfDxfA8/edit?tab=t.0"],
+]
+reference = [
+  ["Wikipedia: Distributed computing", "https://en.wikipedia.org/wiki/Distributed_computing"],
+  ["Dominik Tornow: Distributed Async Await (NDC talk)", "https://www.youtube.com/watch?v=lfSIunYUsSg"],
+]
+[concept.languages]
+elixir_erlang = "[distributed Erlang](https://www.erlang.org/doc/system/distributed.html): runtime systems called nodes connect, and message passing, links and monitors work across nodes when pids are used"
+
+[[concept]]
+slug = "partial_failure"
+title = "Partial failure"
+summary = "In a distributed system one component can fail while the others continue, and a caller often cannot tell a slow peer from a dead one."
+related = ["idempotency", "durable_execution", "timeout"]
+reference = [["Dominik Tornow: Distributed Async Await (NDC talk)", "https://www.youtube.com/watch?v=lfSIunYUsSg"]]
+[concept.languages]
+elixir_erlang = "[`monitor_node`](https://www.erlang.org/doc/apps/erts/erlang.html#monitor_node/2) monitors the status of another node"
+other = "gRPC [deadlines](https://grpc.io/docs/guides/deadlines/): once the deadline has passed, the client gives up and fails the call with `DEADLINE_EXCEEDED`"
+
+[[concept]]
+slug = "clock_skew"
+title = "Clock skew and drift"
+summary = "Skew is how far apart two machines' clocks are at one moment, drift how fast they move apart — the reason timestamps from different machines cannot reliably order events."
+aliases = ["clock drift", "clock synchronization", "NTP", "PTP", "TrueTime"]
+alternative = ["logical_clocks"]
+notes = [
+  ["clock skew", "https://docs.google.com/document/d/1zGFVxtILOswbzW7HHeVlpz_jYTwpRhxU0SMwGN_ezyU/edit?tab=t.0"],
+  ["Clock Drift", "https://docs.google.com/document/d/1-Z0UrnnJd8EBkz023U_z3-rkvrry1Vhj-Vz_8r8-WvQ/edit?tab=t.0"],
+  ["clock synchronization - time synchronization", "https://docs.google.com/document/d/1UMPn_Kg5eyxiaMxqMZjcIvZSxxWJdUPl-YbUoB-aerg/edit?tab=t.0"],
+  ["distributed clock", "https://docs.google.com/document/d/1gxlrcp4H_a-lTSQZAwnykrDML-7_4u-xscRskRXelEs/edit?tab=t.0"],
+  ["distributed time", "https://docs.google.com/document/d/1Tq6KM3vicOkHALOxu3omJmQ7dSaKG4gyaXDeZ5B_Zz8/edit?tab=t.0"],
+  ["Spanner: TrueTime and external consistency", "https://docs.google.com/document/d/1yRF-H2Fdtd_kVDGeRFUwhJkHiRPMD35XLo774HtAWq0/edit?tab=t.0"],
+]
+reference = [
+  ["Wikipedia: Clock skew", "https://en.wikipedia.org/wiki/Clock_skew"],
+  ["Wikipedia: Clock drift", "https://en.wikipedia.org/wiki/Clock_drift"],
+]
+[concept.languages]
+rust = "[`Instant`](https://doc.rust-lang.org/std/time/struct.Instant.html) is monotonic; [`SystemTime`](https://doc.rust-lang.org/std/time/struct.SystemTime.html) is not, and is the one for communicating with other processes"
+go = "`time.Now` returns both a wall-clock and a [monotonic clock reading](https://pkg.go.dev/time#hdr-Monotonic_Clocks), and the monotonic reading has no meaning outside the current process"
+cpp = "[`std::chrono::steady_clock`](https://en.cppreference.com/w/cpp/chrono/steady_clock) is monotonic: its time points cannot decrease as physical time moves forward"
+java = "[`System.nanoTime`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/System.html) measures elapsed time only and is not related to wall-clock time"
+python = "[`time.monotonic`](https://docs.python.org/3/library/time.html#time.monotonic) cannot go backwards and is not affected by system clock updates"
+elixir_erlang = "the runtime keeps Erlang monotonic time apart from system time, with [time warp modes](https://www.erlang.org/doc/apps/erts/time_correction.html) for when system time changes"
+os = "[`CLOCK_REALTIME`](https://man7.org/linux/man-pages/man2/clock_gettime.2.html) jumps when the system time is changed; `CLOCK_MONOTONIC` cannot be set"
+
+[[concept]]
+slug = "logical_clocks"
+title = "Logical clocks"
+summary = "Counters that order events by cause instead of by wall-clock time: a Lamport clock gives every event a consistent order, a vector clock can also tell that two events were concurrent."
+aliases = ["Lamport clock", "vector clock", "timestamp ordering"]
+notes = [
+  ["timestamp ordering (TO)", "https://docs.google.com/document/d/1dDJvs6_9ftPoVXBft41Jfy7oFHZ27qVenrCg3kebWG4/edit?tab=t.0"],
+  ["assign timestamps to transactions", "https://docs.google.com/document/d/1paaXi-x1J1nN2CMAulpOdFhwhMoxHon9GdyjVVKtfAo/edit?tab=t.0"],
+]
+reference = [
+  ["Wikipedia: Lamport timestamp", "https://en.wikipedia.org/wiki/Lamport_timestamp"],
+  ["Wikipedia: Vector clock", "https://en.wikipedia.org/wiki/Vector_clock"],
+]
+[concept.languages]
+other = "CockroachDB's [transaction layer](https://www.cockroachlabs.com/docs/stable/architecture/transaction-layer) uses hybrid-logical clocks: a physical component close to local wall time plus a logical component"
+
+[[concept]]
+slug = "consensus"
+title = "Consensus"
+summary = "Getting a group of machines to agree on one value, or one log of commands, even though some of them fail — the problem Paxos and Raft solve."
+aliases = ["Raft", "Paxos"]
+related = ["partial_failure"]
+notes = [["Raft protocol", "https://docs.google.com/document/d/17Z7jSWP3iuhn6LNnYtsDCwv8hNGipmG_JAMnjlHpYDI/edit?tab=t.0"]]
+reference = [
+  ["Wikipedia: Consensus (computer science)", "https://en.wikipedia.org/wiki/Consensus_(computer_science)"],
+  ["The Raft Consensus Algorithm", "https://raft.github.io/"],
+]
+[concept.languages]
+other = "Raft keeps the replicated log in [etcd](https://etcd.io/docs/v3.6/faq/) and [Consul](https://developer.hashicorp.com/consul/docs/architecture/consensus)"
+
+[[concept]]
+slug = "idempotency"
+title = "Idempotency"
+summary = "An operation that has the same effect whether it runs once or several times, which is what makes retrying after a timeout safe."
+aliases = ["idempotent"]
+notes = [["idempotency", "https://docs.google.com/document/d/1OfjLgcuxGCb2pILxDXmXtGLS2Z1klWu9o0Hb4oNInaA/edit?tab=t.0"]]
+reference = [["Wikipedia: Idempotence (computer science meaning)", "https://en.wikipedia.org/wiki/Idempotence#Computer_science_meaning"]]
+[concept.languages]
+other = "HTTP: the safe methods, `PUT` and `DELETE` are [idempotent](https://developer.mozilla.org/en-US/docs/Glossary/Idempotent), `POST` and `PATCH` are not guaranteed to be; APIs such as [Stripe's](https://docs.stripe.com/api/idempotent_requests) take an idempotency key so that a retried request is safe"
+
+[[concept]]
+slug = "consistency_models"
+title = "Consistency models"
+summary = "The promise a distributed store makes about what a reader will see — from strong consistency, where every read sees the latest write, to eventual consistency, where replicas agree only in the end."
+aliases = ["ACID", "BASE", "eventual consistency", "external consistency"]
+related = ["linearizability", "sequential_consistency", "mvcc"]
+reference = [["Wikipedia: Consistency model", "https://en.wikipedia.org/wiki/Consistency_model"]]
+[concept.languages]
+other = "[etcd](https://etcd.io/docs/v3.6/learning/api_guarantees/) is linearizable by default and serializable on request; [Cassandra](https://cassandra.apache.org/doc/latest/cassandra/architecture/dynamo.html) lets each operation choose how many replicas must respond, from `ONE` to `QUORUM` and beyond"
+
+[[concept]]
+slug = "mvcc"
+title = "Multi-version concurrency control"
+summary = "Keeping several versions of each record so that readers see a consistent snapshot while writers add new versions, instead of readers and writers locking each other out."
+aliases = ["MVCC", "snapshot isolation"]
+alternative = ["read_write_lock"]
+related = ["transactional_memory"]
+notes = [["Multi-Version Concurrency Control (MVCC)", "https://docs.google.com/document/d/1sNeZtAABmStuxsVW5tI9yvBA1WPZNcgAlRIula83CgU/edit?tab=t.0"]]
+reference = [["Wikipedia: Multiversion concurrency control", "https://en.wikipedia.org/wiki/Multiversion_concurrency_control"]]
+[concept.languages]
+other = "[PostgreSQL](https://www.postgresql.org/docs/current/mvcc-intro.html): each statement sees a snapshot, so reading never blocks writing; [Clojure's STM](https://clojure.org/reference/refs) also uses multiversion concurrency control"
+
+[[concept]]
+slug = "rpc"
+title = "Remote procedure call"
+summary = "Calling a function that runs on another machine as though it were local — convenient until the network fails in a way no local call can."
+aliases = ["RPC", "RMI", "remote method invocation"]
+notes = [["remote method invocation (RMI) - general", "https://docs.google.com/document/u/0/d/18c4ILIWpWmSuCYbKzNUWd_y_EkJDkcnWhpGIvXHcxqA/edit"]]
+reference = [["Wikipedia: Remote procedure call", "https://en.wikipedia.org/wiki/Remote_procedure_call"]]
+related = ["partial_failure"]
+[concept.languages]
+go = "[`net/rpc`](https://pkg.go.dev/net/rpc), frozen and not accepting new features"
+java = "[RMI](https://docs.oracle.com/en/java/javase/25/docs/api/java.rmi/java/rmi/package-summary.html): an object in one Java virtual machine invokes methods on an object in another"
+python = "[`xmlrpc`](https://docs.python.org/3/library/xmlrpc.html), remote procedure calls as XML over HTTP"
+csharp = "[gRPC on ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/grpc/)"
+elixir_erlang = "[`erpc`](https://www.erlang.org/doc/apps/kernel/erpc.html), enhanced remote procedure calls to functions on other nodes"
+other = "[gRPC](https://grpc.io/docs/what-is-grpc/core-concepts/): services described in Protocol Buffers, with a deadline on each call"
+
+[[concept]]
+slug = "durable_execution"
+title = "Durable execution"
+summary = "Recording a long-running workflow's progress — checkpoints, an event log — so that after a crash it resumes where it stopped instead of starting over."
+aliases = ["distributed async await", "checkpointing", "workflow engine", "resume semantics"]
+uses = ["idempotency"]
+related = ["async_await"]
+reference = [["Dominik Tornow: Distributed Async Await (NDC talk)", "https://www.youtube.com/watch?v=lfSIunYUsSg"]]
+[concept.languages]
+csharp = "[Azure Durable Functions](https://learn.microsoft.com/en-us/azure/azure-functions/durable/durable-functions-overview): orchestrator functions whose runtime manages state, checkpoints, retries and recovery"
+other = "[Temporal](https://docs.temporal.io/temporal): a Workflow Execution keeps its state and progress through crashes by recording an Event History"

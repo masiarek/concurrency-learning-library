@@ -1,0 +1,184 @@
+[category]
+title = "Scheduling"
+order = 3
+blurb = "Who decides what runs next, when, and on which core — the operating system's scheduler, or a runtime's event loop and executor."
+
+[[concept]]
+slug = "scheduler"
+title = "Scheduler"
+summary = "The part of an operating system or runtime that decides which ready thread or task runs next, on which core, and for how long."
+aliases = ["thread scheduler", "process scheduler"]
+uses = ["context_switch", "scheduling_policy"]
+reference = [["Wikipedia: Scheduling (computing)", "https://en.wikipedia.org/wiki/Scheduling_(computing)"]]
+[concept.languages]
+rust = "Threads are scheduled by the OS; async tasks by the chosen runtime, such as [Tokio's](https://docs.rs/tokio/latest/tokio/runtime/index.html)"
+go = "The runtime schedules goroutines onto threads, running Go code on at most [`GOMAXPROCS`](https://pkg.go.dev/runtime#GOMAXPROCS) CPUs at once"
+java = "Platform threads by the OS; [virtual threads](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html#virtual-threads) by a scheduler in the JDK, using as many platform threads as there are processors by default"
+csharp = "[`TaskScheduler`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.taskscheduler) decides where tasks run"
+kotlin = "A [`CoroutineDispatcher`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-coroutine-dispatcher/), such as `Dispatchers.Default` or `Dispatchers.IO`, runs coroutines on its pool of threads"
+elixir_erlang = "[Scheduler threads](https://www.erlang.org/doc/apps/erts/erl_cmd.html) (`+S`), by default one per logical processor"
+haskell = "[`setNumCapabilities`](https://hackage.haskell.org/package/base/docs/GHC-Conc.html#v:setNumCapabilities) sets how many Haskell threads can run truly simultaneously"
+os = "[`sched(7)`](https://man7.org/linux/man-pages/man7/sched.7.html): Linux's policies `SCHED_OTHER`, `SCHED_FIFO`, `SCHED_RR` and `SCHED_DEADLINE`"
+
+[[concept]]
+slug = "preemptive_scheduling"
+title = "Preemptive scheduling"
+summary = "The scheduler may stop a running thread at any moment, usually on a timer interrupt, and run another — no thread can hog the CPU, and any step can be interrupted."
+aliases = ["preemption", "preemptive multitasking"]
+is_a = ["scheduling_policy"]
+contrasts = ["cooperative_scheduling"]
+related = ["interleaving"]
+reference = [["Wikipedia: Preemption (computing)", "https://en.wikipedia.org/wiki/Preemption_(computing)"]]
+[concept.languages]
+go = "Goroutines have been [asynchronously preemptible since Go 1.14](https://go.dev/doc/go1.14#runtime); before that, a loop without function calls could hold up the scheduler"
+python = "Threads get timeslices set by the [switch interval](https://docs.python.org/3/library/sys.html#sys.setswitchinterval), and the operating system picks which runs next: the interpreter has no scheduler of its own"
+javascript = "Never: a function [runs to completion](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Execution_model) before other code on the same thread runs"
+haskell = "GHC [preempts a thread](https://hackage.haskell.org/package/base/docs/Control-Concurrent.html) only when it allocates memory, so a tight loop that never allocates can lock out other threads"
+os = "[`sched(7)`](https://man7.org/linux/man-pages/man7/sched.7.html): a higher-priority thread preempts a lower one; `SCHED_RR` also takes turns by time slice"
+
+[[concept]]
+slug = "cooperative_scheduling"
+title = "Cooperative scheduling"
+summary = "A task runs until it gives way — at an await, a yield or a blocking call — so switches happen only at known points, and one task that never gives way stalls all the others."
+aliases = ["cooperative multitasking", "non-preemptive scheduling"]
+chapter = 6
+is_a = ["scheduling_policy"]
+uses = ["suspension_point"]
+causes = ["blocking_the_event_loop"]
+notes = [["cooperative scheduling - general", "https://docs.google.com/document/d/1G8Rb6Qf3fPkDzNri1u6E3XWA4Krv2IaZw1Waz7OFqEs/edit?tab=t.0"]]
+reference = [["Wikipedia: Cooperative multitasking", "https://en.wikipedia.org/wiki/Cooperative_multitasking"]]
+[concept.languages]
+rust = "[`tokio::task::yield_now`](https://docs.rs/tokio/latest/tokio/task/fn.yield_now.html) yields execution back to the runtime, which schedules the other pending tasks"
+go = "Before [Go 1.14](https://go.dev/doc/go1.14#runtime), a loop without function calls could hold up the scheduler; [`runtime.Gosched`](https://pkg.go.dev/runtime#Gosched) still yields on request"
+python = "[`await asyncio.sleep(0)`](https://docs.python.org/3/library/asyncio-task.html#asyncio.sleep) lets other tasks run"
+csharp = "[`await Task.Yield()`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.yield)"
+javascript = "Code [runs to completion](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Execution_model); other code runs only after an `await` or a return to the event loop"
+kotlin = "A coroutine keeps its thread until it suspends; [`yield()`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/yield.html) suspends only to let other coroutines run"
+swift = "[`Task.yield()`](https://developer.apple.com/documentation/swift/task/yield%28%29) suspends the current task so that other tasks can run"
+
+[[concept]]
+slug = "work_stealing"
+title = "Work stealing"
+summary = "Each worker thread keeps its own queue of tasks, and an idle worker takes tasks from a busy worker's queue, balancing the load without one central queue."
+aliases = ["work-stealing scheduler"]
+is_a = ["scheduling_policy"]
+notes = [["work-stealing based task scheduler", "https://docs.google.com/document/d/1vTgNx3VxgbuMS7mj24BpO9SEdSIA33PW7GZgq0TIh7U/edit?tab=t.0"]]
+reference = [["Wikipedia: Work stealing", "https://en.wikipedia.org/wiki/Work_stealing"]]
+[concept.languages]
+rust = "Tokio's [multi-thread scheduler](https://docs.rs/tokio/latest/tokio/runtime/index.html) and Rayon's [`join`](https://docs.rs/rayon/latest/rayon/fn.join.html) both use work stealing"
+java = "[`ForkJoinPool`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ForkJoinPool.html), and [`Executors.newWorkStealingPool`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executors.html#newWorkStealingPool%28%29)"
+csharp = "The default [`TaskScheduler`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.taskscheduler) gives thread-pool threads local work queues, and an idle thread steals from another's"
+
+[[concept]]
+slug = "event_loop"
+title = "Event loop"
+summary = "A loop on one thread that waits for events — a socket ready, a timer due, work finished — and runs the callbacks or resumes the tasks waiting on each."
+aliases = ["run loop", "message loop"]
+chapter = 6
+uses = ["io_multiplexing"]
+related = ["callback"]
+notes = [["Event loop - async - general", "https://docs.google.com/document/d/1yuX9X55V0ARMjFmBB4z1Lp4v0ikOTDIa0DmvCAivuuo/edit?tab=t.0"]]
+reference = [["Wikipedia: Event loop", "https://en.wikipedia.org/wiki/Event_loop"]]
+[concept.languages]
+rust = "None in the standard library; an async runtime such as [Tokio](https://docs.rs/tokio/latest/tokio/runtime/index.html) provides it"
+c = "Written by hand around [`poll`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/poll.html), or taken from an event library"
+python = "The [`asyncio` event loop](https://docs.python.org/3/library/asyncio-eventloop.html); applications normally start it with `asyncio.run` and rarely touch the loop object"
+javascript = "Always there, provided by the host; [microtasks](https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide) such as promise callbacks run before control returns to the event loop"
+swift = "[`RunLoop`](https://developer.apple.com/documentation/foundation/runloop) in Foundation"
+elixir_erlang = "A [`GenServer`](https://hexdocs.pm/elixir/GenServer.html) is a process whose receive loop the behaviour writes for you"
+
+[[concept]]
+slug = "async_runtime"
+title = "Async runtime (executor and reactor)"
+summary = "The library that drives async tasks: an executor that polls the tasks that can make progress, and a reactor that wakes them when the I/O they wait for is ready."
+aliases = ["executor", "reactor", "tokio", "asyncio event loop"]
+chapter = 6
+uses = ["event_loop", "io_multiplexing", "polling", "work_stealing"]
+notes = [
+  ["async runtimes - rust - executor", "https://docs.google.com/document/u/0/d/1r7DE4Fatd-0QI-I0c4_HL2ACvJMpBqH5H-okshAJPiY/edit"],
+  ["runtime - executor - async", "https://docs.google.com/document/u/0/d/1qlUZaKlBvhpcAXz1C4kS6yelY1NnOKHz9sNw2ASmPDE/edit"],
+  ["tokio - main", "https://docs.google.com/document/d/1ppXXUpBzA6HXaoLaf09BmfrOHGtnCxRAofZw7MrQtKk/edit?tab=t.0"],
+]
+[concept.languages]
+rust = "Not in the standard library: [Tokio](https://docs.rs/tokio/latest/tokio/), whose `#[tokio::main]` starts one, is the common choice"
+python = "[`asyncio.run`](https://docs.python.org/3/library/asyncio-runner.html#asyncio.run) runs a coroutine in an event loop that it manages, and returns the result"
+kotlin = "[`runBlocking`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/run-blocking.html) bridges regular blocking code to suspending code, blocking its thread until the coroutine completes"
+
+[[concept]]
+slug = "io_multiplexing"
+title = "I/O multiplexing"
+summary = "Asking the operating system to watch many sockets or file descriptors at once and report which are ready, so that one thread can serve thousands of connections."
+aliases = ["epoll", "kqueue", "IOCP", "select(2)", "poll(2)"]
+chapter = 6
+related = ["blocking_and_nonblocking"]
+notes = [["Rust's Journey to Async/Await - Evented I/O non-blocking APIs - nginx", "https://docs.google.com/document/d/1UP0c6brYqFlGiHsO6dSzuxa-SKsHGc24w0apNb4Fqcc/edit?tab=t.0"]]
+reference = [["Wikipedia: epoll", "https://en.wikipedia.org/wiki/Epoll"]]
+[concept.languages]
+rust = "Not in the standard library; the [`mio`](https://docs.rs/mio/latest/mio/struct.Poll.html) crate's `Poll` is backed by epoll, kqueue or IOCP, depending on the OS"
+c = "POSIX [`poll`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/poll.html) and [`select`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/select.html)"
+java = "[`Selector`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/channels/Selector.html) over non-blocking channels"
+python = "[`selectors`](https://docs.python.org/3/library/selectors.html), whose `DefaultSelector` picks the most efficient mechanism on the platform"
+os = "[`epoll(7)`](https://man7.org/linux/man-pages/man7/epoll.7.html) on Linux, [`poll(2)`](https://man7.org/linux/man-pages/man2/poll.2.html) everywhere; Windows [I/O completion ports](https://learn.microsoft.com/en-us/windows/win32/fileio/i-o-completion-ports) queue a packet when an I/O operation completes"
+
+[[concept]]
+slug = "polling"
+title = "Polling"
+summary = "Asking repeatedly whether something is ready instead of being told; in Rust, an executor polls a future and the future answers Ready or Pending."
+aliases = ["poll"]
+related = ["busy_waiting", "future_and_promise"]
+notes = [
+  ["poll - polling - general", "https://docs.google.com/document/d/1otsU4JjxA2eQrj-G1kuoWJS6QyMIYXYMBnzSuCKY6zs/edit?tab=t.0"],
+  ["poll - rust", "https://docs.google.com/document/u/0/d/1Osp8gq7XwMEiMGlEZ8fSFbpedjz-7ZapsXQXgZhSblc/edit"],
+]
+reference = [["Wikipedia: Polling (computer science)", "https://en.wikipedia.org/wiki/Polling_(computer_science)"]]
+[concept.languages]
+rust = "[`Future::poll`](https://doc.rust-lang.org/std/future/trait.Future.html#tymethod.poll) returns [`Poll::Ready`](https://doc.rust-lang.org/std/task/enum.Poll.html) or `Poll::Pending`, and a [`Waker`](https://doc.rust-lang.org/std/task/struct.Waker.html) says when to poll again"
+go = "A [`select` with a `default` case](https://go.dev/ref/spec#Select_statements) checks channels without blocking"
+cpp = "[`std::future::wait_for`](https://en.cppreference.com/w/cpp/thread/future/wait_for) with a zero timeout asks whether a result is ready"
+java = "[`Future.isDone`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Future.html#isDone%28%29), and `poll` on a [`BlockingQueue`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/BlockingQueue.html)"
+python = "[`Popen.poll`](https://docs.python.org/3/library/subprocess.html#subprocess.Popen.poll) checks whether a child process has ended"
+os = "[`poll(2)`](https://man7.org/linux/man-pages/man2/poll.2.html), despite its name, waits for a file descriptor to become ready"
+
+[[concept]]
+slug = "suspension_point"
+title = "Suspension point"
+summary = "A place where a coroutine or async function can pause and hand control back — an await, a yield — and where other tasks may run before it resumes."
+aliases = ["await point", "yield point"]
+chapter = 6
+related = ["coroutine", "async_await"]
+notes = [
+  ["suspension point - concurrent - async - general", "https://docs.google.com/document/d/152N9fY5IrgOSHLjxj08re2_IKtUVU9LpV_FjbpEhh2k/edit?tab=t.0"],
+  ["await - yield control to caller at an await - rust", "https://docs.google.com/document/d/1kXQpJjA-j44wqGe7eWidTkjwp3XLgRJyDBup5fzBVho/edit?tab=t.0"],
+]
+[concept.languages]
+rust = "Each [`.await`](https://doc.rust-lang.org/reference/expressions/await-expr.html)"
+go = "No marked points: goroutines have been [asynchronously preemptible](https://go.dev/doc/go1.14#runtime) since Go 1.14"
+cpp = "[`co_await` and `co_yield`](https://en.cppreference.com/w/cpp/language/coroutines)"
+python = "[`await`](https://docs.python.org/3/reference/expressions.html#await-expression), and the implicit awaits in `async for` and `async with`"
+csharp = "[`await`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/await)"
+javascript = "[`await`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await), and `yield` in a generator"
+kotlin = "A call to a [suspending function](https://kotlinlang.org/docs/coroutines-overview.html), which pauses and resumes without blocking a thread"
+swift = "[`await`](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/) marks each possible suspension point"
+
+[[concept]]
+slug = "busy_waiting"
+title = "Busy waiting"
+summary = "Waiting for a condition by checking it in a loop, burning CPU the whole time; worth it for a few nanoseconds inside a spinlock, wasteful for anything longer."
+aliases = ["spinning", "spin-waiting", "spin loop"]
+alternative = ["condition_variable"]
+related = ["spinlock"]
+notes = [["busy-waiting", "https://docs.google.com/document/u/0/d/1VSUTXXyFhpf6E3ZTYXWKmkOTU-Dq73aqa6kX4EFRiNY/edit"]]
+reference = [["Wikipedia: Busy waiting", "https://en.wikipedia.org/wiki/Busy_waiting"]]
+[concept.languages]
+rust = "[`std::hint::spin_loop`](https://doc.rust-lang.org/std/hint/fn.spin_loop.html) tells the processor it is in a spin loop"
+java = "[`Thread.onSpinWait`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html#onSpinWait%28%29) tells the runtime that the caller is busy-waiting"
+csharp = "[`SpinWait`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.spinwait) spins for a while and then starts yielding"
+
+[[concept]]
+slug = "scheduling_policy"
+title = "Scheduling policy"
+summary = "The rule a scheduler follows to pick what runs next: whether a running task can be interrupted, how priorities are set, and where idle cores find work."
+aliases = ["scheduling algorithm"]
+reference = [["Wikipedia: Scheduling (computing) — scheduling disciplines", "https://en.wikipedia.org/wiki/Scheduling_(computing)#Scheduling_disciplines"]]
+[concept.languages]
+os = "Linux's [scheduling policies](https://man7.org/linux/man-pages/man7/sched.7.html): `SCHED_OTHER` for ordinary threads, and the real-time `SCHED_FIFO` and `SCHED_RR`"

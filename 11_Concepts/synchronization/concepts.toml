@@ -1,0 +1,348 @@
+[category]
+title = "Synchronization"
+order = 5
+blurb = "The primitives that make tasks take turns or wait for each other: locks, condition variables, semaphores, latches and barriers."
+
+[[concept]]
+slug = "synchronization"
+title = "Synchronization"
+summary = "Coordinating concurrent tasks so that their interactions happen safely — only one at a time, or one waiting until another is ready."
+aliases = ["coordination", "synchronization mechanisms", "synchronization primitives"]
+chapter = 4
+notes = [
+  ["synchronization mechanisms - coordinating multiple processes", "https://docs.google.com/document/d/1VAUhAJm1sdVCJvLVWwL1my9jNCqUu93dxxlfS6vwbSw/edit?tab=t.0"],
+  ["coordination (managing interactions between concurrent - parallel tasks)", "https://docs.google.com/document/d/1shqvAb6zs3lOBd7lXRyvBP12C5TdcJCEe4zTge9T-pE/edit?tab=t.0"],
+]
+reference = [["Wikipedia: Synchronization (computer science)", "https://en.wikipedia.org/wiki/Synchronization_(computer_science)"]]
+[concept.languages]
+rust = "[`std::sync`](https://doc.rust-lang.org/std/sync/index.html): `Mutex`, `RwLock`, `Condvar`, `Barrier`, `Once`, `OnceLock`, `LazyLock`, atomics and channels — but no semaphore"
+go = "[`sync`](https://pkg.go.dev/sync) and [`sync/atomic`](https://pkg.go.dev/sync/atomic); the [memory model](https://go.dev/ref/mem) counts channel operations as synchronization too"
+c = "[Concurrency support](https://en.cppreference.com/w/c/thread) in C11 `<threads.h>`: mutexes, condition variables and `call_once`"
+cpp = "[Concurrency support library](https://en.cppreference.com/w/cpp/thread): mutexes, condition variables, semaphores, latches, futures and atomics"
+java = "[`java.util.concurrent`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/package-summary.html) synchronizers and locks, beside the `synchronized` keyword built into the language"
+python = "[`threading`](https://docs.python.org/3/library/threading.html): `Lock`, `RLock`, `Condition`, `Semaphore`, `Event`, `Barrier`; the [`asyncio` primitives](https://docs.python.org/3/library/asyncio-sync.html) look alike but are not thread-safe"
+csharp = "[Overview of synchronization primitives](https://learn.microsoft.com/en-us/dotnet/standard/threading/overview-of-synchronization-primitives) in `System.Threading`"
+javascript = "[`Atomics`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics) for workers that share a `SharedArrayBuffer`; the [Web Locks API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Locks_API) across tabs and workers"
+swift = "The [Synchronization](https://developer.apple.com/documentation/synchronization) module, with `Mutex` and `Atomic`"
+os = "Linux [futexes](https://man7.org/linux/man-pages/man7/futex.7.html) are the building block for fast user-space locks and semaphores"
+
+[[concept]]
+slug = "critical_section"
+title = "Critical section"
+summary = "A stretch of code that touches shared state and must not be run by two tasks at once."
+aliases = ["critical region"]
+chapter = 2
+related = ["mutual_exclusion"]
+pages = [["Go: A mutex guards a counter", "https://masiarek.github.io/go-learning-library/04_Sync/a_mutex_guards_a_counter/index.html"]]
+reference = [["Wikipedia: Critical section", "https://en.wikipedia.org/wiki/Critical_section"]]
+[concept.languages]
+rust = "As long as the [`MutexGuard`](https://doc.rust-lang.org/std/sync/struct.MutexGuard.html) lives: the mutex is unlocked when the guard is dropped"
+go = "Between [`Mutex.Lock`](https://pkg.go.dev/sync#Mutex.Lock) and `Unlock`; a locked `Mutex` is not tied to the goroutine that locked it"
+cpp = "The scope of a [`std::lock_guard`](https://en.cppreference.com/w/cpp/thread/lock_guard), which owns the mutex for the duration of a scoped block"
+java = "A [`synchronized` statement](https://docs.oracle.com/javase/specs/jls/se25/html/jls-14.html#jls-14.19): the monitor is unlocked whether the block completes normally or abruptly"
+python = "A `with lock:` block: [`threading` primitives](https://docs.python.org/3/library/threading.html#using-locks-conditions-and-semaphores-in-the-with-statement) acquire on entry and release on exit"
+csharp = "The body of a [`lock` statement](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/lock), released even if an exception is thrown"
+os = "Windows names an object after it: [critical section objects](https://learn.microsoft.com/en-us/windows/win32/sync/critical-section-objects) work like a mutex for the threads of one process"
+
+[[concept]]
+slug = "mutual_exclusion"
+title = "Mutual exclusion"
+summary = "The guarantee that at most one task is inside a critical section at any moment."
+aliases = ["exclusive access"]
+chapter = 2
+is_a = ["synchronization"]
+prevents = ["race_condition", "data_race"]
+notes = [["Mutual Exclusion", "https://docs.google.com/document/d/13UdhepCAsU6CKWgXDv5PtIK3kGiZC_TxaVVJrQa18FE/edit?tab=t.0"]]
+reference = [["Wikipedia: Mutual exclusion", "https://en.wikipedia.org/wiki/Mutual_exclusion"]]
+[concept.languages]
+rust = "Enforced by types: a [`Mutex<T>`](https://doc.rust-lang.org/std/sync/struct.Mutex.html) owns its data, reachable only through the guard that `lock` returns"
+go = "The [memory model](https://go.dev/ref/mem): programs must serialize access to shared data, with channel operations or the `sync` and `sync/atomic` primitives"
+javascript = "The [Web Locks API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Locks_API) lets a script in one tab or worker hold a named lock while it works"
+elixir_erlang = "Little shared memory to exclude: [all data in messages between processes is copied](https://www.erlang.org/doc/system/eff_guide_processes.html), except refc binaries and literals"
+
+[[concept]]
+slug = "mutex"
+title = "Mutex"
+summary = "A lock that one task holds at a time; any other task that tries to take it waits until it is released."
+aliases = ["lock", "mutual exclusion lock"]
+chapter = 2
+is_a = ["mutual_exclusion"]
+uses = ["futex"]
+causes = ["deadlock", "contention", "priority_inversion"]
+alternative = ["channel", "atomic_variable"]
+pages = [
+  ["Rust: Sharing across threads: Arc", "https://masiarek.github.io/rust-learning-library/18_Ownership/sharing_across_threads/index.html"],
+  ["Go: A mutex guards a counter", "https://masiarek.github.io/go-learning-library/04_Sync/a_mutex_guards_a_counter/index.html"],
+]
+notes = [
+  ["Locks in general - concurrency", "https://docs.google.com/document/d/1NP9uyNLSCaTpUwQa08VvqI3qD226R9-pvtIOAf0XlKg/edit"],
+  ["Mutexes in general - concurrency", "https://docs.google.com/document/d/1JGosAZ9FWuQSc90co5JH2ZZmJg21CcJt9kY56tcg0Ek/edit"],
+  ["Mutexes and Spinlocks in general - C++", "https://docs.google.com/document/d/1wwututLXE2Lpx997jfg-DzDgb8L88zyNuYe8GF8OXVE/edit?tab=t.0"],
+  ["parking_lot", "https://docs.google.com/document/d/1EiehFfa6Cb-fEeY6WY8mowS6YvWqiPIaWWylFzgZ-BM/edit?tab=t.0"],
+]
+reference = [["Wikipedia: Lock (computer science)", "https://en.wikipedia.org/wiki/Lock_(computer_science)"]]
+[concept.languages]
+rust = "[`std::sync::Mutex`](https://doc.rust-lang.org/std/sync/struct.Mutex.html) contains the data it guards; the guard unlocks when dropped, and a panic while holding it poisons the lock"
+go = "[`sync.Mutex`](https://pkg.go.dev/sync#Mutex): the zero value is unlocked, it must not be copied after first use, and it is not tied to the goroutine that locked it; `Lock` returns nothing, so there is no poisoning"
+c = "[`mtx_t`](https://en.cppreference.com/w/c/thread/mtx_init) from C11 `<threads.h>`: `mtx_plain` or `mtx_timed`, optionally combined with `mtx_recursive`"
+cpp = "[`std::mutex`](https://en.cppreference.com/w/cpp/thread/mutex): [locking it again](https://en.cppreference.com/w/cpp/thread/mutex/lock) from the owning thread is undefined behaviour"
+java = "The monitor behind `synchronized`, or [`ReentrantLock`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/locks/ReentrantLock.html), which behaves like it and adds `tryLock`, timed waits and a fairness option; both are reentrant"
+python = "[`threading.Lock`](https://docs.python.org/3/library/threading.html#lock-objects) is not owned by the thread that locked it; [`RLock`](https://docs.python.org/3/library/threading.html#rlock-objects) is the reentrant one"
+csharp = "The [`lock` statement](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/lock) on a [`System.Threading.Lock`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.lock), or on any reference object through `Monitor`"
+kotlin = "[`Mutex`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.sync/-mutex/) in kotlinx.coroutines suspends the coroutine instead of blocking a thread, and is non-reentrant"
+swift = "[`Mutex`](https://developer.apple.com/documentation/synchronization/mutex) in the Synchronization module protects shared mutable state via mutual exclusion"
+haskell = "An [`MVar`](https://hackage.haskell.org/package/base/docs/Control-Concurrent-MVar.html) holding `()`: `takeMVar` to lock, `putMVar` to unlock, with FIFO wake-ups"
+os = "POSIX [`pthread_mutex_lock`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_mutex_lock.html) with normal, error-checking, recursive and robust mutexes; on Linux they are built on [futexes](https://man7.org/linux/man-pages/man7/futex.7.html)"
+
+[[concept]]
+slug = "spinlock"
+title = "Spinlock"
+summary = "A lock that waits by looping and retrying instead of sleeping, which pays off only when it is held for very short times."
+aliases = ["spin lock", "spin-wait"]
+is_a = ["mutex"]
+uses = ["busy_waiting", "atomic_variable"]
+notes = [["Spinlock in general", "https://docs.google.com/document/d/1AsCfo4S41TPVABSCzq1PQ7EqdZZelfkiw2o7xS_OR6k/edit"]]
+reference = [["Wikipedia: Spinlock", "https://en.wikipedia.org/wiki/Spinlock"]]
+[concept.languages]
+rust = "[`std::hint::spin_loop`](https://doc.rust-lang.org/std/hint/fn.spin_loop.html) tells the processor it is running in a busy-wait spin loop"
+cpp = "[`std::atomic_flag`](https://en.cppreference.com/w/cpp/atomic/atomic_flag) is guaranteed lock-free; its page builds a spinlock from it and warns that spinlock mutexes are extremely dubious in practice"
+java = "[`Thread.onSpinWait`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html) tells the runtime that a loop is busy-waiting"
+csharp = "[`SpinLock`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.spinlock): a thread that wants the lock waits in a loop, checking again until it is free"
+os = "POSIX [`pthread_spin_lock`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_spin_lock.html); in the Linux kernel the [spinlock](https://docs.kernel.org/locking/spinlocks.html) is the most basic locking primitive"
+
+[[concept]]
+slug = "read_write_lock"
+title = "Read-write lock"
+summary = "A lock that lets many readers in at once but lets a writer in only alone."
+aliases = ["RwLock", "shared-exclusive lock", "shared lock", "readers-writer lock", "RWMutex", "shared_mutex"]
+chapter = 2
+is_a = ["mutex"]
+causes = ["starvation"]
+pages = [["Rust: RwLock and atomics", "https://masiarek.github.io/rust-learning-library/09_Advanced/rwlock_and_atomics/index.html"]]
+reference = [["Wikipedia: Readers–writer lock", "https://en.wikipedia.org/wiki/Readers%E2%80%93writer_lock"]]
+[concept.languages]
+rust = "[`RwLock`](https://doc.rust-lang.org/std/sync/struct.RwLock.html): the reader-writer priority policy is left to the operating system, and taking it again on the same thread might panic"
+go = "[`sync.RWMutex`](https://pkg.go.dev/sync#RWMutex): a waiting writer blocks new readers, which rules out recursive read-locking; `RLock` cannot be upgraded to `Lock`"
+cpp = "[`std::shared_mutex`](https://en.cppreference.com/w/cpp/thread/shared_mutex) (C++17): shared access for readers, exclusive for a writer"
+java = "[`ReentrantReadWriteLock`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/locks/ReentrantReadWriteLock.html) with an optional fair mode; [`StampedLock`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/locks/StampedLock.html) adds optimistic reads but is not reentrant"
+csharp = "[`ReaderWriterLockSlim`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.readerwriterlockslim), which by default does not allow recursion"
+os = "POSIX [`pthread_rwlock_rdlock`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_rwlock_rdlock.html): a reader gets the lock if no writer holds it and no writers are blocked on it"
+
+[[concept]]
+slug = "reentrant_lock"
+title = "Reentrant lock"
+summary = "A lock that the thread already holding it may take again without deadlocking itself; it is released only when every acquisition has been undone."
+aliases = ["recursive mutex", "recursive lock", "RLock"]
+is_a = ["mutex"]
+contrasts = ["reentrancy"]
+reference = [["Wikipedia: Reentrant mutex", "https://en.wikipedia.org/wiki/Reentrant_mutex"]]
+[concept.languages]
+rust = "[`Mutex::lock`](https://doc.rust-lang.org/std/sync/struct.Mutex.html#method.lock) is not reentrant — a second call may panic or deadlock; [`ReentrantLock`](https://doc.rust-lang.org/std/sync/struct.ReentrantLock.html) is a nightly-only experimental API"
+go = "None: a [`sync.Mutex`](https://pkg.go.dev/sync#Mutex) is not tied to a goroutine, so a second `Lock` from the same goroutine blocks like any other; `RWMutex` rules out recursive read-locking too"
+c = "[`mtx_init`](https://en.cppreference.com/w/c/thread/mtx_init) with `mtx_recursive`"
+cpp = "[`std::recursive_mutex`](https://en.cppreference.com/w/cpp/thread/recursive_mutex)"
+java = "Both locks are reentrant: [JLS §17.1](https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html#jls-17.1) lets a thread lock a monitor multiple times, and [`ReentrantLock`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/locks/ReentrantLock.html) allows up to 2147483647 recursive locks"
+python = "[`threading.RLock`](https://docs.python.org/3/library/threading.html#rlock-objects) may be acquired multiple times by the same thread"
+csharp = "[`System.Threading.Lock`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.lock) may be entered recursively and must be exited as many times"
+kotlin = "[`Mutex`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.sync/-mutex/) is non-reentrant: locking it again from the coroutine that holds it suspends"
+os = "POSIX [`PTHREAD_MUTEX_RECURSIVE`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_mutex_lock.html) keeps a lock count; a Windows [critical section](https://learn.microsoft.com/en-us/windows/win32/sync/critical-section-objects) lets its owner enter again without blocking"
+
+[[concept]]
+slug = "lock_poisoning"
+title = "Lock poisoning"
+summary = "Marking a lock as suspect when a thread panics while holding it, so that the next thread to take it learns the data may be half-updated."
+aliases = ["poisoned mutex", "abandoned mutex"]
+chapter = 3
+related = ["mutex", "scoped_lock"]
+pages = [
+  ["Rust: Lock poisoning", "https://masiarek.github.io/rust-learning-library/09_Advanced/mutex_poisoning/index.html"],
+  ["Go: A mutex guards a counter", "https://masiarek.github.io/go-learning-library/04_Sync/a_mutex_guards_a_counter/index.html"],
+]
+reference = [["Rust std: Mutex poisoning", "https://doc.rust-lang.org/std/sync/struct.Mutex.html#poisoning"]]
+[concept.languages]
+rust = "[`Mutex`](https://doc.rust-lang.org/std/sync/struct.Mutex.html#poisoning): a panic while holding the guard poisons it and later `lock` calls return an error, until `clear_poison` (Rust 1.77); [`Once`](https://doc.rust-lang.org/std/sync/struct.Once.html) is poisoned the same way"
+go = "No poisoning: [`Mutex.Lock`](https://pkg.go.dev/sync#Mutex.Lock) returns no value that could report a panic"
+java = "No poisoning: a [`synchronized` statement](https://docs.oracle.com/javase/specs/jls/se25/html/jls-14.html#jls-14.19) unlocks the monitor when its block completes abruptly for any reason"
+csharp = "[`AbandonedMutexException`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.abandonedmutexexception) is thrown when a thread acquires a `Mutex` that another thread abandoned by exiting without releasing it"
+os = "POSIX robust mutexes: [`pthread_mutex_lock`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_mutex_lock.html) returns `EOWNERDEAD` when the owner terminated while holding it, and [`pthread_mutex_consistent`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_mutex_consistent.html) marks the state consistent again"
+
+[[concept]]
+slug = "scoped_lock"
+title = "Scoped locking"
+summary = "Tying a lock's release to leaving a scope — a guard object, `defer`, `with`, `synchronized` — so that no path out of the code can forget to unlock."
+aliases = ["lock guard", "RAII guard", "lock_guard", "defer unlock"]
+chapter = 3
+uses = ["mutex"]
+pages = [
+  ["Rust: Forgotten unlock", "https://masiarek.github.io/rust-learning-library/31_C_and_Cpp/forgotten_unlock/index.html"],
+  ["Go: A mutex guards a counter", "https://masiarek.github.io/go-learning-library/04_Sync/a_mutex_guards_a_counter/index.html"],
+]
+reference = [["Wikipedia: Resource acquisition is initialization", "https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization"]]
+prevents = ["liveness_failure"]
+[concept.languages]
+rust = "[`MutexGuard`](https://doc.rust-lang.org/std/sync/struct.MutexGuard.html) is an RAII scoped lock: the mutex unlocks when the guard is dropped"
+go = "`defer mu.Unlock()` on the line after `Lock`: [deferred calls](https://go.dev/ref/spec#Defer_statements) run however the function returns, a panic included — but the `defer` is a line you must remember"
+cpp = "[`std::lock_guard`](https://en.cppreference.com/w/cpp/thread/lock_guard) for one mutex, [`std::scoped_lock`](https://en.cppreference.com/w/cpp/thread/scoped_lock) (C++17) for several, with deadlock avoidance"
+java = "[`synchronized`](https://docs.oracle.com/javase/specs/jls/se25/html/jls-14.html#jls-14.19) blocks release on any exit; a [`Lock`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/locks/Lock.html) needs `unlock()` as the first statement of a `finally` block"
+python = "`with lock:` — [`threading` primitives](https://docs.python.org/3/library/threading.html#using-locks-conditions-and-semaphores-in-the-with-statement) release when the block is exited"
+csharp = "The [`lock` statement](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/lock) expands to `try`/`finally`, or to `using (x.EnterScope())` for a `System.Threading.Lock`"
+kotlin = "[`Mutex.withLock`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.sync/with-lock.html) runs a block under the lock and releases it afterwards"
+javascript = "[`navigator.locks.request`](https://developer.mozilla.org/en-US/docs/Web/API/LockManager/request) releases the lock automatically when the callback returns or throws"
+
+[[concept]]
+slug = "lock_ordering"
+title = "Lock ordering"
+summary = "Always taking locks in one agreed order, so that no cycle of tasks waiting on each other — and so no deadlock — can form."
+aliases = ["lock hierarchy"]
+chapter = 3
+prevents = ["deadlock"]
+reference = [["Wikipedia: Dining philosophers problem", "https://en.wikipedia.org/wiki/Dining_philosophers_problem"]]
+[concept.languages]
+cpp = "[`std::lock`](https://en.cppreference.com/w/cpp/thread/lock) takes several mutexes with a deadlock avoidance algorithm instead of a fixed order"
+java = "[JLS §17.1](https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html#jls-17.1) tells programs holding locks on multiple objects to use conventional deadlock-avoidance techniques"
+os = "Linux [lockdep](https://docs.kernel.org/locking/lockdep-design.html) records which lock is taken while holding which, and reports orders that could form a cycle"
+other = "Valgrind's [Helgrind](https://valgrind.org/docs/manual/hg-manual.html) monitors the order threads acquire locks in to find potential deadlocks; [ThreadSanitizer](https://clang.llvm.org/docs/ThreadSanitizer.html) reports lock-order inversions (`detect_deadlocks`)"
+
+[[concept]]
+slug = "condition_variable"
+title = "Condition variable"
+summary = "Lets a thread that holds a lock sleep until another thread signals that what it waits for may now be true; wake-ups can be spurious, so the condition is checked again in a loop."
+aliases = ["condvar", "spurious wakeup", "guarded block", "wait and notify"]
+chapter = 4
+is_a = ["synchronization"]
+uses = ["mutex"]
+reference = [["Wikipedia: Monitor — condition variables", "https://en.wikipedia.org/wiki/Monitor_(synchronization)#Condition_variables_2"]]
+[concept.languages]
+rust = "[`Condvar`](https://doc.rust-lang.org/std/sync/struct.Condvar.html): `wait` is susceptible to spurious wakeups, and `wait_while` checks the predicate for you"
+go = "[`sync.Cond`](https://pkg.go.dev/sync#Cond), whose docs say most simple uses are better off with channels: `Broadcast` is like closing one, `Signal` like sending on one"
+c = "[`cnd_wait`](https://en.cppreference.com/w/c/thread/cnd_wait) returns when signalled or on a spurious wake-up"
+cpp = "[`std::condition_variable::wait`](https://en.cppreference.com/w/cpp/thread/condition_variable/wait) may wake spuriously; the overload taking a predicate loops for you"
+java = "A [`Condition`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/locks/Condition.html) from a `Lock`, or [`Object.wait`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html) inside `synchronized`; both permit spurious wakeups"
+python = "[`threading.Condition`](https://docs.python.org/3/library/threading.html#condition-objects); `wait_for` automates the condition check"
+csharp = "[`Monitor.Wait`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.monitor) with `Pulse` and `PulseAll`, called by the thread that owns the lock"
+javascript = "[`Atomics.wait`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics/wait) and `Atomics.notify` on shared memory; `wait` cannot be used on the main thread"
+os = "POSIX [`pthread_cond_wait`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_cond_wait.html): spurious wakeups may occur"
+
+[[concept]]
+slug = "monitor"
+title = "Monitor"
+summary = "An object whose methods all run under one built-in lock, with condition variables for waiting inside it — Java's `synchronized` with `wait` and `notify`."
+aliases = ["synchronized", "intrinsic lock"]
+chapter = 4
+is_a = ["synchronization"]
+uses = ["mutex", "condition_variable"]
+notes = [["synchronized constructs", "https://docs.google.com/document/d/1YgMesPh7_i5Hw63tY4pQgmN3cHiLmpMU0Q_3cXG0DAg/edit?tab=t.0"]]
+reference = [["Wikipedia: Monitor (synchronization)", "https://en.wikipedia.org/wiki/Monitor_(synchronization)"]]
+[concept.languages]
+rust = "No monitor type: a [`Mutex<T>`](https://doc.rust-lang.org/std/sync/struct.Mutex.html) holds the data and a [`Condvar`](https://doc.rust-lang.org/std/sync/struct.Condvar.html) waits on its guard"
+go = "No monitor: a [`sync.Cond`](https://pkg.go.dev/sync#Cond) carries a `Locker` that must be held when the condition changes and when calling `Wait`"
+java = "Every object has one: [JLS §17.1](https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html#jls-17.1) `synchronized` locks it, and [`Object.wait`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html), `notify` and `notifyAll` wait inside it"
+python = "[`threading.Condition`](https://docs.python.org/3/library/threading.html#condition-objects) bundles a lock with `wait` and `notify`"
+csharp = "[`Monitor`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.monitor): `Enter` and `Exit`, and `Wait`, `Pulse` and `PulseAll` inside; the `lock` statement uses it"
+kotlin = "[`@Synchronized`](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.jvm/-synchronized/) marks the generated JVM method as synchronized"
+
+[[concept]]
+slug = "semaphore"
+title = "Semaphore"
+summary = "A counter of permits: taking one waits while none are left, and returning one lets a waiter in — a lock that up to n tasks may hold at once."
+aliases = ["counting semaphore", "binary semaphore"]
+chapter = 4
+is_a = ["synchronization"]
+related = ["bounded_channel"]
+pages = [["Go: A buffered channel as a semaphore", "https://masiarek.github.io/go-learning-library/06_Patterns/a_buffered_channel_as_a_semaphore/index.html"]]
+notes = [["Semaphores in general - semaphore", "https://docs.google.com/document/d/1vTOfVk_ZB8ZA6WoWB9w1vR-B07Gt4y5w3JdLC7SL9RY/edit"]]
+reference = [
+  ["Wikipedia: Semaphore (programming)", "https://en.wikipedia.org/wiki/Semaphore_(programming)"],
+  ["Allen B. Downey: The Little Book of Semaphores", "https://greenteapress.com/wp/semaphores/"],
+]
+[concept.languages]
+rust = "None in [`std::sync`](https://doc.rust-lang.org/std/sync/index.html); [`tokio::sync::Semaphore`](https://docs.rs/tokio/latest/tokio/sync/struct.Semaphore.html) is fair, giving permits out in the order they were requested"
+go = "None in `sync`: a buffered channel serves as a counting semaphore, and [`golang.org/x/sync/semaphore`](https://pkg.go.dev/golang.org/x/sync/semaphore) provides a weighted one"
+c = "None in C11 [`<threads.h>`](https://en.cppreference.com/w/c/thread); POSIX `sem_t` fills the gap"
+cpp = "[`std::counting_semaphore` and `std::binary_semaphore`](https://en.cppreference.com/w/cpp/thread/counting_semaphore) (C++20)"
+java = "[`Semaphore`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Semaphore.html) with an optional fairness setting, which the untimed `tryAcquire` ignores"
+python = "[`threading.Semaphore`](https://docs.python.org/3/library/threading.html#semaphore-objects), and `BoundedSemaphore`, which checks that it is not released too many times"
+csharp = "[`SemaphoreSlim`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.semaphoreslim); blocked threads enter in no guaranteed order"
+kotlin = "[`Semaphore`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.sync/-semaphore/) in kotlinx.coroutines, fair and FIFO"
+os = "POSIX [`sem_wait`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/sem_wait.html) and [`sem_post`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/sem_post.html)"
+
+[[concept]]
+slug = "latch"
+title = "Latch"
+summary = "A one-shot gate: tasks wait on it until a set number of other tasks have each signalled, then every waiter proceeds and the gate stays open."
+aliases = ["CountDownLatch", "std::latch", "CountdownEvent"]
+chapter = 4
+is_a = ["synchronization"]
+contrasts = ["barrier"]
+notes = [["Latches - C++", "https://docs.google.com/document/d/1WpU_f2wtATL4GFhpqVgWLe5M2FxI5XXYh9vwtzRDIEY/edit?tab=t.0"]]
+related = ["semaphore"]
+[concept.languages]
+go = "[`sync.WaitGroup`](https://pkg.go.dev/sync#WaitGroup), a counting semaphore typically used to wait for a group of goroutines to finish"
+cpp = "[`std::latch`](https://en.cppreference.com/w/cpp/thread/latch) (C++20), a downward counter that threads can block on until it reaches zero"
+java = "[`CountDownLatch`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CountDownLatch.html): a one-shot phenomenon, the count cannot be reset"
+python = "No counted latch; [`threading.Event`](https://docs.python.org/3/library/threading.html#event-objects) is a flag that `wait` blocks on until it is set"
+csharp = "[`CountdownEvent`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.countdownevent) is signaled when its count reaches zero"
+
+[[concept]]
+slug = "barrier"
+title = "Barrier"
+summary = "A meeting point for a fixed number of tasks: each waits there until all of them have arrived, then all continue together."
+aliases = ["CyclicBarrier", "std::sync::Barrier", "rendezvous"]
+chapter = 4
+is_a = ["synchronization"]
+pages = [["Go: A buffered channel as a semaphore", "https://masiarek.github.io/go-learning-library/06_Patterns/a_buffered_channel_as_a_semaphore/index.html"]]
+notes = [
+  ["std::barrier - C++", "https://docs.google.com/document/u/0/d/1rZl9ENxfdmr-e77AKoAvwtFNt1Wfg5xd8glex-lWeXM/edit"],
+  ["Synchronisation Patterns - C++", "https://docs.google.com/document/u/0/d/1HNxows1jQ3CjB-e8hWScZUU9bp1fUuaU0PnGnOBN6Dk/edit"],
+]
+[concept.languages]
+rust = "[`std::sync::Barrier`](https://doc.rust-lang.org/std/sync/struct.Barrier.html) enables multiple threads to synchronize the beginning of some computation"
+go = "None in `sync`; closing a channel releases every goroutine waiting to receive from it, because [after `close`](https://go.dev/ref/spec#Close) receives no longer block"
+java = "[`CyclicBarrier`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CyclicBarrier.html) can be reset and reused; if one waiter is interrupted or times out, the others leave with `BrokenBarrierException`"
+python = "[`threading.Barrier`](https://docs.python.org/3/library/threading.html#barrier-objects): a timeout or `abort` breaks it, and waiters get `BrokenBarrierError`"
+csharp = "[`Barrier`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.barrier) is reused through several phases of an algorithm"
+os = "POSIX [`pthread_barrier_wait`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_barrier_wait.html) returns `PTHREAD_BARRIER_SERIAL_THREAD` to one arbitrary thread and zero to the others"
+
+[[concept]]
+slug = "once_initialization"
+title = "Run-once initialization"
+summary = "Running an initializer exactly once however many threads ask for it at the same moment, and handing all of them the same result."
+aliases = ["lazy initialization", "double-checked locking", "sync.Once", "OnceLock", "call_once"]
+chapter = 4
+is_a = ["synchronization"]
+pages = [["Go: `sync.Once` runs exactly once", "https://masiarek.github.io/go-learning-library/04_Sync/once_runs_exactly_once/index.html"]]
+reference = [["Wikipedia: Double-checked locking", "https://en.wikipedia.org/wiki/Double-checked_locking"]]
+[concept.languages]
+rust = "[`Once`](https://doc.rust-lang.org/std/sync/struct.Once.html), [`OnceLock`](https://doc.rust-lang.org/std/sync/struct.OnceLock.html), and [`LazyLock`](https://doc.rust-lang.org/std/sync/struct.LazyLock.html), a value initialized on first access that can live in a static"
+go = "[`sync.Once`](https://pkg.go.dev/sync#Once) performs exactly one action; [`sync.OnceValue`](https://pkg.go.dev/sync#OnceValue) (Go 1.21) returns a function that calls `f` only once"
+c = "[`call_once`](https://en.cppreference.com/w/c/thread/call_once) (C11) calls the function exactly once, even from several threads"
+cpp = "[`std::call_once`](https://en.cppreference.com/w/cpp/thread/call_once), and a [static local variable](https://en.cppreference.com/w/cpp/language/storage_duration) is initialized exactly once even when threads reach it concurrently"
+java = "Class initialization runs under a unique per-class initialization lock ([JLS §12.4.2](https://docs.oracle.com/javase/specs/jls/se25/html/jls-12.html#jls-12.4.2))"
+python = "Not [`functools.cached_property`](https://docs.python.org/3/library/functools.html#functools.cached_property): since 3.12 it takes no lock, so synchronize the getter yourself"
+csharp = "[`Lazy<T>`](https://learn.microsoft.com/en-us/dotnet/api/system.lazy-1) with `LazyThreadSafetyMode.ExecutionAndPublication`: the initialization is thread-safe, but the object it creates is not protected afterwards"
+kotlin = "[`by lazy`](https://kotlinlang.org/docs/delegated-properties.html#lazy-properties) is synchronized by default: the value is computed in one thread and all threads see it"
+os = "POSIX [`pthread_once`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_once.html): later calls with the same `once_control` do not call the routine again"
+
+[[concept]]
+slug = "futex"
+title = "Futex"
+summary = "A Linux kernel facility for building locks: the uncontended case is a single atomic operation in user space, and only a thread that has to wait enters the kernel."
+aliases = ["fast user-space mutex", "WaitOnAddress"]
+reference = [["Linux man page: futex(2)", "https://man7.org/linux/man-pages/man2/futex.2.html"]]
+[concept.languages]
+cpp = "[`std::atomic<T>::wait`](https://en.cppreference.com/w/cpp/atomic/atomic/wait) and `notify_one` (C++20) block a thread until the atomic is notified and its value has changed"
+javascript = "[`Atomics.wait` and `Atomics.notify`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics) are modeled on Linux futexes"
+os = "Linux [futex(7)](https://man7.org/linux/man-pages/man7/futex.7.html): the uncontended case happens entirely in user space; Windows has [`WaitOnAddress`](https://learn.microsoft.com/en-us/windows/win32/api/synchapi/nf-synchapi-waitonaddress), which waits for the value at an address to change"
+
+[[concept]]
+slug = "classic_synchronization_problems"
+title = "Classic synchronization problems"
+summary = "Small puzzles that each stand for a family of real bugs: the dining philosophers (deadlock and starvation), readers and writers, producer and consumer, the sleeping barber."
+aliases = ["dining philosophers", "readers-writers problem", "sleeping barber problem"]
+chapter = 4
+related = ["deadlock", "starvation", "read_write_lock", "producer_consumer", "semaphore"]
+reference = [
+  ["Wikipedia: Dining philosophers problem", "https://en.wikipedia.org/wiki/Dining_philosophers_problem"],
+  ["Wikipedia: Readers–writers problem", "https://en.wikipedia.org/wiki/Readers%E2%80%93writers_problem"],
+  ["Allen B. Downey: The Little Book of Semaphores", "https://greenteapress.com/wp/semaphores/"],
+]

@@ -1,0 +1,252 @@
+[category]
+title = "Hazards"
+order = 4
+blurb = "What goes wrong: the failures that exist only because more than one thing runs at once, and why they are so hard to reproduce."
+
+[[concept]]
+slug = "safety_and_liveness"
+title = "Safety and liveness"
+summary = "The two kinds of correctness for a concurrent program: safety means nothing bad ever happens, liveness means something good eventually does."
+aliases = ["safety property", "liveness property"]
+chapter = 3
+related = ["safety_failure", "liveness_failure"]
+reference = [["Wikipedia: Liveness", "https://en.wikipedia.org/wiki/Liveness"]]
+[concept.languages]
+rust = "[The Rustonomicon: Data races and race conditions](https://doc.rust-lang.org/nomicon/races.html): safe Rust guarantees there are no data races, a safety property, but counts getting deadlocked as safe, so liveness is left to the program"
+java = "[JLS §17.1](https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html#jls-17.1): the language neither prevents nor requires detection of deadlock, so liveness is the program's job"
+
+[[concept]]
+slug = "safety_failure"
+title = "Safety failure"
+summary = "The program reaches a state it must never reach — a lost update, a torn read, a broken invariant — usually because two tasks interleaved badly."
+aliases = ["data inconsistency", "lost update", "torn read"]
+chapter = 2
+notes = [["data inconsistencies - async - concurrency - general", "https://docs.google.com/document/d/137RrmeoW8FsI52Lqn5uZOZB_i3fai6RqbppI3h6cOuc/edit?tab=t.0"]]
+pages = [["Go: A mutex guards a counter", "https://masiarek.github.io/go-learning-library/04_Sync/a_mutex_guards_a_counter/index.html"]]
+[concept.languages]
+go = "The [Go memory model](https://go.dev/ref/mem) warns that races on multiword values can lead to arbitrary memory corruption; since [Go 1.6](https://go.dev/doc/go1.6#runtime) the runtime has best-effort detection of concurrent misuse of maps"
+java = "[`ArrayList`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html) is not synchronized, and its fail-fast iterators throw `ConcurrentModificationException` only on a best-effort basis"
+python = "[Library FAQ](https://docs.python.org/3/faq/library.html#what-kinds-of-global-value-mutation-are-thread-safe): some operations on built-in types are atomic, but a read-modify-write such as `i = i+1` is not"
+
+[[concept]]
+slug = "race_condition"
+title = "Race condition"
+summary = "The result depends on the relative timing of tasks, and some timings give a wrong result — whether or not there is also a data race."
+aliases = ["race", "interference", "general race", "resource race"]
+chapter = 2
+is_a = ["safety_failure"]
+contrasts = ["data_race"]
+reference = [["Wikipedia: Race condition (in software)", "https://en.wikipedia.org/wiki/Race_condition#In_software"]]
+causes = ["heisenbug"]
+[concept.languages]
+rust = "[The Rustonomicon](https://doc.rust-lang.org/nomicon/races.html): Rust prevents data races but not general race conditions, which it calls impossible to prevent when you do not control the scheduler"
+java = "[`ConcurrentHashMap`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ConcurrentHashMap.html): `putIfAbsent`, `replace` and `computeIfAbsent` do a check and an update as one atomic action"
+
+[[concept]]
+slug = "data_race"
+title = "Data race"
+summary = "Two threads access the same memory at the same time, at least one of them writing, with nothing synchronizing them — undefined behaviour in C and C++, a compile error in safe Rust."
+aliases = ["unsynchronized access"]
+chapter = 2
+is_a = ["safety_failure"]
+related = ["race_detector"]
+pages = [
+  ["Rust: Data races (for C and C++ programmers)", "https://masiarek.github.io/rust-learning-library/31_C_and_Cpp/data_races/index.html"],
+  ["Go: A mutex guards a counter", "https://masiarek.github.io/go-learning-library/04_Sync/a_mutex_guards_a_counter/index.html"],
+  ["Go: The race detector", "https://masiarek.github.io/go-learning-library/07_Testing_Concurrent_Code/the_race_detector/index.html"],
+]
+reference = [["Wikipedia: Race condition (data race)", "https://en.wikipedia.org/wiki/Race_condition#Data_race"]]
+[concept.languages]
+rust = "[The Rustonomicon](https://doc.rust-lang.org/nomicon/races.html): safe Rust guarantees there are none; in `unsafe` code a data race is [undefined behaviour](https://doc.rust-lang.org/reference/behavior-considered-undefined.html)"
+go = "Compiles and runs: the [memory model](https://go.dev/ref/mem) requires such access to be serialized and warns that races can corrupt memory; the [race detector](https://go.dev/doc/articles/race_detector) (`-race`) reports them at run time"
+c = "[Memory model and data races](https://en.cppreference.com/w/c/language/memory_model): if a data race occurs, the behaviour of the program is undefined"
+cpp = "[Multi-threaded executions and data races](https://en.cppreference.com/w/cpp/language/multithread): a data race is undefined behaviour; `std::atomic` or a mutex avoids it"
+java = "Not undefined behaviour, but [JLS §17.4](https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html#jls-17.4) specifies a memory model with few guarantees for unsynchronized reads, and [§17.7](https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html#jls-17.7) warns that writes to `long` and `double` are not atomic"
+python = "In the [free-threaded build](https://docs.python.org/3/howto/free-threading-python.html) built-in types like `dict`, `list` and `set` use internal locks, much as the GIL protected them; the program's own invariants still need `threading.Lock`"
+swift = "[The Swift Programming Language: Concurrency](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/): most data races are compile-time errors, and those found only at run time terminate the program"
+javascript = "Only memory shared through a [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer) can race; [`Atomics`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics) operations make its reads and writes predictable"
+
+[[concept]]
+slug = "toctou"
+title = "Time of check to time of use"
+summary = "Checking a condition and then acting on it as two separate steps, so that the condition can change in between — the classic check-then-act race."
+aliases = ["TOCTOU", "TOCTTOU", "check-then-act"]
+chapter = 2
+is_a = ["race_condition"]
+prevented_by = ["mutual_exclusion", "compare_and_swap"]
+notes = [["time of check to time of use bug (TOCTTOU)", "https://docs.google.com/document/d/1M9GFwMOuS4nCwMJugYkKT4fgPxCGEJbNvLidA-xOxH8/edit?tab=t.0"]]
+reference = [["Wikipedia: Time-of-check to time-of-use", "https://en.wikipedia.org/wiki/Time-of-check_to_time-of-use"]]
+[concept.languages]
+rust = "[`Path::exists`](https://doc.rust-lang.org/std/path/struct.Path.html#method.exists) warns of TOCTOU bugs, and says `try_exists` cannot prevent them either"
+c = "[`fopen`](https://en.cppreference.com/w/c/io/fopen): the `x` flag makes `w` fail if the file already exists, so the check and the create are one step"
+cpp = "[`std::ios_base::noreplace`](https://en.cppreference.com/w/cpp/io/ios_base/openmode) (C++23) opens a file in exclusive mode"
+java = "[`Files.createFile`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/file/Files.html) checks for the file and creates it as a single atomic operation; `ConcurrentHashMap.putIfAbsent` does the same for a map entry"
+python = "[`os.access`](https://docs.python.org/3/library/os.html#os.access) warns that checking before `open()` creates a security hole in the interval between the two"
+os = "[access(2)](https://man7.org/linux/man-pages/man2/access.2.html) gives the same warning: the time between checking and `open(2)` can be exploited"
+
+[[concept]]
+slug = "aba_problem"
+title = "ABA problem"
+summary = "A compare-and-swap succeeds because a value changed from A to B and back to A, although what it stands for is no longer the same."
+chapter = 2
+is_a = ["race_condition"]
+reference = [["Wikipedia: ABA problem", "https://en.wikipedia.org/wiki/ABA_problem"]]
+[concept.languages]
+java = "[`AtomicStampedReference`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/atomic/AtomicStampedReference.html) keeps an integer stamp beside the reference, and its `compareAndSet` compares and sets both together"
+
+[[concept]]
+slug = "weak_memory_model"
+title = "Weak memory models and reordering"
+summary = "CPUs and compilers may perform memory reads and writes in a different order from the source code, and without synchronization another thread can see that order."
+aliases = ["weak ordering", "compiler reordering", "store buffering"]
+chapter = 2
+related = ["happens_before", "data_race"]
+notes = [
+  ["Weak ordering", "https://docs.google.com/document/u/0/d/1q9oyCBsb82pfr_krAMFzQ9GSzWvqMJIpHZNcbmDjvVc/edit"],
+  ["weak memory model - C++", "https://docs.google.com/document/u/0/d/1_6CERBnbsIcBVDea-m8QNIrYuvbn8dT2fMe13wPLAow/edit"],
+  ["Compiler Reordering", "https://docs.google.com/document/d/1PWVZ3XkgJmEl7I8XTbD_yruu_OtYm5zBSATZaCyMJ3c/edit?tab=t.0"],
+]
+pages = [["Rust: Data races — the -O2 build that hides one", "https://masiarek.github.io/rust-learning-library/31_C_and_Cpp/data_races/index.html"]]
+[concept.languages]
+rust = "[`atomic::Ordering`](https://doc.rust-lang.org/std/sync/atomic/enum.Ordering.html): `Relaxed`, `Release`, `Acquire`, `AcqRel` and `SeqCst` choose how strongly each atomic operation synchronizes memory"
+go = "[The Go Memory Model](https://go.dev/ref/mem) defines happens-before from sequenced-before and synchronized-before, and tells programs to serialize shared access rather than reason about the rest"
+cpp = "[`std::memory_order`](https://en.cppreference.com/w/cpp/atomic/memory_order): atomic operations default to sequentially consistent ordering, which can cost performance"
+java = "[JLS §17.4 Memory Model](https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html#jls-17.4); the [`java.util.concurrent` memory consistency properties](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/package-summary.html#MemoryVisibility) list what happens-before what: unlocking a monitor, `volatile` writes, `Thread.start` and `join`"
+
+[[concept]]
+slug = "liveness_failure"
+title = "Liveness failure"
+summary = "A task that should make progress never does, though nothing has crashed: it waits for ever, spins for ever, or never gets its turn."
+chapter = 3
+[concept.languages]
+rust = "[The Rustonomicon](https://doc.rust-lang.org/nomicon/races.html) counts getting deadlocked as safe: the compiler checks memory safety, not progress"
+java = "[JLS §17.1](https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html#jls-17.1): the language neither prevents nor requires detection of deadlock"
+haskell = "[`BlockedIndefinitelyOnMVar`](https://hackage.haskell.org/package/base/docs/Control-Exception.html) is the exception for a thread blocked on an `MVar` that nothing else references, so it can never continue"
+
+[[concept]]
+slug = "deadlock"
+title = "Deadlock"
+summary = "Tasks each hold something another of them needs and wait for it, so none of them can ever continue."
+aliases = ["deadly embrace"]
+chapter = 3
+is_a = ["liveness_failure"]
+contrasts = ["livelock", "starvation"]
+notes = [["Deadlock in general (concurrent async processing)", "https://docs.google.com/document/d/1tALJk7JPUA5gRrQKAkWiwxlnWO0LXJs90CsxfgC7Bgo/edit"]]
+pages = [["Go: All goroutines are asleep", "https://masiarek.github.io/go-learning-library/02_Channels/all_goroutines_are_asleep/index.html"]]
+reference = [["Wikipedia: Deadlock (computer science)", "https://en.wikipedia.org/wiki/Deadlock_(computer_science)"]]
+[concept.languages]
+rust = "Not prevented: [`Mutex::lock`](https://doc.rust-lang.org/std/sync/struct.Mutex.html#method.lock) on the thread that already holds the lock may deadlock or panic, and [the Book](https://doc.rust-lang.org/book/ch16-03-shared-state.html) warns that `Mutex<T>` comes with the risk of deadlocks"
+go = "The runtime's `checkdead` in [`runtime/proc.go`](https://go.dev/src/runtime/proc.go) stops the program with `all goroutines are asleep - deadlock!`; in a [`testing/synctest`](https://pkg.go.dev/testing/synctest) bubble a deadlock makes `Test` panic"
+c = "[`mtx_lock`](https://en.cppreference.com/w/c/thread/mtx_lock): locking a non-recursive mutex the thread already holds is undefined behaviour"
+cpp = "[`std::lock`](https://en.cppreference.com/w/cpp/thread/lock) and [`std::scoped_lock`](https://en.cppreference.com/w/cpp/thread/scoped_lock) (C++17) take several mutexes with a deadlock avoidance algorithm; [relocking a `std::mutex`](https://en.cppreference.com/w/cpp/thread/mutex/lock) is undefined and may deadlock"
+java = "[JLS §17.1](https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html#jls-17.1): not prevented or detected by the language; [`ThreadMXBean.findDeadlockedThreads`](https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/ThreadMXBean.html) finds deadlocked threads at run time"
+python = "[`Lock.acquire`](https://docs.python.org/3/library/threading.html#threading.Lock.acquire) takes a `timeout`, so a thread can give up instead of waiting for ever"
+haskell = "[`BlockedIndefinitelyOnMVar`](https://hackage.haskell.org/package/base/docs/Control-Exception.html): a thread blocked on an `MVar` that nothing else references gets this exception instead of hanging"
+elixir_erlang = "[`gen_server:call/2`](https://www.erlang.org/doc/apps/stdlib/gen_server.html) waits at most 5000 ms for a reply unless given `infinity`"
+os = "POSIX [`pthread_mutex_lock`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_mutex_lock.html): a `PTHREAD_MUTEX_ERRORCHECK` mutex returns `EDEADLK` when its owner locks it again; Linux [lockdep](https://docs.kernel.org/locking/lockdep-design.html) checks the kernel's lock order for cycles"
+
+[[concept]]
+slug = "livelock"
+title = "Livelock"
+summary = "Tasks keep changing state in response to each other — backing off, retrying, stepping aside — without any of them getting work done."
+chapter = 3
+is_a = ["liveness_failure"]
+reference = [["Wikipedia: Deadlock — livelock", "https://en.wikipedia.org/wiki/Deadlock_(computer_science)#Livelock"]]
+
+[[concept]]
+slug = "starvation"
+title = "Starvation"
+summary = "A task that is ready never gets to run, or never gets the lock, because others keep being chosen ahead of it."
+aliases = ["resource starvation", "thread starvation", "fairness"]
+chapter = 3
+is_a = ["liveness_failure"]
+notes = [
+  ["thread starvation", "https://docs.google.com/document/d/1xhvuuHOPz71PD3e_aCuhrnoQjG3Cyt0LQkY-g3qgSsQ/edit?tab=t.0"],
+  ["resource starvation - general", "https://docs.google.com/document/d/1pAEvG7JsjREZTUPqTGs9JKvQiZQ4weXZ-pktsBqoF0I/edit?tab=t.0"],
+]
+pages = [["Go: `select` chooses at random", "https://masiarek.github.io/go-learning-library/03_Select/select_chooses_at_random/index.html"]]
+reference = [["Wikipedia: Starvation (computer science)", "https://en.wikipedia.org/wiki/Starvation_(computer_science)"]]
+[concept.languages]
+rust = "[`RwLock`](https://doc.rust-lang.org/std/sync/struct.RwLock.html): the priority policy depends on the operating system, so a waiting writer may or may not block new readers"
+go = "[`RWMutex`](https://pkg.go.dev/sync#RWMutex): once a writer waits, new `RLock` calls block so the writer eventually gets in; [`select`](https://go.dev/ref/spec#Select_statements) picks among ready cases uniformly at random"
+java = "[`ReentrantLock`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/locks/ReentrantLock.html) takes a fairness flag: when true the longest-waiting thread is favoured, otherwise no access order is guaranteed"
+python = "[`threading.Lock`](https://docs.python.org/3/library/threading.html#lock-objects): which waiting thread proceeds on release is not defined"
+csharp = "[`SemaphoreSlim`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.semaphoreslim): blocked threads enter in no guaranteed order, neither FIFO nor LIFO"
+kotlin = "[`Semaphore`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.sync/-semaphore/) in kotlinx.coroutines is fair, keeping acquirers in FIFO order"
+haskell = "[`MVar`](https://hackage.haskell.org/package/base/docs/Control-Concurrent-MVar.html) promises fairness: threads blocked on it are woken in FIFO order"
+os = "[sched(7)](https://man7.org/linux/man-pages/man7/sched.7.html): a runnable `SCHED_FIFO` thread always preempts a running normal thread, which can then wait indefinitely"
+
+[[concept]]
+slug = "priority_inversion"
+title = "Priority inversion"
+summary = "A high-priority task waits for a lock held by a low-priority task, which is itself preempted by medium-priority work, so the most important task effectively runs last."
+chapter = 3
+is_a = ["liveness_failure"]
+reference = [["Wikipedia: Priority inversion", "https://en.wikipedia.org/wiki/Priority_inversion"]]
+[concept.languages]
+os = "POSIX [`PTHREAD_PRIO_INHERIT`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_mutexattr_getprotocol.html): a thread holding such a mutex runs at the priority of the highest-priority thread it blocks; Linux builds this on [priority-inheritance futexes](https://man7.org/linux/man-pages/man2/futex.2.html) and [RT-mutexes](https://docs.kernel.org/locking/rt-mutex.html)"
+
+[[concept]]
+slug = "task_leak"
+title = "Leaked tasks"
+summary = "A thread, goroutine or task blocked for ever on something nobody will provide, holding its memory until the process ends."
+aliases = ["goroutine leak", "thread leak", "memory leak", "zombie thread"]
+chapter = 6
+is_a = ["liveness_failure"]
+notes = [
+  ["memory leaks - general", "https://docs.google.com/document/d/1QA4Pr0tOLQEMcL6iqdx2lg9-H9NBynluyo6_uGxQQ2s/edit?tab=t.0"],
+  ["memory leak - rust", "https://docs.google.com/document/u/0/d/1-24Bz0vaLCHV7SPBF-IZUor1-co5YdX_DKAF58_W354/edit"],
+]
+pages = [["Go: A leaked goroutine never ends", "https://masiarek.github.io/go-learning-library/05_Context/a_leaked_goroutine_never_ends/index.html"]]
+[concept.languages]
+rust = "[`JoinHandle`](https://doc.rust-lang.org/std/thread/struct.JoinHandle.html) detaches its thread when dropped, and [`mem::forget`](https://doc.rust-lang.org/std/mem/fn.forget.html) is safe: Rust does not guarantee that destructors run"
+go = "[`context`](https://pkg.go.dev/context): failing to call a `CancelFunc` leaks the child context, and `go vet` checks for it; [`runtime/pprof`](https://pkg.go.dev/runtime/pprof) lists a `goroutineleak` profile"
+cpp = "Destroying a joinable [`std::thread`](https://en.cppreference.com/w/cpp/thread/thread/~thread) calls `std::terminate`; [`std::jthread`](https://en.cppreference.com/w/cpp/thread/jthread) joins on destruction"
+java = "[`ExecutorService`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ExecutorService.html): an unused executor should be shut down to allow reclamation of its resources"
+python = "[`asyncio.create_task`](https://docs.python.org/3/library/asyncio-task.html#asyncio.create_task) needs a strong reference kept to the task; [`asyncio.TaskGroup`](https://docs.python.org/3/library/asyncio-task.html#asyncio.TaskGroup) keeps one and awaits every task"
+kotlin = "[`GlobalScope`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-global-scope/): a coroutine that is never cancelled or resumed can be a resource leak, so tie coroutines to a lifecycle"
+os = "[pthread_join(3)](https://man7.org/linux/man-pages/man3/pthread_join.3.html): a joinable thread that nobody joins becomes a zombie thread holding system resources"
+
+[[concept]]
+slug = "heisenbug"
+title = "Heisenbug"
+summary = "A bug that disappears or changes when you look for it — adding a print, attaching a debugger or changing the optimizer shifts the timing it depends on."
+aliases = ["flaky concurrency bug"]
+related = ["race_detector", "deterministic_testing"]
+notes = [["heisenbug", "https://docs.google.com/document/d/1U0NuN9NO02_e_oNutiNPs-TcWk6Ar11xNreOBCCJU7Q/edit"]]
+pages = [
+  ["Go: `synctest` makes time virtual", "https://masiarek.github.io/go-learning-library/07_Testing_Concurrent_Code/synctest_makes_time_virtual/index.html"],
+  ["Go: `synctest.Wait` instead of a sleep", "https://masiarek.github.io/go-learning-library/07_Testing_Concurrent_Code/synctest_wait/index.html"],
+]
+reference = [["Wikipedia: Heisenbug", "https://en.wikipedia.org/wiki/Heisenbug"]]
+[concept.languages]
+rust = "[loom](https://docs.rs/loom/latest/loom/) deterministically explores the possible execution permutations instead of relying on random runs"
+go = "[`testing/synctest`](https://pkg.go.dev/testing/synctest), new in [Go 1.25](https://go.dev/doc/go1.25), runs a test in a bubble whose fake clock advances only when every goroutine in it is durably blocked"
+other = "[rr](https://rr-project.org/) records a failing run once and replays it deterministically; its chaos mode makes intermittent bugs more reproducible"
+
+[[concept]]
+slug = "contention"
+title = "Contention"
+summary = "Tasks competing for the same lock or resource, so their time goes to waiting instead of working — the reason adding threads can make a program slower."
+aliases = ["lock contention"]
+chapter = 2
+related = ["false_sharing", "starvation"]
+reference = [["Wikipedia: Lock (computer science) — granularity", "https://en.wikipedia.org/wiki/Lock_(computer_science)#Granularity"]]
+[concept.languages]
+go = "[`runtime.SetMutexProfileFraction`](https://pkg.go.dev/runtime#SetMutexProfileFraction) turns on the [`mutex` profile](https://pkg.go.dev/runtime/pprof) of contended mutexes; the `block` profile shows where goroutines wait"
+java = "[`ThreadMXBean`](https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/ThreadMXBean.html) thread contention monitoring accumulates the time each thread has blocked for synchronization"
+python = "[`functools.cached_property`](https://docs.python.org/3/library/functools.html#functools.cached_property) dropped its lock in 3.12 because the lock was per property, not per instance, and caused high lock contention"
+csharp = "[`Monitor.LockContentionCount`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.monitor.lockcontentioncount) counts the times taking a monitor's lock met contention"
+
+[[concept]]
+slug = "false_sharing"
+title = "False sharing"
+summary = "Threads writing unrelated variables that happen to sit on the same CPU cache line keep invalidating each other's cache, slowing down with no logical sharing at all."
+aliases = ["cache line contention"]
+chapter = 7
+related = ["cache_coherence", "numa"]
+reference = [["Wikipedia: False sharing", "https://en.wikipedia.org/wiki/False_sharing"]]
+[concept.languages]
+rust = "[`crossbeam_utils::CachePadded`](https://docs.rs/crossbeam-utils/latest/crossbeam_utils/struct.CachePadded.html) pads and aligns a value to the length of a cache line"
+go = "[`cpu.CacheLinePad`](https://pkg.go.dev/golang.org/x/sys/cpu#CacheLinePad) in `golang.org/x/sys` pads structs to avoid false sharing"
+cpp = "[`std::hardware_destructive_interference_size`](https://en.cppreference.com/w/cpp/thread/hardware_destructive_interference_size) (C++17): the minimum offset between two objects to avoid false sharing"

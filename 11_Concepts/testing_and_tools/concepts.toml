@@ -1,0 +1,97 @@
+[category]
+title = "Testing and tools"
+order = 13
+blurb = "Finding concurrency bugs on purpose: race detectors, deterministic schedulers, stress runs, model checkers, and the tools that show what every thread is waiting for."
+
+[[concept]]
+slug = "race_detector"
+title = "Race detector"
+summary = "A tool that instruments memory accesses as the program runs and reports the data races that actually happened in that run — ThreadSanitizer, Go's `-race`."
+aliases = ["ThreadSanitizer", "TSan", "go -race", "Helgrind"]
+chapter = 9
+pages = [
+  ["Rust: Data races — ThreadSanitizer on a C counter", "https://masiarek.github.io/rust-learning-library/31_C_and_Cpp/data_races/index.html"],
+  ["Go: The race detector", "https://masiarek.github.io/go-learning-library/07_Testing_Concurrent_Code/the_race_detector/index.html"],
+]
+reference = [["ThreadSanitizer manual", "https://github.com/google/sanitizers/wiki/ThreadSanitizerCppManual"]]
+[concept.languages]
+rust = "Unstable [`-Zsanitizer=thread`](https://doc.rust-lang.org/unstable-book/compiler-flags/sanitizer.html#threadsanitizer) on supported targets, usually with `-Zbuild-std`"
+go = "[`go test -race`](https://go.dev/doc/articles/race_detector): needs cgo, and typically costs 5-10x memory and 2-20x time"
+c = "[ThreadSanitizer](https://clang.llvm.org/docs/ThreadSanitizer.html): compile and link with `-fsanitize=thread` in Clang or [GCC](https://gcc.gnu.org/onlinedocs/gcc/Instrumentation-Options.html); typical slowdown 5x-15x"
+cpp = "The same [ThreadSanitizer](https://clang.llvm.org/docs/ThreadSanitizer.html) `-fsanitize=thread`, which also reports lock-order inversions"
+python = "CPython itself can be built with [`--with-thread-sanitizer`](https://docs.python.org/3/using/configure.html#cmdoption-with-thread-sanitizer) (added in 3.13)"
+other = "Valgrind's [Helgrind](https://valgrind.org/docs/manual/hg-manual.html) finds data races, lock-ordering problems and misuses of the pthreads API"
+
+[[concept]]
+slug = "deterministic_testing"
+title = "Deterministic scheduling for tests"
+summary = "Running concurrent code under a controlled scheduler or a fake clock, so that an interleaving or a timeout can be reproduced on demand — Rust's loom, Go's `testing/synctest`."
+aliases = ["loom", "synctest", "deterministic simulation", "virtual time"]
+chapter = 9
+prevents = ["heisenbug"]
+related = ["model_checking"]
+pages = [
+  ["Go: `synctest` makes time virtual", "https://masiarek.github.io/go-learning-library/07_Testing_Concurrent_Code/synctest_makes_time_virtual/index.html"],
+  ["Go: `synctest.Wait` instead of a sleep", "https://masiarek.github.io/go-learning-library/07_Testing_Concurrent_Code/synctest_wait/index.html"],
+]
+[concept.languages]
+rust = "[loom](https://github.com/tokio-rs/loom) runs a test many times, permuting the possible concurrent executions of it"
+go = "[`testing/synctest`](https://pkg.go.dev/testing/synctest), new in [Go 1.25](https://go.dev/doc/go1.25): a bubble with a fake clock, and `Wait` until every other goroutine in it is durably blocked"
+kotlin = "[`runTest`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-test/) in kotlinx-coroutines-test skips delays using the virtual time of a `TestCoroutineScheduler`"
+csharp = "Microsoft's [Coyote](https://microsoft.github.io/coyote/) writes concurrency unit tests that control a .NET program's non-determinism"
+
+[[concept]]
+slug = "stress_testing"
+title = "Stress testing"
+summary = "Running concurrent code many times, under load and with many threads, so that rare interleavings get a chance to show up."
+aliases = ["jcstress"]
+chapter = 9
+related = ["nondeterminism"]
+[concept.languages]
+go = "[`go test -count n -cpu 1,2,4`](https://pkg.go.dev/cmd/go#hdr-Testing_flags) repeats each test under several `GOMAXPROCS` values; [`stress`](https://pkg.go.dev/golang.org/x/tools/cmd/stress) runs a process in parallel in a loop to catch sporadic failures"
+java = "[jcstress](https://github.com/openjdk/jcstress), the OpenJDK harness and test suite for the correctness of concurrency support in the JVM, class libraries and hardware"
+kotlin = "[Lincheck](https://kotlinlang.org/docs/lincheck-guide.html) offers stress testing beside its model checking strategy"
+python = "[`sys.setswitchinterval`](https://docs.python.org/3/library/sys.html#sys.setswitchinterval) sets how often the interpreter switches between threads"
+
+[[concept]]
+slug = "model_checking"
+title = "Model checking"
+summary = "Exploring every state and interleaving of a model of a program — in TLA+, SPIN, or loom — to prove a property or produce a counterexample."
+aliases = ["TLA+", "SPIN", "Lincheck"]
+chapter = 9
+reference = [["Wikipedia: Model checking", "https://en.wikipedia.org/wiki/Model_checking"]]
+[concept.languages]
+rust = "[loom](https://docs.rs/loom/latest/loom/) simulates the operating system's scheduler and Rust's memory model so that all possible valid behaviours are explored"
+kotlin = "[Lincheck](https://kotlinlang.org/docs/lincheck-guide.html) model checking inserts thread switches at synchronization points and shared memory accesses, and reports an exact failing trace"
+other = "[TLA+](https://lamport.azurewebsites.net/tla/tla.html) models concurrent and distributed systems; [Spin](https://spinroot.com/spin/whatispin.html) formally verifies multi-threaded software"
+
+[[concept]]
+slug = "concurrency_debugging"
+title = "Debugging concurrent programs"
+summary = "Thread dumps, deadlock detectors and tracing that show what every thread or task is waiting for at a given moment."
+aliases = ["thread dump", "deadlock detection", "goroutine dump", "stack dump"]
+chapter = 9
+related = ["deadlock"]
+notes = [["tools for concurrent programming", "https://docs.google.com/document/d/1SC1yU8oBqvxoAsZZ2AdoaCnHFR8apqvzSoNh4U2tX0U/edit?tab=t.0"]]
+pages = [
+  ["Rust: Instrumenting async code", "https://masiarek.github.io/rust-learning-library/21_Observability/instrumenting_async/index.html"],
+  ["Go: All goroutines are asleep", "https://masiarek.github.io/go-learning-library/02_Channels/all_goroutines_are_asleep/index.html"],
+]
+[concept.languages]
+go = "`SIGQUIT` (Ctrl-backslash) makes a program [exit with a stack dump](https://pkg.go.dev/os/signal#hdr-Default_behavior_of_signals_in_Go_programs); [`runtime/pprof`](https://pkg.go.dev/runtime/pprof) has `goroutine`, `block` and `mutex` profiles"
+java = "[`jcmd` `Thread.print`](https://docs.oracle.com/en/java/javase/25/docs/specs/man/jcmd.html) prints all threads with stack traces; [`ThreadMXBean.findDeadlockedThreads`](https://docs.oracle.com/en/java/javase/25/docs/api/java.management/java/lang/management/ThreadMXBean.html) finds cycles of deadlocked threads"
+python = "[`faulthandler.dump_traceback`](https://docs.python.org/3/library/faulthandler.html#faulthandler.dump_traceback) dumps the tracebacks of all threads, also after a timeout or on a signal"
+csharp = "[`dotnet-stack`](https://learn.microsoft.com/en-us/dotnet/core/diagnostics/dotnet-stack) inspects managed stack traces"
+other = "[GDB](https://sourceware.org/gdb/current/onlinedocs/gdb.html/Threads.html) `thread apply all bt` applies `bt` to every thread, printing a backtrace for each"
+
+[[concept]]
+slug = "profiling_concurrency"
+title = "Profiling concurrent programs"
+summary = "Measuring where the time goes when many threads run — waiting for locks, waiting to be scheduled, and bouncing cache lines — and not only which functions are hot."
+aliases = ["performance tuning", "contention profiling", "mutex profile"]
+chapter = 9
+related = ["contention", "speedup_and_amdahls_law", "false_sharing"]
+[concept.languages]
+go = "[`runtime/pprof`](https://pkg.go.dev/runtime/pprof) has `block` and `mutex` profiles beside the CPU profile"
+java = "[JDK Flight Recorder](https://docs.oracle.com/en/java/javase/25/docs/api/jdk.jfr/jdk/jfr/package-summary.html) records events such as lock contention from a running JVM"
+os = "[`perf`](https://man7.org/linux/man-pages/man1/perf.1.html) samples CPU time across every thread and the kernel"

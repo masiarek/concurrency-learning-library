@@ -1,0 +1,150 @@
+[category]
+title = "Lock-free"
+order = 6
+blurb = "Sharing without locks: atomic operations, the algorithms built on them, and the memory rules that decide what one thread can see of another's writes."
+
+[[concept]]
+slug = "atomic_variable"
+title = "Atomic variable"
+summary = "A number or pointer whose reads, writes and increments each happen as one indivisible CPU operation, so threads can share it without a lock."
+aliases = ["atomics", "atomic integer", "Interlocked"]
+chapter = 2
+prevents = ["data_race"]
+related = ["compare_and_swap"]
+pages = [
+  ["Rust: RwLock and atomics", "https://masiarek.github.io/rust-learning-library/09_Advanced/rwlock_and_atomics/index.html"],
+  ["Go: Atomic counters", "https://masiarek.github.io/go-learning-library/04_Sync/atomic_counters/index.html"],
+]
+notes = [
+  ["Atomics - general", "https://docs.google.com/document/d/19N4Ry_RnheXiRNwdKV3n-xSuURTGSHRVLGxkmzVFNoE/edit?tab=t.0"],
+  ["Atomics and Memory Ordering - crust of rust YouTube", "https://docs.google.com/document/d/1Jh73kXIDbkYt9NK3ogTXUuqwkCdu5KAh1Z2edHf1B2A/edit?tab=t.0"],
+  ["missing atomic float - rust", "https://docs.google.com/document/d/1wa9j22J8FAkSLn3tBiVkEKZ8DGywoYxlvP3MZHZlHu8/edit?tab=t.0"],
+  ["arc - box - atomics - rust", "https://docs.google.com/document/d/1KIy8e1NDtGrNfAfzoS_mRsfAzEzS-RwKzpE9Zh4y0SM/edit?tab=t.0"],
+]
+reference = [["Wikipedia: Linearizability — primitive atomic instructions", "https://en.wikipedia.org/wiki/Linearizability#Primitive_atomic_instructions"]]
+[concept.languages]
+rust = "[`std::sync::atomic`](https://doc.rust-lang.org/std/sync/atomic/index.html): `AtomicBool`, `AtomicUsize`, `AtomicPtr` and more, each taking an `Ordering`; not every platform has every type"
+go = "[`sync/atomic`](https://pkg.go.dev/sync/atomic) typed values such as `atomic.Int64`, `atomic.Bool` and `atomic.Pointer`, added in Go 1.19"
+c = "[`_Atomic` and `<stdatomic.h>`](https://en.cppreference.com/w/c/atomic) (C11); a compiler that defines `__STDC_NO_ATOMICS__` does not provide them"
+cpp = "[`std::atomic<T>`](https://en.cppreference.com/w/cpp/atomic/atomic) for integers, pointers and other trivially copyable types"
+java = "[`AtomicInteger`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/atomic/AtomicInteger.html) and the rest of [`java.util.concurrent.atomic`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/atomic/package-summary.html)"
+csharp = "[`Interlocked`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.interlocked) provides atomic operations for variables shared by multiple threads"
+javascript = "[`Atomics`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics) operations on typed arrays over a `SharedArrayBuffer`"
+swift = "[`Atomic`](https://developer.apple.com/documentation/synchronization/atomic) in the Synchronization module"
+haskell = "[`atomicModifyIORef'`](https://hackage.haskell.org/package/base/docs/Data-IORef.html) modifies an `IORef` atomically; plain `modifyIORef` is not atomic"
+
+[[concept]]
+slug = "compare_and_swap"
+title = "Compare-and-swap"
+summary = "Replace a value only if it still holds what you last read, in one atomic step; if another thread changed it first, read again and retry."
+aliases = ["CAS", "compare-exchange", "compare-and-set"]
+chapter = 2
+causes = ["aba_problem"]
+pages = [["Go: Atomic counters", "https://masiarek.github.io/go-learning-library/04_Sync/atomic_counters/index.html"]]
+notes = [["atomic compare-and-swap (CAS) operations", "https://docs.google.com/document/d/1FxQ7O2Pcg9ZTxd_eKfJnS4mwyp7ydfv7Sv2mydqeCgI/edit?tab=t.0"]]
+reference = [["Wikipedia: Compare-and-swap", "https://en.wikipedia.org/wiki/Compare-and-swap"]]
+[concept.languages]
+rust = "[`compare_exchange`](https://doc.rust-lang.org/std/sync/atomic/struct.Atomic.html#method.compare_exchange), and [`compare_exchange_weak`](https://doc.rust-lang.org/std/sync/atomic/struct.Atomic.html#method.compare_exchange_weak), which may fail spuriously even when the comparison succeeds"
+go = "[`CompareAndSwap`](https://pkg.go.dev/sync/atomic#Int64.CompareAndSwap) on the typed values, returning whether it swapped"
+c = "[`atomic_compare_exchange_strong` and `atomic_compare_exchange_weak`](https://en.cppreference.com/w/c/atomic/atomic_compare_exchange); the weak forms may fail spuriously"
+cpp = "[`compare_exchange_strong` and `compare_exchange_weak`](https://en.cppreference.com/w/cpp/atomic/atomic/compare_exchange); the weak one may fail spuriously"
+java = "[`AtomicInteger.compareAndSet`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/atomic/AtomicInteger.html) and its siblings in `java.util.concurrent.atomic`"
+csharp = "[`Interlocked.CompareExchange`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.interlocked.compareexchange) compares two values and, if they are equal, replaces one as an atomic operation"
+javascript = "[`Atomics.compareExchange`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics/compareExchange) on a shared typed array"
+swift = "[`Atomic.compareExchange(expected:desired:ordering:)`](https://developer.apple.com/documentation/synchronization/atomic)"
+
+[[concept]]
+slug = "lock_free"
+title = "Lock-free"
+summary = "A progress guarantee for a shared data structure: however the threads are scheduled, some thread always completes an operation, and there is no lock to deadlock on."
+aliases = ["non-blocking algorithm", "lockless"]
+uses = ["compare_and_swap", "atomic_variable"]
+prevents = ["deadlock"]
+notes = [
+  ["Lock-Free - lock free", "https://docs.google.com/document/u/0/d/1i3FtfE2Tk77Md2ZeAK_p1Yqb7-vOzD6-ZKsdU9a4B7s/edit"],
+  ["lock free vs wait free - rust", "https://docs.google.com/document/u/0/d/10HQckWXsY1XC1KCZ0ngQoGs5rkl-PScRv_Bust5hmYo/edit"],
+  ["lockless concurrent programming", "https://docs.google.com/document/d/1zCP7ek5zcb6W5tERQNRPMlC-_zgAjU6LpQnuU4Wmt00/edit?tab=t.0"],
+]
+reference = [["Wikipedia: Non-blocking algorithm", "https://en.wikipedia.org/wiki/Non-blocking_algorithm"]]
+[concept.languages]
+rust = "[Portability](https://doc.rust-lang.org/std/sync/atomic/index.html#portability): every atomic type in `std::sync::atomic` is guaranteed lock-free if it is available at all"
+c = "[`ATOMIC_INT_LOCK_FREE` and its siblings](https://en.cppreference.com/w/c/atomic/ATOMIC_LOCK_FREE_consts) say whether each atomic type is never, sometimes or always lock-free"
+cpp = "[`std::atomic<T>::is_always_lock_free`](https://en.cppreference.com/w/cpp/atomic/atomic/is_always_lock_free) (C++17); only [`std::atomic_flag`](https://en.cppreference.com/w/cpp/atomic/atomic_flag) is guaranteed lock-free"
+java = "[`ConcurrentLinkedQueue`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ConcurrentLinkedQueue.html) uses the non-blocking algorithm of Michael and Scott"
+
+[[concept]]
+slug = "wait_free"
+title = "Wait-free"
+summary = "Stronger than lock-free: every thread finishes its own operation in a bounded number of its own steps, whatever the other threads do."
+is_a = ["lock_free"]
+reference = [["Wikipedia: Non-blocking algorithm — wait-freedom", "https://en.wikipedia.org/wiki/Non-blocking_algorithm#Wait-freedom"]]
+
+[[concept]]
+slug = "rcu"
+title = "Read-copy-update"
+summary = "Readers use shared data without any lock while a writer publishes a modified copy, and the old version is freed only after every reader that might still see it has finished."
+aliases = ["RCU", "copy-on-write"]
+alternative = ["read_write_lock"]
+reference = [["Wikipedia: Read-copy-update", "https://en.wikipedia.org/wiki/Read-copy-update"]]
+uses = ["atomic_variable"]
+[concept.languages]
+go = "The [`atomic.Value`](https://pkg.go.dev/sync/atomic#Value) docs keep a frequently read, rarely updated map with a copy-on-write idiom"
+cpp = "[`<rcu>`](https://en.cppreference.com/w/cpp/header/rcu) (C++26): `rcu_obj_base`, `rcu_domain`, `rcu_synchronize` and `rcu_retire`"
+java = "[`CopyOnWriteArrayList`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CopyOnWriteArrayList.html) makes a fresh copy of the underlying array for every mutation"
+os = "Linux kernel [RCU](https://docs.kernel.org/RCU/whatisRCU.html), optimized for read-mostly data: an update frees the old version after a grace period"
+
+[[concept]]
+slug = "happens_before"
+title = "Happens-before"
+summary = "The rule a memory model states for when one thread is guaranteed to see another thread's write: only when synchronization orders the write before the read."
+aliases = ["memory model", "Java Memory Model", "Go memory model", "synchronized before"]
+chapter = 2
+related = ["data_race"]
+reference = [["The Go Memory Model", "https://go.dev/ref/mem"]]
+[concept.languages]
+rust = "[`std::sync::atomic`](https://doc.rust-lang.org/std/sync/atomic/index.html) states a memory model for atomic accesses: conflicting accesses are fine only if one happens-before the other"
+go = "[The Go Memory Model](https://go.dev/ref/mem): happens-before is the transitive closure of sequenced-before and synchronized-before, and each `sync` type documents what it synchronizes before what"
+c = "[Memory model](https://en.cppreference.com/w/c/language/memory_model): conflicting evaluations are no data race if one happens-before the other, as `mtx_unlock` does before the next `mtx_lock`"
+cpp = "[Multi-threaded executions and data races](https://en.cppreference.com/w/cpp/language/multithread): releasing a `std::mutex` happens-before another thread acquires it"
+java = "[JLS §17.4.5 Happens-before Order](https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html#jls-17.4.5); the [`java.util.concurrent` memory consistency properties](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/package-summary.html#MemoryVisibility) list which actions happen-before which"
+kotlin = "[`Mutex`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.sync/-mutex/): an unlock happens-before every later successful lock, like `synchronized` on the JVM"
+
+[[concept]]
+slug = "hazard_pointers"
+title = "Hazard pointers"
+summary = "Each thread publishes the pointers it is about to use, and memory is freed only when no thread has it published — safe memory reclamation for lock-free data structures."
+aliases = ["safe memory reclamation"]
+prevents = ["aba_problem"]
+related = ["rcu", "lock_free"]
+reference = [["Wikipedia: Hazard pointer", "https://en.wikipedia.org/wiki/Hazard_pointer"]]
+[concept.languages]
+cpp = "[`<hazard_pointer>`](https://en.cppreference.com/w/cpp/header/hazard_pointer) (C++26): `hazard_pointer_obj_base`, `hazard_pointer` and `make_hazard_pointer`"
+
+[[concept]]
+slug = "transactional_memory"
+title = "Transactional memory"
+summary = "Running a block of memory reads and writes as a transaction that either commits atomically or rolls back and retries, instead of taking locks."
+aliases = ["STM", "software transactional memory"]
+alternative = ["mutex"]
+reference = [["Wikipedia: Software transactional memory", "https://en.wikipedia.org/wiki/Software_transactional_memory"]]
+prevents = ["deadlock"]
+[concept.languages]
+cpp = "The experimental [Transactional Memory TS](https://en.cppreference.com/w/cpp/language/transactional_memory): `synchronized` blocks run as if under a global lock, atomic blocks run as transactions"
+haskell = "[`Control.Monad.STM`](https://hackage.haskell.org/package/stm/docs/Control-Monad-STM.html): `atomically` runs a series of STM actions as one transaction, and `retry` abandons it when the `TVar` values it has seen mean it should not continue"
+other = "Clojure [refs](https://clojure.org/reference/refs) share mutable storage locations safely through software transactional memory"
+
+[[concept]]
+slug = "concurrent_data_structures"
+title = "Concurrent data structures"
+summary = "Queues, maps, stacks and lists built to be used by many threads at once — with locks inside, lock-free algorithms, or both — so that their callers need no synchronization of their own."
+aliases = ["concurrent collections", "thread-safe containers", "ConcurrentHashMap"]
+chapter = 2
+uses = ["compare_and_swap"]
+related = ["lock_free", "thread_safety", "hazard_pointers"]
+reference = [["Wikipedia: Concurrent data structure", "https://en.wikipedia.org/wiki/Concurrent_data_structure"]]
+[concept.languages]
+rust = "none in the standard library besides channels; [`crossbeam::queue`](https://docs.rs/crossbeam/latest/crossbeam/queue/index.html) has lock-free queues"
+go = "[`sync.Map`](https://pkg.go.dev/sync#Map), meant for keys that are written once and read many times; a plain map needs its own mutex"
+java = "[`ConcurrentHashMap`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ConcurrentHashMap.html) and the other collections in `java.util.concurrent`"
+python = "[`queue.Queue`](https://docs.python.org/3/library/queue.html), whose classes implement all the required locking"
+csharp = "[`System.Collections.Concurrent`](https://learn.microsoft.com/en-us/dotnet/api/system.collections.concurrent): `ConcurrentDictionary`, `ConcurrentQueue`, `BlockingCollection`"

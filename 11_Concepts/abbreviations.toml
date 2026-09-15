@@ -1,0 +1,200 @@
+# Abbreviations for 11_Concepts/abbreviations/README.md. Every entry needs a source.
+# An abbreviation with no findable source is left out rather than guessed at.
+
+[[abbreviation]]
+abbr = "ABA"
+expansion = "the A → B → A sequence of values behind the ABA problem (not an acronym)"
+concept = "aba_problem"
+source = "https://en.wikipedia.org/wiki/ABA_problem"
+
+[[abbreviation]]
+abbr = "ACID"
+expansion = "atomicity, consistency, isolation, durability — the guarantees of a database transaction"
+concept = "consistency_models"
+source = "https://en.wikipedia.org/wiki/ACID"
+
+[[abbreviation]]
+abbr = "BASE"
+expansion = "basically available, soft state, eventually consistent — the usual contrast with ACID"
+concept = "consistency_models"
+source = "https://en.wikipedia.org/wiki/Eventual_consistency"
+
+[[abbreviation]]
+abbr = "CAS"
+expansion = "compare-and-swap"
+concept = "compare_and_swap"
+source = "https://en.wikipedia.org/wiki/Compare-and-swap"
+
+[[abbreviation]]
+abbr = "CSP"
+expansion = "communicating sequential processes"
+concept = "csp"
+source = "https://en.wikipedia.org/wiki/Communicating_sequential_processes"
+
+[[abbreviation]]
+abbr = "EDF"
+expansion = "earliest deadline first"
+concept = "earliest_deadline_first"
+source = "https://en.wikipedia.org/wiki/Earliest_deadline_first_scheduling"
+
+[[abbreviation]]
+abbr = "FIFO"
+expansion = "first in, first out — the order a channel or queue delivers in"
+concept = "channel"
+source = "https://en.wikipedia.org/wiki/FIFO_(computing_and_electronics)"
+
+[[abbreviation]]
+abbr = "futex"
+expansion = "fast user-space mutex"
+concept = "futex"
+source = "https://man7.org/linux/man-pages/man2/futex.2.html"
+
+[[abbreviation]]
+abbr = "GCD"
+expansion = "Grand Central Dispatch, Apple's task-queue concurrency library"
+concept = "thread_pool"
+source = "https://developer.apple.com/documentation/dispatch"
+
+[[abbreviation]]
+abbr = "GIL"
+expansion = "global interpreter lock"
+concept = "gil"
+source = "https://docs.python.org/3/glossary.html#term-global-interpreter-lock"
+
+[[abbreviation]]
+abbr = "GPGPU"
+expansion = "general-purpose computing on graphics processing units"
+concept = "gpu_computing"
+source = "https://en.wikipedia.org/wiki/General-purpose_computing_on_graphics_processing_units"
+
+[[abbreviation]]
+abbr = "IOCP"
+expansion = "I/O completion port, Windows' mechanism for asynchronous I/O"
+concept = "io_multiplexing"
+source = "https://learn.microsoft.com/en-us/windows/win32/fileio/i-o-completion-ports"
+
+[[abbreviation]]
+abbr = "IPC"
+expansion = "inter-process communication (in CPU performance, the same letters also mean instructions per cycle)"
+concept = "ipc"
+source = "https://en.wikipedia.org/wiki/Inter-process_communication"
+
+[[abbreviation]]
+abbr = "MPI"
+expansion = "Message Passing Interface"
+concept = "mpi"
+source = "https://www.mpi-forum.org/"
+
+[[abbreviation]]
+abbr = "MPSC"
+expansion = "multi-producer, single-consumer — the shape of Rust's `std::sync::mpsc` channel; SPSC and MPMC are the other shapes"
+concept = "channel"
+source = "https://doc.rust-lang.org/std/sync/mpsc/index.html"
+
+[[abbreviation]]
+abbr = "MVCC"
+expansion = "multi-version concurrency control"
+concept = "mvcc"
+source = "https://en.wikipedia.org/wiki/Multiversion_concurrency_control"
+
+[[abbreviation]]
+abbr = "M:N"
+expansion = "M user-level threads scheduled onto N operating-system threads"
+concept = "green_thread"
+source = "https://en.wikipedia.org/wiki/Thread_(computing)#Threading_models"
+
+[[abbreviation]]
+abbr = "NIO"
+expansion = "New I/O, Java's buffer-and-channel I/O API (`java.nio`), which includes non-blocking I/O"
+concept = "io_multiplexing"
+source = "https://en.wikipedia.org/wiki/Non-blocking_I/O_(Java)"
+
+[[abbreviation]]
+abbr = "NTP"
+expansion = "Network Time Protocol"
+concept = "clock_skew"
+source = "https://en.wikipedia.org/wiki/Network_Time_Protocol"
+
+[[abbreviation]]
+abbr = "NUMA"
+expansion = "non-uniform memory access"
+concept = "numa"
+source = "https://en.wikipedia.org/wiki/Non-uniform_memory_access"
+
+[[abbreviation]]
+abbr = "PTP"
+expansion = "Precision Time Protocol"
+concept = "clock_skew"
+source = "https://en.wikipedia.org/wiki/Precision_Time_Protocol"
+
+[[abbreviation]]
+abbr = "RAII"
+expansion = "resource acquisition is initialization — the idiom behind scoped lock guards"
+concept = "scoped_lock"
+source = "https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization"
+
+[[abbreviation]]
+abbr = "RCU"
+expansion = "read-copy-update"
+concept = "rcu"
+source = "https://en.wikipedia.org/wiki/Read-copy-update"
+
+[[abbreviation]]
+abbr = "RMS"
+expansion = "rate-monotonic scheduling"
+concept = "rate_monotonic_scheduling"
+source = "https://en.wikipedia.org/wiki/Rate-monotonic_scheduling"
+
+[[abbreviation]]
+abbr = "RPC"
+expansion = "remote procedure call (RMI, remote method invocation, is Java's object-oriented form)"
+concept = "rpc"
+source = "https://en.wikipedia.org/wiki/Remote_procedure_call"
+
+[[abbreviation]]
+abbr = "SIMD"
+expansion = "single instruction, multiple data"
+concept = "simd"
+source = "https://en.wikipedia.org/wiki/Single_instruction,_multiple_data"
+
+[[abbreviation]]
+abbr = "SMT"
+expansion = "simultaneous multithreading (Intel's brand name for it is Hyper-Threading)"
+concept = "smt"
+source = "https://en.wikipedia.org/wiki/Simultaneous_multithreading"
+
+[[abbreviation]]
+abbr = "STM"
+expansion = "software transactional memory"
+concept = "transactional_memory"
+source = "https://en.wikipedia.org/wiki/Software_transactional_memory"
+
+[[abbreviation]]
+abbr = "TLS"
+expansion = "thread-local storage (not to be confused with Transport Layer Security)"
+concept = "thread_local_storage"
+source = "https://en.wikipedia.org/wiki/Thread-local_storage"
+
+[[abbreviation]]
+abbr = "TOCTOU"
+expansion = "time of check to time of use (also written TOCTTOU)"
+concept = "toctou"
+source = "https://en.wikipedia.org/wiki/Time-of-check_to_time-of-use"
+
+[[abbreviation]]
+abbr = "TSan"
+expansion = "ThreadSanitizer"
+concept = "race_detector"
+source = "https://github.com/google/sanitizers/wiki/ThreadSanitizerCppManual"
+
+[[abbreviation]]
+abbr = "TSO"
+expansion = "total store order, the memory model of x86 processors (x86-TSO)"
+concept = "weak_memory_model"
+source = "https://www.cl.cam.ac.uk/~pes20/weakmemory/"
+
+[[abbreviation]]
+abbr = "WCET"
+expansion = "worst-case execution time"
+concept = "wcet"
+source = "https://en.wikipedia.org/wiki/Worst-case_execution_time"

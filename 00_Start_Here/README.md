@@ -26,6 +26,8 @@ What does vary is shown as variation, in a fence titled **Real runs**, with the 
 1. [**Who waits when main returns?**](../01_Threads/who_waits_when_main_returns/README.md) — the question a first threaded program raises, and why the six languages answer it differently.
 2. [**Getting a result back**](../01_Threads/getting_a_result_back/README.md) — where a thread's answer goes, and where its failure goes.
 
+Then keep [**the concept map**](../11_Concepts/README.md) open beside the lessons: every term a lesson uses has a page there, with its name in each language and links to where it is taught — here, in the [Go library ↗](https://masiarek.github.io/go-learning-library/), the [Rust library ↗](https://masiarek.github.io/rust-learning-library/), and the books.
+
 ## The toolchains
 
 | Language | Keys recorded with | In CI |

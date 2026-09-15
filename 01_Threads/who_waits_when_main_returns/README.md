@@ -133,7 +133,7 @@ main:                      returning
 ```
 <!-- /output -->
 
-The [Go specification ↗](https://go.dev/ref/spec#Program_execution) settles this in its section on program execution: when `main` returns, the program exits, and it does not wait for other goroutines to complete. There is no handle to join and no flag to change that. A program that must wait counts its goroutines with a `sync.WaitGroup`: `wg.Go` adds one, starts the goroutine, and marks it done when the function returns. `wg.Go` arrived in Go 1.25; before it, the same program calls `wg.Add(1)` and defers `wg.Done()` itself.
+The [Go specification ↗](https://go.dev/ref/spec#Program_execution) settles this in its section on program execution: when `main` returns, the program exits, and it does not wait for other goroutines to complete. There is no handle to join and no flag to change that. A program that must wait counts its goroutines with a `sync.WaitGroup`: `wg.Go` adds one, starts the goroutine, and marks it done when the function returns. `wg.Go` arrived in Go 1.25; before it, the same program calls `wg.Add(1)` and defers `wg.Done()` itself. The Go library's [`main` does not wait ↗](https://masiarek.github.io/go-learning-library/01_Goroutines/main_does_not_wait/index.html) goes further: the deferred calls that never run in a goroutine cut off this way, and the four ways a Go program can end.
 
 <details markdown="1">
 <summary><code>who_waits_go.go</code></summary>
@@ -293,7 +293,7 @@ exit status 134: killed by signal 6, SIGABRT
 ```
 <!-- /output -->
 
-Exit status 134 is 128 plus 6, and signal 6 is `SIGABRT`: the [default terminate handler calls `std::abort` ↗](https://en.cppreference.com/w/cpp/error/terminate). libc++ and libstdc++ print different messages to stderr on the way down; the script drops them and keeps what the two agree on.
+Exit status 134 is 128 plus 6, and signal 6 is `SIGABRT` — the same arithmetic as the 141, 128 plus `SIGPIPE`'s 13, in the Linux library's [head closes the pipe early ↗](https://masiarek.github.io/linux-learning-library/01_Pipelines/head_closes_the_pipe_early/index.html): the [default terminate handler calls `std::abort` ↗](https://en.cppreference.com/w/cpp/error/terminate). libc++ and libstdc++ print different messages to stderr on the way down; the script drops them and keeps what the two agree on.
 
 <details markdown="1">
 <summary><code>who_waits_cpp.cpp</code> and <code>who_waits_unjoined_cpp_sh.sh</code></summary>
@@ -480,3 +480,6 @@ print("main:             end of the script", flush=True)
 - [Getting a result back](../getting_a_result_back/README.md) — the next lesson: a join is also how a thread's answer, and its failure, comes back.
 - The Rust library's [Spawning a thread ↗](https://masiarek.github.io/rust-learning-library/09_Advanced/spawning_a_thread/index.html) — `JoinHandle`, `move`, and `thread::scope` in depth.
 - [*Rust Atomics and Locks*, chapter 1 ↗](https://marabos.nl/atomics/basics.html) — where the program at the top of this page comes from.
+- The Rust library's [Standard error, and exit status ↗](https://masiarek.github.io/rust-learning-library/02_Errors/stderr_and_exit_status/index.html) and the Encodings library's [A pipe is not a terminal ↗](https://masiarek.github.io/encodings-learning-library/06_Terminal/pipe_is_not_a_terminal/index.html) — the other way output goes missing at exit: a buffer that nothing flushes.
+- The Go library's [A panic ends the whole program ↗](https://masiarek.github.io/go-learning-library/01_Goroutines/a_panic_ends_the_whole_program/index.html) — the other way a Go program ends without waiting.
+- Concepts: [Thread](../../11_Concepts/units_of_execution/thread/README.md) · [Daemon and detached threads](../../11_Concepts/units_of_execution/daemon_thread/README.md) · [Join](../../11_Concepts/async/join/README.md) · [Structured concurrency](../../11_Concepts/async/structured_concurrency/README.md) · [Nondeterminism](../../11_Concepts/foundations/nondeterminism/README.md) · [Process](../../11_Concepts/units_of_execution/process/README.md)

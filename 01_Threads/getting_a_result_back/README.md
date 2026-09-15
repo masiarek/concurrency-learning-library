@@ -78,7 +78,7 @@ received a result whose err is "no total today"
 ```
 <!-- /output -->
 
-There is no handle to ask. `go` is a statement, not an expression, and the spec's section on [Go statements ↗](https://go.dev/ref/spec#Go_statements) says that a function started this way has its return values discarded when it completes. So a goroutine's answer is always something it sends.
+There is no handle to ask. `go` is a statement, not an expression, and the spec's section on [Go statements ↗](https://go.dev/ref/spec#Go_statements) says that a function started this way has its return values discarded when it completes. So a goroutine's answer is always something it sends. The Go library's [A goroutine has no handle ↗](https://masiarek.github.io/go-learning-library/01_Goroutines/a_goroutine_has_no_handle/index.html) takes this further — results collected back into input order, errors joined, and a one-slot channel used as a future — and [The first error cancels the rest ↗](https://masiarek.github.io/go-learning-library/06_Patterns/first_error_cancels_the_rest/index.html) builds `errgroup`'s behaviour from the standard library.
 
 The program uses two channels: one of `int`, and one of a small struct carrying an `error` beside the value, which is the shape a result channel takes once the goroutine can fail. The [`errgroup` ↗](https://pkg.go.dev/golang.org/x/sync/errgroup) package packages that pattern for a group of goroutines; it lives in `golang.org/x/sync`, outside the standard library, so no program here runs it.
 
@@ -407,3 +407,5 @@ with ThreadPoolExecutor() as pool:
 
 - [Who waits when main returns?](../who_waits_when_main_returns/README.md) — the previous lesson: what happens to a thread nobody joins.
 - The Rust library's [Channels ↗](https://masiarek.github.io/rust-learning-library/09_Advanced/channels/index.html) — the Go pattern in Rust, where ownership of the value moves with it.
+- The Go library's [A worker pool ↗](https://masiarek.github.io/go-learning-library/06_Patterns/a_worker_pool/index.html) — Go's answer to `ExecutorService` and `ThreadPoolExecutor`, with results returned in input order.
+- Concepts: [Future and promise](../../11_Concepts/async/future_and_promise/README.md) · [Join](../../11_Concepts/async/join/README.md) · [Channel](../../11_Concepts/communication/channel/README.md) · [Thread pool and executor](../../11_Concepts/units_of_execution/thread_pool/README.md)

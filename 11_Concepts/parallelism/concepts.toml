@@ -1,0 +1,218 @@
+[category]
+title = "Parallelism"
+order = 9
+blurb = "Using more cores to finish sooner: splitting data and work across them, and the hardware facts that decide whether it helps."
+
+[[concept]]
+slug = "data_parallelism"
+title = "Data parallelism"
+summary = "The same operation applied to many pieces of data at once, each piece on its own core or vector lane."
+chapter = 7
+is_a = ["parallelism"]
+contrasts = ["task_parallelism"]
+pages = [["Go: Fan-out, fan-in", "https://masiarek.github.io/go-learning-library/06_Patterns/fan_out_fan_in/index.html"]]
+reference = [["Wikipedia: Data parallelism", "https://en.wikipedia.org/wiki/Data_parallelism"]]
+[concept.languages]
+rust = "Rayon's [parallel iterators](https://docs.rs/rayon/latest/rayon/iter/index.html); the standard library offers only [`thread::scope`](https://doc.rust-lang.org/std/thread/fn.scope.html)"
+cpp = "[`std::execution::par`](https://en.cppreference.com/w/cpp/algorithm/execution_policy_tag_t) (C++17) on a standard algorithm, or `par_unseq` to allow vectorization as well"
+java = "[Parallel streams](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/package-summary.html#Parallelism)"
+python = "[`multiprocessing.Pool.map`](https://docs.python.org/3/library/multiprocessing.html#multiprocessing.pool.Pool.map)"
+csharp = "[Data parallelism](https://learn.microsoft.com/en-us/dotnet/standard/parallel-programming/data-parallelism-task-parallel-library) with `Parallel.For` and `Parallel.ForEach`"
+swift = "[`DispatchQueue.concurrentPerform`](https://developer.apple.com/documentation/dispatch/dispatchqueue/concurrentperform%28iterations:execute:%29) runs a block the given number of times, balanced across cores"
+haskell = "[`parMap`](https://hackage.haskell.org/package/parallel/docs/Control-Parallel-Strategies.html#v:parMap) in the `parallel` package"
+
+[[concept]]
+slug = "task_parallelism"
+title = "Task parallelism"
+summary = "Different tasks, possibly doing different things, running at the same time on different cores."
+chapter = 7
+is_a = ["parallelism"]
+reference = [["Wikipedia: Task parallelism", "https://en.wikipedia.org/wiki/Task_parallelism"]]
+[concept.languages]
+rust = "Rayon's [`join`](https://docs.rs/rayon/latest/rayon/fn.join.html) runs two closures, potentially in parallel"
+go = "`go` statements, with a [`sync.WaitGroup`](https://pkg.go.dev/sync#WaitGroup) to wait for them"
+cpp = "[`std::async`](https://en.cppreference.com/w/cpp/thread/async) with `std::launch::async`"
+java = "[`ForkJoinTask`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ForkJoinTask.html) `fork` and `join`; [`StructuredTaskScope`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/StructuredTaskScope.html) is still a preview API in JDK 25"
+python = "[`Executor.submit`](https://docs.python.org/3/library/concurrent.futures.html#concurrent.futures.Executor.submit)"
+csharp = "[`Parallel.Invoke`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.parallel.invoke) and [task parallelism](https://learn.microsoft.com/en-us/dotnet/standard/parallel-programming/task-based-asynchronous-programming)"
+swift = "[`async let` and task groups](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/)"
+
+[[concept]]
+slug = "map_reduce"
+title = "Map-reduce"
+summary = "Apply a function to every item independently, then combine the results with an associative operation, so that both halves can be split across workers."
+aliases = ["MapReduce"]
+chapter = 7
+is_a = ["data_parallelism"]
+reference = [["Wikipedia: MapReduce", "https://en.wikipedia.org/wiki/MapReduce"]]
+[concept.languages]
+rust = "Rayon's [`reduce`](https://docs.rs/rayon/latest/rayon/iter/trait.ParallelIterator.html#method.reduce) takes an identity value as well as the combining operation"
+cpp = "[`std::transform_reduce`](https://en.cppreference.com/w/cpp/algorithm/transform_reduce); with a non-associative or non-commutative operation the result is non-deterministic"
+java = "[`Stream.reduce`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Stream.html) requires an associative accumulator, so that a parallel stream can split the work"
+other = "[Hadoop MapReduce](https://hadoop.apache.org/docs/stable/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html) runs the same split across a cluster"
+
+[[concept]]
+slug = "parallel_prefix_sum"
+title = "Parallel prefix sum"
+summary = "Computing every running total of a sequence in a number of rounds that grows with the logarithm of its length — a building block of many data-parallel algorithms."
+aliases = ["prefix scan", "scan"]
+is_a = ["data_parallelism"]
+reference = [["Wikipedia: Prefix sum — parallel algorithms", "https://en.wikipedia.org/wiki/Prefix_sum#Parallel_algorithms"]]
+[concept.languages]
+cpp = "[`std::inclusive_scan`](https://en.cppreference.com/w/cpp/algorithm/inclusive_scan) and `std::exclusive_scan` (C++17) accept an execution policy"
+java = "[`Arrays.parallelPrefix`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Arrays.html)"
+
+[[concept]]
+slug = "parallel_iterators"
+title = "Parallel iterators and streams"
+summary = "A library that spreads an iterator's work over a thread pool with one method call — Rayon's `par_iter`, Java's `parallelStream`."
+aliases = ["rayon", "parallel streams", "PLINQ"]
+chapter = 7
+is_a = ["data_parallelism"]
+uses = ["work_stealing", "thread_pool"]
+[concept.languages]
+rust = "Rayon's [`par_iter`](https://docs.rs/rayon/latest/rayon/) gives parallel versions of iterator methods such as `map`, `filter` and `fold`"
+cpp = "Standard algorithms take an [execution policy](https://en.cppreference.com/w/cpp/algorithm/execution_policy_tag_t) rather than a parallel iterator"
+java = "[`Collection.parallelStream`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html#parallelStream%28%29), or `parallel()` on a stream"
+python = "[`Executor.map`](https://docs.python.org/3/library/concurrent.futures.html#concurrent.futures.Executor.map) on a thread or process pool"
+csharp = "[PLINQ](https://learn.microsoft.com/en-us/dotnet/standard/parallel-programming/introduction-to-plinq): `AsParallel()` on a LINQ query"
+elixir_erlang = "[`Task.async_stream`](https://hexdocs.pm/elixir/Task.html#async_stream/3) runs a function on each element in its own task, by default as many at once as there are schedulers online"
+
+[[concept]]
+slug = "simd"
+title = "SIMD"
+summary = "One CPU instruction applied to several numbers at once: parallelism inside a single core."
+aliases = ["vectorization", "single instruction, multiple data"]
+is_a = ["data_parallelism"]
+reference = [["Wikipedia: Single instruction, multiple data", "https://en.wikipedia.org/wiki/Single_instruction,_multiple_data"]]
+[concept.languages]
+rust = "Platform intrinsics in [`std::arch`](https://doc.rust-lang.org/std/arch/index.html); the portable [`std::simd`](https://doc.rust-lang.org/std/simd/index.html) is nightly-only"
+cpp = "[`std::simd`](https://en.cppreference.com/w/cpp/numeric/simd) in C++26, after [`std::experimental::simd`](https://en.cppreference.com/w/cpp/experimental/simd)"
+java = "The [Vector API](https://docs.oracle.com/en/java/javase/25/docs/api/jdk.incubator.vector/jdk/incubator/vector/package-summary.html), still an incubator module in JDK 25"
+csharp = "[`Vector<T>`](https://learn.microsoft.com/en-us/dotnet/api/system.numerics.vector-1), which supports hardware acceleration, and the instruction-set register types of [`System.Runtime.Intrinsics`](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.intrinsics)"
+swift = "[`SIMD`](https://developer.apple.com/documentation/swift/simd) vector types such as `SIMD4<Float>` in the standard library"
+
+[[concept]]
+slug = "gpu_computing"
+title = "GPU computing"
+summary = "Running thousands of small data-parallel computations on a graphics processor instead of the CPU."
+aliases = ["GPGPU", "CUDA"]
+is_a = ["data_parallelism"]
+reference = [["Wikipedia: General-purpose computing on graphics processing units", "https://en.wikipedia.org/wiki/General-purpose_computing_on_graphics_processing_units"]]
+[concept.languages]
+javascript = "Compute shaders in the [WebGPU API](https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API)"
+swift = "[Metal](https://developer.apple.com/documentation/metal) compute pipelines"
+other = "NVIDIA's [CUDA](https://docs.nvidia.com/cuda/) toolkit"
+
+[[concept]]
+slug = "openmp"
+title = "OpenMP"
+summary = "Compiler directives and a runtime that parallelize loops and sections of C, C++ and Fortran programs over shared memory."
+aliases = ["OMP"]
+uses = ["thread_pool"]
+reference = [["OpenMP", "https://www.openmp.org/"]]
+[concept.languages]
+c = "Compiler directives defined by the [OpenMP specifications](https://www.openmp.org/specifications/); the GNU implementation is [libgomp](https://gcc.gnu.org/onlinedocs/libgomp/)"
+cpp = "The same directives as C; C++17 [execution policies](https://en.cppreference.com/w/cpp/algorithm/execution_policy_tag_t) parallelize standard algorithms without them"
+
+[[concept]]
+slug = "mpi"
+title = "MPI"
+summary = "The Message Passing Interface: separate processes, often on separate machines, exchanging messages — the standard for distributed-memory parallel programs."
+aliases = ["Message Passing Interface"]
+uses = ["message_passing", "process"]
+reference = [["MPI Forum", "https://www.mpi-forum.org/"]]
+
+[[concept]]
+slug = "numa"
+title = "NUMA"
+summary = "Non-uniform memory access: on a multi-socket machine some memory is closer to some cores, so where a thread runs changes how fast its memory is."
+aliases = ["non-uniform memory access"]
+related = ["cache_coherence"]
+reference = [["Wikipedia: Non-uniform memory access", "https://en.wikipedia.org/wiki/Non-uniform_memory_access"]]
+[concept.languages]
+java = "HotSpot's [`-XX:+UseNUMA`](https://docs.oracle.com/en/java/javase/25/docs/specs/man/java.html) option"
+os = "[`numa(7)`](https://man7.org/linux/man-pages/man7/numa.7.html), [`set_mempolicy(2)`](https://man7.org/linux/man-pages/man2/set_mempolicy.2.html), and `numactl` to bind a program to nodes"
+
+[[concept]]
+slug = "smt"
+title = "Simultaneous multithreading"
+summary = "One physical core presenting two or more logical cores to the operating system, sharing its execution resources between them."
+aliases = ["SMT", "Hyper-Threading"]
+notes = [["HW - CPUs - pipelines - caching - HT - memory bandwidth - latency", "https://docs.google.com/document/u/0/d/12TY3QDOenDFezomACTM7BV3rKpFnrADXMT5q8Yc653Q/edit"]]
+reference = [["Wikipedia: Simultaneous multithreading", "https://en.wikipedia.org/wiki/Simultaneous_multithreading"]]
+[concept.languages]
+go = "[`runtime.NumCPU`](https://pkg.go.dev/runtime#NumCPU) counts logical CPUs"
+python = "[`os.cpu_count`](https://docs.python.org/3/library/os.html#os.cpu_count) returns logical CPUs"
+csharp = "[`Environment.ProcessorCount`](https://learn.microsoft.com/en-us/dotnet/api/system.environment.processorcount) counts logical processors, capped by CPU affinity and CPU limits"
+javascript = "[`navigator.hardwareConcurrency`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/hardwareConcurrency) counts logical processors"
+os = "[`sched_setaffinity(2)`](https://man7.org/linux/man-pages/man2/sched_setaffinity.2.html) pins a thread to chosen logical CPUs"
+
+[[concept]]
+slug = "cache_coherence"
+title = "Cache coherence"
+summary = "Keeping several cached copies of the same data consistent when one of them is written — done in hardware between a CPU's cores, at a cost that false sharing exposes."
+aliases = ["cache invalidation", "write-back"]
+notes = [
+  ["Cache coherence", "https://docs.google.com/document/d/11AUT-9ZiaDLML1DHaKz41nj_dmzj0-fSXxHyxMGj_4U/edit?tab=t.0"],
+  ["cache invalidation", "https://docs.google.com/document/d/1DHSM56i69dzhauCUMym3o5DfyA1RJkichLYl4KFKn9Q/edit?tab=t.0"],
+  ["write-back with invalidation", "https://docs.google.com/document/d/1MYeif5pOPcuarLG0aae17yq8oqPFZwY3_y9j17h-NFU/edit?tab=t.0"],
+  ["shared data across different caches", "https://docs.google.com/document/d/1JSbyd8pdLLMCtMUdosY1amPrzgdJu_6uHIGQGSkL9YA/edit?tab=t.0"],
+]
+reference = [["Wikipedia: Cache coherence", "https://en.wikipedia.org/wiki/Cache_coherence"]]
+
+[[concept]]
+slug = "gil"
+title = "Global interpreter lock"
+summary = "A lock that lets only one thread run interpreter code at a time — CPython's, and Ruby's — so threads give concurrency but not CPU parallelism; CPython 3.13 added an optional build without it."
+aliases = ["GIL", "GVL", "free threading"]
+chapter = 7
+uses = ["mutex"]
+related = ["multiprocessing", "io_bound_and_cpu_bound"]
+reference = [["PEP 703: Making the Global Interpreter Lock Optional in CPython", "https://peps.python.org/pep-0703/"]]
+[concept.languages]
+python = "CPython's [GIL](https://docs.python.org/3/glossary.html#term-global-interpreter-lock); the [free-threaded build](https://docs.python.org/3/howto/free-threading-python.html), available since 3.13, disables it"
+other = "CRuby holds its Global VM Lock (GVL) per [`Ractor`](https://docs.ruby-lang.org/en/master/Ractor.html), so ractors run in parallel where threads cannot"
+
+[[concept]]
+slug = "multiprocessing"
+title = "Multiprocessing"
+summary = "Using several processes instead of several threads — for isolation, or to get parallelism in a runtime whose threads share one global lock."
+aliases = ["process pool", "ProcessPoolExecutor"]
+chapter = 8
+uses = ["process", "ipc"]
+notes = [
+  ["multiprocessing python", "https://docs.google.com/document/d/1cOE8bkU-PY_V_0tDGixPK0OO13PRWoAZzbLeJ-IiA58/edit?tab=t.0"],
+  ["multi-processing - general - multiprocessing", "https://docs.google.com/document/d/14T579Iokz3DEBIQZ_jRHwSMlo48xH8eey43kN2bMgQU/edit?tab=t.0"],
+]
+reference = [["Wikipedia: Multiprocessing", "https://en.wikipedia.org/wiki/Multiprocessing"]]
+[concept.languages]
+python = "[`multiprocessing`](https://docs.python.org/3/library/multiprocessing.html) and [`ProcessPoolExecutor`](https://docs.python.org/3/library/concurrent.futures.html#processpoolexecutor); in 3.14 the default start method on POSIX changed from `fork` to `forkserver`, while macOS and Windows use `spawn`"
+
+[[concept]]
+slug = "fork_join"
+title = "Fork-join"
+summary = "Split a task into subtasks, run them in parallel, wait for all of them and combine their results — recursively, until the pieces are small enough to do directly."
+aliases = ["divide and conquer in parallel", "ForkJoinPool"]
+chapter = 7
+is_a = ["task_parallelism"]
+uses = ["work_stealing", "join"]
+related = ["map_reduce"]
+reference = [["Wikipedia: Fork–join model", "https://en.wikipedia.org/wiki/Fork%E2%80%93join_model"]]
+[concept.languages]
+rust = "Rayon's [`join`](https://docs.rs/rayon/latest/rayon/fn.join.html) runs two closures, potentially in parallel, and returns both results"
+java = "[`ForkJoinPool`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ForkJoinPool.html) runs `ForkJoinTask`s, whose `fork` and `join` split and rejoin the work"
+csharp = "[`Parallel.Invoke`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.parallel.invoke) runs actions in parallel and returns when all have completed"
+
+[[concept]]
+slug = "parallel_algorithms"
+title = "Parallel algorithms"
+summary = "Sorting, searching, graph and numeric algorithms rebuilt so that their work splits across cores — not always by the obvious split."
+aliases = ["parallel sort", "parallel search"]
+chapter = 7
+related = ["data_parallelism", "fork_join", "speedup_and_amdahls_law"]
+reference = [["Wikipedia: Parallel algorithm", "https://en.wikipedia.org/wiki/Parallel_algorithm"]]
+[concept.languages]
+rust = "Rayon's [`par_sort`](https://docs.rs/rayon/latest/rayon/slice/trait.ParallelSliceMut.html) and the other parallel slice methods"
+cpp = "the standard algorithms with an [execution policy](https://en.cppreference.com/w/cpp/algorithm/execution_policy_tag_t) (C++17), such as `std::sort(std::execution::par, ...)`"
+java = "[`Arrays.parallelSort`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Arrays.html)"

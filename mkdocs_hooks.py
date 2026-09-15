@@ -61,6 +61,7 @@ NAV_ORDER: dict[str, list[str]] = {
         "index.md",
         "00_Start_Here",
         "01_Threads",
+        "11_Concepts",
         "10_Resources",
     ],
     # The edges of a thread's life. The end of the program comes first because
@@ -72,6 +73,34 @@ NAV_ORDER: dict[str, list[str]] = {
         "getting_a_result_back",
     ],
 }
+
+
+def _concept_nav() -> None:
+    """11_Concepts takes its reading order from the data that generates it.
+
+    tools/build_concepts.py writes a page per concept from
+    11_Concepts/<category>/concepts.toml; listing some hundred and fifty folders here
+    by hand would be a second copy of that data, and a stale one within a week.
+    """
+    import tomllib
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parent / "11_Concepts"
+    cats = []
+    for path in root.glob("*/concepts.toml"):
+        data = tomllib.loads(path.read_text(encoding="utf-8"))
+        slugs = [c["slug"] for c in data.get("concept", [])]
+        cats.append((data.get("category", {}).get("order", 99), path.parent.name, slugs))
+    if not cats:
+        return
+    cats.sort()
+    extras = [name for name in ("schema", "abbreviations") if (root / name).is_dir()]
+    NAV_ORDER["11_Concepts"] = ["README.md", *extras, *(name for _, name, _ in cats)]
+    for _, name, slugs in cats:
+        NAV_ORDER[f"11_Concepts/{name}"] = ["README.md", *slugs]
+
+
+_concept_nav()
 
 
 def _label(name: str) -> str:

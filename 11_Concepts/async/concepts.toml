@@ -1,0 +1,306 @@
+[category]
+title = "Async"
+order = 8
+blurb = "Not waiting: callbacks, futures and promises, async and await, and what cancelling, timing out and blocking mean once a task can pause."
+
+[[concept]]
+slug = "event_driven_programming"
+title = "Event-driven programming"
+summary = "A program built as handlers that run when events arrive — a click, a message, a ready socket — instead of as one flow from top to bottom."
+chapter = 6
+uses = ["event_loop", "callback"]
+contrasts = ["reactive_programming"]
+reference = [["Wikipedia: Event-driven programming", "https://en.wikipedia.org/wiki/Event-driven_programming"]]
+aliases = ["event-driven architecture"]
+[concept.languages]
+go = "no event loop in user code: a goroutine makes an ordinary blocking call, and the runtime moves the other goroutines to a runnable thread ([FAQ](https://go.dev/doc/faq#goroutines))"
+python = "the [asyncio event loop](https://docs.python.org/3/library/asyncio-eventloop.html) runs asynchronous tasks and callbacks, network I/O and subprocesses"
+csharp = "[events](https://learn.microsoft.com/en-us/dotnet/standard/events/), built on the delegate model and declared with the `event` keyword"
+javascript = "the host's event loop takes jobs from a job queue ([execution model](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Execution_model)); handlers are attached with [`addEventListener`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener), or with Node's [`EventEmitter`](https://nodejs.org/api/events.html)"
+os = "[epoll](https://man7.org/linux/man-pages/man7/epoll.7.html) reports which of many file descriptors can do I/O, edge- or level-triggered"
+
+[[concept]]
+slug = "callback"
+title = "Callback"
+summary = "A function handed to an operation to be called when the operation finishes — the oldest way to write asynchronous code, and the source of deeply nested callback code."
+aliases = ["completion handler", "callback hell"]
+chapter = 6
+alternative = ["future_and_promise"]
+notes = [["Callback-Based - Asynchronous Programming", "https://docs.google.com/document/d/1zFZ8NF6R3-81b46gVYpKPc-woMDFy-wo2wie158ODs8/edit?tab=t.0"]]
+reference = [["Wikipedia: Callback (computer programming)", "https://en.wikipedia.org/wiki/Callback_(computer_programming)"]]
+[concept.languages]
+c = "a function pointer; POSIX [AIO](https://man7.org/linux/man-pages/man7/aio.7.html) can report a finished operation by starting a thread (`SIGEV_THREAD`)"
+java = "[`CompletableFuture`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html) takes callbacks such as `thenApply` and `thenAccept`"
+python = "[`Future.add_done_callback`](https://docs.python.org/3/library/asyncio-future.html#asyncio.Future.add_done_callback) and [`loop.call_soon`](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.loop.call_soon); asyncio futures exist to bridge callback-based code with async/await"
+csharp = "the [Asynchronous Programming Model](https://learn.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm): `BeginOperationName` takes an `AsyncCallback` that is called when the operation completes"
+javascript = "a [callback function](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function), passed into another function and invoked inside it"
+swift = "completion handlers, which the [Swift book](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/) shows piling up as nested closures before it introduces `async` and `await`"
+
+[[concept]]
+slug = "future_and_promise"
+title = "Future and promise"
+summary = "A placeholder for a result that is not ready yet: the future is the side that waits for the value, the promise the side that supplies it."
+aliases = ["future", "promise", "deferred", "Task"]
+chapter = 6
+related = ["join", "async_await"]
+lessons = ["01_Threads/getting_a_result_back"]
+pages = [["Go: A goroutine has no handle", "https://masiarek.github.io/go-learning-library/01_Goroutines/a_goroutine_has_no_handle/index.html"]]
+notes = [
+  ["future - promise - delay - deferred - general", "https://docs.google.com/document/d/1iqZZ4hXscxlN9ZjMpeangJ8CyWVVw3pFiJDCpYy4FHQ/edit?tab=t.0"],
+  ["futures - rust - main", "https://docs.google.com/document/u/0/d/1OuH409o_MQsV3yRAMxznNr8EV4FRYUJ0-7M3hvq9tQw/edit"],
+  ["Futures rust - code snippets", "https://docs.google.com/document/u/0/d/1UDGnkC1IwtqRUA15TzE5qSOpCWTQ0NRV7NhSak62BoY/edit"],
+  ["resolving - fulfilling, binding a future - general", "https://docs.google.com/document/d/1PokViozEx7OcfZ6pSVA2J98H5U-_6yJsNkHsBE9N-hg/edit?tab=t.0"],
+  ["asynchronous results - general", "https://docs.google.com/document/d/19HPYv4knrGuaCoHxcL0WDHOlmkHBLvZpQ94V1ugVrkU/edit?tab=t.0"],
+  ["promises - general", "https://docs.google.com/document/d/1OSuXt27KNUd9Jd5rUoDpH_-nOA0yiKBMPhJRgm8MO_Q/edit?tab=t.0"],
+]
+reference = [["Wikipedia: Futures and promises", "https://en.wikipedia.org/wiki/Futures_and_promises"]]
+[concept.languages]
+rust = "[`Future`](https://doc.rust-lang.org/std/future/trait.Future.html), a trait with a `poll` method; an async function's future does no work until polled ([reference](https://doc.rust-lang.org/reference/items/functions.html#async-functions)); a thread's result comes back from [`JoinHandle::join`](https://doc.rust-lang.org/std/thread/struct.JoinHandle.html#method.join)"
+go = "none: a [`go` statement](https://go.dev/ref/spec#Go_statements) discards the function's return values, so a result has to be sent back on a channel"
+cpp = "[`std::future`](https://en.cppreference.com/w/cpp/thread/future) and [`std::promise`](https://en.cppreference.com/w/cpp/thread/promise) (C++11); [`std::async`](https://en.cppreference.com/w/cpp/thread/async) returns a future"
+java = "[`Future`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Future.html); a [`CompletableFuture`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html) can also be completed explicitly, so it is the promise side too"
+python = "[`concurrent.futures.Future`](https://docs.python.org/3/library/concurrent.futures.html#concurrent.futures.Future) from executors; [`asyncio.Future`](https://docs.python.org/3/library/asyncio-future.html#asyncio.Future) on the event loop, which is not thread-safe"
+csharp = "[`Task<TResult>`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task-1) is the future and [`TaskCompletionSource<TResult>`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.taskcompletionsource-1) the producer side"
+javascript = "[`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise); the executor passed to its [constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/Promise) runs synchronously and receives the resolve and reject functions"
+kotlin = "[`Deferred`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-deferred/), returned by `async`: a light-weight non-blocking future that is also a `Job`, so it can be cancelled"
+swift = "a [`Task`](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/) handle, whose result is read with `await handle.value`"
+elixir_erlang = "[`Task.async` and `Task.await`](https://hexdocs.pm/elixir/Task.html): a task is a process meant to execute one particular action"
+
+[[concept]]
+slug = "async_await"
+title = "Async and await"
+summary = "Syntax that lets asynchronous code read like sequential code: an async function returns a future, and await pauses the caller until that future resolves, without blocking the thread."
+aliases = ["async/await", "async function", "coroutines (C++20)"]
+chapter = 6
+uses = ["future_and_promise", "suspension_point"]
+related = ["function_coloring"]
+notes = [
+  ["Topics - async - how to teach async rust", "https://docs.google.com/document/u/0/d/1r-1z2MoDfVtR0gaz7ZypLhOzfmZrlme1BJs_Y6vx1IQ/edit"],
+  ["async - rust - concurrency - main - idx", "https://docs.google.com/document/u/0/d/1V8gave_8PBAPOj3SgO91rktMc3u-3FLIExFu_0HNJsw/edit"],
+  ["Asynchronous Programming in Rust (notes)", "https://docs.google.com/document/u/0/d/15kighMDIDhny4QjmTyiEjVUeBe_GqTMb23rVH3rNWAQ/edit"],
+  ["book rust asynchronous programming", "https://docs.google.com/document/u/0/d/10K6F_oPLDwp9oMmeOjA_yEJlZJyrUzGvXD9MLePpDd8/edit"],
+  ["Error handling in async functions", "https://docs.google.com/document/d/18z0CoZUSqptiWohFcLyKKOph22f5DgpxiQO791phWEc/edit?tab=t.0"],
+  ["asynchronous python", "https://docs.google.com/document/u/0/d/1tkAkfrrVTZY30QMNLV211PXKcQooMhDHBL1lF_27_ic/edit"],
+  ["async kata - python", "https://docs.google.com/document/d/1og40CcSWMRJCs2H98L8VGFoi12eX-DYNtFBAl_BQrFQ/edit?tab=t.0"],
+  ["async - concurrent - C# - main", "https://docs.google.com/document/d/1RA-b0Ib0k0Vly1mMsvENHLwJ4cHG_mrhEFY7LKDxI-g/edit?tab=t.0"],
+  ["async method - c#", "https://docs.google.com/document/d/1oJ7jSmz8DkWkGE_8nP9KxsUgGk_xpM2IygCWLrV0FJo/edit?tab=t.0"],
+  ["async - dart programming - main", "https://docs.google.com/document/d/1k7sgra_fO8kFhNIN7QRN2dgC7z0KMo1sXboan8WG4O8/edit?tab=t.0"],
+]
+reference = [["Wikipedia: Async/await", "https://en.wikipedia.org/wiki/Async/await"]]
+[concept.languages]
+rust = "`async fn` and `.await`; an async function does no work until its future is polled ([reference](https://doc.rust-lang.org/reference/items/functions.html#async-functions)), and while most languages with async bundle a runtime, Rust does not ([Book](https://doc.rust-lang.org/book/ch17-01-futures-and-syntax.html))"
+go = "neither: code blocks in ordinary calls, and when a goroutine blocks the runtime moves the others to a runnable thread ([FAQ](https://go.dev/doc/faq#goroutines))"
+cpp = "C++20 [coroutines](https://en.cppreference.com/w/cpp/language/coroutines) (`co_await`, `co_yield`, `co_return`) are stackless; C++20 ships handles and traits but no task type, which the [support library](https://en.cppreference.com/w/cpp/coroutine) adds as `std::execution::task` in C++26"
+java = "no async/await: [JEP 444](https://openjdk.org/jeps/444) delivered virtual threads in JDK 21 and rejected async/await because it would split the world between APIs for threads and APIs for coroutines; [`CompletableFuture`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html) chains actions on completion"
+python = "[`async def` and `await`](https://docs.python.org/3/reference/compound_stmts.html#coroutine-function-definition) on [asyncio's event loop](https://docs.python.org/3/library/asyncio-eventloop.html); simply calling a coroutine does not schedule it ([docs](https://docs.python.org/3/library/asyncio-task.html#coroutines))"
+csharp = "an `async` method returns a [`Task`](https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/) that is already running: only tasks made with a `Task` constructor start cold ([TAP](https://learn.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap)); the compiler turns the method into a state machine"
+javascript = "an [`async function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) runs synchronously up to its first `await`, so its work starts on the call; [`await`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await) is allowed only in async functions and at the top level of a module"
+kotlin = "`suspend` functions, called with no `await` keyword and only from other suspending functions ([basics](https://kotlinlang.org/docs/coroutines-basics.html)); [`async`](https://kotlinlang.org/docs/composing-suspending-functions.html) returns a `Deferred` to await, and starts lazily only if asked to"
+swift = "`async` functions with `await` marking each possible suspension point, plus `async let` and task groups ([Swift book](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/))"
+
+[[concept]]
+slug = "async_state_machine"
+title = "Async functions as state machines"
+summary = "A compiler turns an async function into a state machine whose states are its suspension points, storing the local variables that live across each await."
+chapter = 6
+uses = ["coroutine"]
+related = ["async_await", "pinning"]
+notes = [["async functions - state machines - rust", "https://docs.google.com/document/d/1mQYBLftNU6A4mo4hA5gsJVMOfvWY79dNFSagAlZETVU/edit?tab=t.0"]]
+[concept.languages]
+rust = "the compiler turns async code into an invisible state machine that a runtime drives ([Book](https://doc.rust-lang.org/book/ch17-01-futures-and-syntax.html))"
+cpp = "a [coroutine](https://en.cppreference.com/w/cpp/language/coroutines) keeps its promise, parameters, suspension point and locals in a coroutine state, allocated dynamically unless the allocation is optimized out"
+csharp = "the compiler generates a state machine for each async method, implementing [`IAsyncStateMachine`](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.compilerservices.iasyncstatemachine)"
+kotlin = "a suspended computation is resumed through a [`Continuation`](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.coroutines/-continuation/), which represents the rest of the work after a suspension point"
+
+[[concept]]
+slug = "structured_concurrency"
+title = "Structured concurrency"
+summary = "Concurrent tasks are started inside a scope that does not end until all of them have, so no task outlives the code that started it and every error reaches that code."
+aliases = ["nursery", "task group", "scoped threads"]
+chapter = 6
+prevents = ["task_leak"]
+uses = ["join", "cancellation"]
+lessons = ["01_Threads/who_waits_when_main_returns"]
+pages = [["Go: The first error cancels the rest", "https://masiarek.github.io/go-learning-library/06_Patterns/first_error_cancels_the_rest/index.html"]]
+reference = [["Wikipedia: Structured concurrency", "https://en.wikipedia.org/wiki/Structured_concurrency"]]
+[concept.languages]
+rust = "[`thread::scope`](https://doc.rust-lang.org/std/thread/fn.scope.html): every thread spawned in the scope is joined before it returns, which is why scoped threads may borrow local data"
+go = "not in std; [`errgroup`](https://pkg.go.dev/golang.org/x/sync/errgroup) waits for a group of goroutines and cancels their context the first time one returns an error"
+cpp = "no scope construct; a [`std::jthread`](https://en.cppreference.com/w/cpp/thread/jthread) (C++20) joins on destruction, where a still-joinable [`std::thread`](https://en.cppreference.com/w/cpp/thread/thread/~thread) calls `std::terminate`"
+java = "[`StructuredTaskScope`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/StructuredTaskScope.html), a preview API in JDK 25 ([JEP 505](https://openjdk.org/jeps/505), fifth preview) and again in JDK 26 ([JEP 525](https://openjdk.org/jeps/525), sixth preview)"
+python = "[`asyncio.TaskGroup`](https://docs.python.org/3/library/asyncio-task.html#asyncio.TaskGroup), added in 3.11"
+kotlin = "the default: coroutines start inside a `CoroutineScope`, and [`coroutineScope`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/coroutine-scope.html) returns only when its block and all coroutines launched in it have completed"
+swift = "task groups and `async let` create child tasks; the [Swift book](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/) calls that explicit parent-child relationship structured concurrency"
+other = "Trio's [nurseries](https://trio.readthedocs.io/en/stable/reference-core.html#tasks-let-you-do-multiple-things-at-once), in Python"
+
+[[concept]]
+slug = "cancellation"
+title = "Cancellation"
+summary = "Asking a running task to stop early and release what it holds; in most languages the task has to cooperate by noticing the request."
+aliases = ["cancellation token", "context cancellation", "stop token"]
+chapter = 6
+prevents = ["task_leak"]
+related = ["timeout"]
+pages = [
+  ["Go: One `cancel` reaches every goroutine", "https://masiarek.github.io/go-learning-library/05_Context/cancel_reaches_every_goroutine/index.html"],
+  ["Go: Cancel with a cause", "https://masiarek.github.io/go-learning-library/05_Context/cancel_with_a_cause/index.html"],
+  ["Go: The first error cancels the rest", "https://masiarek.github.io/go-learning-library/06_Patterns/first_error_cancels_the_rest/index.html"],
+]
+[concept.languages]
+rust = "a future is cancelled by dropping it; tokio's [`select!`](https://docs.rs/tokio/latest/tokio/macro.select.html) cancels the branches that lose that way, which is why its docs discuss cancellation safety"
+go = "a [`context`](https://pkg.go.dev/context#WithCancel): calling `cancel` closes the context's `Done` channel, and with it those of the contexts derived from it; each goroutine has to watch `Done`"
+c = "[`pthread_cancel`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_cancel.html) asks; the target thread's cancelability state and type decide when it takes effect"
+cpp = "[`std::stop_token`](https://en.cppreference.com/w/cpp/thread/stop_token) (C++20) tells a thread whether a stop has been requested; a [`std::jthread`](https://en.cppreference.com/w/cpp/thread/jthread) can be stopped this way"
+java = "[`Thread.interrupt`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html), which a blocked `sleep`, `wait` or `join` answers with `InterruptedException`; [`Future.cancel`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Future.html)"
+python = "[`Task.cancel`](https://docs.python.org/3/library/asyncio-task.html#asyncio.Task.cancel) raises `CancelledError` inside the task at its next opportunity"
+csharp = "a [`CancellationToken`](https://learn.microsoft.com/en-us/dotnet/standard/threading/cancellation-in-managed-threads), a cooperative model: each listener must notice the request and respond to it"
+javascript = "an [`AbortController`](https://developer.mozilla.org/en-US/docs/Web/API/AbortController) and its `AbortSignal`"
+kotlin = "[cooperative](https://kotlinlang.org/docs/coroutines-cancellation.html): a coroutine reacts to cancellation only when it suspends or checks for it explicitly"
+swift = "cooperative: a task checks with `Task.checkCancellation()` or `Task.isCancelled` ([Swift book](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/))"
+elixir_erlang = "[`Process.exit/2`](https://hexdocs.pm/elixir/Process.html#exit/2) sends an exit signal; a process that traps exits receives it as a message instead"
+haskell = "[`killThread`](https://hackage.haskell.org/package/base/docs/Control-Concurrent.html#v:killThread) raises the `ThreadKilled` exception in the target thread"
+
+[[concept]]
+slug = "timeout"
+title = "Timeout"
+summary = "Giving up on an operation after a time limit — which, in concurrent code, means cancelling or abandoning whatever was still running on its behalf."
+aliases = ["deadline"]
+chapter = 6
+uses = ["cancellation"]
+prevents = ["deadlock"]
+pages = [
+  ["Go: A timeout is a channel", "https://masiarek.github.io/go-learning-library/03_Select/a_timeout_is_a_channel/index.html"],
+  ["Go: A deadline is a cancel with a clock", "https://masiarek.github.io/go-learning-library/05_Context/a_deadline_is_a_cancel_with_a_clock/index.html"],
+]
+[concept.languages]
+rust = "[`Receiver::recv_timeout`](https://doc.rust-lang.org/std/sync/mpsc/struct.Receiver.html#method.recv_timeout) on a channel; tokio's [`time::timeout`](https://docs.rs/tokio/latest/tokio/time/fn.timeout.html) requires a future to complete before a duration has elapsed"
+go = "[`context.WithTimeout`](https://pkg.go.dev/context#WithTimeout) for a whole call tree; [`time.After`](https://pkg.go.dev/time#After) as one case of a `select`"
+c = "[`pthread_cond_timedwait`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_cond_timedwait.html), which takes an absolute time"
+cpp = "[`std::future::wait_for`](https://en.cppreference.com/w/cpp/thread/future/wait_for), which returns `future_status::timeout`"
+java = "[`Future.get`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Future.html) with a timeout throws `TimeoutException`; [`CompletableFuture.orTimeout`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html)"
+python = "[`asyncio.timeout`](https://docs.python.org/3/library/asyncio-task.html#asyncio.timeout) cancels the task and turns the `CancelledError` into a `TimeoutError`; [`asyncio.wait_for`](https://docs.python.org/3/library/asyncio-task.html#asyncio.wait_for)"
+csharp = "[`CancellationTokenSource.CancelAfter`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.cancellationtokensource.cancelafter), and [`Task.WaitAsync`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.waitasync) with a `TimeSpan`"
+javascript = "[`AbortSignal.timeout()`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal/timeout_static) returns a signal that aborts with a `TimeoutError`"
+kotlin = "[`withTimeout`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/with-timeout.html) cancels its block with a `TimeoutCancellationException`; `withTimeoutOrNull` is the variant the [guide](https://kotlinlang.org/docs/coroutines-cancellation.html) uses"
+elixir_erlang = "an `after` clause on `receive`, in [Erlang](https://www.erlang.org/doc/system/expressions.html) and [Elixir](https://hexdocs.pm/elixir/processes.html)"
+haskell = "[`System.Timeout.timeout`](https://hackage.haskell.org/package/base/docs/System-Timeout.html)"
+
+[[concept]]
+slug = "join"
+title = "Join"
+summary = "Waiting for a thread or task to finish, usually receiving its result or its failure through a handle."
+aliases = ["join handle", "JoinHandle", "WaitGroup", "await"]
+chapter = 1
+related = ["daemon_thread"]
+lessons = ["01_Threads/who_waits_when_main_returns", "01_Threads/getting_a_result_back"]
+pages = [
+  ["Rust: Spawning a thread", "https://masiarek.github.io/rust-learning-library/09_Advanced/spawning_a_thread/index.html"],
+  ["Go: A goroutine has no handle", "https://masiarek.github.io/go-learning-library/01_Goroutines/a_goroutine_has_no_handle/index.html"],
+  ["Go: `main` does not wait", "https://masiarek.github.io/go-learning-library/01_Goroutines/main_does_not_wait/index.html"],
+  ["Go: A WaitGroup counts goroutines", "https://masiarek.github.io/go-learning-library/04_Sync/a_waitgroup_counts_goroutines/index.html"],
+]
+[concept.languages]
+rust = "[`JoinHandle::join`](https://doc.rust-lang.org/std/thread/struct.JoinHandle.html#method.join) returns the thread's result, or `Err` if the thread panicked"
+go = "no handle to join: count goroutines with a [`sync.WaitGroup`](https://pkg.go.dev/sync#WaitGroup), which also has a `Go` method, or receive their results on a channel"
+c = "[`pthread_join`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_join.html) suspends the caller until the target thread terminates"
+cpp = "[`std::thread::join`](https://en.cppreference.com/w/cpp/thread/thread/join); destroying a thread that is still joinable calls `std::terminate` ([destructor](https://en.cppreference.com/w/cpp/thread/thread/~thread)), which a [`std::jthread`](https://en.cppreference.com/w/cpp/thread/jthread) avoids by joining"
+java = "[`Thread.join`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html), or `get` on a [`Future`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Future.html)"
+python = "[`Thread.join`](https://docs.python.org/3/library/threading.html#threading.Thread.join)"
+csharp = "[`Thread.Join`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.thread.join); for tasks, `await` or [`Task.WhenAll`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.whenall)"
+javascript = "[`Promise.all`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all), which rejects as soon as any input promise rejects"
+kotlin = "[`Job.join`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-job/join.html) suspends until the job is complete, for any reason"
+swift = "`await` a task's `value` ([Swift book](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/))"
+elixir_erlang = "[`Task.await`](https://hexdocs.pm/elixir/Task.html)"
+os = "[`waitpid`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/waitpid.html) for a child process"
+
+[[concept]]
+slug = "function_coloring"
+title = "Function coloring"
+summary = "An async function can call a sync one, but not the other way round without help, so async-ness spreads up the call graph and splits libraries into two colors."
+aliases = ["what color is your function", "sync and async functions"]
+chapter = 6
+related = ["blocking_the_event_loop"]
+notes = [["async and ffi - async & FFI - not exactly a love story", "https://docs.google.com/document/d/1vBvNkxdRh2b88PkKupNiZssYZAyUFY3IFQ1UEgbfa-Y/edit?tab=t.0"]]
+reference = [["Bob Nystrom: What Color is Your Function?", "https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/"]]
+[concept.languages]
+rust = "futures are lazy until awaited, and Rust bundles no runtime, so sync code needs one from a crate to run an async function ([Book](https://doc.rust-lang.org/book/ch17-01-futures-and-syntax.html))"
+go = "no colors: any function can run in its own goroutine with a [`go` statement](https://go.dev/ref/spec#Go_statements), and a blocking call does not hold up the other goroutines ([FAQ](https://go.dev/doc/faq#goroutines))"
+java = "[JEP 444](https://openjdk.org/jeps/444) chose virtual threads over async/await because async/await would split the world between APIs for threads and APIs for coroutines"
+python = "`await`, `async for` and `async with` are allowed only in a [coroutine function](https://docs.python.org/3/reference/compound_stmts.html#coroutine-function-definition); sync code starts one with [`asyncio.run`](https://docs.python.org/3/library/asyncio-runner.html#asyncio.run), and async code can hand a blocking call to [`asyncio.to_thread`](https://docs.python.org/3/library/asyncio-task.html#asyncio.to_thread)"
+javascript = "[`await`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await) is allowed only inside async functions and at the top level of a module"
+kotlin = "a suspending function can be called only from another suspending function ([basics](https://kotlinlang.org/docs/coroutines-basics.html)); [`runBlocking`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/run-blocking.html) bridges from blocking code by blocking the thread"
+
+[[concept]]
+slug = "async_stream"
+title = "Async stream"
+summary = "An asynchronous iterator: a sequence whose items arrive over time, each one awaited in turn."
+aliases = ["Stream", "async generator", "AsyncIterator", "Sink"]
+chapter = 6
+uses = ["future_and_promise"]
+notes = [["sink - rust - futures::sink::Sink", "https://docs.google.com/document/d/1CqiyECIqf2na7Xlkc3WqurQf5kQxHDm44qY8-n3g_9s/edit?tab=t.0"]]
+[concept.languages]
+rust = "no stable trait: std's [`AsyncIterator`](https://doc.rust-lang.org/std/async_iter/trait.AsyncIterator.html) is a nightly-only experimental API"
+java = "[`Flow.Publisher`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Flow.html), with the subscriber requesting items"
+python = "[asynchronous generators](https://docs.python.org/3/reference/expressions.html#asynchronous-generator-functions), consumed with [`async for`](https://docs.python.org/3/reference/compound_stmts.html#async-for)"
+csharp = "[`IAsyncEnumerable<T>`](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.iasyncenumerable-1), consumed with [`await foreach`](https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/generate-consume-asynchronous-stream)"
+javascript = "[`async function*`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function*) generators, consumed with [`for await...of`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of)"
+kotlin = "[`Flow`](https://kotlinlang.org/docs/coroutines-flow.html): a cold flow is lazy and runs anew for each collector, a hot flow shares its values with all collectors"
+swift = "[`AsyncSequence`](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/), iterated with `for await`; an [`AsyncStream`](https://developer.apple.com/documentation/swift/asyncstream) builds one from a closure"
+
+[[concept]]
+slug = "pinning"
+title = "Pinning"
+summary = "Rust's guarantee that a value will not move in memory, needed because an async state machine may hold pointers into itself."
+aliases = ["Pin", "Unpin"]
+chapter = 6
+reference = [["Rust std: module pin", "https://doc.rust-lang.org/std/pin/index.html"]]
+[concept.languages]
+rust = "[`Pin`](https://doc.rust-lang.org/std/pin/struct.Pin.html) keeps a pointee from being moved unless it implements `Unpin`"
+csharp = "a different pinning: [`fixed`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/fixed) stops the garbage collector from relocating a variable while a pointer to it is in use, and so does a [`Pinned`](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.gchandletype) `GCHandle`"
+
+[[concept]]
+slug = "blocking_the_event_loop"
+title = "Blocking the event loop"
+summary = "A task that computes for a long time, or makes a blocking call, on the runtime's thread stops every other task on that thread until it is done."
+aliases = ["blocking in async code"]
+chapter = 6
+causes = ["starvation"]
+related = ["event_loop"]
+[concept.languages]
+rust = "tokio's [`spawn_blocking`](https://docs.rs/tokio/latest/tokio/task/fn.spawn_blocking.html) runs blocking work on a thread dedicated to it, because a future that does not yield keeps the executor from driving other futures"
+go = "there is no event loop to block, and since [Go 1.14](https://go.dev/doc/go1.14#runtime) goroutines are asynchronously preemptible, so even a loop without function calls cannot hold up the scheduler"
+java = "a virtual thread that blocks releases its platform thread; [JEP 491](https://openjdk.org/jeps/491) (JDK 24) made that happen inside `synchronized` too"
+python = "blocking (CPU-bound) code should not be called directly; `loop.run_in_executor` or [`asyncio.to_thread`](https://docs.python.org/3/library/asyncio-task.html#asyncio.to_thread) moves it off the loop ([asyncio guide](https://docs.python.org/3/library/asyncio-dev.html#running-blocking-code))"
+javascript = "Node runs callbacks on the Event Loop and expensive tasks on a Worker Pool; a thread blocked on behalf of one client cannot serve any other ([guide](https://nodejs.org/en/learn/asynchronous-work/dont-block-the-event-loop))"
+
+[[concept]]
+slug = "reactive_programming"
+title = "Reactive programming"
+summary = "Describing a program as streams of values over time and the values derived from them, with changes propagating through automatically."
+aliases = ["Rx", "ReactiveX", "Reactive Extensions", "observables"]
+uses = ["async_stream"]
+notes = [["Reactive Programming vs Asynchronous Programming", "https://docs.google.com/document/u/0/d/13Xtxk5uCx66-69cMmCQzR4AGM084u-7MvJ00xCiuCjs/edit"]]
+reference = [["Wikipedia: Reactive programming", "https://en.wikipedia.org/wiki/Reactive_programming"]]
+[concept.languages]
+java = "[`Flow`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Flow.html), the JDK's version of the reactive-streams interfaces"
+csharp = "[`IObservable<T>`](https://learn.microsoft.com/en-us/dotnet/api/system.iobservable-1), a provider for push-based notification"
+kotlin = "[`Flow`](https://kotlinlang.org/docs/coroutines-flow.html), including `StateFlow`, a `SharedFlow` that always holds the latest state value"
+swift = "[Combine](https://developer.apple.com/documentation/combine): publishers expose values that change over time, and subscribers receive them"
+other = "[ReactiveX](https://reactivex.io/intro.html), whose Observable is the asynchronous, push counterpart of an Iterable"
+
+[[concept]]
+slug = "timers"
+title = "Timers and tickers"
+summary = "A runtime facility that fires once after a delay, or repeatedly at an interval, and delivers it as a callback, a value on a channel, or something to await."
+aliases = ["ticker", "interval", "setTimeout"]
+chapter = 6
+related = ["timeout", "event_loop"]
+pages = [["Go: A timeout is a channel", "https://masiarek.github.io/go-learning-library/03_Select/a_timeout_is_a_channel/index.html"]]
+[concept.languages]
+rust = "Tokio's [`time`](https://docs.rs/tokio/latest/tokio/time/index.html) module: `sleep`, `interval` and `timeout`"
+go = "[`time.Timer`](https://pkg.go.dev/time#Timer) and [`time.Ticker`](https://pkg.go.dev/time#Ticker), each delivering on a channel"
+java = "[`ScheduledExecutorService`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ScheduledExecutorService.html) runs tasks after a delay or periodically"
+python = "[`loop.call_later`](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.loop.call_later) on the event loop, and [`threading.Timer`](https://docs.python.org/3/library/threading.html#timer-objects) for threads"
+csharp = "[`PeriodicTimer`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.periodictimer), whose ticks are awaited"
+javascript = "[`setTimeout`](https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout) and `setInterval`"
+os = "[`timerfd_create`](https://man7.org/linux/man-pages/man2/timerfd_create.2.html) makes a timer readable as a file descriptor, so an event loop can wait on it"

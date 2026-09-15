@@ -1,0 +1,279 @@
+[category]
+title = "Units of execution"
+order = 2
+blurb = "The things that run: processes, threads, and the lighter units — goroutines, virtual threads, coroutines, tasks — that runtimes schedule on top of them."
+
+[[concept]]
+slug = "process"
+title = "Process"
+summary = "A running program with its own address space, open files and at least one thread; two processes share nothing unless they arrange to."
+aliases = ["OS process"]
+chapter = 8
+contrasts = ["thread"]
+related = ["ipc", "multiprocessing", "context_switch"]
+lessons = ["01_Threads/who_waits_when_main_returns"]
+notes = [
+  ["processes and the operating system", "https://docs.google.com/document/d/1HwQOUG5CZYqFcLTjpyTbDqXCx753PxesnMEa69Y09pM/edit?tab=t.0"],
+  ["process - rust", "https://docs.google.com/document/d/12slQV5W0Nnu16WPelT4LOTtCiEZGk39kI-5ZS-tczOU/edit?tab=t.0"],
+  ["exit - function - rust - std::process::exit", "https://docs.google.com/document/u/0/d/1k-s4WLlQ4f3M7leYOgCHCere0fxavnIxwWYPddMxsQg/edit"],
+  ["how the CPU interacts with processes and threads", "https://docs.google.com/document/u/0/d/1l0y3Zy3fKsIhcYkWkeqiitgQEP-uMEyceIWqsZoRkig/edit"],
+]
+pages = [["Linux: head closes the pipe early", "https://masiarek.github.io/linux-learning-library/01_Pipelines/head_closes_the_pipe_early/index.html"]]
+reference = [["Wikipedia: Process (computing)", "https://en.wikipedia.org/wiki/Process_(computing)"]]
+[concept.languages]
+rust = "[`std::process::Command`](https://doc.rust-lang.org/std/process/struct.Command.html) spawns a child process and returns a [`Child`](https://doc.rust-lang.org/std/process/struct.Child.html)"
+go = "[`os/exec`](https://pkg.go.dev/os/exec) runs an external command"
+c = "[`fork`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/fork.html) copies the calling process but only the thread that called it; [`posix_spawn`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/posix_spawn.html) starts a new program"
+java = "[`ProcessBuilder`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ProcessBuilder.html) starts a [`Process`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Process.html); [`ProcessHandle`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ProcessHandle.html) (Java 9) inspects any process"
+python = "[`subprocess`](https://docs.python.org/3/library/subprocess.html) runs programs; [`multiprocessing`](https://docs.python.org/3/library/multiprocessing.html) runs Python functions in child processes"
+csharp = "[`Process.Start`](https://learn.microsoft.com/en-us/dotnet/api/system.diagnostics.process.start)"
+elixir_erlang = "An external program is reached through a [port](https://www.erlang.org/doc/system/ports.html), and runs in another OS process"
+os = "[`fork(2)`](https://man7.org/linux/man-pages/man2/fork.2.html) and [`execve(2)`](https://man7.org/linux/man-pages/man2/execve.2.html); on Linux [`clone(2)`](https://man7.org/linux/man-pages/man2/clone.2.html) creates processes and threads alike"
+
+[[concept]]
+slug = "thread"
+title = "Thread"
+summary = "A sequence of execution inside a process, with its own stack but sharing the process's memory with every other thread in it."
+aliases = ["thread of execution", "OS thread", "platform thread", "multithreading"]
+chapter = 1
+contrasts = ["async_task"]
+related = ["scheduler"]
+lessons = ["01_Threads/who_waits_when_main_returns", "01_Threads/getting_a_result_back"]
+notes = [
+  ["threads - rust - main", "https://docs.google.com/document/d/1kxIk0nGkxOJ5lcybX_r2txaFTawZwYpOTyygywmHOlc/edit?tab=t.0"],
+  ["Spawning threads - rust", "https://docs.google.com/document/u/0/d/1v208vCRPt1fkxIb2K49oL1p3pX5QJdpe87_Cvnper7M/edit"],
+  ["Multithreading - general - multi-threaded", "https://docs.google.com/document/d/1prANOgePI5APNxKTuQbforpHjIm0z4iuqhsqRve6QyU/edit?tab=t.0"],
+  ["async vs threads - rust", "https://docs.google.com/document/d/153Qen2UNMMvVIen06MeChAghpYjp5pEXAl2KL8EgQMo/edit?tab=t.0"],
+]
+pages = [
+  ["Rust: Spawning a thread", "https://masiarek.github.io/rust-learning-library/09_Advanced/spawning_a_thread/index.html"],
+  ["Go: Goroutines are cheap", "https://masiarek.github.io/go-learning-library/01_Goroutines/goroutines_are_cheap/index.html"],
+]
+reference = [["Wikipedia: Thread (computing)", "https://en.wikipedia.org/wiki/Thread_(computing)"]]
+[concept.languages]
+rust = "[`std::thread::spawn`](https://doc.rust-lang.org/std/thread/fn.spawn.html) returns a [`JoinHandle`](https://doc.rust-lang.org/std/thread/struct.JoinHandle.html); a panic in the thread comes back as `Err` from `join`"
+go = "No thread API: goroutines run on threads the runtime manages, and [`runtime.LockOSThread`](https://pkg.go.dev/runtime#LockOSThread) wires one goroutine to its thread"
+c = "POSIX [`pthread_create`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_create.html), or C11 [`thrd_create`](https://en.cppreference.com/w/c/thread/thrd_create)"
+cpp = "[`std::thread`](https://en.cppreference.com/w/cpp/thread/thread) calls `std::terminate` if destroyed while still joinable; C++20 [`std::jthread`](https://en.cppreference.com/w/cpp/thread/jthread) joins in its destructor"
+java = "[`Thread`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html), since JDK 21 either a platform thread or a [virtual thread](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html#virtual-threads)"
+python = "[`threading.Thread`](https://docs.python.org/3/library/threading.html#threading.Thread); in CPython, the Global Interpreter Lock lets only one thread execute Python code at once"
+csharp = "[`System.Threading.Thread`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.thread)"
+javascript = "A [`Worker`](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API) runs a script in a background thread with its own global scope"
+kotlin = "On the JVM, [`thread { }`](https://kotlinlang.org/api/core/kotlin-stdlib/kotlin.concurrent/thread.html) creates and starts a `java.lang.Thread`"
+swift = "[`Thread`](https://developer.apple.com/documentation/foundation/thread) in Foundation"
+haskell = "[`forkOS`](https://hackage.haskell.org/package/base/docs/Control-Concurrent.html#v:forkOS) makes a bound thread tied to one OS thread; `forkIO` threads are lighter and not tied to one"
+os = "[`pthreads(7)`](https://man7.org/linux/man-pages/man7/pthreads.7.html); Linux's NPTL is a 1:1 implementation, one kernel scheduling entity per thread"
+
+[[concept]]
+slug = "daemon_thread"
+title = "Daemon and detached threads"
+summary = "A thread that does not keep its program alive: when the program ends, the thread is stopped wherever it happens to be."
+aliases = ["daemon thread", "detached thread", "background thread"]
+chapter = 1
+is_a = ["thread"]
+related = ["join"]
+lessons = ["01_Threads/who_waits_when_main_returns"]
+pages = [["Go: `main` does not wait", "https://masiarek.github.io/go-learning-library/01_Goroutines/main_does_not_wait/index.html"]]
+[concept.languages]
+rust = "Dropping a [`JoinHandle`](https://doc.rust-lang.org/std/thread/struct.JoinHandle.html) detaches its thread, and [every thread ends when `main` does](https://doc.rust-lang.org/std/thread/index.html#the-threading-model)"
+go = "Every goroutine behaves this way: [when `main` returns the program exits](https://go.dev/ref/spec#Program_execution), without waiting for other goroutines"
+c = "[`pthread_detach`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_detach.html) means nobody will join the thread; after [`pthread_exit`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_exit.html) the process exits with status 0 once the last thread has ended"
+cpp = "[`std::thread::detach`](https://en.cppreference.com/w/cpp/thread/thread/detach) lets the thread run on after its `std::thread` object is gone"
+java = "[`Thread.setDaemon`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html#setDaemon%28boolean%29); the JVM does not wait for daemon threads, and virtual threads are always daemons"
+python = "[`daemon=True`](https://docs.python.org/3/library/threading.html#threading.Thread.daemon); the interpreter waits for non-daemon threads, and daemon threads are stopped abruptly at shutdown"
+csharp = "[`Thread.IsBackground`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.thread.isbackground): background threads do not keep a process running"
+haskell = "Every [`forkIO`](https://hackage.haskell.org/package/base/docs/Control-Concurrent.html#v:forkIO) thread is daemonic: the program ends when the main thread does, and waiting for the others is written by hand, for instance with an `MVar`"
+
+[[concept]]
+slug = "green_thread"
+title = "Green threads and M:N scheduling"
+summary = "Threads implemented by a language runtime instead of the operating system, many of them multiplexed onto a smaller number of OS threads."
+aliases = ["user-space threads", "M:N threading", "lightweight threads"]
+is_a = ["thread"]
+related = ["fiber", "coroutine", "scheduler"]
+pages = [["Go: Goroutines are cheap", "https://masiarek.github.io/go-learning-library/01_Goroutines/goroutines_are_cheap/index.html"]]
+reference = [["Wikipedia: Green thread", "https://en.wikipedia.org/wiki/Green_thread"]]
+[concept.languages]
+rust = "Standard threads are [native OS threads](https://doc.rust-lang.org/std/thread/index.html); M:N scheduling of tasks comes from an async runtime such as [Tokio's](https://docs.rs/tokio/latest/tokio/runtime/index.html)"
+go = "Goroutines are M:N: [multiplexed onto a set of OS threads](https://go.dev/doc/faq#goroutines)"
+java = "[Virtual threads](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html#virtual-threads) (JDK 21) are scheduled by the Java runtime rather than the operating system"
+kotlin = "Coroutines are sent to threads by [dispatchers](https://kotlinlang.org/docs/coroutine-context-and-dispatchers.html)"
+elixir_erlang = "Processes are M:N, run by [scheduler threads](https://www.erlang.org/doc/apps/erts/erl_cmd.html) inside the VM"
+haskell = "[`forkIO`](https://hackage.haskell.org/package/base/docs/Control-Concurrent.html#v:forkIO) threads are lightweight, scheduled by the GHC runtime rather than the OS"
+
+[[concept]]
+slug = "goroutine"
+title = "Goroutine"
+summary = "Go's unit of concurrency: a function call started with the `go` statement and scheduled by the Go runtime onto a small pool of operating-system threads."
+chapter = 1
+is_a = ["green_thread"]
+related = ["csp", "channel", "daemon_thread", "preemptive_scheduling"]
+lessons = ["01_Threads/who_waits_when_main_returns", "01_Threads/getting_a_result_back"]
+notes = [["Concurrency in Go - Main", "https://docs.google.com/document/d/1pBqchTSqkZvxYku7BahB5--c2HWLa3OBx_Mj5g4VOHs/edit"]]
+pages = [
+  ["Go: `main` does not wait", "https://masiarek.github.io/go-learning-library/01_Goroutines/main_does_not_wait/index.html"],
+  ["Go: A goroutine has no handle", "https://masiarek.github.io/go-learning-library/01_Goroutines/a_goroutine_has_no_handle/index.html"],
+  ["Go: A panic ends the whole program", "https://masiarek.github.io/go-learning-library/01_Goroutines/a_panic_ends_the_whole_program/index.html"],
+  ["Go: Goroutines are cheap", "https://masiarek.github.io/go-learning-library/01_Goroutines/goroutines_are_cheap/index.html"],
+]
+reference = [["The Go spec: Go statements", "https://go.dev/ref/spec#Go_statements"]]
+[concept.languages]
+rust = "[`tokio::spawn`](https://docs.rs/tokio/latest/tokio/task/fn.spawn.html) is the nearest, and returns a `JoinHandle`"
+go = "The [`go` statement](https://go.dev/ref/spec#Go_statements) discards the function's results, and a goroutine has [no ID](https://go.dev/doc/faq#no_goroutine_id) to hold on to"
+java = "[Virtual threads](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html#virtual-threads) are the nearest: scheduled by the Java runtime, but still `Thread` objects that can be joined"
+kotlin = "[`launch`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/launch.html) returns a `Job`, and `Job.join` suspends until the coroutine completes"
+elixir_erlang = "[`spawn`](https://www.erlang.org/doc/apps/erts/erlang.html#spawn/1) returns a pid, which is used to send the process messages"
+haskell = "[`forkIO`](https://hackage.haskell.org/package/base/docs/Control-Concurrent.html#v:forkIO) returns a `ThreadId` to kill it by; waiting for it is written by hand, for instance with an `MVar`"
+
+[[concept]]
+slug = "virtual_thread"
+title = "Virtual thread"
+summary = "Java's lightweight thread, final in JDK 21: a `Thread` that the JVM schedules onto a few carrier platform threads, cheap enough to start one per task."
+aliases = ["Project Loom"]
+chapter = 1
+is_a = ["green_thread"]
+related = ["daemon_thread"]
+lessons = ["01_Threads/who_waits_when_main_returns"]
+reference = [["JEP 444: Virtual Threads", "https://openjdk.org/jeps/444"]]
+[concept.languages]
+go = "Goroutines, [multiplexed onto OS threads](https://go.dev/doc/faq#goroutines), are the same idea"
+java = "[`Thread.ofVirtual()`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html#ofVirtual%28%29) and [`Executors.newVirtualThreadPerTaskExecutor()`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executors.html#newVirtualThreadPerTaskExecutor%28%29)"
+
+[[concept]]
+slug = "coroutine"
+title = "Coroutine"
+summary = "A function that can suspend itself part-way through and be resumed later from the same point, keeping its local state in between."
+aliases = ["asymmetric coroutine", "symmetric coroutine", "generator", "stackless coroutine"]
+chapter = 6
+related = ["suspension_point", "async_await"]
+notes = [["coroutine - python - async", "https://docs.google.com/document/d/1VYbPExkcfz9f-JmjIDpyLxTKXkSKFwlW7BRelaZDIGk/edit?tab=t.0"]]
+reference = [["Wikipedia: Coroutine", "https://en.wikipedia.org/wiki/Coroutine"]]
+[concept.languages]
+rust = "`async` blocks produce a [`Future`](https://doc.rust-lang.org/std/future/trait.Future.html); general [coroutines](https://doc.rust-lang.org/unstable-book/language-features/coroutines.html) are unstable"
+cpp = "C++20 [coroutines](https://en.cppreference.com/w/cpp/language/coroutines) are stackless, with `co_await`, `co_yield` and `co_return`; C++23 adds [`std::generator`](https://en.cppreference.com/w/cpp/coroutine/generator)"
+python = "[Coroutines](https://docs.python.org/3/glossary.html#term-coroutine) are written with `async def`; [generators](https://docs.python.org/3/glossary.html#term-generator) with `yield` are the other kind"
+csharp = "Iterators with [`yield return`](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/yield), and `async` methods"
+javascript = "[Generator functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*) (`function*`, `yield`) and `async` functions"
+kotlin = "[Coroutines](https://kotlinlang.org/docs/coroutines-basics.html): the language supplies `suspend`, and builders such as `launch` come from `kotlinx.coroutines`"
+other = "Lua's [coroutines](https://www.lua.org/manual/5.4/manual.html#2.6), also called collaborative multithreading, suspend only by explicitly calling a yield function"
+
+[[concept]]
+slug = "fiber"
+title = "Fiber"
+summary = "A coroutine with its own stack that is switched to explicitly — the building block several green-thread runtimes are made of."
+aliases = ["stackful coroutine"]
+is_a = ["coroutine"]
+related = ["green_thread"]
+reference = [["Wikipedia: Fiber (computer science)", "https://en.wikipedia.org/wiki/Fiber_(computer_science)"]]
+[concept.languages]
+os = "[Fibers](https://learn.microsoft.com/en-us/windows/win32/procthread/fibers) in the Windows API; POSIX removed [`makecontext` and `swapcontext`](https://man7.org/linux/man-pages/man3/makecontext.3.html) from the standard"
+other = "Ruby's [`Fiber`](https://docs.ruby-lang.org/en/master/Fiber.html), and PHP's [Fibers](https://www.php.net/manual/en/language.fibers.php) since PHP 8.1"
+
+[[concept]]
+slug = "async_task"
+title = "Task (async)"
+summary = "A unit of async work handed to a runtime — a future being driven to completion — far cheaper than a thread because it holds no stack of its own while it waits."
+aliases = ["task", "spawned future"]
+chapter = 6
+uses = ["future_and_promise"]
+related = ["async_runtime"]
+[concept.languages]
+rust = "[`tokio::spawn`](https://docs.rs/tokio/latest/tokio/task/fn.spawn.html) hands a future to the Tokio runtime and returns a `JoinHandle`"
+python = "[`asyncio.create_task`](https://docs.python.org/3/library/asyncio-task.html#asyncio.create_task); keep a reference to the task, since the event loop holds only a weak one"
+csharp = "[`Task`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.task) represents an asynchronous operation"
+javascript = "Calling an [`async` function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) runs it synchronously up to its first `await` and returns a `Promise`"
+kotlin = "[`async`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/async.html) returns a `Deferred` with a result; [`launch`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/launch.html) returns a `Job`"
+swift = "[`Task`](https://developer.apple.com/documentation/swift/task), a unit of asynchronous work"
+elixir_erlang = "[`Task.async`](https://hexdocs.pm/elixir/Task.html#async/1) starts a process linked to the caller, and `Task.await` receives its reply"
+haskell = "[`async`](https://hackage.haskell.org/package/async/docs/Control-Concurrent-Async.html#v:async) runs an `IO` action in a separate thread and returns an `Async` handle"
+
+[[concept]]
+slug = "thread_pool"
+title = "Thread pool and executor"
+summary = "A set of threads that run submitted tasks one after another, so the cost of starting a thread is paid once rather than once per task."
+aliases = ["executor", "ExecutorService", "ThreadPoolExecutor"]
+chapter = 1
+uses = ["thread"]
+related = ["worker_pool", "work_stealing"]
+lessons = ["01_Threads/getting_a_result_back"]
+pages = [["Go: A worker pool", "https://masiarek.github.io/go-learning-library/06_Patterns/a_worker_pool/index.html"]]
+reference = [["Wikipedia: Thread pool", "https://en.wikipedia.org/wiki/Thread_pool"]]
+[concept.languages]
+rust = "None in the standard library; the Rayon crate has [`ThreadPool`](https://docs.rs/rayon/latest/rayon/struct.ThreadPool.html)"
+go = "No pool type: a fixed number of goroutines receiving from one channel, as in [bounded parallelism](https://go.dev/blog/pipelines)"
+java = "[`ExecutorService`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ExecutorService.html), from the [`Executors`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/Executors.html) factories or [`ThreadPoolExecutor`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ThreadPoolExecutor.html)"
+python = "[`ThreadPoolExecutor`](https://docs.python.org/3/library/concurrent.futures.html#threadpoolexecutor) and `ProcessPoolExecutor`"
+csharp = "The [managed thread pool](https://learn.microsoft.com/en-us/dotnet/standard/threading/the-managed-thread-pool): one per process, used by `Task`"
+kotlin = "[`Dispatchers.Default`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-default.html) and `Dispatchers.IO` are shared pools of threads"
+swift = "[Dispatch](https://developer.apple.com/documentation/dispatch) queues, run on threads the system manages"
+
+[[concept]]
+slug = "context_switch"
+title = "Context switch"
+summary = "Saving one thread's or process's CPU state and loading another's so that it can run; switching between threads is cheaper than between processes, and between async tasks cheaper still."
+aliases = ["task switch"]
+related = ["scheduler", "preemptive_scheduling"]
+notes = [
+  ["Difference between Thread Context Switch and Process Context Switch", "https://docs.google.com/document/u/0/d/1SCJjKfXjd-HhXqBSUDNCobjTHcrqmYURRgZUtaJSCbw/edit"],
+  ["context switching - general", "https://docs.google.com/document/u/0/d/1o8StLlChfE11FyBBzKiqNBbu2xAUz2RfX-w_nwmqhQY/edit"],
+  ["thread suspension", "https://docs.google.com/document/d/1bsfSdHUmJpNIzQsT401GsVrtWj-VzLBrJvd8OSf2-OI/edit?tab=t.0"],
+]
+reference = [["Wikipedia: Context switch", "https://en.wikipedia.org/wiki/Context_switch"]]
+[concept.languages]
+rust = "[`std::thread::yield_now`](https://doc.rust-lang.org/std/thread/fn.yield_now.html) gives up the rest of a time slice"
+go = "[`runtime.Gosched`](https://pkg.go.dev/runtime#Gosched) yields the processor to other goroutines"
+cpp = "[`std::this_thread::yield`](https://en.cppreference.com/w/cpp/thread/yield)"
+java = "[`Thread.yield`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html#yield%28%29), which its documentation says is rarely appropriate to use"
+os = "[`sched_yield(2)`](https://man7.org/linux/man-pages/man2/sched_yield.2.html); [`/proc/pid/status`](https://man7.org/linux/man-pages/man5/proc_pid_status.5.html) counts a process's voluntary and involuntary switches"
+
+[[concept]]
+slug = "thread_local_storage"
+title = "Thread-local storage"
+summary = "A variable with a separate copy per thread, so each thread sees only its own value and no lock is needed."
+aliases = ["TLS", "thread-specific data", "thread-local variable"]
+chapter = 2
+prevents = ["data_race"]
+related = ["thread_confinement", "async_task"]
+reference = [["Wikipedia: Thread-local storage", "https://en.wikipedia.org/wiki/Thread-local_storage"]]
+[concept.languages]
+rust = "[`thread_local!`](https://doc.rust-lang.org/std/macro.thread_local.html) declares a [`LocalKey`](https://doc.rust-lang.org/std/thread/struct.LocalKey.html), read through `with`"
+go = "None: goroutines are anonymous, with [no ID](https://go.dev/doc/faq#no_goroutine_id) to attach state to, and request-scoped values travel in a [`context.Context`](https://pkg.go.dev/context)"
+c = "C11 [`_Thread_local`](https://en.cppreference.com/w/c/language/storage_duration) (`thread_local` since C23), or POSIX [`pthread_key_create`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_key_create.html)"
+cpp = "[`thread_local`](https://en.cppreference.com/w/cpp/language/storage_duration) (C++11)"
+java = "[`ThreadLocal`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ThreadLocal.html), and [`ScopedValue`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ScopedValue.html) (JDK 25) for immutable values bound for a scope"
+python = "[`threading.local`](https://docs.python.org/3/library/threading.html#threading.local); concurrent code should use [`contextvars`](https://docs.python.org/3/library/contextvars.html) instead, so that state does not bleed into other code"
+csharp = "[`ThreadLocal<T>`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.threadlocal-1), and [`AsyncLocal<T>`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.asynclocal-1) for a value that follows an asynchronous flow"
+swift = "[`TaskLocal`](https://developer.apple.com/documentation/swift/tasklocal) values belong to a task and are inherited by its child tasks"
+elixir_erlang = "Each process has its own [process dictionary](https://www.erlang.org/doc/apps/erts/erlang.html#put/2)"
+
+[[concept]]
+slug = "subprocess"
+title = "Child process"
+summary = "A process started by another program, which can pass it input, read its output, wait for it and learn how it ended."
+aliases = ["subprocess", "spawn", "fork and exec"]
+chapter = 8
+is_a = ["process"]
+related = ["ipc"]
+lessons = ["01_Threads/who_waits_when_main_returns"]
+reference = [["Wikipedia: Child process", "https://en.wikipedia.org/wiki/Child_process"]]
+[concept.languages]
+rust = "[`std::process::Command`](https://doc.rust-lang.org/std/process/struct.Command.html)"
+go = "[`os/exec`](https://pkg.go.dev/os/exec)"
+c = "[`posix_spawn`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/posix_spawn.html), or `fork` then `exec`, and [`waitpid`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/waitpid.html) for the exit status"
+java = "[`ProcessBuilder`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ProcessBuilder.html)"
+python = "[`subprocess`](https://docs.python.org/3/library/subprocess.html), and [asyncio subprocesses](https://docs.python.org/3/library/asyncio-subprocess.html) for use inside an event loop"
+javascript = "Node's [`child_process`](https://nodejs.org/api/child_process.html)"
+
+[[concept]]
+slug = "ui_thread"
+title = "UI thread"
+summary = "The one thread a graphical toolkit allows to touch its widgets: long work goes to other threads or tasks, and its results are posted back to that thread."
+aliases = ["main thread", "event dispatch thread", "GUI thread"]
+chapter = 6
+is_a = ["thread"]
+related = ["thread_confinement", "blocking_the_event_loop", "event_loop"]
+[concept.languages]
+java = "Swing's event dispatch thread: [`SwingUtilities.invokeLater`](https://docs.oracle.com/en/java/javase/25/docs/api/java.desktop/javax/swing/SwingUtilities.html) runs code on it"
+csharp = "[`Control.Invoke`](https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.control.invoke) runs a delegate on the thread that owns a Windows Forms control"
+swift = "[`MainActor`](https://developer.apple.com/documentation/swift/mainactor), the global actor that performs its tasks on the main thread"
+javascript = "the [main thread](https://developer.mozilla.org/en-US/docs/Glossary/Main_thread), where the browser runs user code, handles events and renders; web workers run elsewhere"

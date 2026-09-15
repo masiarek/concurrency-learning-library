@@ -57,6 +57,9 @@ REPO = pathlib.Path(__file__).resolve().parent.parent
 GATES: list[tuple[str, list[str]]] = [
     ("examples", [sys.executable, "tools/run_examples.py", "--check"]),
     ("link style", [sys.executable, "tools/check_link_style.py"]),
+    # The concept pages are generated from 11_Concepts/**/concepts.toml; this fails on bad
+    # data (an unknown slug, a missing summary) or on a page that no longer matches it.
+    ("concepts", [sys.executable, "tools/build_concepts.py", "--check"]),
     # CI does `uv sync --group docs` first; `uv run --group docs` is the same
     # resolution in one step, and it is what makes this work in the temporary
     # directory --committed extracts into, where no .venv exists yet.

@@ -100,6 +100,16 @@ CI's *Show toolchain* step prints what each runner has. Add a row when CI finds 
 
 The runner versions are from the first CI run, on 2026-09-15 (UTC), and no example has yet printed differently on the two. The keys were recorded on 2026-09-14 on an x86-64 Mac with Apple clang 21.0.0, rustc 1.98.0, go1.25.5, OpenJDK 25.0.4.1, Python 3.14.7 and bash 3.2.57. Before the first push, the C and C++ examples were also run on Linux in the Docker image `gcc:14` (GCC 14.4, glibc 2.41) and printed the same keys.
 
+## Concept pages
+
+`11_Concepts/` is generated. The data is `11_Concepts/<category>/concepts.toml` (one `[[concept]]` per concept), `11_Concepts/abbreviations.toml`, `11_Concepts/book_refs.toml` and `10_Resources/books.toml`; `tools/build_concepts.py` writes the ontology block, the schema block, every category and concept page, the abbreviations page and the books pages from them. Edit the data and run the tool; CI runs it with `--check`, which fails on an unknown slug, a missing summary, a `|` in a table cell, or a page that no longer matches its data.
+
+- **A relation is written once, on either page.** `is_a`, `uses`, `prevents` and `causes` have inverse spellings (`kinds`, `used_by`, `prevented_by`, `caused_by`) so that it can be written wherever it is easiest to think of; `alternative`, `contrasts` and `related` are symmetric. Both concept pages show it either way.
+- **A concept page is a stub, not a lesson.** It defines, names and links; it does not claim behaviour that no program here has shown. Every construct in its *In each language* table links that language's own documentation, and `python3 tools/build_concepts.py --validate --links` fetches every external URL (Google Docs links excepted, since they are private).
+- **When a lesson measures a concept**, add the lesson's folder to the concept's `lessons`, and link the concept page from the lesson's *See also*.
+- **Books are cited by id** (`book_refs.toml`), with the chapter or section where the book covers the concept. Titles only — never quote a book's text. Local file paths of the PDFs are never published.
+- Below the marker line at the end of a generated page, hand-written notes are allowed and are kept when the page is regenerated.
+
 ## Links
 
 - Link a folder by naming its `README.md` — `[label](some_folder/README.md)`, never `[label](some_folder/)`.

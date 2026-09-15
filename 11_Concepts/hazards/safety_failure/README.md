@@ -1,0 +1,40 @@
+# Safety failure
+
+**Category:** [Hazards](../README.md) · **Status:** stub · **Lessons:** chapter 02, Shared state *(planned)*
+
+**One line:** The program reaches a state it must never reach — a lost update, a torn read, a broken invariant — usually because two tasks interleaved badly.
+
+Also called: data inconsistency, lost update, torn read.
+
+## How it connects
+
+```mermaid
+flowchart LR
+  n_data_race["Data race"]
+  n_race_condition["Race condition"]
+  n_safety_failure["Safety failure"]
+  n_data_race -->|is a| n_safety_failure
+  n_race_condition -->|is a| n_safety_failure
+  classDef center stroke-width:3px
+  class n_safety_failure center
+  classDef outside stroke-dasharray: 4 3
+  class n_data_race,n_race_condition outside
+```
+
+- **Kinds:** [Data race](../data_race/README.md), [Race condition](../race_condition/README.md)
+- **See also:** [Safety and liveness](../safety_and_liveness/README.md)
+
+## In each language
+
+| | |
+|---|---|
+| Go | The [Go memory model ↗](https://go.dev/ref/mem) warns that races on multiword values can lead to arbitrary memory corruption; since [Go 1.6 ↗](https://go.dev/doc/go1.6#runtime) the runtime has best-effort detection of concurrent misuse of maps |
+| Java | [`ArrayList` ↗](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/ArrayList.html) is not synchronized, and its fail-fast iterators throw `ConcurrentModificationException` only on a best-effort basis |
+| Python | [Library FAQ ↗](https://docs.python.org/3/faq/library.html#what-kinds-of-global-value-mutation-are-thread-safe): some operations on built-in types are atomic, but a read-modify-write such as `i = i+1` is not |
+
+## Where to read more
+
+- **In a sibling library:** [Go: A mutex guards a counter ↗](https://masiarek.github.io/go-learning-library/04_Sync/a_mutex_guards_a_counter/index.html)
+- **Notes:** [data inconsistencies - async - concurrency - general ↗](https://docs.google.com/document/d/137RrmeoW8FsI52Lqn5uZOZB_i3fai6RqbppI3h6cOuc/edit?tab=t.0)
+
+<!-- Generated above this line by tools/build_concepts.py from TOML data — edit the data, not the page. Hand-written notes go below it and are kept. -->

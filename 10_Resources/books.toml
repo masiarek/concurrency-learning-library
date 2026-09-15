@@ -1,0 +1,2660 @@
+# Concurrency books, by the language they focus on. Generated once from a survey of
+# the books' own title pages and tables of contents; edit freely from here on.
+# `on_shelf` says a copy is on Adam's drive — its path is deliberately not recorded.
+
+[[book]]
+id = "cox_buday_concurrency_in_go"
+title = "Concurrency in Go"
+subtitle = "Tools and Techniques for Developers"
+authors = ["Katherine Cox-Buday"]
+publisher = "O'Reilly Media"
+edition = "1st"
+year = 2017
+focus = "go"
+dedicated = true
+on_shelf = true
+chapters = [
+  "1. An Introduction to Concurrency",
+  "2. Modeling Your Code: Communicating Sequential Processes",
+  "3. Go’s Concurrency Building Blocks",
+  "4. Concurrency Patterns in Go",
+  "5. Concurrency at Scale",
+  "6. Goroutines and the Go Runtime",
+  "Appendix",
+]
+
+[[book]]
+id = "cutajar_learn_concurrent_programming_with_go"
+title = "Learn Concurrent Programming with Go"
+authors = ["James Cutajar"]
+publisher = "Manning Publications"
+edition = "1st"
+year = 2024
+focus = "go"
+dedicated = true
+on_shelf = true
+code_repo = "https://github.com/cutajarj/ConcurrentProgrammingWithGo"
+publisher_url = "https://www.manning.com/books/learn-concurrent-programming-with-go"
+chapters = [
+  "1. Stepping into concurrent programming",
+  "2. Dealing with threads",
+  "3. Thread communication using memory sharing",
+  "4. Synchronization with mutexes",
+  "5. Condition variables and semaphores",
+  "6. Synchronizing with waitgroups and barriers",
+  "7. Communication using message passing",
+  "8. Selecting channels",
+  "9. Programming with channels",
+  "10. Concurrency patterns",
+  "11. Avoiding deadlocks",
+  "12. Atomics, spin locks, and futexes",
+]
+
+[[book]]
+id = "serdar_effective_concurrency_in_go"
+title = "Effective Concurrency in Go"
+authors = ["Burak Serdar"]
+publisher = "Packt Publishing"
+edition = "1st"
+year = 2023
+focus = "go"
+dedicated = true
+on_shelf = true
+code_repo = "https://github.com/PacktPublishing/Effective-Concurrency-in-Go"
+chapters = [
+  "1. Concurrency – A High-Level Overview",
+  "2. Go Concurrency Primitives",
+  "3. The Go Memory Model",
+  "4. Some Well-Known Concurrency Problems",
+  "5. Worker Pools and Pipelines",
+  "6. Error Handling",
+  "7. Timers and Tickers",
+  "8. Handling Requests Concurrently",
+  "9. Atomic Memory Operations",
+  "10. Troubleshooting Concurrency Issues",
+]
+
+[[book]]
+id = "bodner_learning_go"
+title = "Learning Go"
+subtitle = "An Idiomatic Approach to Real-World Go Programming"
+authors = ["Jon Bodner"]
+publisher = "O'Reilly Media"
+edition = "2nd"
+year = 2024
+focus = "go"
+dedicated = false
+on_shelf = true
+code_repo = "https://github.com/learning-go-book-2e"
+chapters = [
+  "12. Concurrency in Go",
+  "14. The Context",
+]
+
+[[book]]
+id = "kennedy_go_in_action"
+title = "Go in Action"
+authors = ["William Kennedy", "Brian Ketelsen", "Erik St. Martin"]
+publisher = "Manning Publications"
+edition = "1st"
+year = 2016
+focus = "go"
+dedicated = false
+on_shelf = true
+code_repo = "https://github.com/goinaction/code"
+publisher_url = "https://www.manning.com/books/go-in-action"
+chapters = [
+  "6. Concurrency",
+  "7. Concurrency patterns",
+]
+
+[[book]]
+id = "donovan_kernighan_go_programming_language"
+title = "The Go Programming Language"
+authors = ["Alan A. A. Donovan", "Brian W. Kernighan"]
+publisher = "Addison-Wesley (Pearson Education)"
+edition = "1st"
+year = 2015
+focus = "go"
+dedicated = false
+on_shelf = true
+code_repo = "https://github.com/adonovan/gopl.io"
+publisher_url = "https://www.informit.com/store/go-programming-language-9780134190440"
+chapters = [
+  "8. Goroutines and Channels",
+  "9. Concurrency with Shared Variables",
+]
+
+[[book]]
+id = "butcher_farina_go_in_practice"
+title = "Go in Practice"
+authors = ["Nathan Kozyra", "Matt Butcher", "Matt Farina"]
+publisher = "Manning Publications"
+edition = "2nd"
+year = 2025
+focus = "go"
+dedicated = false
+on_shelf = true
+code_repo = "https://github.com/nkozyra/go-in-practice"
+publisher_url = "https://www.manning.com/books/go-in-practice-second-edition"
+chapters = [
+  "5. Concurrency in Go",
+]
+
+[[book]]
+id = "doxsey_introducing_go"
+title = "Introducing Go"
+subtitle = "Build Reliable, Scalable Programs"
+authors = ["Caleb Doxsey"]
+publisher = "O'Reilly Media"
+edition = "1st"
+year = 2016
+focus = "go"
+dedicated = false
+on_shelf = true
+chapters = [
+  "10. Concurrency",
+]
+
+[[book]]
+id = "chisnall_go_phrasebook"
+title = "The Go Programming Language Phrasebook"
+authors = ["David Chisnall"]
+publisher = "Addison-Wesley (Pearson Education)"
+edition = "1st"
+year = 2012
+focus = "go"
+dedicated = false
+on_shelf = true
+publisher_url = "https://www.informit.com/store/go-programming-language-phrasebook-9780321817143"
+chapters = [
+  "9. Goroutines",
+  "10. Concurrency Design Patterns",
+]
+
+[[book]]
+id = "tsoukalos_go_systems_programming"
+title = "Go Systems Programming"
+subtitle = "Master Linux and Unix system level programming with Go"
+authors = ["Mihalis Tsoukalos"]
+publisher = "Packt Publishing"
+edition = "1st"
+year = 2017
+focus = "go"
+dedicated = false
+on_shelf = true
+code_repo = "https://github.com/PacktPublishing/Go-Systems-Programming"
+chapters = [
+  "9. Goroutines — Basic Features",
+  "10. Goroutines — Advanced Features",
+]
+
+[[book]]
+id = "bos_rust_atomics_and_locks"
+free_url = "https://marabos.nl/atomics/"
+title = "Rust Atomics and Locks"
+subtitle = "Low-Level Concurrency in Practice"
+authors = ["Mara Bos"]
+publisher = "O'Reilly Media"
+edition = "1st"
+year = 2023
+focus = "rust"
+dedicated = true
+on_shelf = true
+chapters = [
+  "1. Basics of Rust Concurrency",
+  "2. Atomics",
+  "3. Memory Ordering",
+  "4. Building Our Own Spin Lock",
+  "5. Building Our Own Channels",
+  "6. Building Our Own “Arc”",
+  "7. Understanding the Processor",
+  "8. Operating System Primitives",
+  "9. Building Our Own Locks",
+  "10. Ideas and Inspiration",
+]
+
+[[book]]
+id = "samson_asynchronous_programming_in_rust"
+title = "Asynchronous Programming in Rust"
+subtitle = "Learn asynchronous programming by building working examples of futures, green threads, and runtimes"
+authors = ["Carl Fredrik Samson"]
+publisher = "Packt Publishing"
+edition = "1st"
+year = 2024
+focus = "rust"
+dedicated = true
+on_shelf = true
+code_repo = "https://github.com/PacktPublishing/Asynchronous-Programming-in-Rust"
+chapters = [
+  "1. Concurrency and Asynchronous Programming: a Detailed Overview",
+  "2. How Programming Languages Model Asynchronous Program Flow",
+  "3. Understanding OS-Backed Event Queues, System Calls, and Cross-Platform Abstractions",
+  "4. Create Your Own Event Queue",
+  "5. Creating Our Own Fibers",
+  "6. Futures in Rust",
+  "7. Coroutines and async/await",
+  "8. Runtimes, Wakers, and the Reactor-Executor Pattern",
+  "9. Coroutines, Self-Referential Structs, and Pinning",
+  "10. Creating Your Own Runtime",
+]
+
+[[book]]
+id = "troutwine_hands_on_concurrency_with_rust"
+title = "Hands-On Concurrency with Rust"
+subtitle = "Confidently build memory-safe, parallel, and efficient software in Rust"
+authors = ["Brian L. Troutwine"]
+publisher = "Packt Publishing"
+edition = "1st"
+year = 2018
+focus = "rust"
+dedicated = true
+on_shelf = true
+code_repo = "https://github.com/PacktPublishing/Hands-On-Concurrency-with-Rust"
+chapters = [
+  "1. Preliminaries – Machine Architecture and Getting Started with Rust",
+  "2. Sequential Rust Performance and Testing",
+  "3. The Rust Memory Model – Ownership, References and Manipulation",
+  "4. Sync and Send – the Foundation of Rust Concurrency",
+  "5. Locks – Mutex, Condvar, Barriers and RWLock",
+  "6. Atomics – the Primitives of Synchronization",
+  "7. Atomics – Safely Reclaiming Memory",
+  "8. High-Level Parallelism – Threadpools, Parallel Iterators and Processes",
+  "9. FFI and Embedding – Combining Rust and Other Languages",
+  "10. Futurism – Near-Term Rust",
+]
+
+[[book]]
+id = "flitton_morton_async_rust"
+title = "Async Rust"
+subtitle = "Unleashing the Power of Fearless Concurrency"
+authors = ["Maxwell Flitton", "Caroline Morton"]
+publisher = "O'Reilly Media"
+edition = "1st"
+year = 2024
+focus = "rust"
+dedicated = true
+on_shelf = true
+chapters = [
+  "1. Introduction to Async",
+  "2. Basic Async Rust",
+  "3. Building Our Own Async Queues",
+  "4. Integrating Networking into Our Own Async Runtime",
+  "5. Coroutines",
+  "6. Reactive Programming",
+  "7. Customizing Tokio",
+  "8. The Actor Model",
+  "9. Design Patterns",
+  "10. Building an Async Server with No Dependencies",
+  "11. Testing",
+]
+
+[[book]]
+id = "blandy_programming_rust"
+title = "Programming Rust"
+subtitle = "Fast, Safe Systems Development"
+authors = ["Jim Blandy", "Jason Orendorff", "Leonora F. S. Tindall"]
+publisher = "O'Reilly Media"
+edition = "2nd"
+year = 2021
+focus = "rust"
+dedicated = false
+on_shelf = true
+code_repo = "https://github.com/ProgrammingRust"
+chapters = [
+  "19. Concurrency",
+  "20. Asynchronous Programming",
+]
+
+[[book]]
+id = "mcnamara_rust_in_action"
+title = "Rust in Action"
+authors = ["Tim McNamara"]
+publisher = "Manning Publications"
+edition = "1st"
+year = 2021
+focus = "rust"
+dedicated = false
+on_shelf = true
+code_repo = "https://github.com/rust-in-action/code"
+publisher_url = "https://www.manning.com/books/rust-in-action"
+chapters = [
+  "10. Processes, threads, and containers",
+]
+
+[[book]]
+id = "gjengset_rust_for_rustaceans"
+title = "Rust for Rustaceans"
+subtitle = "Idiomatic Programming for Experienced Developers"
+authors = ["Jon Gjengset"]
+publisher = "No Starch Press"
+edition = "1st"
+year = 2022
+focus = "rust"
+dedicated = false
+on_shelf = true
+publisher_url = "https://nostarch.com/rust-rustaceans"
+chapters = [
+  "8. Asynchronous Programming",
+  "10. Concurrency (and Parallelism)",
+]
+
+[[book]]
+id = "klabnik_nichols_rust_programming_language"
+title = "The Rust Programming Language"
+authors = ["Steve Klabnik", "Carol Nichols"]
+publisher = "No Starch Press"
+edition = "Covers Rust 2018"
+year = 2019
+focus = "rust"
+dedicated = false
+on_shelf = true
+code_repo = "https://github.com/rust-lang/book"
+chapters = [
+  "16. Fearless Concurrency",
+  "20. Final Project: Building a Multithreaded Web Server",
+]
+
+[[book]]
+id = "balbaert_rust_essentials"
+title = "Rust Essentials"
+subtitle = "A quick guide to writing fast, safe, and concurrent systems and applications"
+authors = ["Ivo Balbaert"]
+publisher = "Packt Publishing"
+edition = "2nd"
+year = 2017
+focus = "rust"
+dedicated = false
+on_shelf = true
+code_repo = "https://github.com/PacktPublishing/Rust-Essentials-Second-Edition"
+chapters = [
+  "9. Concurrency - Coding for Multicore Execution",
+]
+
+[[book]]
+id = "kaihlavirta_mastering_rust"
+title = "Mastering Rust"
+subtitle = "Advanced concurrency, macros, and safe database access"
+authors = ["Vesa Kaihlavirta"]
+publisher = "Packt Publishing"
+edition = "1st"
+year = 2017
+focus = "rust"
+dedicated = false
+on_shelf = true
+code_repo = "https://github.com/PacktPublishing/Mastering-Rust"
+chapters = [
+  "7. Concurrency",
+]
+
+[[book]]
+id = "gomez_boucher_rust_programming_by_example"
+title = "Rust Programming By Example"
+subtitle = "Enter the world of Rust by building engaging, concurrent, reactive, and robust applications"
+authors = ["Antoni Boucher", "Guillaume Gomez"]
+publisher = "Packt Publishing"
+edition = "1st"
+year = 2018
+focus = "rust"
+dedicated = false
+on_shelf = true
+code_repo = "https://github.com/PacktPublishing/Rust-Programming-By-Example"
+chapters = [
+  "9. Implementing an Asynchronous FTP Server",
+  "10. Implementing Asynchronous File Transfer",
+]
+
+[[book]]
+id = "kolodin_hands_on_microservices_with_rust"
+title = "Hands-On Microservices with Rust"
+subtitle = "Build, test, and deploy scalable and reactive microservices with Rust 2018"
+authors = ["Denis Kolodin"]
+publisher = "Packt Publishing"
+edition = "1st"
+year = 2019
+focus = "rust"
+dedicated = false
+on_shelf = true
+code_repo = "https://github.com/PacktPublishing/Hands-On-Microservices-with-Rust"
+chapters = [
+  "5. Understanding Asynchronous Operations with Futures Crate",
+  "6. Reactive Microservices - Increasing Capacity and Performance",
+  "10. Background Tasks and Thread Pools in Microservices",
+  "11. Involving Concurrency with Actors and the Actix Crate",
+]
+
+[[book]]
+id = "harmouch_ultimate_rust_for_systems_programming"
+title = "Ultimate Rust for Systems Programming"
+subtitle = "Master Core Programming for Architecting Secure and Reliable Software Systems with Rust and WebAssembly"
+authors = ["Mahmoud Harmouch"]
+publisher = "Orange Education Pvt Ltd (AVA)"
+edition = "1st"
+year = 2024
+focus = "rust"
+dedicated = false
+on_shelf = true
+code_repo = "https://github.com/OrangeAVA/Ultimate-Rust-for-Systems-Programming"
+publisher_url = "https://orangeava.com/products/ultimate-rust-for-systems-programming"
+chapters = [
+  "7. Managing Concurrency",
+  "14. Asynchronous Programming",
+]
+
+[[book]]
+id = "nichols_pthreads_programming"
+title = "Pthreads Programming"
+subtitle = "A POSIX Standard for Better Multiprocessing"
+authors = ["Bradford Nichols", "Dick Buttlar", "Jacqueline Proulx Farrell"]
+publisher = "O'Reilly & Associates"
+edition = "1st"
+year = 1996
+focus = "c"
+dedicated = true
+on_shelf = true
+chapters = [
+  "1. Why Threads",
+  "2. Designing Threaded Programs",
+  "3. Synchronizing Pthreads",
+  "4. Managing Pthreads",
+  "5. Pthreads and UNIX",
+  "6. Practical Considerations",
+  "A. Pthreads and DCE",
+  "B. Pthreads Draft 4 vs. the Final Standard",
+  "C. Pthreads Quick Reference",
+]
+
+[[book]]
+id = "butenhof_programming_with_posix_threads"
+title = "Programming with POSIX Threads"
+authors = ["David R. Butenhof"]
+publisher = "Addison-Wesley"
+edition = "1st"
+year = 1997
+focus = "c"
+dedicated = true
+on_shelf = true
+publisher_url = "https://www.informit.com/store/programming-with-posix-threads-9780201633924"
+chapters = [
+  "1. Introduction",
+  "2. Threads",
+  "3. Synchronization",
+  "4. A Few Ways to Use Threads",
+  "5. Advanced Threaded Programming",
+  "6. POSIX Adjusts to Threads",
+  "7. \"Real Code\"",
+  "8. Hints to Avoid Debugging",
+  "9. POSIX Threads Mini-Reference",
+  "10. Future Standardization",
+]
+
+[[book]]
+id = "kerrisk_linux_programming_interface"
+title = "The Linux Programming Interface"
+subtitle = "A Linux and UNIX System Programming Handbook"
+authors = ["Michael Kerrisk"]
+publisher = "No Starch Press"
+edition = "1st"
+year = 2010
+focus = "c"
+dedicated = false
+on_shelf = true
+publisher_url = "https://nostarch.com/tlpi"
+chapters = [
+  "29. Threads: Introduction",
+  "30. Threads: Thread Synchronization",
+  "31. Threads: Thread Safety and Per-Thread Storage",
+  "32. Threads: Thread Cancellation",
+  "33. Threads: Further Details",
+  "53. POSIX Semaphores",
+  "63. Alternative I/O Models",
+]
+
+[[book]]
+id = "stevens_rago_apue"
+title = "Advanced Programming in the UNIX Environment"
+authors = ["W. Richard Stevens", "Stephen A. Rago"]
+publisher = "Addison-Wesley (Pearson Education)"
+edition = "3rd"
+year = 2013
+focus = "c"
+dedicated = false
+on_shelf = true
+chapters = [
+  "11. Threads",
+  "12. Thread Control",
+  "14. Advanced I/O",
+  "15. Interprocess Communication",
+]
+
+[[book]]
+id = "bryant_ohallaron_csapp"
+title = "Computer Systems"
+subtitle = "A Programmer's Perspective"
+authors = ["Randal E. Bryant", "David R. O'Hallaron"]
+publisher = "Pearson"
+edition = "3rd"
+year = 2016
+focus = "c"
+dedicated = false
+on_shelf = true
+chapters = [
+  "12. Concurrent Programming",
+]
+
+[[book]]
+id = "silberschatz_operating_system_concepts"
+title = "Operating System Concepts"
+authors = ["Abraham Silberschatz", "Peter Baer Galvin", "Greg Gagne"]
+publisher = "John Wiley & Sons"
+edition = "10th"
+year = 2018
+focus = "c"
+dedicated = false
+on_shelf = true
+publisher_url = "https://www.wiley.com/en-us/Operating+System+Concepts%2C+10th+Edition-p-9781119320913"
+chapters = [
+  "3. Processes",
+  "4. Threads & Concurrency",
+  "5. CPU Scheduling",
+  "6. Synchronization Tools",
+  "7. Synchronization Examples",
+  "8. Deadlocks",
+]
+
+[[book]]
+id = "wang_systems_programming_unix_linux"
+title = "Systems Programming in Unix/Linux"
+authors = ["K. C. Wang"]
+publisher = "Springer"
+edition = "1st"
+year = 2018
+focus = "c"
+dedicated = false
+on_shelf = true
+publisher_url = "https://link.springer.com/book/10.1007/978-3-319-92429-8"
+chapters = [
+  "3. Process Management in Unix/Linux",
+  "4. Concurrent Programming",
+]
+
+[[book]]
+id = "amos_hands_on_rtos"
+title = "Hands-On RTOS with Microcontrollers"
+subtitle = "Building real-time embedded systems using FreeRTOS, STM32 MCUs, and SEGGER debug tools"
+authors = ["Brian Amos"]
+publisher = "Packt Publishing"
+edition = "1st"
+year = 2020
+focus = "c"
+dedicated = false
+on_shelf = true
+chapters = [
+  "2. Understanding RTOS Tasks",
+  "3. Task Signaling and Communication Mechanisms",
+  "7. The FreeRTOS Scheduler",
+  "8. Protecting Data and Synchronizing Tasks",
+  "9. Intertask Communication",
+  "16. Multi-Processor and Multi-Core Systems",
+]
+
+[[book]]
+id = "williams_cpp_concurrency_in_action"
+title = "C++ Concurrency in Action"
+authors = ["Anthony Williams"]
+publisher = "Manning Publications"
+edition = "2nd"
+year = 2019
+focus = "cpp"
+dedicated = true
+on_shelf = true
+code_repo = "https://github.com/anthonywilliams/ccia_code_samples"
+publisher_url = "https://www.manning.com/books/c-plus-plus-concurrency-in-action-second-edition"
+chapters = [
+  "1. Hello, world of concurrency in C++!",
+  "2. Managing threads",
+  "3. Sharing data between threads",
+  "4. Synchronizing concurrent operations",
+  "5. The C++ memory model and operations on atomic types",
+  "6. Designing lock-based concurrent data structures",
+  "7. Designing lock-free concurrent data structures",
+  "8. Designing concurrent code",
+  "9. Advanced thread management",
+  "10. Parallel algorithms",
+  "11. Testing and debugging multithreaded applications",
+  "Brief comparison of concurrency libraries",
+  "C. A message-passing framework and complete ATM example",
+  "D. C++ Thread Library reference",
+]
+
+[[book]]
+id = "grimm_concurrency_with_modern_cpp"
+title = "Concurrency with Modern C++"
+authors = ["Rainer Grimm"]
+publisher = "Leanpub (self-published)"
+edition = "Leanpub version of 2019-03-19"
+year = 2019
+focus = "cpp"
+dedicated = true
+on_shelf = true
+publisher_url = "https://leanpub.com/concurrencywithmodernc"
+chapters = [
+  "1. Concurrency with Modern C++",
+  "2. Memory Model",
+  "3. Multithreading",
+  "4. Parallel Algorithms of the Standard Template Library",
+  "5. Case Studies",
+  "6. The Future: C++20/23",
+  "7. Patterns and Best Practices",
+  "8. Synchronisation Patterns",
+  "9. Concurrent Architecture",
+  "10. Best Practices",
+  "11. Lock-Based Data Structures",
+  "12. Lock-Free Data Structures",
+  "13. Challenges",
+  "14. The Time Library",
+  "15. CppMem - An Overview",
+]
+
+[[book]]
+id = "voss_pro_tbb"
+title = "Pro TBB"
+subtitle = "C++ Parallel Programming with Threading Building Blocks"
+authors = ["Michael Voss", "Rafael Asenjo", "James Reinders"]
+publisher = "Apress"
+edition = "1st"
+year = 2019
+focus = "cpp"
+dedicated = true
+on_shelf = true
+code_repo = "https://github.com/Apress/pro-TBB"
+publisher_url = "https://link.springer.com/book/10.1007/978-1-4842-4398-5"
+chapters = [
+  "1. Jumping Right In: “Hello, TBB!”",
+  "2. Generic Parallel Algorithms",
+  "3. Flow Graphs",
+  "4. TBB and the Parallel Algorithms of the C++ Standard Template Library",
+  "5. Synchronization: Why and How to Avoid It",
+  "6. Data Structures for Concurrency",
+  "7. Scalable Memory Allocation",
+  "8. Mapping Parallel Patterns to TBB",
+  "9. The Pillars of Composability",
+  "10. Using Tasks to Create Your Own Algorithms",
+  "11. Controlling the Number of Threads Used for Execution",
+  "12. Using Work Isolation for Correctness and Performance",
+  "13. Creating Thread-to-Core and Task-to-Thread Affinity",
+  "14. Using Task Priorities",
+  "15. Cancellation and Exception Handling",
+  "16. Tuning TBB Algorithms: Granularity, Locality, Parallelism, and Determinism",
+  "17. Flow Graphs: Beyond the Basics",
+  "18. Beef Up Flow Graphs with Async Nodes",
+  "19. Flow Graphs on Steroids: OpenCL Nodes",
+  "20. TBB on NUMA Architectures",
+]
+
+[[book]]
+id = "posch_mastering_cpp_multithreading"
+title = "Mastering C++ Multithreading"
+subtitle = "Write robust, concurrent, and parallel applications"
+authors = ["Maya Posch"]
+publisher = "Packt Publishing"
+edition = "1st"
+year = 2017
+focus = "cpp"
+dedicated = true
+on_shelf = true
+code_repo = "https://github.com/PacktPublishing/Mastering-CPP-Multithreading"
+chapters = [
+  "1. Revisiting Multithreading",
+  "2. Multithreading Implementation on the Processor and OS",
+  "3. C++ Multithreading APIs",
+  "4. Thread Synchronization and Communication",
+  "5. Native C++ Threads and Primitives",
+  "6. Debugging Multithreaded Code",
+  "7. Best Practices",
+  "8. Atomic Operations - Working with the Hardware",
+  "9. Multithreading with Distributed Computing",
+  "10. Multithreading with GPGPU",
+]
+
+[[book]]
+id = "pai_abraham_cpp_reactive_programming"
+title = "C++ Reactive Programming"
+subtitle = "Design concurrent and asynchronous applications using the RxCpp library and Modern C++17"
+authors = ["Praseed Pai", "Peter Abraham"]
+publisher = "Packt Publishing"
+edition = "1st"
+year = 2018
+focus = "cpp"
+dedicated = true
+on_shelf = true
+code_repo = "https://github.com/PacktPublishing/CPP-Reactive-Programming"
+chapters = [
+  "1. Reactive Programming Model – Overview and History",
+  "2. A Tour of Modern C++ and its Key Idioms",
+  "3. Language-Level Concurrency and Parallelism in C++",
+  "4. Asynchronous and Lock-Free Programming in C++",
+  "5. Introduction to Observables",
+  "6. Introduction to Event Stream Programming Using C++",
+  "7. Introduction to Data Flow Computation and the RxCpp Library",
+  "8. RxCpp – the Key Elements",
+  "9. Reactive GUI Programming Using Qt/C++",
+  "10. Creating Custom Operators in RxCpp",
+  "11. Design Patterns and Idioms for C++ Rx Programming",
+  "12. Reactive Microservices Using C++",
+  "13. Advanced Streams and Handling Errors",
+]
+
+[[book]]
+id = "reinders_data_parallel_cpp"
+title = "Data Parallel C++"
+subtitle = "Mastering DPC++ for Programming of Heterogeneous Systems using C++ and SYCL"
+authors = ["James Reinders", "Ben Ashbaugh", "James Brodman", "Michael Kinsner", "John Pennycook", "Xinmin Tian"]
+publisher = "Apress"
+edition = "1st"
+year = 2021
+focus = "cpp"
+dedicated = true
+on_shelf = true
+code_repo = "https://github.com/Apress/data-parallel-CPP"
+publisher_url = "https://link.springer.com/book/10.1007/978-1-4842-5574-2"
+chapters = [
+  "1. Introduction",
+  "2. Where Code Executes",
+  "3. Data Management",
+  "4. Expressing Parallelism",
+  "5. Error Handling",
+  "6. Unified Shared Memory",
+  "7. Buffers",
+  "8. Scheduling Kernels and Data Movement",
+  "9. Communication and Synchronization",
+  "10. Defining Kernels",
+  "11. Vectors",
+  "12. Device Information",
+  "13. Practical Tips",
+  "14. Common Parallel Patterns",
+  "15. Programming for GPUs",
+  "16. Programming for CPUs",
+  "17. Programming for FPGAs",
+  "18. Libraries",
+  "19. Memory Model and Atomics",
+]
+
+[[book]]
+id = "walmsley_multithreaded_programming_in_cpp"
+title = "Multi-Threaded Programming in C++"
+authors = ["Mark Walmsley"]
+publisher = "Springer-Verlag London"
+edition = "1st"
+year = 2000
+focus = "cpp"
+dedicated = true
+on_shelf = true
+publisher_url = "https://link.springer.com/book/10.1007/978-1-4471-0725-5"
+chapters = [
+  "1. Introduction",
+  "2. Threads",
+  "3. Mutexes",
+  "4. Events",
+  "5. Semaphores",
+  "6. Objects",
+  "7. Keys",
+  "8. Multiple Mutexes",
+  "9. Multiple Events",
+  "10. Distributed Computing",
+]
+
+[[book]]
+id = "fertig_programming_with_cpp20"
+title = "Programming with C++20"
+subtitle = "Concepts, Coroutines, Ranges, and more"
+authors = ["Andreas Fertig"]
+publisher = "Fertig Publications"
+edition = "1st"
+year = 2021
+focus = "cpp"
+dedicated = false
+on_shelf = true
+code_repo = "https://github.com/andreasfertig/programming-with-cpp20"
+publisher_url = "https://leanpub.com/programming-with-cpp20"
+chapters = [
+  "2. Coroutines: Suspending functions",
+]
+
+[[book]]
+id = "blair_chappell_intel_parallel_studio_xe"
+title = "Parallel Programming with Intel Parallel Studio XE"
+authors = ["Stephen Blair-Chappell", "Andrew Stokes"]
+publisher = "John Wiley & Sons (Wrox)"
+edition = "1st"
+year = 2012
+focus = "cpp"
+dedicated = true
+on_shelf = true
+publisher_url = "https://www.wiley.com/en-us/Parallel+Programming+with+Intel+Parallel+Studio+XE-p-9780470891650"
+chapters = [
+  "1. Parallelism Today",
+  "2. An Overview of Parallel Studio XE",
+  "3. Parallel Studio XE for the Impatient",
+  "4. Producing Optimized Code",
+  "5. Writing Secure Code",
+  "6. Where to Parallelize",
+  "7. Implementing Parallelism",
+  "8. Checking for Errors",
+  "9. Tuning Parallel Applications",
+  "10. Parallel Advisor–Driven Design",
+  "11. Debugging Parallel Applications",
+  "12. Event-Based Analysis with VTune Amplifier XE",
+  "13. The World’s First Sudoku “Thirty-Niner”",
+  "14. Nine Tips to Parallel-Programming Heaven",
+  "15. Parallel Track Fitting in the CERN Collider",
+  "16. Parallelizing Legacy Code",
+]
+
+[[book]]
+id = "kusswurm_modern_parallel_programming_cpp_assembly"
+title = "Modern Parallel Programming with C++ and Assembly Language"
+subtitle = "X86 SIMD Development Using AVX, AVX2, and AVX-512"
+authors = ["Daniel Kusswurm"]
+publisher = "Apress"
+edition = "1st"
+year = 2022
+focus = "cpp"
+dedicated = true
+on_shelf = true
+code_repo = "https://github.com/Apress/modern-parallel-programming-cpp-assembly"
+publisher_url = "https://link.springer.com/book/10.1007/978-1-4842-7918-2"
+chapters = [
+  "1. SIMD Fundamentals",
+  "2. AVX C++ Programming: Part 1",
+  "3. AVX C++ Programming: Part 2",
+  "4. AVX2 C++ Programming: Part 1",
+  "5. AVX2 C++ Programming: Part 2",
+  "6. AVX2 C++ Programming: Part 3",
+  "7. AVX-512 C++ Programming: Part 1",
+  "8. AVX-512 C++ Programming: Part 2",
+  "9. Supplemental C++ SIMD Programming",
+  "10. X86-64 Processor Architecture",
+  "11. Core Assembly Language Programming: Part 1",
+  "12. Core Assembly Language Programming: Part 2",
+  "13. AVX Assembly Language Programming: Part 1",
+  "14. AVX Assembly Language Programming: Part 2",
+  "15. AVX2 Assembly Language Programming: Part 1",
+  "16. AVX2 Assembly Language Programming: Part 2",
+  "17. AVX-512 Assembly Language Programming: Part 1",
+  "18. AVX-512 Assembly Language Programming: Part 2",
+  "19. SIMD Usage and Optimization Guidelines",
+]
+
+[[book]]
+id = "goetz_java_concurrency_in_practice"
+title = "Java Concurrency in Practice"
+authors = ["Brian Goetz", "Tim Peierls", "Joshua Bloch", "Joseph Bowbeer", "David Holmes", "Doug Lea"]
+publisher = "Addison-Wesley (Pearson Education)"
+edition = "1st"
+year = 2006
+focus = "java"
+dedicated = true
+on_shelf = true
+code_repo = "https://jcip.net/"
+publisher_url = "https://www.informit.com/store/java-concurrency-in-practice-9780321349606"
+chapters = [
+  "1. Introduction",
+  "2. Thread Safety",
+  "3. Sharing Objects",
+  "4. Composing Objects",
+  "5. Building Blocks",
+  "6. Task Execution",
+  "7. Cancellation and Shutdown",
+  "8. Applying Thread Pools",
+  "9. GUI Applications",
+  "10. Avoiding Liveness Hazards",
+  "11. Performance and Scalability",
+  "12. Testing Concurrent Programs",
+  "13. Explicit Locks",
+  "14. Building Custom Synchronizers",
+  "15. Atomic Variables and Nonblocking Synchronization",
+  "16. The Java Memory Model",
+  "Annotations for Concurrency",
+]
+
+[[book]]
+id = "subramaniam_programming_concurrency_on_the_jvm"
+title = "Programming Concurrency on the JVM"
+subtitle = "Mastering Synchronization, STM, and Actors"
+authors = ["Venkat Subramaniam"]
+publisher = "The Pragmatic Bookshelf"
+edition = "1st"
+year = 2011
+focus = "java"
+dedicated = true
+on_shelf = true
+code_repo = "https://pragprog.com/titles/vspcon/source_code"
+publisher_url = "https://pragprog.com/titles/vspcon/programming-concurrency-on-the-jvm/"
+chapters = [
+  "1. The Power and Perils of Concurrency",
+  "2. Division of Labor",
+  "3. Design Approaches",
+  "4. Scalability and Thread Safety",
+  "5. Taming Shared Mutability",
+  "6. Introduction to Software Transactional Memory",
+  "7. STM in Clojure, Groovy, Java, JRuby, and Scala",
+  "8. Favoring Isolated Mutability",
+  "9. Actors in Groovy, Java, JRuby, and Scala",
+  "10. Zen of Programming Concurrency",
+  "A1. Clojure Agents",
+]
+
+[[book]]
+id = "urma_modern_java_in_action"
+title = "Modern Java in Action"
+subtitle = "Lambdas, streams, functional and reactive programming"
+authors = ["Raoul-Gabriel Urma", "Mario Fusco", "Alan Mycroft"]
+publisher = "Manning Publications"
+edition = "1st (successor to Java 8 in Action)"
+year = 2019
+focus = "java"
+dedicated = false
+on_shelf = true
+publisher_url = "https://www.manning.com/books/modern-java-in-action"
+chapters = [
+  "7. Parallel data processing and performance",
+  "15. Concepts behind CompletableFuture and reactive programming",
+  "16. CompletableFuture: composable asynchronous programming",
+  "17. Reactive programming",
+  "C. Performing multiple operations in parallel on a stream",
+]
+
+[[book]]
+id = "naftalin_mastering_lambdas"
+title = "Mastering Lambdas"
+subtitle = "Java Programming in a Multicore World"
+authors = ["Maurice Naftalin"]
+publisher = "McGraw-Hill Education (Oracle Press)"
+edition = "1st"
+year = 2015
+focus = "java"
+dedicated = false
+on_shelf = true
+chapters = [
+  "3. Introduction to Streams and Pipelines",
+  "6. Stream Performance",
+]
+
+[[book]]
+id = "bloch_effective_java"
+title = "Effective Java"
+authors = ["Joshua Bloch"]
+publisher = "Addison-Wesley (Pearson Education)"
+edition = "3rd"
+year = 2018
+focus = "java"
+dedicated = false
+on_shelf = true
+publisher_url = "https://www.informit.com/store/effective-java-9780134685991"
+chapters = [
+  "11. Concurrency",
+]
+
+[[book]]
+id = "horstmann_core_java_vol1"
+title = "Core Java, Volume I"
+subtitle = "Fundamentals"
+authors = ["Cay S. Horstmann"]
+publisher = "Pearson"
+edition = "12th"
+year = 2022
+focus = "java"
+dedicated = false
+on_shelf = true
+publisher_url = "https://www.informit.com/store/core-java-volume-i-fundamentals-9780137673629"
+chapters = [
+  "12. Concurrency",
+]
+
+[[book]]
+id = "horstmann_core_java_vol2"
+title = "Core Java, Volume II"
+subtitle = "Advanced Features"
+authors = ["Cay S. Horstmann"]
+publisher = "Pearson Education"
+edition = "11th"
+year = 2019
+focus = "java"
+dedicated = false
+on_shelf = true
+publisher_url = "https://www.informit.com/store/core-java-volume-ii-advanced-features-9780135166314"
+chapters = [
+  "1. Streams",
+]
+
+[[book]]
+id = "evans_java_in_a_nutshell"
+title = "Java in a Nutshell"
+authors = ["Benjamin J. Evans", "Jason Clark", "David Flanagan"]
+publisher = "O'Reilly Media"
+edition = "8th"
+year = 2023
+focus = "java"
+dedicated = false
+on_shelf = true
+code_repo = "https://github.com/kittylyst/javanut8"
+chapters = [
+  "6. Java’s Approach to Memory and Concurrency",
+]
+
+[[book]]
+id = "prokopec_learning_concurrent_programming_in_scala"
+title = "Learning Concurrent Programming in Scala"
+authors = ["Aleksandar Prokopec"]
+publisher = "Packt Publishing"
+edition = "2nd"
+year = 2017
+focus = "scala_jvm_functional"
+dedicated = true
+on_shelf = true
+code_repo = "https://github.com/PacktPublishing/Learning-Concurrent-Programming-in-Scala-Second-Edition"
+chapters = [
+  "1. Introduction",
+  "2. Concurrency on the JVM and the Java Memory Model",
+  "3. Traditional Building Blocks of Concurrency",
+  "4. Asynchronous Programming with Futures and Promises",
+  "5. Data-Parallel Collections",
+  "6. Concurrent Programming with Reactive Extensions",
+  "7. Software Transactional Memory",
+  "8. Actors",
+  "9. Concurrency in Practice",
+  "10. Reactors",
+]
+
+[[book]]
+id = "charpentier_functional_and_concurrent_programming"
+title = "Functional and Concurrent Programming"
+subtitle = "Core Concepts and Features"
+authors = ["Michel Charpentier"]
+publisher = "Addison-Wesley (Pearson Education)"
+edition = "1st"
+year = 2023
+focus = "scala_jvm_functional"
+dedicated = false
+on_shelf = true
+publisher_url = "https://www.informit.com/store/functional-and-concurrent-programming-core-concepts-9780137466542"
+chapters = [
+  "16. Concepts of Concurrent Programming",
+  "17. Threads and Nondeterminism",
+  "18. Atomicity and Locking",
+  "19. Thread-Safe Objects",
+  "20. Case Study: Thread-Safe Queue",
+  "21. Thread Pools",
+  "22. Synchronization",
+  "23. Common Synchronizers",
+  "24. Case Study: Parallel Execution",
+  "25. Futures and Promises",
+  "26. Functional-Concurrent Programming",
+  "27. Minimizing Thread Blocking",
+  "28. Case Study: Parallel Strategies",
+]
+
+[[book]]
+id = "wampler_programming_scala"
+title = "Programming Scala"
+subtitle = "Scalability = Functional Programming + Objects"
+authors = ["Dean Wampler"]
+publisher = "O'Reilly Media"
+edition = "3rd"
+year = 2021
+focus = "scala_jvm_functional"
+dedicated = false
+on_shelf = true
+chapters = [
+  "19. Tools for Concurrency",
+]
+
+[[book]]
+id = "chiusano_bjarnason_functional_programming_in_scala"
+title = "Functional Programming in Scala"
+authors = ["Paul Chiusano", "Rúnar Bjarnason"]
+publisher = "Manning Publications"
+edition = "MEAP v10 (pre-publication)"
+year = 2013
+focus = "scala_jvm_functional"
+dedicated = false
+on_shelf = true
+code_repo = "https://github.com/fpinscala/fpinscala"
+publisher_url = "https://www.manning.com/books/functional-programming-in-scala"
+chapters = [
+  "7. Purely functional parallelism",
+]
+
+[[book]]
+id = "halloway_programming_clojure"
+title = "Programming Clojure"
+authors = ["Stuart Halloway", "Aaron Bedra"]
+publisher = "The Pragmatic Bookshelf"
+edition = "2nd"
+year = 2012
+focus = "scala_jvm_functional"
+dedicated = false
+on_shelf = true
+code_repo = "https://github.com/stuarthalloway/programming-clojure"
+chapters = [
+  "5. State",
+]
+
+[[book]]
+id = "emerick_clojure_programming"
+title = "Clojure Programming"
+authors = ["Chas Emerick", "Brian Carper", "Christophe Grand"]
+publisher = "O'Reilly Media"
+edition = "1st"
+year = 2012
+focus = "scala_jvm_functional"
+dedicated = false
+on_shelf = true
+chapters = [
+  "4. Concurrency and Parallelism",
+]
+
+[[book]]
+id = "fogus_houser_joy_of_clojure"
+title = "The Joy of Clojure"
+authors = ["Michael Fogus", "Chris Houser"]
+publisher = "Manning Publications"
+edition = "1st"
+year = 2011
+focus = "scala_jvm_functional"
+dedicated = false
+on_shelf = true
+publisher_url = "https://www.manning.com/books/the-joy-of-clojure"
+chapters = [
+  "11. Mutation",
+]
+
+[[book]]
+id = "marlow_parallel_and_concurrent_programming_in_haskell"
+title = "Parallel and Concurrent Programming in Haskell"
+subtitle = "Techniques for Multicore and Multithreaded Programming"
+authors = ["Simon Marlow"]
+publisher = "O'Reilly Media"
+edition = "1st"
+year = 2013
+focus = "haskell"
+dedicated = true
+on_shelf = true
+code_repo = "https://github.com/simonmar/parconc-examples"
+chapters = [
+  "1. Introduction",
+  "2. Basic Parallelism: The Eval Monad",
+  "3. Evaluation Strategies",
+  "4. Dataflow Parallelism: The Par Monad",
+  "5. Data Parallel Programming with Repa",
+  "6. GPU Programming with Accelerate",
+  "7. Basic Concurrency: Threads and MVars",
+  "8. Overlapping Input/Output",
+  "9. Cancellation and Timeouts",
+  "10. Software Transactional Memory",
+  "11. Higher-Level Concurrency Abstractions",
+  "12. Concurrent Network Servers",
+  "13. Parallel Programming Using Threads",
+  "14. Distributed Programming",
+  "15. Debugging, Tuning, and Interfacing with Foreign Code",
+]
+
+[[book]]
+id = "osullivan_real_world_haskell"
+title = "Real World Haskell"
+authors = ["Bryan O'Sullivan", "John Goerzen", "Don Stewart"]
+publisher = "O'Reilly Media"
+edition = "1st"
+year = 2008
+focus = "haskell"
+dedicated = false
+on_shelf = true
+chapters = [
+  "24. Concurrent and Multicore Programming",
+  "28. Software Transactional Memory",
+]
+
+[[book]]
+id = "sajanikar_haskell_cookbook"
+title = "Haskell Cookbook"
+subtitle = "Build functional applications using Monads, Applicatives, and Functors"
+authors = ["Yogesh Sajanikar"]
+publisher = "Packt Publishing"
+edition = "1st"
+year = 2017
+focus = "haskell"
+dedicated = false
+on_shelf = true
+code_repo = "https://github.com/PacktPublishing/HaskellCookbook"
+chapters = [
+  "12. Concurrent and Distributed Programming in Haskell",
+]
+
+[[book]]
+id = "tan_little_elixir_otp_guidebook"
+title = "The Little Elixir & OTP Guidebook"
+authors = ["Benjamin Tan Wei Hao"]
+publisher = "Manning Publications"
+edition = "1st"
+year = 2017
+focus = "elixir_erlang"
+dedicated = true
+on_shelf = true
+code_repo = "https://github.com/benjamintanweihao/the-little-elixir-otp-guidebook-code"
+publisher_url = "https://www.manning.com/books/the-little-elixir-and-otp-guidebook"
+chapters = [
+  "1. Introduction",
+  "2. A whirlwind tour",
+  "3. Processes 101",
+  "4. Writing server applications with GenServer",
+  "5. Concurrent error-handling and fault tolerance with links, monitors, and processes",
+  "6. Fault tolerance with Supervisors",
+  "7. Completing the worker-pool application",
+  "8. Distribution and load balancing",
+  "9. Distribution and fault tolerance",
+  "10. Dialyzer and type specifications",
+  "11. Property-based and concurrency testing",
+]
+
+[[book]]
+id = "logan_erlang_and_otp_in_action"
+title = "Erlang and OTP in Action"
+authors = ["Martin Logan", "Eric Merritt", "Richard Carlsson"]
+publisher = "Manning Publications"
+edition = "MEAP (pre-publication draft)"
+year = 2009
+focus = "elixir_erlang"
+dedicated = true
+on_shelf = true
+publisher_url = "https://www.manning.com/books/erlang-and-otp-in-action"
+chapters = [
+  "1. The foundations of Erlang/OTP",
+  "2. Erlang Essentials",
+  "3. Writing a TCP Based RPC Service",
+  "4. OTP Packaging and Organization",
+  "5. Processes, Linking and the Platform",
+  "6. Implementing a Caching System",
+  "7. Logging and Eventing the Erlang/OTP Way",
+  "8. Introducing Distributed Erlang/OTP",
+  "9. Converting the Cache into a Distributed Application",
+  "10. Packaging, Services & Deployment",
+  "11. Non-native Erlang Distribution with TCP and REST",
+  "12. Drivers and Multi-Language Interfaces",
+  "13. Communication between Erlang & Java via JInterface",
+  "14. Optimization and Performance",
+]
+
+[[book]]
+id = "thomas_programming_elixir"
+title = "Programming Elixir ≥ 1.6"
+subtitle = "Functional |> Concurrent |> Pragmatic |> Fun"
+authors = ["Dave Thomas"]
+publisher = "The Pragmatic Bookshelf"
+edition = "1st (Elixir 1.6)"
+year = 2018
+focus = "elixir_erlang"
+dedicated = false
+on_shelf = true
+publisher_url = "https://pragprog.com/titles/elixir16/programming-elixir-1-6/"
+chapters = [
+  "15. Working with Multiple Processes",
+  "16. Nodes—The Key to Distributing Services",
+  "17. OTP: Servers",
+  "18. OTP: Supervisors",
+  "19. A More Complex Example",
+  "20. OTP: Applications",
+  "21. Tasks and Agents",
+]
+
+[[book]]
+id = "armstrong_programming_erlang"
+title = "Programming Erlang"
+subtitle = "Software for a Concurrent World"
+authors = ["Joe Armstrong"]
+publisher = "The Pragmatic Bookshelf"
+edition = "2nd"
+year = 2013
+focus = "elixir_erlang"
+dedicated = false
+on_shelf = true
+code_repo = "https://pragprog.com/titles/jaerlang2/source_code"
+publisher_url = "https://pragprog.com/titles/jaerlang2/programming-erlang-2nd-edition/"
+chapters = [
+  "11. Real-World Concurrency",
+  "12. Concurrent Programming",
+  "13. Errors in Concurrent Programs",
+  "14. Distributed Programming",
+  "22. Introducing OTP",
+  "23. Making a System with OTP",
+]
+
+[[book]]
+id = "cesarini_thompson_erlang_programming"
+title = "Erlang Programming"
+authors = ["Francesco Cesarini", "Simon Thompson"]
+publisher = "O'Reilly Media"
+edition = "1st"
+year = 2009
+focus = "elixir_erlang"
+dedicated = false
+on_shelf = true
+chapters = [
+  "4. Concurrent Programming",
+  "5. Process Design Patterns",
+  "6. Process Error Handling",
+  "11. Distributed Programming in Erlang",
+  "12. OTP Behaviors",
+]
+
+[[book]]
+id = "st_laurent_introducing_elixir"
+title = "Introducing Elixir"
+authors = ["Simon St. Laurent", "J. David Eisenberg"]
+publisher = "O'Reilly Media"
+edition = "1st"
+year = 2014
+focus = "elixir_erlang"
+dedicated = false
+on_shelf = true
+chapters = [
+  "9. Playing with Processes",
+  "12. Getting Started with OTP",
+]
+
+[[book]]
+id = "st_laurent_introducing_erlang"
+title = "Introducing Erlang"
+authors = ["Simon St. Laurent"]
+publisher = "O'Reilly Media"
+edition = "1st"
+year = 2013
+focus = "elixir_erlang"
+dedicated = false
+on_shelf = true
+chapters = [
+  "8. Playing with Processes",
+  "11. Getting Started with OTP",
+]
+
+[[book]]
+id = "bussey_from_ruby_to_elixir"
+title = "From Ruby to Elixir"
+subtitle = "Unleash the Full Potential of Functional Programming"
+authors = ["Stephen Bussey"]
+publisher = "The Pragmatic Bookshelf"
+edition = "1st"
+year = 2024
+focus = "elixir_erlang"
+dedicated = false
+on_shelf = true
+publisher_url = "https://pragprog.com/titles/sbelixir/from-ruby-to-elixir/"
+chapters = [
+  "5. GenServers: Build Cities, Not Skyscrapers",
+  "9. Asynchronous Jobs with Oban",
+]
+
+[[book]]
+id = "cleary_concurrency_in_csharp_cookbook"
+title = "Concurrency in C# Cookbook"
+subtitle = "Asynchronous, Parallel, and Multithreaded Programming"
+authors = ["Stephen Cleary"]
+publisher = "O'Reilly Media"
+edition = "2nd"
+year = 2019
+focus = "csharp_dotnet"
+dedicated = true
+on_shelf = true
+chapters = [
+  "1. Concurrency: An Overview",
+  "2. Async Basics",
+  "3. Asynchronous Streams",
+  "4. Parallel Basics",
+  "5. Dataflow Basics",
+  "6. System.Reactive Basics",
+  "7. Testing",
+  "8. Interop",
+  "9. Collections",
+  "10. Cancellation",
+  "11. Functional-Friendly OOP",
+  "12. Synchronization",
+  "13. Scheduling",
+  "14. Scenarios",
+  "B. Recognizing and Interpreting Asynchronous Patterns",
+]
+
+[[book]]
+id = "duffy_concurrent_programming_on_windows"
+title = "Concurrent Programming on Windows"
+authors = ["Joe Duffy"]
+publisher = "Addison-Wesley (Pearson Education)"
+edition = "1st"
+year = 2009
+focus = "csharp_dotnet"
+dedicated = true
+on_shelf = true
+chapters = [
+  "1. Introduction",
+  "2. Synchronization and Time",
+  "3. Threads",
+  "4. Advanced Threads",
+  "5. Windows Kernel Synchronization",
+  "6. Data and Control Synchronization",
+  "7. Thread Pools",
+  "8. Asynchronous Programming Models",
+  "9. Fibers",
+  "10. Memory Models and Lock Freedom",
+  "11. Concurrency Hazards",
+  "12. Parallel Containers",
+  "13. Data and Task Parallelism",
+  "14. Performance and Scalability",
+  "15. Input and Output",
+  "16. Graphical User Interfaces",
+  "A. Designing Reusable Libraries for Concurrent .NET Programs",
+  "B. Parallel Extensions to .NET",
+]
+
+[[book]]
+id = "ashcraft_parallel_programming_concurrency_csharp10"
+title = "Parallel Programming and Concurrency with C# 10 and .NET 6"
+authors = ["Alvin Ashcraft"]
+publisher = "Packt Publishing"
+edition = "1st"
+year = 2022
+focus = "csharp_dotnet"
+dedicated = true
+on_shelf = true
+code_repo = "https://github.com/PacktPublishing/Parallel-Programming-and-Concurrency-with-C-sharp-10-and-.NET-6"
+chapters = [
+  "1. Managed Threading Concepts",
+  "2. Evolution of Multithreaded Programming in .NET",
+  "3. Best Practices for Managed Threading",
+  "4. User Interface Responsiveness and Threading",
+  "5. Asynchronous Programming with C#",
+  "6. Parallel Programming Concepts",
+  "7. Task Parallel Library (TPL) and Dataflow",
+  "8. Parallel Data Structures and Parallel LINQ",
+  "9. Working with Concurrent Collections in .NET",
+  "10. Debugging Multithreaded Applications with Visual Studio",
+  "11. Canceling Asynchronous Work",
+  "12. Unit Testing Async, Concurrent, and Parallel Code",
+]
+
+[[book]]
+id = "terrell_concurrency_in_dotnet"
+title = "Concurrency in .NET"
+subtitle = "Modern patterns of concurrent and parallel programming"
+authors = ["Riccardo Terrell"]
+publisher = "Manning Publications"
+edition = "1st"
+year = 2018
+focus = "csharp_dotnet"
+dedicated = true
+on_shelf = true
+code_repo = "https://github.com/rikace/fConcBook"
+publisher_url = "https://www.manning.com/books/concurrency-in-dot-net"
+chapters = [
+  "1. Functional concurrency foundations",
+  "2. Functional programming techniques for concurrency",
+  "3. Functional data structures and immutability",
+  "4. The basics of processing big data: data parallelism, part 1",
+  "5. PLINQ and MapReduce: data parallelism, part 2",
+  "6. Real-time event streams: functional reactive programming",
+  "7. Task-based functional parallelism",
+  "8. Task asynchronicity for the win",
+  "9. Asynchronous functional programming in F#",
+  "10. Functional combinators for fluent concurrent programming",
+  "11. Applying reactive programming everywhere with agents",
+  "12. Parallel workflow and agent programming with TPL Dataflow",
+  "13. Recipes and design patterns for successful concurrent programming",
+  "14. Building a scalable mobile app with concurrent functional programming",
+]
+
+[[book]]
+id = "blewett_clymer_pro_asynchronous_programming_dotnet"
+title = "Pro Asynchronous Programming with .NET"
+authors = ["Richard Blewett", "Andrew Clymer"]
+publisher = "Apress"
+edition = "1st"
+year = 2013
+focus = "csharp_dotnet"
+dedicated = true
+on_shelf = true
+code_repo = "https://github.com/Apress/pro-asynchronous-programming-w-.net"
+publisher_url = "https://link.springer.com/book/10.1007/978-1-4302-5921-3"
+chapters = [
+  "1. An Introduction to Asynchronous Programming",
+  "2. The Evolution of the .NET Asynchronous API",
+  "3. Tasks",
+  "4. Basic Thread Safety",
+  "5. Concurrent Data Structures",
+  "6. Asynchronous UI",
+  "7. async and await",
+  "8. Everything a Task",
+  "9. Server-Side Async",
+  "10. TPL Dataflow",
+  "11. Parallel Programming",
+  "12. Task Scheduling",
+  "13. Debugging Async with Visual Studio",
+  "14. Debugging Async —Beyond Visual Studio",
+]
+
+[[book]]
+id = "albahari_csharp_in_a_nutshell"
+title = "C# 10 in a Nutshell"
+subtitle = "The Definitive Reference"
+authors = ["Joseph Albahari"]
+publisher = "O'Reilly Media"
+edition = "1st (C# 10)"
+year = 2022
+focus = "csharp_dotnet"
+dedicated = false
+on_shelf = true
+chapters = [
+  "14. Concurrency and Asynchrony",
+  "21. Advanced Threading",
+  "22. Parallel Programming",
+]
+
+[[book]]
+id = "griffiths_programming_csharp"
+title = "Programming C# 12"
+subtitle = "Build Cloud, Web, and Desktop Applications"
+authors = ["Ian Griffiths"]
+publisher = "O'Reilly Media"
+edition = "1st (C# 12)"
+year = 2024
+focus = "csharp_dotnet"
+dedicated = false
+on_shelf = true
+code_repo = "https://github.com/idg10/prog-cs-12-examples"
+chapters = [
+  "11. Rx: Reactive Extensions",
+  "16. Multithreading",
+  "17. Asynchronous Language Features",
+]
+
+[[book]]
+id = "fowler_python_concurrency_with_asyncio"
+title = "Python Concurrency with asyncio"
+authors = ["Matthew Fowler"]
+publisher = "Manning Publications"
+edition = "1st"
+year = 2022
+focus = "python"
+dedicated = true
+on_shelf = true
+code_repo = "https://github.com/concurrency-in-python-with-asyncio/concurrency-in-python-with-asyncio"
+publisher_url = "https://www.manning.com/books/python-concurrency-with-asyncio"
+chapters = [
+  "1. Getting to know asyncio",
+  "2. asyncio basics",
+  "3. A first asyncio application",
+  "4. Concurrent web requests",
+  "5. Non-blocking database drivers",
+  "6. Handling CPU-bound work",
+  "7. Handling blocking work with threads",
+  "8. Streams",
+  "9. Web applications",
+  "10. Microservices",
+  "11. Synchronization",
+  "12. Asynchronous queues",
+  "13. Managing subprocesses",
+  "14. Advanced asyncio",
+]
+
+[[book]]
+id = "hattingh_using_asyncio_in_python"
+title = "Using Asyncio in Python"
+subtitle = "Understanding Python's Asynchronous Programming Features"
+authors = ["Caleb Hattingh"]
+publisher = "O'Reilly Media"
+edition = "1st"
+year = 2020
+focus = "python"
+dedicated = true
+on_shelf = true
+chapters = [
+  "1. Introducing Asyncio",
+  "2. The Truth About Threads",
+  "3. Asyncio Walk-Through",
+  "4. 20 Asyncio Libraries You Aren’t Using (But…Oh, Never Mind)",
+  "5. Concluding Thoughts",
+  "A Short History of Async Support in Python",
+]
+
+[[book]]
+id = "brownlee_python_asyncio_jump_start"
+title = "Python Asyncio Jump-Start"
+subtitle = "Asynchronous Programming And Non-Blocking I/O With Coroutines"
+authors = ["Jason Brownlee"]
+publisher = "SuperFastPython (self-published)"
+edition = "1st"
+year = 2022
+focus = "python"
+dedicated = true
+on_shelf = true
+code_repo = "https://github.com/SuperFastPython/PythonAsyncioJumpStart"
+chapters = [
+  "1. Asyncio Concurrency",
+  "2. Coroutines and Tasks",
+  "3. Collections of Tasks",
+  "4. Iterators, Generators, and Context Managers",
+  "5. Queues and Synchronization Primitives",
+  "6. Subprocesses and Streams",
+  "7. Port Scanner Case Study",
+]
+
+[[book]]
+id = "brownlee_parallel_loops_in_python"
+title = "Parallel Loops in Python"
+authors = ["Jason Brownlee"]
+publisher = "SuperFastPython (self-published)"
+edition = "1st"
+year = 2022
+focus = "python"
+dedicated = true
+on_shelf = true
+code_repo = "https://github.com/SuperFastPython/ParallelLoopsInPython"
+chapters = [
+  "1. Introduction",
+  "2. Parallel Loop with the Thread Class",
+  "3. Parallel Loop with the ThreadPool Class",
+  "4. Parallel Loop with the ThreadPoolExecutor Class",
+  "5. Parallel Loop with the Process Class",
+  "6. Parallel Loop with the Pool Class",
+  "7. Parallel Loop with the ProcessPoolExecutor Class",
+]
+
+[[book]]
+id = "zaccone_python_parallel_programming_cookbook"
+title = "Python Parallel Programming Cookbook"
+authors = ["Giancarlo Zaccone"]
+publisher = "Packt Publishing"
+edition = "1st"
+year = 2015
+focus = "python"
+dedicated = true
+on_shelf = true
+chapters = [
+  "1. Getting Started with Parallel Computing and Python",
+  "2. Thread-based Parallelism",
+  "3. Process-based Parallelism",
+  "4. Asynchronous Programming",
+  "5. Distributed Python",
+  "6. GPU Programming with Python",
+]
+
+[[book]]
+id = "palach_parallel_programming_with_python"
+title = "Parallel Programming with Python"
+authors = ["Jan Palach"]
+publisher = "Packt Publishing"
+edition = "1st"
+year = 2014
+focus = "python"
+dedicated = true
+on_shelf = true
+chapters = [
+  "1. Contextualizing Parallel, Concurrent, and Distributed Programming",
+  "2. Designing Parallel Algorithms",
+  "3. Identifying a Parallelizable Problem",
+  "4. Using the threading and concurrent.futures Modules",
+  "5. Using Multiprocessing and ProcessPoolExecutor",
+  "6. Utilizing Parallel Python",
+  "7. Distributing Tasks with Celery",
+  "8. Doing Things Asynchronously",
+]
+
+[[book]]
+id = "tahrioui_asyncio_recipes"
+title = "asyncio Recipes"
+subtitle = "A Problem-Solution Approach"
+authors = ["Mohamed Mustapha Tahrioui"]
+publisher = "Apress"
+edition = "1st"
+year = 2019
+focus = "python"
+dedicated = true
+on_shelf = true
+code_repo = "https://github.com/Apress/asyncio-recipes"
+publisher_url = "https://link.springer.com/book/10.1007/978-1-4842-4401-2"
+chapters = [
+  "1. Preparing for the Recipes",
+  "2. Working with Event Loops",
+  "3. Working with Coroutines and Async/Await",
+  "4. Working with Async Generators",
+  "5. Working with Async Context Manager",
+  "6. Communication Between Asyncio Components",
+  "7. Synchronization Between Asyncio Components",
+  "8. Improving Asyncio Applications",
+  "9. Working with Network Protocols",
+  "10. Preventing Common Asyncio Mistakes",
+  "B. Event Loops",
+]
+
+[[book]]
+id = "gorelick_ozsvald_high_performance_python"
+title = "High Performance Python"
+subtitle = "Practical Performant Programming for Humans"
+authors = ["Micha Gorelick", "Ian Ozsvald"]
+publisher = "O'Reilly Media"
+edition = "2nd"
+year = 2020
+focus = "python"
+dedicated = false
+on_shelf = true
+code_repo = "https://github.com/mynameisfiber/high_performance_python_2e"
+chapters = [
+  "8. Asynchronous I/O",
+  "9. The multiprocessing Module",
+  "10. Clusters and Job Queues",
+]
+
+[[book]]
+id = "doglio_mastering_python_high_performance"
+title = "Mastering Python High Performance"
+authors = ["Fernando Doglio"]
+publisher = "Packt Publishing"
+edition = "1st"
+year = 2015
+focus = "python"
+dedicated = false
+on_shelf = true
+chapters = [
+  "5. Multithreading versus Multiprocessing",
+]
+
+[[book]]
+id = "summerfield_python_in_practice"
+title = "Python in Practice"
+subtitle = "Create Better Programs Using Concurrency, Libraries, and Patterns"
+authors = ["Mark Summerfield"]
+publisher = "Addison-Wesley (Pearson Education)"
+edition = "1st"
+year = 2013
+focus = "python"
+dedicated = false
+on_shelf = true
+chapters = [
+  "4. High-Level Concurrency in Python",
+]
+
+[[book]]
+id = "nguyen_advanced_python_programming"
+title = "Advanced Python Programming"
+subtitle = "Accelerate your Python programs using proven techniques and design patterns"
+authors = ["Quan Nguyen"]
+publisher = "Packt Publishing"
+edition = "2nd"
+year = 2022
+focus = "python"
+dedicated = false
+on_shelf = true
+code_repo = "https://github.com/PacktPublishing/Advanced-Python-Programming-Second-Edition"
+chapters = [
+  "7. Implementing Concurrency",
+  "8. Parallel Processing",
+  "9. Concurrent Web Requests",
+  "10. Concurrent Image Processing",
+  "11. Building Communication Channels with asyncio",
+  "12. Deadlocks",
+  "13. Starvation",
+  "14. Race Conditions",
+  "15. The Global Interpreter Lock",
+]
+
+[[book]]
+id = "slatkin_effective_python"
+title = "Effective Python"
+subtitle = "90 Specific Ways to Write Better Python"
+authors = ["Brett Slatkin"]
+publisher = "Addison-Wesley (Pearson Education)"
+edition = "2nd"
+year = 2020
+focus = "python"
+dedicated = false
+on_shelf = true
+code_repo = "https://github.com/bslatkin/effectivepython"
+publisher_url = "https://www.informit.com/store/effective-python-90-specific-ways-to-write-better-python-9780134853987"
+chapters = [
+  "7. Concurrency and Parallelism",
+]
+
+[[book]]
+id = "ramalho_fluent_python"
+title = "Fluent Python"
+subtitle = "Clear, Concise, and Effective Programming"
+authors = ["Luciano Ramalho"]
+publisher = "O'Reilly Media"
+edition = "2nd"
+year = 2022
+focus = "python"
+dedicated = false
+on_shelf = true
+code_repo = "https://github.com/fluentpython/example-code-2e"
+chapters = [
+  "19. Concurrency Models in Python",
+  "20. Concurrent Executors",
+  "21. Asynchronous Programming",
+]
+
+[[book]]
+id = "beazley_jones_python_cookbook"
+title = "Python Cookbook"
+authors = ["David Beazley", "Brian K. Jones"]
+publisher = "O'Reilly Media"
+edition = "3rd"
+year = 2013
+focus = "python"
+dedicated = false
+on_shelf = true
+code_repo = "https://github.com/dabeaz/python-cookbook"
+chapters = [
+  "12. Concurrency",
+]
+
+[[book]]
+id = "martelli_python_in_a_nutshell"
+title = "Python in a Nutshell"
+authors = ["Alex Martelli", "Anna Ravenscroft", "Steve Holden"]
+publisher = "O'Reilly Media"
+edition = "3rd"
+year = 2017
+focus = "python"
+dedicated = false
+on_shelf = true
+chapters = [
+  "14. Threads and Processes",
+  "18. Asynchronous Alternatives",
+]
+
+[[book]]
+id = "boduch_javascript_concurrency"
+title = "JavaScript Concurrency"
+authors = ["Adam Boduch"]
+publisher = "Packt Publishing"
+edition = "1st"
+year = 2015
+focus = "javascript"
+dedicated = true
+on_shelf = true
+chapters = [
+  "1. Why JavaScript Concurrency",
+  "2. The JavaScript Execution Model",
+  "3. Synchronizing with Promises",
+  "4. Lazy Evaluation with Generators",
+  "5. Working with Workers",
+  "6. Practical Parallelism",
+  "7. Abstracting Concurrency",
+  "8. Evented IO with NodeJS",
+  "9. Advanced NodeJS Concurrency",
+  "10. Building a Concurrent Application",
+]
+
+[[book]]
+id = "burnham_async_javascript"
+title = "Async JavaScript"
+subtitle = "Build More Responsive Apps with Less Code"
+authors = ["Trevor Burnham"]
+publisher = "The Pragmatic Bookshelf"
+edition = "1st"
+year = 2012
+focus = "javascript"
+dedicated = true
+on_shelf = true
+publisher_url = "https://pragprog.com/titles/tbajs/async-javascript/"
+chapters = [
+  "1. Understanding JavaScript Events",
+  "2. Distributing Events",
+  "3. Promises and Deferreds",
+  "4. Flow Control with Async.js",
+  "5. Multithreading with Workers",
+  "6. Async Script Loading",
+  "A1. Tools for Taming JavaScript",
+]
+
+[[book]]
+id = "hunter_english_multithreaded_javascript"
+title = "Multithreaded JavaScript"
+subtitle = "Concurrency Beyond the Event Loop"
+authors = ["Thomas Hunter II", "Bryan English"]
+publisher = "O'Reilly Media"
+edition = "1st"
+year = 2021
+focus = "javascript"
+dedicated = true
+on_shelf = true
+code_repo = "https://github.com/MultithreadedJSBook/code-samples"
+chapters = [
+  "1. Introduction",
+  "2. Browsers",
+  "3. Node.js",
+  "4. Shared Memory",
+  "5. Advanced Shared Memory",
+  "6. Multithreaded Patterns",
+  "7. WebAssembly",
+  "8. Analysis",
+]
+
+[[book]]
+id = "hunter_distributed_systems_with_nodejs"
+title = "Distributed Systems with Node.js"
+subtitle = "Building Enterprise-Ready Backend Services"
+authors = ["Thomas Hunter II"]
+publisher = "O'Reilly Media"
+edition = "1st"
+year = 2020
+focus = "javascript"
+dedicated = false
+on_shelf = true
+code_repo = "https://github.com/tlhunter/distributed-node"
+chapters = [
+  "8. Resilience",
+  "9. Distributed Primitives",
+]
+
+[[book]]
+id = "zakas_high_performance_javascript"
+title = "High Performance JavaScript"
+authors = ["Nicholas C. Zakas"]
+publisher = "O'Reilly Media"
+edition = "1st"
+year = 2010
+focus = "javascript"
+dedicated = false
+on_shelf = true
+chapters = [
+  "6. Responsive Interfaces",
+]
+
+[[book]]
+id = "cantelon_nodejs_in_action"
+title = "Node.js in Action"
+authors = ["Mike Cantelon", "Marc Harter", "T.J. Holowaychuk", "Nathan Rajlich"]
+publisher = "Manning Publications"
+edition = "1st"
+year = 2014
+focus = "javascript"
+dedicated = false
+on_shelf = true
+publisher_url = "https://www.manning.com/books/node-js-in-action"
+chapters = [
+  "3. Node programming fundamentals",
+]
+
+[[book]]
+id = "springer_nodejs_comprehensive_guide"
+title = "Node.js"
+subtitle = "The Comprehensive Guide"
+authors = ["Sebastian Springer"]
+publisher = "Rheinwerk Publishing"
+edition = "1st"
+year = 2022
+focus = "javascript"
+dedicated = false
+on_shelf = true
+chapters = [
+  "16. Asynchronous Programming",
+]
+
+[[book]]
+id = "kodeco_combine_asynchronous_programming_swift"
+title = "Combine: Asynchronous Programming with Swift"
+authors = ["Shai Mishali", "Florent Pillet", "Marin Todorov", "Scott Gardner"]
+publisher = "Razeware LLC (raywenderlich.com / Kodeco)"
+edition = "3rd"
+year = 2021
+focus = "swift"
+dedicated = true
+on_shelf = true
+code_repo = "https://github.com/kodecocodes/comb-materials"
+publisher_url = "https://www.kodeco.com/books/combine-asynchronous-programming-with-swift"
+chapters = [
+  "1. Hello, Combine!",
+  "2. Publishers & Subscribers",
+  "3. Transforming Operators",
+  "4. Filtering Operators",
+  "5. Combining Operators",
+  "6. Time Manipulation Operators",
+  "7. Sequence Operators",
+  "8. In Practice: Project \"Collage Neue\"",
+  "9. Networking",
+  "10. Debugging",
+  "11. Timers",
+  "12. Key-Value Observing",
+  "13. Resource Management",
+  "14. In Practice: Project \"News\"",
+  "15. In Practice: Combine & SwiftUI",
+  "16. Error Handling",
+  "17. Schedulers",
+  "18. Custom Publishers & Handling Backpressure",
+  "19. Testing",
+  "20. In Practice: Building a Complete App",
+]
+
+[[book]]
+id = "babic_srivastava_kotlin_coroutines_by_tutorials"
+title = "Kotlin Coroutines by Tutorials"
+subtitle = "Mastering Coroutines in Kotlin and Android"
+authors = ["Filip Babić", "Nishant Srivastava"]
+publisher = "Razeware LLC (raywenderlich.com / Kodeco)"
+year = 2019
+focus = "other"
+dedicated = true
+on_shelf = true
+publisher_url = "https://www.kodeco.com/books/kotlin-coroutines-by-tutorials"
+chapters = [
+  "1. What Is Asynchronous Programming",
+  "2. Setting Up Your Build Environments",
+  "3. Getting Started with Coroutines",
+  "4. Suspending Functions",
+  "5. Async/Await",
+  "6. Coroutine Context",
+  "7. Coroutine Contexts & Dispatchers",
+  "8. Exception Handling",
+  "9. Manage Cancellation",
+  "10. Building Sequences & Iterators with Yield",
+  "11. Channels",
+  "12. Broadcast Channels",
+  "13. Producer & Actors",
+  "14. Beginning with Coroutines Flow",
+  "15. Testing Coroutines",
+  "16. Android Concurrency Before Coroutines",
+  "17. Coroutines on Android - Part 1",
+  "18. Coroutines on Android - Part 2",
+]
+
+[[book]]
+id = "gabrijelcic_delphi_high_performance"
+title = "Delphi High Performance"
+subtitle = "Master the art of concurrency, parallel programming, and memory management to build fast Delphi apps"
+authors = ["Primož Gabrijelčič"]
+publisher = "Packt Publishing"
+edition = "2nd"
+year = 2023
+focus = "other"
+dedicated = false
+on_shelf = true
+code_repo = "https://github.com/PacktPublishing/Delphi-High-Performance---Second-Edition"
+chapters = [
+  "7. Getting Started with the Parallel World",
+  "8. Working with Parallel Tools",
+  "9. Exploring Parallel Practices",
+  "10. More Parallel Patterns",
+]
+
+[[book]]
+id = "picheta_nim_in_action"
+title = "Nim in Action"
+authors = ["Dominik Picheta"]
+publisher = "Manning Publications"
+edition = "1st"
+year = 2017
+focus = "other"
+dedicated = false
+on_shelf = true
+code_repo = "https://github.com/dom96/nim-in-action-code"
+publisher_url = "https://www.manning.com/books/nim-in-action"
+chapters = [
+  "6. Parallelism",
+]
+
+[[book]]
+id = "madhavapeddy_minsky_real_world_ocaml"
+title = "Real World OCaml"
+subtitle = "Functional Programming for the Masses"
+authors = ["Anil Madhavapeddy", "Yaron Minsky"]
+publisher = "Cambridge University Press"
+edition = "2nd"
+year = 2022
+focus = "other"
+dedicated = false
+on_shelf = true
+code_repo = "https://github.com/realworldocaml/book"
+chapters = [
+  "17. Concurrent Programming with Async",
+]
+
+[[book]]
+id = "bobrov_grokking_concurrency"
+title = "Grokking Concurrency"
+authors = ["Kirill Bobrov"]
+publisher = "Manning Publications"
+edition = "1st"
+year = 2024
+focus = "general"
+dedicated = true
+on_shelf = true
+code_repo = "https://github.com/luminousmen/grokking_concurrency"
+publisher_url = "https://www.manning.com/books/grokking-concurrency"
+chapters = [
+  "1. Introducing concurrency",
+  "2. Serial and parallel execution",
+  "3. How computers work",
+  "4. Building blocks of concurrency",
+  "5. Interprocess communication",
+  "6. Multitasking",
+  "7. Decomposition",
+  "8. Solving concurrency problems: Race conditions and synchronization",
+  "9. Solving concurrency problems: Deadlocks and starvation",
+  "10. Nonblocking I/O",
+  "11. Event-based concurrency",
+  "12. Asynchronous communication",
+  "13. Writing concurrent applications",
+]
+
+[[book]]
+id = "butcher_seven_concurrency_models"
+title = "Seven Concurrency Models in Seven Weeks"
+subtitle = "When Threads Unravel"
+authors = ["Paul Butcher"]
+publisher = "The Pragmatic Bookshelf"
+edition = "1st"
+year = 2014
+focus = "general"
+dedicated = true
+on_shelf = true
+publisher_url = "https://pragprog.com/titles/pb7con/seven-concurrency-models-in-seven-weeks/"
+chapters = [
+  "1. Introduction",
+  "2. Threads and Locks",
+  "3. Functional Programming",
+  "4. The Clojure Way—Separating Identity from State",
+  "5. Actors",
+  "6. Communicating Sequential Processes",
+  "7. Data Parallelism",
+  "8. The Lambda Architecture",
+  "9. Wrapping Up",
+]
+
+[[book]]
+id = "breshears_art_of_concurrency"
+title = "The Art of Concurrency"
+subtitle = "A Thread Monkey's Guide to Writing Parallel Applications"
+authors = ["Clay Breshears"]
+publisher = "O'Reilly Media"
+edition = "1st"
+year = 2009
+focus = "general"
+dedicated = true
+on_shelf = true
+chapters = [
+  "1. Want to Go Faster? Raise Your Hands if You Want to Go Faster!",
+  "2. Concurrent or Not Concurrent",
+  "3. Proving Correctness and Measuring Performance",
+  "4. Eight Simple Rules for Designing Multithreaded Applications",
+  "5. Threading Libraries",
+  "6. Parallel Sum and Prefix Scan",
+  "7. MapReduce",
+  "8. Sorting",
+  "9. Searching",
+  "10. Graph Algorithms",
+  "11. Threading Tools",
+]
+
+[[book]]
+id = "raynal_concurrent_programming_algorithms"
+title = "Concurrent Programming: Algorithms, Principles, and Foundations"
+authors = ["Michel Raynal"]
+publisher = "Springer"
+edition = "1st"
+year = 2013
+focus = "general"
+dedicated = true
+on_shelf = true
+publisher_url = "https://link.springer.com/book/10.1007/978-3-642-32027-9"
+chapters = [
+  "1. The Mutual Exclusion Problem",
+  "2. Solving Mutual Exclusion",
+  "3. Lock-Based Concurrent Objects",
+  "4. Atomicity: Formal Definition and Properties",
+  "5. Mutex-Free Concurrent Objects",
+  "6. Hybrid Concurrent Objects",
+  "7. Wait-Free Objects from Read/Write Registers Only",
+  "8. Snapshot Objects from Read/Write Registers Only",
+  "9. Renaming Objects from Read/Write Registers Only",
+  "10. Transactional Memory",
+  "11. Safe, Regular, and Atomic Read/Write Registers",
+  "12. From Safe Bits to Atomic Bits: Lower Bound and Optimal Construction",
+  "13. Bounded Constructions of Atomic b-Valued Registers",
+  "14. Universality of Consensus",
+  "15. The Case of Unreliable Base Objects",
+  "16. Consensus Numbers and the Consensus Hierarchy",
+  "17. The Alpha(s) and Omega of Consensus: Failure Detector-Based Consensus",
+]
+
+[[book]]
+id = "herlihy_shavit_art_of_multiprocessor_programming"
+title = "The Art of Multiprocessor Programming"
+authors = ["Maurice Herlihy", "Nir Shavit"]
+publisher = "Morgan Kaufmann (Elsevier)"
+edition = "1st"
+year = 2008
+focus = "general"
+dedicated = true
+on_shelf = true
+publisher_url = "https://shop.elsevier.com/books/the-art-of-multiprocessor-programming/herlihy/978-0-12-370591-4"
+chapters = [
+  "1. Introduction",
+  "2. Mutual Exclusion",
+  "3. Concurrent Objects",
+  "4. Foundations of Shared Memory",
+  "5. The Relative Power of Primitive Synchronization Operations",
+  "6. Universality of Consensus",
+  "7. Spin Locks and Contention",
+  "8. Monitors and Blocking Synchronization",
+  "9. Linked Lists: The Role of Locking",
+  "10. Concurrent Queues and the ABA Problem",
+  "11. Concurrent Stacks and Elimination",
+  "12. Counting, Sorting, and Distributed Coordination",
+  "13. Concurrent Hashing and Natural Parallelism",
+  "14. Skiplists and Balanced Search",
+  "15. Priority Queues",
+  "16. Futures, Scheduling, and Work Distribution",
+  "17. Barriers",
+  "18. Transactional Memory",
+]
+
+[[book]]
+id = "downey_little_book_of_semaphores"
+free_url = "https://greenteapress.com/wp/semaphores/"
+title = "The Little Book of Semaphores"
+authors = ["Allen B. Downey"]
+publisher = "Green Tea Press"
+edition = "2nd (version 2.2.1)"
+year = 2016
+focus = "general"
+dedicated = true
+on_shelf = true
+publisher_url = "https://greenteapress.com/wp/semaphores/"
+chapters = [
+  "1. Introduction",
+  "2. Semaphores",
+  "3. Basic synchronization patterns",
+  "4. Classical synchronization problems",
+  "5. Less classical synchronization problems",
+  "6. Not-so-classical problems",
+  "7. Not remotely classical problems",
+  "8. Synchronization in Python",
+  "9. Synchronization in C",
+  "A. Cleaning up Python threads",
+  "B. Cleaning up POSIX threads",
+]
+
+[[book]]
+id = "kshemkalyani_singhal_distributed_computing"
+title = "Distributed Computing"
+subtitle = "Principles, Algorithms, and Systems"
+authors = ["Ajay D. Kshemkalyani", "Mukesh Singhal"]
+publisher = "Cambridge University Press"
+edition = "1st"
+year = 2008
+focus = "general"
+dedicated = true
+on_shelf = true
+chapters = [
+  "1. Introduction",
+  "2. A Model of Distributed Computations",
+  "3. Logical Time",
+  "4. Global State and Snapshot Recording Algorithms",
+  "5. Terminology and Basic Algorithms",
+  "6. Message Ordering and Group Communication",
+  "7. Termination Detection",
+  "8. Reasoning with Knowledge",
+  "9. Distributed Mutual Exclusion Algorithms",
+  "10. Deadlock Detection in Distributed Systems",
+  "11. Global Predicate Detection",
+  "12. Distributed Shared Memory",
+  "13. Checkpointing and Rollback Recovery",
+  "14. Consensus and Agreement Algorithms",
+  "15. Failure Detectors",
+  "16. Authentication in Distributed System",
+  "17. Self-Stabilization",
+  "18. Peer-to-Peer Computing and Overlay Graphs",
+]
+
+[[book]]
+id = "edet_asynchronous_programming"
+title = "Asynchronous Programming"
+subtitle = "Beyond the Main Thread"
+authors = ["Theophilus Edet"]
+publisher = "CompreQuest Books (Theophilus Edet)"
+year = 2023
+focus = "general"
+dedicated = true
+on_shelf = true
+chapters = [
+  "1. Introduction to Asynchronous Programming",
+  "2. Asynchronous Programming in Various Languages",
+  "3. Asynchronous I/O Operations",
+  "4. Asynchronous UI Programming",
+  "5. Real-time Applications and Event-driven Architectures",
+  "6. Asynchronous Programming in Different Platforms",
+  "7. Asynchronous Data Processing and Messaging",
+  "8. Asynchronous Applications in Emerging Technologies",
+  "9. Multimedia Processing and Web Scraping",
+  "10. Mobile App Development and Robotics",
+  "11. Social Media Integration and DevOps",
+  "12. Industry-specific Applications",
+  "13. Legal Tech and Environmental Monitoring",
+  "14. CRM and Supply Chain Management",
+  "15. Space Exploration and Wearable Tech",
+  "16. Cybersecurity and Incident Response",
+  "17. Compliance Technologies and Risk Management",
+  "18. Remote Work Solutions and HR Management",
+  "19. Sales and E-commerce Platforms",
+  "20. Marketing Automation and Content Management",
+  "21. Education Technology and Learning Management",
+  "22. Legal Tech and Compliance",
+  "23. Data Analytics and Business Intelligence",
+  "24. Cloud Computing and DevOps",
+]
+
+[[book]]
+id = "kleppmann_designing_data_intensive_applications"
+title = "Designing Data-Intensive Applications"
+subtitle = "The Big Ideas Behind Reliable, Scalable, and Maintainable Systems"
+authors = ["Martin Kleppmann"]
+publisher = "O'Reilly Media"
+edition = "1st"
+year = 2017
+focus = "general"
+dedicated = false
+on_shelf = true
+chapters = [
+  "5. Replication",
+  "6. Partitioning",
+  "7. Transactions",
+  "8. The Trouble with Distributed Systems",
+  "9. Consistency and Consensus",
+]
+
+[[book]]
+id = "petrov_database_internals"
+title = "Database Internals"
+subtitle = "A Deep Dive into How Distributed Data Systems Work"
+authors = ["Alex Petrov"]
+publisher = "O'Reilly Media"
+edition = "1st"
+year = 2019
+focus = "general"
+dedicated = false
+on_shelf = true
+chapters = [
+  "8. Introduction and Overview",
+  "9. Failure Detection",
+  "10. Leader Election",
+  "11. Replication and Consistency",
+  "12. Anti-Entropy and Dissemination",
+  "13. Distributed Transactions",
+  "14. Consensus",
+]
+
+[[book]]
+id = "burns_designing_distributed_systems"
+title = "Designing Distributed Systems"
+subtitle = "Patterns and Paradigms for Scalable, Reliable Services"
+authors = ["Brendan Burns"]
+publisher = "O'Reilly Media"
+edition = "1st"
+year = 2018
+focus = "general"
+dedicated = false
+on_shelf = true
+code_repo = "https://github.com/brendandburns/designing-distributed-systems"
+chapters = [
+  "5. Replicated Load-Balanced Services",
+  "6. Sharded Services",
+  "7. Scatter/Gather",
+  "8. Functions and Event-Driven Processing",
+  "9. Ownership Election",
+  "10. Work Queue Systems",
+  "11. Event-Driven Batch Processing",
+  "12. Coordinated Batch Processing",
+]
+
+[[book]]
+id = "cormen_introduction_to_algorithms"
+title = "Introduction to Algorithms"
+authors = ["Thomas H. Cormen", "Charles E. Leiserson", "Ronald L. Rivest", "Clifford Stein"]
+publisher = "The MIT Press"
+edition = "4th"
+year = 2022
+focus = "general"
+dedicated = false
+on_shelf = true
+chapters = [
+  "26. Parallel Algorithms",
+]
+
+[[book]]
+id = "erciyes_guide_to_graph_algorithms"
+title = "Guide to Graph Algorithms"
+subtitle = "Sequential, Parallel and Distributed"
+authors = ["K. Erciyes"]
+publisher = "Springer"
+edition = "1st"
+year = 2018
+focus = "other"
+dedicated = false
+on_shelf = true
+publisher_url = "https://link.springer.com/book/10.1007/978-3-319-73235-0"
+chapters = [
+  "4. Parallel Graph Algorithms",
+  "5. Distributed Graph Algorithms",
+]
+
+[[book]]
+id = "erciyes_distributed_graph_algorithms"
+title = "Distributed Graph Algorithms for Computer Networks"
+authors = ["K. Erciyes"]
+publisher = "Springer"
+edition = "1st"
+year = 2013
+focus = "other"
+dedicated = true
+on_shelf = true
+publisher_url = "https://link.springer.com/book/10.1007/978-1-4471-5173-9"
+chapters = [
+  "1. Introduction",
+  "2. Graphs",
+  "3. The Computational Model",
+  "4. Spanning Tree Construction",
+  "5. Graph Traversals",
+  "6. Minimum Spanning Trees",
+  "7. Routing",
+  "8. Self-Stabilization",
+  "9. Vertex Coloring",
+  "10. Maximal Independent Sets",
+  "11. Dominating Sets",
+  "12. Matching",
+  "13. Vertex Cover",
+  "14. Introduction",
+  "15. Topology Control",
+  "16. Ad Hoc Routing",
+  "17. Sensor Network Applications",
+  "18. ASSIST: A Simulator to Develop Distributed Algorithms",
+]
+
+[[book]]
+id = "zomaya_parallel_computing_bioinformatics"
+title = "Parallel Computing for Bioinformatics and Computational Biology"
+subtitle = "Models, Enabling Technologies, and Case Studies"
+authors = ["Albert Y. Zomaya (editor)"]
+publisher = "John Wiley & Sons"
+edition = "1st"
+year = 2006
+focus = "other"
+dedicated = true
+on_shelf = true
+publisher_url = "https://www.wiley.com/en-us/Parallel+Computing+for+Bioinformatics+and+Computational+Biology-p-9780471718482"
+chapters = [
+  "1. Parallel and Evolutionary Approaches to Computational Biology",
+  "2. Parallel Monte Carlo Simulation of HIV Molecular Evolution in Response to Immune Surveillance",
+  "3. Differential Evolutionary Algorithms for In Vivo Dynamic Analysis of Glycolysis and Pentose Phosphate Pathway in Escherichia coli",
+  "4. Compute-Intensive Simulations for Cellular Models",
+  "5. Parallel Computation in Simulating Diffusion and Deformation in Human Brain",
+  "6. Computational Molecular Biology",
+  "7. Special-Purpose Computing for Biological Sequence Analysis",
+  "8. Multiple Sequence Alignment in Parallel on a Cluster of Workstations",
+  "9. Searching Sequence Databases Using High-Performance BLASTs",
+  "10. Parallel Implementations of Local Sequence Alignment: Hardware and Software",
+  "11. Parallel Computing in the Analysis of Gene Expression Relationships",
+  "12. Assembling DNA Fragments with a Distributed Genetic Algorithm",
+  "13. A Cooperative Genetic Algorithm for Knowledge Discovery in Microarray Experiments",
+  "14. Parallel and Distributed Computation of Large Phylogenetic Trees",
+  "15. Phylogenetic Parameter Estimation on COWs",
+  "16. High-Performance Phylogeny Reconstruction Under Maximum Parsimony",
+  "17. Protein Folding with the Parallel Replica Exchange Molecular Dynamics Method",
+  "18. High-Performance Alignment Methods for Protein Threading",
+  "19. Parallel Evolutionary Computations in Discerning Protein Structures",
+  "20. A Brief Overview of Grid Activities for Bioinformatics and Health Applications",
+  "21. Parallel Algorithms for Bioinformatics",
+  "22. Cluster and Grid Infrastructure for Computational Chemistry and Biochemistry",
+  "23. Distributed Workflows in Bioinformatics",
+  "24. Molecular Structure Determination on a Computational and Data Grid",
+  "25. GIPSY: A Problem-Solving Environment for Bioinformatics Applications",
+  "26. TaskSpaces: A Software Framework for Parallel Bioinformatics on Computational Grids",
+  "27. The Organic Grid: Self-Organizing Computational Biology on Desktop Grids",
+  "28. FPGA Computing in Modern Bioinformatics",
+  "29. Virtual Microscopy: Distributed Image Storage, Retrieval, Analysis, and Visualization",
+]
+
+[[book]]
+id = "carver_tai_modern_multithreading"
+title = "Modern Multithreading"
+subtitle = "Implementing, Testing, and Debugging Multithreaded Java and C++/Pthreads/Win32 Programs"
+authors = ["Richard H. Carver", "Kuo-Chung Tai"]
+publisher = "John Wiley & Sons"
+edition = "1st"
+year = 2006
+focus = "general"
+dedicated = true
+on_shelf = true
+publisher_url = "https://www.wiley.com/en-us/Modern+Multithreading%3A+Implementing%2C+Testing%2C+and+Debugging+Multithreaded+Java+and+C%2B%2B%2FPthreads%2FWin32+Programs-p-9780471725046"
+chapters = [
+  "1. Introduction to Concurrent Programming",
+  "2. The Critical Section Problem",
+  "3. Semaphores and Locks",
+  "4. Monitors",
+  "5. Message Passing",
+  "6. Message Passing in Distributed Programs",
+  "7. Testing and Debugging Concurrent Programs",
+]
+
+[[book]]
+id = "herlihy_shavit_luchangco_spear_art_of_multiprocessor_programming_2e"
+title = "The Art of Multiprocessor Programming"
+authors = ["Maurice Herlihy", "Nir Shavit", "Victor Luchangco", "Michael Spear"]
+publisher = "Morgan Kaufmann (Elsevier)"
+edition = "2nd"
+year = 2020
+focus = "general"
+dedicated = true
+on_shelf = false
+publisher_url = "https://shop.elsevier.com/books/the-art-of-multiprocessor-programming/herlihy/978-0-12-415950-1"
+
+[[book]]
+id = "pacheco_malensek_introduction_to_parallel_programming"
+title = "An Introduction to Parallel Programming"
+authors = ["Peter S. Pacheco", "Matthew Malensek"]
+publisher = "Morgan Kaufmann (Elsevier)"
+edition = "2nd"
+year = 2020
+focus = "general"
+dedicated = true
+on_shelf = false
+publisher_url = "https://shop.elsevier.com/books/an-introduction-to-parallel-programming/pacheco/978-0-12-804605-0"
+
+[[book]]
+id = "lea_concurrent_programming_in_java"
+title = "Concurrent Programming in Java"
+subtitle = "Design Principles and Patterns"
+authors = ["Doug Lea"]
+publisher = "Addison-Wesley"
+edition = "2nd"
+year = 1999
+focus = "java"
+dedicated = true
+on_shelf = false
+publisher_url = "https://www.informit.com/store/concurrent-programming-in-java-design-principles-and-9780201310092"
+
+[[book]]
+id = "zaccone_python_parallel_programming_cookbook_2e"
+title = "Python Parallel Programming Cookbook"
+authors = ["Giancarlo Zaccone"]
+publisher = "Packt Publishing"
+edition = "2nd"
+year = 2019
+focus = "python"
+dedicated = true
+on_shelf = false
+code_repo = "https://github.com/PacktPublishing/Python-Parallel-Programming-Cookbook-Second-Edition"
+
+[[book]]
+id = "forbes_learning_concurrency_in_python"
+title = "Learning Concurrency in Python"
+authors = ["Elliot Forbes"]
+publisher = "Packt Publishing"
+edition = "1st"
+year = 2017
+focus = "python"
+dedicated = true
+on_shelf = false
+code_repo = "https://github.com/PacktPublishing/Learning-Concurrency-in-Python"
+
+[[book]]
+id = "nguyen_mastering_concurrency_in_python"
+title = "Mastering Concurrency in Python"
+authors = ["Quan Nguyen"]
+publisher = "Packt Publishing"
+edition = "1st"
+year = 2018
+focus = "python"
+dedicated = true
+on_shelf = false
+code_repo = "https://github.com/PacktPublishing/Mastering-Concurrency-in-Python"
+
+[[book]]
+id = "lanaro_python_high_performance"
+title = "Python High Performance"
+authors = ["Gabriele Lanaro"]
+publisher = "Packt Publishing"
+edition = "2nd"
+year = 2017
+focus = "python"
+dedicated = false
+on_shelf = false
+code_repo = "https://github.com/PacktPublishing/Python-High-Performance-Second-Edition"
+
+[[book]]
+id = "pierfederici_distributed_computing_with_python"
+title = "Distributed Computing with Python"
+authors = ["Francesco Pierfederici"]
+publisher = "Packt Publishing"
+edition = "1st"
+year = 2016
+focus = "python"
+dedicated = true
+on_shelf = false
+
+[[book]]
+id = "nelli_parallel_and_high_performance_programming_with_python"
+title = "Parallel and High Performance Programming with Python"
+authors = ["Fabio Nelli"]
+publisher = "Orange Education Pvt Ltd (AVA)"
+edition = "1st"
+focus = "python"
+dedicated = true
+on_shelf = false
+code_repo = "https://github.com/OrangeAVA/Parallel-Programming-with-Python"
+
+[[book]]
+id = "brownlee_python_asyncio_mastery"
+title = "Python Asyncio Mastery"
+authors = ["Jason Brownlee"]
+publisher = "SuperFastPython (self-published)"
+focus = "python"
+dedicated = true
+on_shelf = false

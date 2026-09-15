@@ -1,0 +1,265 @@
+[category]
+title = "Foundations"
+order = 1
+blurb = "What the words mean before any language gets involved: several tasks over the same period of time, several computations at the same instant, and not waiting for an answer."
+
+[[concept]]
+slug = "concurrency"
+title = "Concurrency"
+summary = "Structuring a program as tasks whose lifetimes overlap, so that all of them make progress over the same period of time — interleaved on one core, or at the same instant on several."
+aliases = ["concurrent programming", "concurrent computing"]
+chapter = 1
+contrasts = ["parallelism", "asynchrony", "sequential_execution"]
+related = ["interleaving", "multitasking", "concurrency_models"]
+lessons = ["01_Threads/who_waits_when_main_returns"]
+notes = [
+  ["Concurrency - concurrent operations", "https://docs.google.com/document/u/0/d/1lPhK8MVCged6d1Px-_N5G4nOME2CfzNzCBHen57IOwo/edit"],
+  ["concurrently - rust - main - concurrency", "https://docs.google.com/document/u/0/d/12nR_hllHkXX0vWYWOvoNvbLVY3cbty0QKf4wSicRKAA/edit"],
+  ["Concurrency vs Parallelism - concurrent vs parallel execution", "https://docs.google.com/document/d/1BFnxp56E09aqwSpSYWKTMkb63gPlIglbyHnUYkAYbzc/edit?tab=t.0"],
+  ["Asynchronous - Concurrency - Parallelism - general concept", "https://docs.google.com/document/d/1lvCfQEo4bjqyU6-F2igHXelkE-1mnbptyNGhsjysZw0/edit?tab=t.0"],
+  ["async vs concurrent", "https://docs.google.com/document/u/0/d/19By5TJ-j-V0oJm4vnUtb51ZKgQOUJmwJT6v3ACYOBPk/edit"],
+  ["Index - Concurrency and Parallelism in general - main", "https://docs.google.com/document/u/0/d/1Nk5uXl3VEjYrkKRMuO_CBtcB0vN2mKLNKh1z5SU9UIA/edit"],
+]
+reference = [["Wikipedia: Concurrent computing", "https://en.wikipedia.org/wiki/Concurrent_computing"]]
+[concept.languages]
+rust = "The book's [Fearless Concurrency](https://doc.rust-lang.org/book/ch16-00-concurrency.html) chapter: threads, message passing and shared state, with ownership and type checking turning many concurrency errors into compile-time errors"
+go = "In the language: the [`go` statement](https://go.dev/ref/spec#Go_statements) starts a goroutine, and [channels](https://go.dev/ref/spec#Channel_types) and [`select`](https://go.dev/ref/spec#Select_statements) connect goroutines"
+c = "C11's [`<threads.h>`](https://en.cppreference.com/w/c/thread) is optional (a compiler may define `__STDC_NO_THREADS__`); POSIX threads start with [`pthread_create`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_create.html)"
+cpp = "The [concurrency support library](https://en.cppreference.com/w/cpp/thread) since C++11: threads, mutexes, condition variables and futures, with `std::jthread` added in C++20"
+java = "[`Thread`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html) since 1.0, and the executors, locks and concurrent collections of [`java.util.concurrent`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/package-summary.html)"
+python = "The library's [Concurrent Execution](https://docs.python.org/3/library/concurrency.html) chapter (`threading`, `multiprocessing`, `concurrent.futures`), and [`asyncio`](https://docs.python.org/3/library/asyncio.html) for `async`/`await` code"
+csharp = "[Task-based asynchronous programming](https://learn.microsoft.com/en-us/dotnet/standard/parallel-programming/task-based-asynchronous-programming) with `Task`, over [managed threads](https://learn.microsoft.com/en-us/dotnet/standard/threading/managed-threading-basics)"
+javascript = "Each agent, analogous to a thread, runs an [event loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Execution_model): concurrency comes from promises and `async` functions, parallelism from [workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API)"
+kotlin = "[Coroutines](https://kotlinlang.org/docs/coroutines-overview.html): the language has `suspend`, and `async`, `launch` and the rest come from the `kotlinx.coroutines` library"
+swift = "In the language: [`async`/`await`, tasks and actors](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/)"
+elixir_erlang = "Lightweight [processes](https://www.erlang.org/doc/system/ref_man_processes.html), fast to create and terminate, that communicate by sending messages"
+haskell = "[`forkIO`](https://hackage.haskell.org/package/base/docs/Control-Concurrent.html#v:forkIO) threads scheduled by the GHC runtime, communicating through `MVar`s"
+
+[[concept]]
+slug = "parallelism"
+title = "Parallelism"
+summary = "Running several computations at the same instant on separate processing units so the whole finishes sooner; it needs more than one core, and concurrency does not."
+aliases = ["parallel computing", "parallel execution"]
+chapter = 7
+related = ["speedup_and_amdahls_law", "io_bound_and_cpu_bound"]
+notes = [
+  ["parallelism - general", "https://docs.google.com/document/d/1VvV-E2KRjEpYtHoTCS1bRh89V1XSUJmzU6wpCpClU6M/edit?tab=t.0"],
+  ["parallelism - rust", "https://docs.google.com/document/u/0/d/1l4c6dy7ZB7PUp83hxH7Vnsr5_qX5JkrRES5aUhvuXXs/edit"],
+]
+reference = [["Wikipedia: Parallel computing", "https://en.wikipedia.org/wiki/Parallel_computing"]]
+[concept.languages]
+rust = "[`std::thread::scope`](https://doc.rust-lang.org/std/thread/fn.scope.html) runs threads that borrow local data; parallel iterators come from the [Rayon](https://docs.rs/rayon/latest/rayon/) crate, not the standard library"
+go = "Goroutines run in parallel on as many CPUs as [`runtime.GOMAXPROCS`](https://pkg.go.dev/runtime#GOMAXPROCS) allows"
+cpp = "[Execution policies](https://en.cppreference.com/w/cpp/algorithm/execution_policy_tag_t) (C++17) let standard algorithms such as `std::sort` and `std::reduce` run in parallel"
+java = "[Parallel streams](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/package-summary.html#Parallelism), and [`ForkJoinPool`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ForkJoinPool.html) for tasks that spawn subtasks"
+python = "Threads do not run Python code in parallel under the [GIL](https://docs.python.org/3/glossary.html#term-global-interpreter-lock); use [`multiprocessing`](https://docs.python.org/3/library/multiprocessing.html) or the free-threaded build"
+csharp = "[Parallel programming in .NET](https://learn.microsoft.com/en-us/dotnet/standard/parallel-programming/): the Task Parallel Library and PLINQ"
+javascript = "Each [worker](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API) runs in a background thread; memory is shared between them with a [`SharedArrayBuffer`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SharedArrayBuffer)"
+elixir_erlang = "The VM starts one [scheduler thread](https://www.erlang.org/doc/apps/erts/erl_cmd.html) per logical processor by default, so processes run in parallel without any change to the code"
+haskell = "[`par` and `pseq`](https://hackage.haskell.org/package/parallel/docs/Control-Parallel.html) in the `parallel` package mark pure expressions that may be worth evaluating in parallel"
+
+[[concept]]
+slug = "asynchrony"
+title = "Asynchrony"
+summary = "Starting an operation and carrying on with other work instead of waiting for it; the result arrives later, through a callback, a future, or an await."
+aliases = ["asynchronous programming", "async"]
+chapter = 6
+contrasts = ["parallelism"]
+related = ["blocking_and_nonblocking", "async_await", "future_and_promise", "callback"]
+notes = [
+  ["Asynchrony", "https://docs.google.com/document/d/1iQlbAm1n6UG6OgFnd-ECDn570GHXVRsqVAce9hrtfCE/edit?tab=t.0"],
+  ["Asynchronous - general", "https://docs.google.com/document/d/1517jQRMuMl7Cf_E4zSvQvcOezzB65W53BrHD5BbadH0/edit?tab=t.0"],
+  ["async - general - asynchronous programming", "https://docs.google.com/document/d/1P9HhzF0eb_Zo4EGP_4V7ESXQd4VoBBypnxHN4jOXHNA/edit?tab=t.0"],
+  ["What is Async Programming and why would you do it", "https://docs.google.com/document/d/1W3Jd69czmRZj2Rc8e5kfWZlnuGK_CPCLEMugE5zFN5A/edit?tab=t.0"],
+  ["synchronous vs asynchronous - general", "https://docs.google.com/document/d/1higzhaQYEb1GjKD2LzfNmbJa8n3Zb8TU0hT4Vt-tY3M/edit?tab=t.0"],
+  ["why async", "https://docs.google.com/document/u/0/d/14WnFVjc_4uIx_qvYCcuxbd0I1dswxPmDizEGOllAv-4/edit"],
+]
+reference = [
+  ["Wikipedia: Asynchrony (computer programming)", "https://en.wikipedia.org/wiki/Asynchrony_(computer_programming)"],
+  ["Asynchronous Programming in Rust: what is async programming", "https://rust-lang.github.io/async-book/"],
+]
+[concept.languages]
+rust = "An [`async`](https://doc.rust-lang.org/std/keyword.async.html) function returns a [`Future`](https://doc.rust-lang.org/std/future/trait.Future.html), which does nothing until something polls it"
+go = "No `async` or `await`: code is written blocking, and when a goroutine blocks, the runtime [moves the others to another thread](https://go.dev/doc/faq#goroutines)"
+c = "POSIX [`aio_read`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/aio_read.html) and its relatives"
+cpp = "[`std::async`](https://en.cppreference.com/w/cpp/thread/async) returns a `std::future`; C++20 [coroutines](https://en.cppreference.com/w/cpp/language/coroutines) add `co_await`"
+java = "[`CompletableFuture`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/CompletableFuture.html) chains stages that run when a result arrives"
+python = "[`asyncio`](https://docs.python.org/3/library/asyncio.html) with `async def` and `await`"
+csharp = "[`async` and `await`](https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/) over `Task` and `Task<T>`"
+javascript = "[Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) and [`async` functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)"
+kotlin = "Calls to [`suspend` functions](https://kotlinlang.org/docs/composing-suspending-functions.html) run sequentially by default; the library function [`async`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/async.html) starts one concurrently and returns a `Deferred`"
+swift = "[`async` functions and `await`](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/)"
+elixir_erlang = "[`Task.async`](https://hexdocs.pm/elixir/Task.html#async/1) and `Task.await`: a process and a message underneath"
+haskell = "[`async` and `wait`](https://hackage.haskell.org/package/async/docs/Control-Concurrent-Async.html) from the `async` package run an `IO` action in a separate thread and collect its result"
+os = "[`io_uring`](https://man7.org/linux/man-pages/man7/io_uring.7.html) on Linux, with a submission queue and a completion queue; the [POSIX AIO](https://man7.org/linux/man-pages/man7/aio.7.html) interface"
+
+[[concept]]
+slug = "sequential_execution"
+title = "Sequential execution"
+summary = "Steps run one after another in a fixed order, each finishing before the next starts: a single total order of events, and the baseline every concurrent program is measured against."
+aliases = ["serial execution", "sequential programming"]
+notes = [
+  ["sequential programming - sequential functions - sequential platform", "https://docs.google.com/document/d/1Ru7dKMOBWpFx36MzGhzMOWZhZ4WYb7Kb0Tkqv9VAMfE/edit?tab=t.0"],
+  ["Sequential Steps", "https://docs.google.com/document/d/1jXqqDFIZQAiQ_0s1hUHe8_X7HiZ2UQeySHO8bVuK8Xs/edit?tab=t.0"],
+]
+reference = [["Dominik Tornow: Distributed Async Await (NDC talk)", "https://www.youtube.com/watch?v=lfSIunYUsSg"]]
+
+[[concept]]
+slug = "blocking_and_nonblocking"
+title = "Blocking and non-blocking calls"
+summary = "A blocking call does not return until its work is done, holding the caller's thread the whole time; a non-blocking call returns at once and reports that the work is not ready yet or will finish later."
+aliases = ["synchronous and asynchronous calls", "blocking I/O", "non-blocking I/O"]
+chapter = 6
+related = ["io_bound_and_cpu_bound", "polling"]
+notes = [
+  ["non-blocking paradigms - general - nonblocking", "https://docs.google.com/document/d/13kt39FBd2i3HqEEjlgEcZg4KDG8mkR4Dc6XSVsP9WRY/edit?tab=t.0"],
+  ["blocked synchronously - general", "https://docs.google.com/document/d/11tECUJ_valZsugbPQQAtQZSi5Je_lGih2rx-RYc7PSg/edit?tab=t.0"],
+  ["Synchronous blocking vs nonblocking model", "https://docs.google.com/document/d/1frCynKXngtPaneaZ2Kt42hxWvV36gBoEy_kL3HkZFn4/edit?tab=t.0"],
+  ["Asynchronous blocking vs nonblocking model", "https://docs.google.com/document/d/1XtbeBZlmovmbd8JDhDpGPyz2alLl0Jm3Uc4RUVildEQ/edit?tab=t.0"],
+  ["Blocking vs. non-blocking code - rust", "https://docs.google.com/document/u/0/d/16_DxN3at4af-2FQFy--4b8TtdQs5OLicJLJNWYRjHyQ/edit"],
+  ["blocking - thread - general", "https://docs.google.com/document/u/0/d/1rrnzJmAZvLCezYnxTj-QriOADeDaAHnmsd03y1t1gMU/edit"],
+]
+reference = [["Wikipedia: Asynchronous I/O", "https://en.wikipedia.org/wiki/Asynchronous_I/O"]]
+[concept.languages]
+rust = "[`TcpStream::set_nonblocking`](https://doc.rust-lang.org/std/net/struct.TcpStream.html#method.set_nonblocking) makes a read that would wait return an `io::ErrorKind::WouldBlock` error instead"
+go = "A send or receive on an [unbuffered channel](https://go.dev/ref/spec#Channel_types) blocks until the other side is ready"
+c = "With `O_NONBLOCK` set, [`read`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/read.html) fails with `EAGAIN` instead of waiting"
+java = "[`SelectableChannel.configureBlocking(false)`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/nio/channels/SelectableChannel.html#configureBlocking%28boolean%29) puts an NIO channel in non-blocking mode"
+python = "[`socket.setblocking(False)`](https://docs.python.org/3/library/socket.html#socket.socket.setblocking); in `asyncio`, [`asyncio.to_thread`](https://docs.python.org/3/library/asyncio-task.html#asyncio.to_thread) runs a blocking function that would otherwise block the event loop"
+csharp = "[Asynchronous file I/O](https://learn.microsoft.com/en-us/dotnet/standard/io/asynchronous-file-i-o) methods such as `ReadAsync` do the work without blocking the main thread"
+javascript = "[`Atomics.wait`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics/wait) blocks, and so cannot be used in the main thread"
+os = "The `O_NONBLOCK` flag of [`open(2)`](https://man7.org/linux/man-pages/man2/open.2.html); readiness is then waited for with `poll` or `epoll`"
+
+[[concept]]
+slug = "io_bound_and_cpu_bound"
+title = "I/O-bound and CPU-bound work"
+summary = "Work that spends its time waiting for disks and networks gains from concurrency even on one core; work that spends its time computing gains only from parallelism."
+aliases = ["I/O-bound", "CPU-bound"]
+chapter = 7
+notes = [
+  ["CPU-Bound Tasks", "https://docs.google.com/document/d/1xw8T95umBjyeuxNkw4LM-WU_igooayxL6Ip-Cgu0yBk/edit?tab=t.0"],
+  ["I/O-bound tasks", "https://docs.google.com/document/u/0/d/1jgLIEhaiavVwamvco5Sr0R-Diim7LY3TrclyFXmESZE/edit"],
+  ["I/O bottlenecks - general", "https://docs.google.com/document/d/1RjYTibpNuLPzaR3ZiL0_sPr2e3hVsLTAUqmfZ_jCmgI/edit?tab=t.0"],
+]
+reference = [
+  ["Wikipedia: CPU-bound", "https://en.wikipedia.org/wiki/CPU-bound"],
+  ["Wikipedia: I/O bound", "https://en.wikipedia.org/wiki/I/O_bound"],
+]
+[concept.languages]
+rust = "[`tokio::task::spawn_blocking`](https://docs.rs/tokio/latest/tokio/task/fn.spawn_blocking.html) moves blocking work off the async worker threads"
+java = "[Virtual threads](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Thread.html#virtual-threads) suit tasks that spend most of their time blocked on I/O, not long CPU-intensive work"
+python = "The [`threading`](https://docs.python.org/3/library/threading.html) docs advise `multiprocessing` or `ProcessPoolExecutor` for CPU-bound work, and threads for I/O-bound tasks, because of the GIL"
+csharp = "[Asynchronous programming scenarios](https://learn.microsoft.com/en-us/dotnet/csharp/asynchronous-programming/async-scenarios) separates I/O-bound work (`await` the I/O call) from CPU-bound work (`await Task.Run`)"
+kotlin = "[`Dispatchers.IO`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-i-o.html) is for offloading blocking I/O; [`Dispatchers.Default`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-default.html) uses at most one thread per CPU core (at least two)"
+elixir_erlang = "A native function that cannot finish within a millisecond is marked dirty and runs on [dirty CPU or dirty I/O schedulers](https://www.erlang.org/doc/apps/erts/erl_nif.html#dirty_nifs), apart from the ordinary ones"
+
+[[concept]]
+slug = "interleaving"
+title = "Interleaving"
+summary = "One of the many orders in which the steps of concurrent tasks can actually run; a concurrent program is correct only if it is correct under every one of them."
+chapter = 2
+causes = ["race_condition"]
+related = ["nondeterminism"]
+notes = [["interleaving actions across threads", "https://docs.google.com/document/d/1JqRl9gJCA_tmJQPkipzg0sG5p773x-PuPIel-Nx5HdM/edit?tab=t.0"]]
+pages = [["Go: Fan-out, fan-in", "https://masiarek.github.io/go-learning-library/06_Patterns/fan_out_fan_in/index.html"]]
+
+[[concept]]
+slug = "nondeterminism"
+title = "Nondeterminism"
+summary = "The same program with the same input gives different results on different runs, because the scheduler chose a different interleaving."
+aliases = ["non-deterministic behaviour"]
+causes = ["heisenbug"]
+lessons = ["01_Threads/who_waits_when_main_returns"]
+notes = [
+  ["non-deterministic behavior - concurrency", "https://docs.google.com/document/d/17sZ1SSHzqKmpS_GIAg2UyMqqvIU4lTs-hvsYeGnwcWM/edit?tab=t.0"],
+  ["deterministic and nondeterministic - concurrency", "https://docs.google.com/document/d/1ospUDi71_hJRcJaEcvj9f5L5uXuaKyrynUwO3QR7TOA/edit?tab=t.0"],
+]
+pages = [
+  ["Go: `select` chooses at random", "https://masiarek.github.io/go-learning-library/03_Select/select_chooses_at_random/index.html"],
+  ["Go: Fan-out, fan-in", "https://masiarek.github.io/go-learning-library/06_Patterns/fan_out_fan_in/index.html"],
+]
+[concept.languages]
+go = "The spec makes [`select`](https://go.dev/ref/spec#Select_statements) choose among ready cases by uniform pseudo-random selection, and leaves [map iteration order](https://go.dev/ref/spec#For_range) unspecified"
+
+[[concept]]
+slug = "multitasking"
+title = "Multitasking"
+summary = "An operating system or runtime running several tasks over the same period by switching between them — by force (preemptive) or when a task gives way (cooperative)."
+uses = ["context_switch"]
+related = ["preemptive_scheduling", "cooperative_scheduling"]
+notes = [["Multitasking - general", "https://docs.google.com/document/d/1tTucxIGt2tzt_Xdsg_zZ1di3oHlKi5SCHa6XLZVEgEE/edit?tab=t.0"]]
+reference = [["Wikipedia: Computer multitasking", "https://en.wikipedia.org/wiki/Computer_multitasking"]]
+[concept.languages]
+os = "[`sched(7)`](https://man7.org/linux/man-pages/man7/sched.7.html): Linux decides which thread runs next by scheduling policy and priority, and preempts the one running"
+
+[[concept]]
+slug = "speedup_and_amdahls_law"
+title = "Speedup and Amdahl's law"
+summary = "How much faster more processors make a program is capped by the part that must still run sequentially: if a tenth of the work is serial, no number of cores gives more than ten times the speed."
+aliases = ["Amdahl's law", "Gustafson's law", "speedup"]
+chapter = 7
+related = ["granularity"]
+reference = [["Wikipedia: Amdahl's law", "https://en.wikipedia.org/wiki/Amdahl%27s_law"]]
+
+[[concept]]
+slug = "granularity"
+title = "Granularity"
+summary = "How big the pieces of work handed to separate tasks are: too coarse leaves cores idle, too fine spends more on coordinating the pieces than on the work in them."
+aliases = ["task granularity", "coarse-grained", "fine-grained"]
+chapter = 7
+related = ["oversubscription"]
+notes = [["granularity - async", "https://docs.google.com/document/d/1maQmN7P6048Px5MIhHitgYvO3M688VMIJkIZkifuS14/edit?tab=t.0"]]
+reference = [["Wikipedia: Granularity (parallel computing)", "https://en.wikipedia.org/wiki/Granularity_(parallel_computing)"]]
+[concept.languages]
+rust = "Rayon's [`with_min_len`](https://docs.rs/rayon/latest/rayon/iter/trait.IndexedParallelIterator.html#method.with_min_len) stops a parallel iterator splitting below a given length"
+java = "[`ForkJoinTask`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ForkJoinTask.html) gives a rule of thumb: a task should perform more than 100 and less than 10000 basic computational steps"
+python = "[`Executor.map`](https://docs.python.org/3/library/concurrent.futures.html#concurrent.futures.Executor.map) with `ProcessPoolExecutor` takes a `chunksize`; a larger one can greatly speed up long iterables"
+csharp = "[Custom partitioners](https://learn.microsoft.com/en-us/dotnet/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl) group loop iterations into ranges when each one does little work"
+
+[[concept]]
+slug = "oversubscription"
+title = "Oversubscription"
+summary = "More busy threads than there are cores, so the machine spends its time switching between them instead of running them."
+causes = ["contention"]
+related = ["thread_pool", "context_switch"]
+notes = [["oversubscription", "https://docs.google.com/document/d/1LjySDlE4JbkjDYmGxU3WjZC73oABCtMp2B4oiyNw8yk/edit?tab=t.0"]]
+[concept.languages]
+rust = "[`available_parallelism`](https://doc.rust-lang.org/std/thread/fn.available_parallelism.html) estimates how many threads a program should use"
+go = "[`runtime.GOMAXPROCS`](https://pkg.go.dev/runtime#GOMAXPROCS) caps how many CPUs execute Go code simultaneously, however many goroutines there are"
+cpp = "[`std::thread::hardware_concurrency`](https://en.cppreference.com/w/cpp/thread/thread/hardware_concurrency) is only a hint, and may be 0"
+python = "[`os.process_cpu_count`](https://docs.python.org/3/library/os.html#os.process_cpu_count) (3.13) counts the logical CPUs the calling thread may use, and [`ThreadPoolExecutor`](https://docs.python.org/3/library/concurrent.futures.html#threadpoolexecutor) sizes its default pool from it"
+javascript = "[`navigator.hardwareConcurrency`](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/hardwareConcurrency) is the number of logical processors available to run threads"
+kotlin = "[`Dispatchers.Default`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-default.html) uses at most as many threads as there are CPU cores, and at least two"
+os = "[`sched_getaffinity`](https://man7.org/linux/man-pages/man2/sched_setaffinity.2.html) gives the CPUs a thread may run on, which can be fewer than the machine has"
+
+[[concept]]
+slug = "concurrency_models"
+title = "Concurrency models"
+summary = "The families of answers to how tasks share work and coordinate: threads and locks, communicating processes, actors, async tasks on an event loop, data parallelism, transactional memory."
+aliases = ["parallelism models", "the concurrency landscape"]
+related = ["csp", "actor_model", "event_loop", "data_parallelism", "transactional_memory"]
+notes = [
+  ["Concurrency models - parallelism models - concurrency and parallelism landscape", "https://docs.google.com/document/u/0/d/1KmLukA7aCxdGBf_fNTuFXSNgEoOV-SHXoiEP-SFxqf8/edit"],
+  ["Threads-and-locks in general", "https://docs.google.com/document/d/1ehTIcbiep-TrCKQQXx5hzPjtF-RXwogDt1tloHdJ9c4/edit"],
+]
+
+[[concept]]
+slug = "concurrency_primitives"
+title = "Concurrency primitives"
+summary = "The building blocks a language or library provides for concurrent code, in four groups: synchronization (mutex, semaphore, condition variable), communication (channels, futures), task management (threads, tasks, pools) and atomics."
+aliases = ["synchronization primitives", "communication primitives"]
+related = ["mutex", "semaphore", "condition_variable", "channel", "future_and_promise", "thread", "thread_pool", "atomic_variable"]
+notes = [["concurrency primitives", "https://docs.google.com/document/d/1ZbsuM7P2zKNut60H16h7r0d-ePIQjFCHXNVFEQqizLA/edit?tab=t.0"]]
+[concept.languages]
+rust = "[`std::sync`](https://doc.rust-lang.org/std/sync/index.html) (`Mutex`, `RwLock`, `Condvar`, `Barrier`, `mpsc`, atomics) and [`std::thread`](https://doc.rust-lang.org/std/thread/index.html)"
+go = "Channels in the language; [`sync`](https://pkg.go.dev/sync), whose documentation says higher-level synchronization is better done with channels; and [`sync/atomic`](https://pkg.go.dev/sync/atomic)"
+c = "POSIX [`<pthread.h>`](https://pubs.opengroup.org/onlinepubs/9799919799/basedefs/pthread.h.html), and C11's [`<threads.h>`](https://en.cppreference.com/w/c/thread) and [`<stdatomic.h>`](https://en.cppreference.com/w/c/atomic)"
+cpp = "The [concurrency support library](https://en.cppreference.com/w/cpp/thread): threads, mutexes, condition variables, semaphores, futures and atomics"
+java = "[`java.util.concurrent`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/package-summary.html), its `locks` and `atomic` subpackages, and the monitor every object has (`synchronized`, [`wait`](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#wait%28%29), `notify`)"
+python = "[`threading`](https://docs.python.org/3/library/threading.html) (`Lock`, `Condition`, `Semaphore`, `Event`, `Barrier`) and [`queue`](https://docs.python.org/3/library/queue.html), with counterparts in [`asyncio`](https://docs.python.org/3/library/asyncio-sync.html)"
+csharp = "[Overview of synchronization primitives](https://learn.microsoft.com/en-us/dotnet/standard/threading/overview-of-synchronization-primitives)"
+javascript = "Workers exchange messages with [`postMessage`](https://developer.mozilla.org/en-US/docs/Web/API/Worker/postMessage); shared memory is a `SharedArrayBuffer` coordinated with [`Atomics`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Atomics)"
+kotlin = "[`Mutex`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.sync/-mutex/) and `Semaphore` for coroutines, which suspend rather than block; [`Channel`](https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.channels/-channel/)"
+elixir_erlang = "Processes and messages; [ETS](https://www.erlang.org/doc/apps/stdlib/ets.html) is built-in term storage for very large quantities of data"
+haskell = "[`MVar`](https://hackage.haskell.org/package/base/docs/Control-Concurrent-MVar.html) and [`Chan`](https://hackage.haskell.org/package/base/docs/Control-Concurrent-Chan.html) in `base`; `TVar` in the [`stm`](https://hackage.haskell.org/package/stm/docs/Control-Concurrent-STM.html) package"
+os = "[`futex(2)`](https://man7.org/linux/man-pages/man2/futex.2.html): a blocking construct for shared-memory synchronization, with most of the work done in user space"
