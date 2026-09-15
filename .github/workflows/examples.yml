@@ -1,0 +1,55 @@
+# Every example must run and print exactly what its recorded .out file says — and
+# every lesson page's generated output block must match that run.
+#
+#   examples/*.rs    rustc, as the runner image ships it
+#   examples/*.go    Go 1.25, from actions/setup-go
+#   examples/*.c     cc: GCC and glibc on Ubuntu, Apple clang on macOS
+#   examples/*.cpp   c++: GCC with libstdc++ on Ubuntu, Apple clang with libc++ on macOS
+#   examples/*.java  Java 25 (Temurin), from actions/setup-java
+#   examples/*.py    the runner image's own python3, standard library only
+#   examples/*.sh    bash: 5.x on Ubuntu, 3.2 on macOS
+#
+# Both machines on purpose: two C libraries, two C++ standard libraries, two CPU
+# architectures (x86-64 and arm64) and two kernels' schedulers. A key is only
+# what all of them agree on — which, for a concurrency library, is the reason
+# CONTRIBUTING.md has a section called "Deterministic about nondeterminism".
+
+name: examples
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.25'
+          cache: false        # no go.sum to key a cache on: examples are single files
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+      - name: Show toolchain
+        run: |
+          cc --version | head -1
+          c++ --version | head -1
+          rustc --version
+          go version
+          java --version | head -1
+          python3 --version
+          bash --version | head -1
+          uname -sm
+      - name: Run every example and check it against its answer key
+        run: python3 tools/run_examples.py --check
+      - name: Check that every external link is marked as external
+        run: python3 tools/check_link_style.py

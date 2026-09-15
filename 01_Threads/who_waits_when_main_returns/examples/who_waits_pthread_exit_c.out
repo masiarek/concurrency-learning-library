@@ -1,0 +1,2 @@
+main:           calling pthread_exit
+worker thread:  finished

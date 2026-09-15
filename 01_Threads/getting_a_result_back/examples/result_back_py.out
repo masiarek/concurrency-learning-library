@@ -1,0 +1,3 @@
+Thread.join() returned None
+Future.result() returned 5050
+Future.result() re-raised ValueError('no total today')

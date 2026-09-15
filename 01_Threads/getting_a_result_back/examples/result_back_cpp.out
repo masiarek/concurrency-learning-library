@@ -1,0 +1,4 @@
+join() returns void: true
+after join(), the variable the lambda captured holds 5050
+std::async handed back a std::future<long>, and get() returned 5050
+get() rethrew the thread's std::runtime_error: no total today

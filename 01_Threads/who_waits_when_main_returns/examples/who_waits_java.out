@@ -1,0 +1,4 @@
+platform thread is a daemon: false
+virtual thread is a daemon:  true
+main:             returning
+platform thread:  finished

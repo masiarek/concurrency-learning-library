@@ -1,0 +1,2 @@
+join() returned Ok(5050)
+join() returned Err, and the payload is the panic message: "no total today"

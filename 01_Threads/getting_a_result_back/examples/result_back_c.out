@@ -1,0 +1,2 @@
+pthread_join returned 0, and handed back a pointer to 5050
+pthread_join returned 0, and handed back NULL

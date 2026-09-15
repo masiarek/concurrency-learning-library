@@ -1,0 +1,4 @@
+$ c++ -std=c++20 -O2 -pthread unjoined.cpp -o unjoined
+$ ./unjoined
+main: returning without join() or detach()
+exit status 134: killed by signal 6, SIGABRT
