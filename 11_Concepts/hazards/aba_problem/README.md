@@ -1,6 +1,6 @@
 # ABA problem
 
-**Category:** [Hazards](../README.md) · **Status:** stub · **Lessons:** chapter 02, Shared state *(planned)*
+**Category:** [Hazards](../README.md) · **Status:** stub · **Lessons:** [chapter 02, Shared state](../../../02_Shared_State/README.md)
 
 **One line:** A compare-and-swap succeeds because a value changed from A to B and back to A, although what it stands for is no longer the same.
 

@@ -54,6 +54,7 @@ slug = "data_race_freedom"
 title = "Data-race freedom by construction"
 summary = "A language rule that makes data races impossible to write in the first place — Rust's ownership with Send and Sync, or actors that never share memory."
 chapter = 2
+lessons = ["02_Shared_State/the_lost_update"]
 prevents = ["data_race"]
 uses = ["send_and_sync"]
 notes = [["data race freedom (DRF)", "https://docs.google.com/document/d/1IhgEtE6x4eeA-a0M4PdTGgW8ekLEoTPANFqNtbZDqPU/edit?tab=t.0"]]

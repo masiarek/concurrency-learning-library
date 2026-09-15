@@ -1,6 +1,6 @@
 # Race condition
 
-**Category:** [Hazards](../README.md) · **Status:** stub · **Lessons:** chapter 02, Shared state *(planned)*
+**Category:** [Hazards](../README.md) · **Status:** stub · **Lessons:** [chapter 02, Shared state](../../../02_Shared_State/README.md)
 
 **One line:** The result depends on the relative timing of tasks, and some timings give a wrong result — whether or not there is also a data race.
 
@@ -47,6 +47,8 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [Is total += n safe on two threads?](../../../02_Shared_State/the_lost_update/README.md)
+- **In this library:** [The lost update in a database](../../../02_Shared_State/the_lost_update_in_a_database/README.md)
 - **In the books:** [*Grokking Concurrency*](../../../10_Resources/books_general/README.md#bobrov_grokking_concurrency), Kirill Bobrov — ch. 8, 'Solving concurrency problems: Race conditions and synchronization'
 - **In the books:** [*Learn Concurrent Programming with Go*](../../../10_Resources/books_go/README.md#cutajar_learn_concurrent_programming_with_go), James Cutajar — ch. 3, 'Thread communication using memory sharing' → 'Race conditions'
 - **In the books:** [*Async Rust*](../../../10_Resources/books_rust/README.md#flitton_morton_async_rust), Maxwell Flitton, Caroline Morton — ch. 11, 'Testing' → 'Testing for Race Conditions'

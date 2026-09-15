@@ -158,6 +158,7 @@ slug = "interleaving"
 title = "Interleaving"
 summary = "One of the many orders in which the steps of concurrent tasks can actually run; a concurrent program is correct only if it is correct under every one of them."
 chapter = 2
+lessons = ["02_Shared_State/the_lost_update"]
 causes = ["race_condition"]
 related = ["nondeterminism"]
 notes = [["interleaving actions across threads", "https://docs.google.com/document/d/1JqRl9gJCA_tmJQPkipzg0sG5p773x-PuPIel-Nx5HdM/edit?tab=t.0"]]

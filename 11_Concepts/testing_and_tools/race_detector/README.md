@@ -24,6 +24,7 @@ Also called: ThreadSanitizer, TSan, go -race, Helgrind.
 
 ## Where to read more
 
+- **In this library:** [Is total += n safe on two threads?](../../../02_Shared_State/the_lost_update/README.md)
 - **In a sibling library:** [Rust: Data races — ThreadSanitizer on a C counter ↗](https://masiarek.github.io/rust-learning-library/31_C_and_Cpp/data_races/index.html)
 - **In a sibling library:** [Go: The race detector ↗](https://masiarek.github.io/go-learning-library/07_Testing_Concurrent_Code/the_race_detector/index.html)
 - **In the books:** [*Async Rust*](../../../10_Resources/books_rust/README.md#flitton_morton_async_rust), Maxwell Flitton, Caroline Morton — ch. 11, 'Testing' → 'Testing for Race Conditions'

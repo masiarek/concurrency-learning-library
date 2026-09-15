@@ -1,6 +1,6 @@
 # Mutual exclusion
 
-**Category:** [Synchronization](../README.md) · **Status:** stub · **Lessons:** chapter 02, Shared state *(planned)*
+**Category:** [Synchronization](../README.md) · **Status:** stub · **Lessons:** [chapter 02, Shared state](../../../02_Shared_State/README.md)
 
 **One line:** The guarantee that at most one task is inside a critical section at any moment.
 

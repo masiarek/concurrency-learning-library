@@ -1,6 +1,6 @@
 # Compare-and-swap
 
-**Category:** [Lock-free](../README.md) · **Status:** stub · **Lessons:** chapter 02, Shared state *(planned)*
+**Category:** [Lock-free](../README.md) · **Status:** stub · **Lessons:** [chapter 02, Shared state](../../../02_Shared_State/README.md)
 
 **One line:** Replace a value only if it still holds what you last read, in one atomic step; if another thread changed it first, read again and retry.
 
@@ -45,6 +45,7 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [The lost update in a database](../../../02_Shared_State/the_lost_update_in_a_database/README.md)
 - **In a sibling library:** [Go: Atomic counters ↗](https://masiarek.github.io/go-learning-library/04_Sync/atomic_counters/index.html)
 - **In the books:** [*Effective Concurrency in Go*](../../../10_Resources/books_go/README.md#serdar_effective_concurrency_in_go), Burak Serdar — ch. 9, 'Atomic Memory Operations' → 'Compare and swap'
 - **In the books:** [*Rust Atomics and Locks*](../../../10_Resources/books_rust/README.md#bos_rust_atomics_and_locks), Mara Bos — ch. 2, 'Atomics' → 'Compare-and-Exchange Operations'

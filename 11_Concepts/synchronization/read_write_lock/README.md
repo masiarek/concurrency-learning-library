@@ -1,6 +1,6 @@
 # Read-write lock
 
-**Category:** [Synchronization](../README.md) · **Status:** stub · **Lessons:** chapter 02, Shared state *(planned)*
+**Category:** [Synchronization](../README.md) · **Status:** stub · **Lessons:** [chapter 02, Shared state](../../../02_Shared_State/README.md)
 
 **One line:** A lock that lets many readers in at once but lets a writer in only alone.
 

@@ -9,6 +9,7 @@ title = "Atomic variable"
 summary = "A number or pointer whose reads, writes and increments each happen as one indivisible CPU operation, so threads can share it without a lock."
 aliases = ["atomics", "atomic integer", "Interlocked"]
 chapter = 2
+lessons = ["02_Shared_State/the_lost_update", "02_Shared_State/keeping_every_update"]
 prevents = ["data_race"]
 related = ["compare_and_swap"]
 pages = [
@@ -39,6 +40,7 @@ title = "Compare-and-swap"
 summary = "Replace a value only if it still holds what you last read, in one atomic step; if another thread changed it first, read again and retry."
 aliases = ["CAS", "compare-exchange", "compare-and-set"]
 chapter = 2
+lessons = ["02_Shared_State/the_lost_update_in_a_database"]
 causes = ["aba_problem"]
 pages = [["Go: Atomic counters", "https://masiarek.github.io/go-learning-library/04_Sync/atomic_counters/index.html"]]
 notes = [["atomic compare-and-swap (CAS) operations", "https://docs.google.com/document/d/1FxQ7O2Pcg9ZTxd_eKfJnS4mwyp7ydfv7Sv2mydqeCgI/edit?tab=t.0"]]

@@ -72,6 +72,7 @@ title = "Async and await"
 summary = "Syntax that lets asynchronous code read like sequential code: an async function returns a future, and await pauses the caller until that future resolves, without blocking the thread."
 aliases = ["async/await", "async function", "coroutines (C++20)"]
 chapter = 6
+lessons = ["02_Shared_State/the_lost_update"]
 uses = ["future_and_promise", "suspension_point"]
 related = ["function_coloring"]
 notes = [

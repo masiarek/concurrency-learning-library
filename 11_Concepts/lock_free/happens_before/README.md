@@ -1,6 +1,6 @@
 # Happens-before
 
-**Category:** [Lock-free](../README.md) · **Status:** stub · **Lessons:** chapter 02, Shared state *(planned)*
+**Category:** [Lock-free](../README.md) · **Status:** stub · **Lessons:** [chapter 02, Shared state](../../../02_Shared_State/README.md)
 
 **One line:** The rule a memory model states for when one thread is guaranteed to see another thread's write: only when synchronization orders the write before the read.
 

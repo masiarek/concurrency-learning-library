@@ -21,6 +21,7 @@ title = "Safety failure"
 summary = "The program reaches a state it must never reach — a lost update, a torn read, a broken invariant — usually because two tasks interleaved badly."
 aliases = ["data inconsistency", "lost update", "torn read"]
 chapter = 2
+lessons = ["02_Shared_State/the_lost_update", "02_Shared_State/the_lost_update_in_a_database"]
 notes = [["data inconsistencies - async - concurrency - general", "https://docs.google.com/document/d/137RrmeoW8FsI52Lqn5uZOZB_i3fai6RqbppI3h6cOuc/edit?tab=t.0"]]
 pages = [["Go: A mutex guards a counter", "https://masiarek.github.io/go-learning-library/04_Sync/a_mutex_guards_a_counter/index.html"]]
 [concept.languages]
@@ -34,6 +35,7 @@ title = "Race condition"
 summary = "The result depends on the relative timing of tasks, and some timings give a wrong result — whether or not there is also a data race."
 aliases = ["race", "interference", "general race", "resource race"]
 chapter = 2
+lessons = ["02_Shared_State/the_lost_update", "02_Shared_State/the_lost_update_in_a_database"]
 is_a = ["safety_failure"]
 contrasts = ["data_race"]
 reference = [["Wikipedia: Race condition (in software)", "https://en.wikipedia.org/wiki/Race_condition#In_software"]]
@@ -48,6 +50,7 @@ title = "Data race"
 summary = "Two threads access the same memory at the same time, at least one of them writing, with nothing synchronizing them — undefined behaviour in C and C++, a compile error in safe Rust."
 aliases = ["unsynchronized access"]
 chapter = 2
+lessons = ["02_Shared_State/the_lost_update"]
 is_a = ["safety_failure"]
 related = ["race_detector"]
 pages = [

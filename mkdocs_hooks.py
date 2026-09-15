@@ -61,6 +61,7 @@ NAV_ORDER: dict[str, list[str]] = {
         "index.md",
         "00_Start_Here",
         "01_Threads",
+        "02_Shared_State",
         "11_Concepts",
         "10_Resources",
     ],
@@ -71,6 +72,16 @@ NAV_ORDER: dict[str, list[str]] = {
         "README.md",
         "who_waits_when_main_returns",
         "getting_a_result_back",
+    ],
+    # The smallest shared state there is: a total that handlers add to. First
+    # how an addition is lost, then the ways to keep it, then the same bug in a
+    # database, and last what besides timing can change a sum.
+    "02_Shared_State": [
+        "README.md",
+        "the_lost_update",
+        "keeping_every_update",
+        "the_lost_update_in_a_database",
+        "when_order_changes_a_sum",
     ],
 }
 

@@ -8,6 +8,7 @@ slug = "message_passing"
 title = "Message passing"
 summary = "Tasks share nothing and interact only by sending each other values, so that each value has one owner at a time."
 chapter = 5
+lessons = ["02_Shared_State/keeping_every_update"]
 alternative = ["shared_memory"]
 notes = [["Broker - sender - receiver - in general", "https://docs.google.com/document/d/1F1NMuTJYTemiALyBsQn6NMQ8ZN9mJvPyUUdCZ0x22e0/edit"]]
 reference = [["Wikipedia: Message passing", "https://en.wikipedia.org/wiki/Message_passing"]]
@@ -52,7 +53,7 @@ summary = "A typed conduit between tasks: one side sends values, the other recei
 aliases = ["queue", "mpsc"]
 chapter = 5
 is_a = ["message_passing"]
-lessons = ["01_Threads/getting_a_result_back"]
+lessons = ["01_Threads/getting_a_result_back", "02_Shared_State/keeping_every_update"]
 pages = [
   ["Rust: Channels", "https://masiarek.github.io/rust-learning-library/09_Advanced/channels/index.html"],
   ["Go: An unbuffered send waits for a receiver", "https://masiarek.github.io/go-learning-library/02_Channels/an_unbuffered_send_waits_for_a_receiver/index.html"],

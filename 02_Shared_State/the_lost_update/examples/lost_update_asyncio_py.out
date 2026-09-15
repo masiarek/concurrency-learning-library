@@ -1,0 +1,2 @@
+10 handlers, add_without_await: the total is 10
+10 handlers, add_with_await_between: the total is 1

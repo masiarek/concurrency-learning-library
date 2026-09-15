@@ -19,7 +19,7 @@
 | | Chapter | What it covers | |
 |---|---|---|---|
 | 01 | [Threads](01_Threads/README.md) | who waits when `main` returns, getting a result back | 2 lessons |
-| 02 | Shared state | data races and lost updates, mutexes, atomics, thread-local storage | planned |
+| 02 | [Shared state](02_Shared_State/README.md) | the lost update, and keeping every update with a lock, an atomic or one owner; the same bug in a database; when order changes a sum | 4 lessons |
 | 03 | When locks go wrong | deadlock and lock order, forgotten unlocks, poisoning | planned |
 | 04 | Waiting for each other | condition variables, semaphores, barriers, run-once initialization | planned |
 | 05 | Message passing | channels, closing a channel, `select`, bounded queues, actors | planned |

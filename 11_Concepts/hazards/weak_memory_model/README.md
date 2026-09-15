@@ -1,6 +1,6 @@
 # Weak memory models and reordering
 
-**Category:** [Hazards](../README.md) · **Status:** stub · **Lessons:** chapter 02, Shared state *(planned)*
+**Category:** [Hazards](../README.md) · **Status:** stub · **Lessons:** [chapter 02, Shared state](../../../02_Shared_State/README.md)
 
 **One line:** CPUs and compilers may perform memory reads and writes in a different order from the source code, and without synchronization another thread can see that order.
 

@@ -1,6 +1,6 @@
 # Time of check to time of use
 
-**Category:** [Hazards](../README.md) · **Status:** stub · **Lessons:** chapter 02, Shared state *(planned)*
+**Category:** [Hazards](../README.md) · **Status:** stub · **Lessons:** [chapter 02, Shared state](../../../02_Shared_State/README.md)
 
 **One line:** Checking a condition and then acting on it as two separate steps, so that the condition can change in between — the classic check-then-act race.
 

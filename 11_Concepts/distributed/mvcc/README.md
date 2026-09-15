@@ -30,6 +30,7 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [The lost update in a database](../../../02_Shared_State/the_lost_update_in_a_database/README.md)
 - **Notes:** [Multi-Version Concurrency Control (MVCC) ↗](https://docs.google.com/document/d/1sNeZtAABmStuxsVW5tI9yvBA1WPZNcgAlRIula83CgU/edit?tab=t.0)
 - **Reference:** [Wikipedia: Multiversion concurrency control ↗](https://en.wikipedia.org/wiki/Multiversion_concurrency_control)
 

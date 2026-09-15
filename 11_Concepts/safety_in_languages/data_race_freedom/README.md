@@ -1,6 +1,6 @@
 # Data-race freedom by construction
 
-**Category:** [Safety in languages](../README.md) · **Status:** stub · **Lessons:** chapter 02, Shared state *(planned)*
+**Category:** [Safety in languages](../README.md) · **Status:** stub · **Lessons:** [chapter 02, Shared state](../../../02_Shared_State/README.md)
 
 **One line:** A language rule that makes data races impossible to write in the first place — Rust's ownership with Send and Sync, or actors that never share memory.
 
@@ -34,6 +34,7 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [Is total += n safe on two threads?](../../../02_Shared_State/the_lost_update/README.md)
 - **In the books:** [*Rust Atomics and Locks*](../../../10_Resources/books_rust/README.md#bos_rust_atomics_and_locks), Mara Bos — ch. 1, 'Basics of Rust Concurrency' → 'Borrowing and Data Races'
 - **In the books:** [*The Rust Programming Language*](../../../10_Resources/books_rust/README.md#klabnik_nichols_rust_programming_language), Steve Klabnik, Carol Nichols — ch. 16, 'Fearless Concurrency'
 - **In the books:** [*Rust for Rustaceans*](../../../10_Resources/books_rust/README.md#gjengset_rust_for_rustaceans), Jon Gjengset — ch. 10, 'Concurrency (and Parallelism)' → 'Sane Concurrency'

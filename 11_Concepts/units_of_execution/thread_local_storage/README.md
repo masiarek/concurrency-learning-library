@@ -1,6 +1,6 @@
 # Thread-local storage
 
-**Category:** [Units of execution](../README.md) · **Status:** stub · **Lessons:** chapter 02, Shared state *(planned)*
+**Category:** [Units of execution](../README.md) · **Status:** stub · **Lessons:** [chapter 02, Shared state](../../../02_Shared_State/README.md)
 
 **One line:** A variable with a separate copy per thread, so each thread sees only its own value and no lock is needed.
 

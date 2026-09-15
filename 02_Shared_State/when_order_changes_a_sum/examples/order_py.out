@@ -1,0 +1,10 @@
+integers 5, 10, 20, 40, 80: 120 orders -> 1 distinct total(s): [155]
+floats 0.1, 0.2, 0.3: 6 orders -> 2 distinct total(s): [0.6, 0.6000000000000001]
+  (0.1 + 0.2) + 0.3 = 0.6000000000000001
+  0.1 + (0.2 + 0.3) = 0.6
+the same floats, summed with math.fsum: 6 orders -> 1 distinct total(s): [0.6]
+a balance that refuses to go below 0, requests +50, -30, -40: 6 orders -> 3 distinct total(s): [10, 20, 50]
+
+one request, +5, delivered twice because the client retried after a lost reply:
+  adding every delivery: 20
+  adding each request id once: 15

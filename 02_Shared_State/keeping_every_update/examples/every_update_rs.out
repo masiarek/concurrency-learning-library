@@ -1,0 +1,4 @@
+8 handlers each add 1 to 10000; the total should be 400040000
+with a Mutex:         400040000
+with fetch_add:       400040000
+with one owner:       400040000

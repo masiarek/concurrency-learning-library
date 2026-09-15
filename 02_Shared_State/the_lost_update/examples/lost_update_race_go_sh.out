@@ -1,0 +1,10 @@
+$ go build -race -o plain plain.go
+$ ./plain
+the total is 1, not 10
+the race detector printed WARNING: DATA RACE
+exit status 66
+$ go build -race -o atomic atomic.go
+$ ./atomic
+the total is 1, not 10
+the race detector printed nothing
+exit status 0

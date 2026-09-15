@@ -1,6 +1,6 @@
 # Thread safety
 
-**Category:** [Safety in languages](../README.md) · **Status:** stub · **Lessons:** chapter 02, Shared state *(planned)*
+**Category:** [Safety in languages](../README.md) · **Status:** stub · **Lessons:** [chapter 02, Shared state](../../../02_Shared_State/README.md)
 
 **One line:** Code or data is thread-safe if it behaves correctly when used from several threads at once, without its callers adding any synchronization.
 

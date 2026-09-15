@@ -1,6 +1,6 @@
 # Contention
 
-**Category:** [Hazards](../README.md) · **Status:** stub · **Lessons:** chapter 02, Shared state *(planned)*
+**Category:** [Hazards](../README.md) · **Status:** stub · **Lessons:** [chapter 02, Shared state](../../../02_Shared_State/README.md)
 
 **One line:** Tasks competing for the same lock or resource, so their time goes to waiting instead of working — the reason adding threads can make a program slower.
 
