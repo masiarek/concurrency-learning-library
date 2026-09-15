@@ -91,11 +91,14 @@ CI's *Show toolchain* step prints what each runner has. Add a row when CI finds 
 | | Ubuntu runner | macOS runner |
 |---|---|---|
 | CPU | x86-64 | arm64 |
-| C and C++ | GCC, glibc, libstdc++ | Apple clang, libc++ |
-| Go, Java | from `setup-go` and `setup-java` | from `setup-go` and `setup-java` |
-| `bash` | 5.x | 3.2 |
+| `cc`, `c++` | GCC 13.3.0, with glibc and libstdc++ | Apple clang 21.0.0, with libc++ |
+| `rustc` | 1.98.1 | 1.98.1 |
+| `go` | 1.25.14, from `setup-go` | 1.25.14, from `setup-go` |
+| `java` | Temurin 25.0.4.1, from `setup-java` | Temurin 25.0.4.1, from `setup-java` |
+| `python3` | 3.12.3 | 3.14.7 |
+| `bash` | 5.2.21 | 3.2.57 |
 
-The keys were recorded on 2026-09-14 on an x86-64 Mac with Apple clang 21.0.0, rustc 1.98.0, go1.25.5, OpenJDK 25.0.4.1, Python 3.14.7 and bash 3.2.57. Before the first push, the C and C++ examples were also run on Linux in the Docker image `gcc:14` (GCC 14.4, glibc 2.41) and printed the same keys.
+The runner versions are from the first CI run, on 2026-09-15 (UTC), and no example has yet printed differently on the two. The keys were recorded on 2026-09-14 on an x86-64 Mac with Apple clang 21.0.0, rustc 1.98.0, go1.25.5, OpenJDK 25.0.4.1, Python 3.14.7 and bash 3.2.57. Before the first push, the C and C++ examples were also run on Linux in the Docker image `gcc:14` (GCC 14.4, glibc 2.41) and printed the same keys.
 
 ## Links
 
