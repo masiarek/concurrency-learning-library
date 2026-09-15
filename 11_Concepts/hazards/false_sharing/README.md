@@ -1,6 +1,6 @@
 # False sharing
 
-**Category:** [Hazards](../README.md) · **Status:** stub · **Lessons:** chapter 07, Parallelism *(planned)*
+**Category:** [Hazards](../README.md) · **Status:** stub · **Lessons:** [chapter 07, Parallelism](../../../07_Parallelism/README.md)
 
 **One line:** Threads writing unrelated variables that happen to sit on the same CPU cache line keep invalidating each other's cache, slowing down with no logical sharing at all.
 

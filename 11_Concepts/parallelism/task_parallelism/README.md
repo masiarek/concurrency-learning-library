@@ -1,6 +1,6 @@
 # Task parallelism
 
-**Category:** [Parallelism](../README.md) · **Status:** stub · **Lessons:** chapter 07, Parallelism *(planned)*
+**Category:** [Parallelism](../README.md) · **Status:** stub · **Lessons:** [chapter 07, Parallelism](../../../07_Parallelism/README.md)
 
 **One line:** Different tasks, possibly doing different things, running at the same time on different cores.
 

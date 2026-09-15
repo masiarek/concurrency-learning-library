@@ -1,6 +1,6 @@
 # Parallel algorithms
 
-**Category:** [Parallelism](../README.md) · **Status:** stub · **Lessons:** chapter 07, Parallelism *(planned)*
+**Category:** [Parallelism](../README.md) · **Status:** stub · **Lessons:** [chapter 07, Parallelism](../../../07_Parallelism/README.md)
 
 **One line:** Sorting, searching, graph and numeric algorithms rebuilt so that their work splits across cores — not always by the obvious split.
 
@@ -21,6 +21,8 @@ Also called: parallel sort, parallel search.
 
 ## Where to read more
 
+- **In this library:** [Splitting a sum across workers](../../../07_Parallelism/splitting_a_sum_across_workers/README.md)
+- **In the books:** [*An Introduction to Parallel Programming*](../../../10_Resources/books_general/README.md#pacheco_malensek_introduction_to_parallel_programming), Peter S. Pacheco, Matthew Malensek — ch. 1, 'Why parallel computing'
 - **In the books:** [*C++ Concurrency in Action*](../../../10_Resources/books_cpp/README.md#williams_cpp_concurrency_in_action), Anthony Williams — ch. 10, 'Parallel algorithms'
 - **In the books:** [*Pro TBB*](../../../10_Resources/books_cpp/README.md#voss_pro_tbb), Michael Voss, Rafael Asenjo, James Reinders — ch. 2, 'Generic Parallel Algorithms'
 - **In the books:** [*Concurrency with Modern C++*](../../../10_Resources/books_cpp/README.md#grimm_concurrency_with_modern_cpp), Rainer Grimm — ch. 1, 'Concurrency with Modern C++' → 'C++17: Parallel Algorithms of the Standard Template Library'

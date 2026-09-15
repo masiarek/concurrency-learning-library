@@ -1,6 +1,6 @@
 # Map-reduce
 
-**Category:** [Parallelism](../README.md) · **Status:** stub · **Lessons:** chapter 07, Parallelism *(planned)*
+**Category:** [Parallelism](../README.md) · **Status:** stub · **Lessons:** [chapter 07, Parallelism](../../../07_Parallelism/README.md)
 
 **One line:** Apply a function to every item independently, then combine the results with an associative operation, so that both halves can be split across workers.
 
@@ -33,12 +33,14 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [Splitting a sum across workers](../../../07_Parallelism/splitting_a_sum_across_workers/README.md)
 - **In the books:** [*Concurrency in .NET*](../../../10_Resources/books_csharp_dotnet/README.md#terrell_concurrency_in_dotnet), Riccardo Terrell — ch. 5, 'PLINQ and MapReduce: data parallelism, part 2'
 - **In the books:** [*The Art of Concurrency*](../../../10_Resources/books_general/README.md#breshears_art_of_concurrency), Clay Breshears — ch. 7, 'MapReduce'
 - **In the books:** [*Python Concurrency with asyncio*](../../../10_Resources/books_python/README.md#fowler_python_concurrency_with_asyncio), Matthew Fowler — ch. 6, 'Handling CPU-bound work' → 'Solving a problem with MapReduce using asyncio'
 - **In the books:** [*Python Parallel Programming Cookbook*](../../../10_Resources/books_python/README.md#zaccone_python_parallel_programming_cookbook), Giancarlo Zaccone — ch. 5, 'Distributed Python' → 'Using MapReduce with Disco'
 - **In the books:** [*Seven Concurrency Models in Seven Weeks*](../../../10_Resources/books_general/README.md#butcher_seven_concurrency_models), Paul Butcher — ch. 8, 'The Lambda Architecture' → 'Day 1: MapReduce'
 - **In the books:** [*The Go Programming Language Phrasebook*](../../../10_Resources/books_go/README.md#chisnall_go_phrasebook), David Chisnall — ch. 10, 'Concurrency Design Patterns' → 'Map Reduce, Go Style'
+- **In the books:** [*An Introduction to Parallel Programming*](../../../10_Resources/books_general/README.md#pacheco_malensek_introduction_to_parallel_programming), Peter S. Pacheco, Matthew Malensek — ch. 1, 'Why parallel computing'
 - **Reference:** [Wikipedia: MapReduce ↗](https://en.wikipedia.org/wiki/MapReduce)
 
 <!-- Generated above this line by tools/build_concepts.py from TOML data — edit the data, not the page. Hand-written notes go below it and are kept. -->

@@ -1,6 +1,6 @@
 # Granularity
 
-**Category:** [Foundations](../README.md) · **Status:** stub · **Lessons:** chapter 07, Parallelism *(planned)*
+**Category:** [Foundations](../README.md) · **Status:** stub · **Lessons:** [chapter 07, Parallelism](../../../07_Parallelism/README.md)
 
 **One line:** How big the pieces of work handed to separate tasks are: too coarse leaves cores idle, too fine spends more on coordinating the pieces than on the work in them.
 

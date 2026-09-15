@@ -8,6 +8,7 @@ slug = "data_parallelism"
 title = "Data parallelism"
 summary = "The same operation applied to many pieces of data at once, each piece on its own core or vector lane."
 chapter = 7
+lessons = ["07_Parallelism/splitting_a_sum_across_workers"]
 is_a = ["parallelism"]
 contrasts = ["task_parallelism"]
 pages = [["Go: Fan-out, fan-in", "https://masiarek.github.io/go-learning-library/06_Patterns/fan_out_fan_in/index.html"]]
@@ -43,6 +44,7 @@ title = "Map-reduce"
 summary = "Apply a function to every item independently, then combine the results with an associative operation, so that both halves can be split across workers."
 aliases = ["MapReduce"]
 chapter = 7
+lessons = ["07_Parallelism/splitting_a_sum_across_workers"]
 is_a = ["data_parallelism"]
 reference = [["Wikipedia: MapReduce", "https://en.wikipedia.org/wiki/MapReduce"]]
 [concept.languages]
@@ -210,6 +212,7 @@ title = "Parallel algorithms"
 summary = "Sorting, searching, graph and numeric algorithms rebuilt so that their work splits across cores — not always by the obvious split."
 aliases = ["parallel sort", "parallel search"]
 chapter = 7
+lessons = ["07_Parallelism/splitting_a_sum_across_workers"]
 related = ["data_parallelism", "fork_join", "speedup_and_amdahls_law"]
 reference = [["Wikipedia: Parallel algorithm", "https://en.wikipedia.org/wiki/Parallel_algorithm"]]
 [concept.languages]

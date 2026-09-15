@@ -1,6 +1,6 @@
 # Parallelism
 
-**Category:** [Foundations](../README.md) · **Status:** stub · **Lessons:** chapter 07, Parallelism *(planned)*
+**Category:** [Foundations](../README.md) · **Status:** stub · **Lessons:** [chapter 07, Parallelism](../../../07_Parallelism/README.md)
 
 **One line:** Running several computations at the same instant on separate processing units so the whole finishes sooner; it needs more than one core, and concurrency does not.
 

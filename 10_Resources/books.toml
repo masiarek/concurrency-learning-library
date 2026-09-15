@@ -2561,11 +2561,21 @@ title = "An Introduction to Parallel Programming"
 authors = ["Peter S. Pacheco", "Matthew Malensek"]
 publisher = "Morgan Kaufmann (Elsevier)"
 edition = "2nd"
-year = 2020
+year = 2021
 focus = "general"
 dedicated = true
 on_shelf = false
 publisher_url = "https://shop.elsevier.com/books/an-introduction-to-parallel-programming/pacheco/978-0-12-804605-0"
+chapters = [
+  "1. Why parallel computing",
+  "2. Parallel hardware and parallel software",
+  "3. Distributed memory programming with MPI",
+  "4. Shared-memory programming with Pthreads",
+  "5. Shared-memory programming with OpenMP",
+  "6. GPU programming with CUDA",
+  "7. Parallel program development",
+  "8. Where to go from here",
+]
 
 [[book]]
 id = "lea_concurrent_programming_in_java"

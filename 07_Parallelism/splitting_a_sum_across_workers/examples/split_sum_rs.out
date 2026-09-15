@@ -1,0 +1,13 @@
+24 values, 3 to each of 8 workers
+partial sums: 8 19 7 15 7 13 12 14
+serial combine: 95, after 7 additions in 7 rounds
+tree, round 1: 27 22 20 26
+tree, round 2: 49 46
+tree, round 3: 95
+tree combine: 95, after 7 additions in 3 rounds
+
+the same 24 values plus 0.2 each, as f64 (on paper, 99.8)
+one loop over all 24: 99.80000000000004
+partial sums, then serial: 99.79999999999998
+partial sums, then tree: 99.80000000000001
+iter().sum(): 99.80000000000004

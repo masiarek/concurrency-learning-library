@@ -1,6 +1,6 @@
 # Global interpreter lock
 
-**Category:** [Parallelism](../README.md) · **Status:** stub · **Lessons:** chapter 07, Parallelism *(planned)*
+**Category:** [Parallelism](../README.md) · **Status:** stub · **Lessons:** [chapter 07, Parallelism](../../../07_Parallelism/README.md)
 
 **One line:** A lock that lets only one thread run interpreter code at a time — CPython's, and Ruby's — so threads give concurrency but not CPU parallelism; CPython 3.13 added an optional build without it.
 

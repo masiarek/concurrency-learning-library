@@ -62,6 +62,7 @@ NAV_ORDER: dict[str, list[str]] = {
         "00_Start_Here",
         "01_Threads",
         "02_Shared_State",
+        "07_Parallelism",
         "11_Concepts",
         "10_Resources",
     ],
@@ -82,6 +83,12 @@ NAV_ORDER: dict[str, list[str]] = {
         "keeping_every_update",
         "the_lost_update_in_a_database",
         "when_order_changes_a_sum",
+    ],
+    # Using more cores to finish sooner. First the split itself: private partial
+    # sums, and the two ways of combining them.
+    "07_Parallelism": [
+        "README.md",
+        "splitting_a_sum_across_workers",
     ],
 }
 

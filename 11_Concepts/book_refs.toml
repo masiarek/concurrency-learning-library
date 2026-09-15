@@ -841,6 +841,11 @@ book = "williams_cpp_concurrency_in_action"
 where = "ch. 10, 'Parallel algorithms' → 'Parallelizing the standard library algorithms'"
 
 [[ref]]
+concept = "data_parallelism"
+book = "pacheco_malensek_introduction_to_parallel_programming"
+where = "ch. 1, 'Why parallel computing'"
+
+[[ref]]
 concept = "data_race"
 book = "bos_rust_atomics_and_locks"
 where = "ch. 1, 'Basics of Rust Concurrency' → 'Borrowing and Data Races'"
@@ -1109,6 +1114,11 @@ where = "ch. 7, 'Data Parallelism' → 'Day 1: GPGPU Programming'"
 concept = "gpu_computing"
 book = "reinders_data_parallel_cpp"
 where = "ch. 2, 'Where Code Executes' → 'Method#3: Using a GPU (or Other Accelerators)'"
+
+[[ref]]
+concept = "gpu_computing"
+book = "pacheco_malensek_introduction_to_parallel_programming"
+where = "ch. 6, 'GPU programming with CUDA'"
 
 [[ref]]
 concept = "granularity"
@@ -1451,6 +1461,11 @@ book = "chisnall_go_phrasebook"
 where = "ch. 10, 'Concurrency Design Patterns' → 'Map Reduce, Go Style'"
 
 [[ref]]
+concept = "map_reduce"
+book = "pacheco_malensek_introduction_to_parallel_programming"
+where = "ch. 1, 'Why parallel computing'"
+
+[[ref]]
 concept = "message_passing"
 book = "cutajar_learn_concurrent_programming_with_go"
 where = "ch. 7, 'Communication using message passing'"
@@ -1524,6 +1539,11 @@ where = "ch. 9, 'Multithreading with Distributed Computing' → 'Installing Open
 concept = "mpi"
 book = "zomaya_parallel_computing_bioinformatics"
 where = "ch. 2, 'Parallel Monte Carlo Simulation of HIV Molecular Evolution in Response to Immune Surveillance' → 'Parallelization with MPI'"
+
+[[ref]]
+concept = "mpi"
+book = "pacheco_malensek_introduction_to_parallel_programming"
+where = "ch. 3, 'Distributed memory programming with MPI'"
 
 [[ref]]
 concept = "multiprocessing"
@@ -1696,6 +1716,11 @@ book = "nguyen_advanced_python_programming"
 where = "ch. 8, 'Parallel Processing' → 'Parallel Cython with OpenMP'"
 
 [[ref]]
+concept = "openmp"
+book = "pacheco_malensek_introduction_to_parallel_programming"
+where = "ch. 5, 'Shared-memory programming with OpenMP'"
+
+[[ref]]
 concept = "oversubscription"
 book = "voss_pro_tbb"
 where = "ch. 11, 'Controlling the Number of Threads Used for Execution'"
@@ -1709,6 +1734,11 @@ where = "ch. 2, 'Managing threads' → 'Choosing the number of threads at runtim
 concept = "oversubscription"
 book = "charpentier_functional_and_concurrent_programming"
 where = "ch. 24, 'Case Study: Parallel Execution' → 'Bounded Number of Threads'"
+
+[[ref]]
+concept = "parallel_algorithms"
+book = "pacheco_malensek_introduction_to_parallel_programming"
+where = "ch. 1, 'Why parallel computing'"
 
 [[ref]]
 concept = "parallel_iterators"

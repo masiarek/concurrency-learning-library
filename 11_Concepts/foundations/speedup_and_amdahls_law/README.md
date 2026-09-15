@@ -1,6 +1,6 @@
 # Speedup and Amdahl's law
 
-**Category:** [Foundations](../README.md) · **Status:** stub · **Lessons:** chapter 07, Parallelism *(planned)*
+**Category:** [Foundations](../README.md) · **Status:** stub · **Lessons:** [chapter 07, Parallelism](../../../07_Parallelism/README.md)
 
 **One line:** How much faster more processors make a program is capped by the part that must still run sequentially: if a tenth of the work is serial, no number of cores gives more than ten times the speed.
 

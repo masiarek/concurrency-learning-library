@@ -1,6 +1,6 @@
 # I/O-bound and CPU-bound work
 
-**Category:** [Foundations](../README.md) · **Status:** stub · **Lessons:** chapter 07, Parallelism *(planned)*
+**Category:** [Foundations](../README.md) · **Status:** stub · **Lessons:** [chapter 07, Parallelism](../../../07_Parallelism/README.md)
 
 **One line:** Work that spends its time waiting for disks and networks gains from concurrency even on one core; work that spends its time computing gains only from parallelism.
 

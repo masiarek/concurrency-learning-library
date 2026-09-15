@@ -24,7 +24,7 @@
 | 04 | Waiting for each other | condition variables, semaphores, barriers, run-once initialization | planned |
 | 05 | Message passing | channels, closing a channel, `select`, bounded queues, actors | planned |
 | 06 | Async | event loops, futures, `async` and `await`, blocking the loop, cancellation | planned |
-| 07 | Parallelism | CPU-bound speedup, the GIL and free-threaded Python, Amdahl's law | planned |
+| 07 | [Parallelism](07_Parallelism/README.md) | splitting a sum across workers and combining it as a tree; still planned: CPU-bound speedup, the GIL and free-threaded Python, Amdahl's law | 1 lesson |
 | 08 | Processes | `fork`, `multiprocessing`, pipes, signals | planned |
 | 09 | Testing and tools | ThreadSanitizer, Go's race detector, stress tests, deterministic schedulers | planned |
 | 10 | [Resources](10_Resources/README.md) | the documentation, the books by language, and the crosswalk to the sibling libraries | |

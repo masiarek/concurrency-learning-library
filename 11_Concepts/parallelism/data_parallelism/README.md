@@ -1,6 +1,6 @@
 # Data parallelism
 
-**Category:** [Parallelism](../README.md) · **Status:** stub · **Lessons:** chapter 07, Parallelism *(planned)*
+**Category:** [Parallelism](../README.md) · **Status:** stub · **Lessons:** [chapter 07, Parallelism](../../../07_Parallelism/README.md)
 
 **One line:** The same operation applied to many pieces of data at once, each piece on its own core or vector lane.
 
@@ -48,6 +48,7 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [Splitting a sum across workers](../../../07_Parallelism/splitting_a_sum_across_workers/README.md)
 - **In a sibling library:** [Go: Fan-out, fan-in ↗](https://masiarek.github.io/go-learning-library/06_Patterns/fan_out_fan_in/index.html)
 - **In the books:** [*Data Parallel C++*](../../../10_Resources/books_cpp/README.md#reinders_data_parallel_cpp), James Reinders, Ben Ashbaugh, James Brodman, Michael Kinsner, John Pennycook, Xinmin Tian — ch. 4, 'Expressing Parallelism'
 - **In the books:** [*Learning Concurrent Programming in Scala*](../../../10_Resources/books_scala_jvm_functional/README.md#prokopec_learning_concurrent_programming_in_scala), Aleksandar Prokopec — ch. 5, 'Data-Parallel Collections'
@@ -55,6 +56,7 @@ flowchart LR
 - **In the books:** [*Concurrency in .NET*](../../../10_Resources/books_csharp_dotnet/README.md#terrell_concurrency_in_dotnet), Riccardo Terrell — ch. 4, 'The basics of processing big data: data parallelism, part 1'
 - **In the books:** [*Seven Concurrency Models in Seven Weeks*](../../../10_Resources/books_general/README.md#butcher_seven_concurrency_models), Paul Butcher — ch. 7, 'Data Parallelism'
 - **In the books:** [*C++ Concurrency in Action*](../../../10_Resources/books_cpp/README.md#williams_cpp_concurrency_in_action), Anthony Williams — ch. 10, 'Parallel algorithms' → 'Parallelizing the standard library algorithms'
+- **In the books:** [*An Introduction to Parallel Programming*](../../../10_Resources/books_general/README.md#pacheco_malensek_introduction_to_parallel_programming), Peter S. Pacheco, Matthew Malensek — ch. 1, 'Why parallel computing'
 - **Reference:** [Wikipedia: Data parallelism ↗](https://en.wikipedia.org/wiki/Data_parallelism)
 
 <!-- Generated above this line by tools/build_concepts.py from TOML data — edit the data, not the page. Hand-written notes go below it and are kept. -->

@@ -27,6 +27,7 @@ flowchart LR
 
 - **In the books:** [*Mastering C++ Multithreading*](../../../10_Resources/books_cpp/README.md#posch_mastering_cpp_multithreading), Maya Posch — ch. 9, 'Multithreading with Distributed Computing' → 'Installing Open MPI'
 - **In the books:** [*Parallel Computing for Bioinformatics and Computational Biology*](../../../10_Resources/books_other/README.md#zomaya_parallel_computing_bioinformatics), Albert Y. Zomaya (editor) — ch. 2, 'Parallel Monte Carlo Simulation of HIV Molecular Evolution in Response to Immune Surveillance' → 'Parallelization with MPI'
+- **In the books:** [*An Introduction to Parallel Programming*](../../../10_Resources/books_general/README.md#pacheco_malensek_introduction_to_parallel_programming), Peter S. Pacheco, Matthew Malensek — ch. 3, 'Distributed memory programming with MPI'
 - **Reference:** [MPI Forum ↗](https://www.mpi-forum.org/)
 
 <!-- Generated above this line by tools/build_concepts.py from TOML data — edit the data, not the page. Hand-written notes go below it and are kept. -->

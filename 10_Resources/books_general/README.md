@@ -73,8 +73,24 @@ Cited on: [Asynchrony](../../11_Concepts/foundations/asynchrony/README.md), [Eve
 
 ## *An Introduction to Parallel Programming*
 
-Peter S. Pacheco, Matthew Malensek · 2nd edition · Morgan Kaufmann (Elsevier) · 2020  
+Peter S. Pacheco, Matthew Malensek · 2nd edition · Morgan Kaufmann (Elsevier) · 2021  
 dedicated to concurrency · [publisher ↗](https://shop.elsevier.com/books/an-introduction-to-parallel-programming/pacheco/978-0-12-804605-0)
+
+<details markdown="1">
+<summary>Chapters</summary>
+
+- **1** Why parallel computing
+- **2** Parallel hardware and parallel software
+- **3** Distributed memory programming with MPI
+- **4** Shared-memory programming with Pthreads
+- **5** Shared-memory programming with OpenMP
+- **6** GPU programming with CUDA
+- **7** Parallel program development
+- **8** Where to go from here
+
+</details>
+
+Cited on: [Data parallelism](../../11_Concepts/parallelism/data_parallelism/README.md), [GPU computing](../../11_Concepts/parallelism/gpu_computing/README.md), [Map-reduce](../../11_Concepts/parallelism/map_reduce/README.md), [MPI](../../11_Concepts/parallelism/mpi/README.md), [OpenMP](../../11_Concepts/parallelism/openmp/README.md), [Parallel algorithms](../../11_Concepts/parallelism/parallel_algorithms/README.md)
 
 <a id="herlihy_shavit_luchangco_spear_art_of_multiprocessor_programming_2e"></a>
 
