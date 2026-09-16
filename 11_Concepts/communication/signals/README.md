@@ -25,12 +25,16 @@ flowchart LR
 
 | | |
 |---|---|
+| Rust | nothing in `std`; the handler is declared across the C ABI and runs as the real C handler, so it may only set an atomic |
 | Go | [`os/signal` ↗](https://pkg.go.dev/os/signal) delivers signals as values on a channel |
 | C | [`sigaction` ↗](https://pubs.opengroup.org/onlinepubs/9799919799/functions/sigaction.html) installs a handler; [`pthread_sigmask` ↗](https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_sigmask.html) chooses which threads may receive one |
-| Python | [`signal` ↗](https://docs.python.org/3/library/signal.html): handlers always run in the main thread of the main interpreter |
+| Python | [`signal` ↗](https://docs.python.org/3/library/signal.html): handlers always run in the main thread of the main interpreter, at a bytecode boundary, so a handler may print and allocate |
 
 ## Where to read more
 
+- **In a sibling library:** [Python: Ctrl-C is a signal ↗](https://masiarek.github.io/python-learning-library/02_Projects_and_Environments/ctrl_c_is_a_signal/index.html)
+- **In a sibling library:** [Rust: Catching a signal ↗](https://masiarek.github.io/rust-learning-library/09_Advanced/catching_a_signal/index.html)
+- **In a sibling library:** [Linux: The signals you cannot catch ↗](https://masiarek.github.io/linux-learning-library/11_Signals/signals_you_cannot_catch/index.html)
 - **In a sibling library:** [Linux: head closes the pipe early ↗](https://masiarek.github.io/linux-learning-library/01_Pipelines/head_closes_the_pipe_early/index.html)
 - **In the books:** [*Pthreads Programming*](../../../10_Resources/books_c/README.md#nichols_pthreads_programming), Bradford Nichols, Dick Buttlar, Jacqueline Proulx Farrell — ch. 5, 'Pthreads and UNIX' → 'Threads and Signals'
 - **In the books:** [*Programming with POSIX Threads*](../../../10_Resources/books_c/README.md#butenhof_programming_with_posix_threads), David R. Butenhof — ch. 6, 'POSIX Adjusts to Threads' → 'Signals'

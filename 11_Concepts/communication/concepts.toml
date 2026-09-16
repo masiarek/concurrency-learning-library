@@ -326,12 +326,18 @@ summary = "Asynchronous notifications the operating system delivers to a process
 aliases = ["Unix signals", "SIGINT", "SIGPIPE", "signal handler"]
 chapter = 8
 is_a = ["ipc"]
-pages = [["Linux: head closes the pipe early", "https://masiarek.github.io/linux-learning-library/01_Pipelines/head_closes_the_pipe_early/index.html"]]
+pages = [
+  ["Python: Ctrl-C is a signal", "https://masiarek.github.io/python-learning-library/02_Projects_and_Environments/ctrl_c_is_a_signal/index.html"],
+  ["Rust: Catching a signal", "https://masiarek.github.io/rust-learning-library/09_Advanced/catching_a_signal/index.html"],
+  ["Linux: The signals you cannot catch", "https://masiarek.github.io/linux-learning-library/11_Signals/signals_you_cannot_catch/index.html"],
+  ["Linux: head closes the pipe early", "https://masiarek.github.io/linux-learning-library/01_Pipelines/head_closes_the_pipe_early/index.html"],
+]
 reference = [["Linux man page: signal(7)", "https://man7.org/linux/man-pages/man7/signal.7.html"]]
 [concept.languages]
 go = "[`os/signal`](https://pkg.go.dev/os/signal) delivers signals as values on a channel"
 c = "[`sigaction`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/sigaction.html) installs a handler; [`pthread_sigmask`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_sigmask.html) chooses which threads may receive one"
-python = "[`signal`](https://docs.python.org/3/library/signal.html): handlers always run in the main thread of the main interpreter"
+python = "[`signal`](https://docs.python.org/3/library/signal.html): handlers always run in the main thread of the main interpreter, at a bytecode boundary, so a handler may print and allocate"
+rust = "nothing in `std`; the handler is declared across the C ABI and runs as the real C handler, so it may only set an atomic"
 
 [[concept]]
 slug = "task_queue"
