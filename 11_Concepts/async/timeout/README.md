@@ -45,6 +45,7 @@ flowchart LR
 
 - **In a sibling library:** [Go: A timeout is a channel ↗](https://masiarek.github.io/go-learning-library/03_Select/a_timeout_is_a_channel/index.html)
 - **In a sibling library:** [Go: A deadline is a cancel with a clock ↗](https://masiarek.github.io/go-learning-library/05_Context/a_deadline_is_a_cancel_with_a_clock/index.html)
+- **In a sibling library:** [Rust: Cancellation ↗](https://masiarek.github.io/rust-learning-library/35_Async/building_minidb/cancellation/index.html)
 - **In the books:** [*Parallel and Concurrent Programming in Haskell*](../../../10_Resources/books_haskell/README.md#marlow_parallel_and_concurrent_programming_in_haskell), Simon Marlow — ch. 9, 'Cancellation and Timeouts'
 - **In the books:** [*Concurrency in Go*](../../../10_Resources/books_go/README.md#cox_buday_concurrency_in_go), Katherine Cox-Buday — ch. 5, 'Concurrency at Scale' → 'Timeouts and Cancellation'
 - **In the books:** [*C++ Concurrency in Action*](../../../10_Resources/books_cpp/README.md#williams_cpp_concurrency_in_action), Anthony Williams — ch. 4, 'Synchronizing concurrent operations' → 'Waiting with a time limit'

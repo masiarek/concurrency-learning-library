@@ -251,7 +251,10 @@ aliases = ["counting semaphore", "binary semaphore"]
 chapter = 4
 is_a = ["synchronization"]
 related = ["bounded_channel"]
-pages = [["Go: A buffered channel as a semaphore", "https://masiarek.github.io/go-learning-library/06_Patterns/a_buffered_channel_as_a_semaphore/index.html"]]
+pages = [
+  ["Go: A buffered channel as a semaphore", "https://masiarek.github.io/go-learning-library/06_Patterns/a_buffered_channel_as_a_semaphore/index.html"],
+  ["Rust: Backpressure", "https://masiarek.github.io/rust-learning-library/35_Async/building_minidb/backpressure/index.html"],
+]
 notes = [["Semaphores in general - semaphore", "https://docs.google.com/document/d/1vTOfVk_ZB8ZA6WoWB9w1vR-B07Gt4y5w3JdLC7SL9RY/edit"]]
 reference = [
   ["Wikipedia: Semaphore (programming)", "https://en.wikipedia.org/wiki/Semaphore_(programming)"],

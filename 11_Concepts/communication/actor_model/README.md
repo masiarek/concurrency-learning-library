@@ -42,6 +42,7 @@ flowchart LR
 
 ## Where to read more
 
+- **In a sibling library:** [Rust: Who owns the state ↗](https://masiarek.github.io/rust-learning-library/35_Async/building_minidb/who_owns_the_state/index.html)
 - **In the books:** [*Async Rust*](../../../10_Resources/books_rust/README.md#flitton_morton_async_rust), Maxwell Flitton, Caroline Morton — ch. 8, 'The Actor Model'
 - **In the books:** [*Learning Concurrent Programming in Scala*](../../../10_Resources/books_scala_jvm_functional/README.md#prokopec_learning_concurrent_programming_in_scala), Aleksandar Prokopec — ch. 8, 'Actors'
 - **In the books:** [*Kotlin Coroutines by Tutorials*](../../../10_Resources/books_other/README.md#babic_srivastava_kotlin_coroutines_by_tutorials), Filip Babić, Nishant Srivastava — ch. 13, 'Producer & Actors'

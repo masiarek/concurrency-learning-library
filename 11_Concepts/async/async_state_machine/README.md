@@ -31,6 +31,7 @@ flowchart LR
 
 ## Where to read more
 
+- **In a sibling library:** [Rust: `async fn` and `.await` ↗](https://masiarek.github.io/rust-learning-library/35_Async/async_fn_and_await/index.html)
 - **In the books:** [*Asynchronous Programming in Rust*](../../../10_Resources/books_rust/README.md#samson_asynchronous_programming_in_rust), Carl Fredrik Samson — ch. 7, 'Coroutines and async/await' → 'Introduction to stackless coroutines'
 - **In the books:** [*asyncio Recipes*](../../../10_Resources/books_python/README.md#tahrioui_asyncio_recipes), Mohamed Mustapha Tahrioui — ch. 4, 'Working with Async Generators' → 'Writing a State Machine with an Async Generator'
 - **In the books:** [*Async Rust*](../../../10_Resources/books_rust/README.md#flitton_morton_async_rust), Maxwell Flitton, Caroline Morton — ch. 9, 'Design Patterns' → 'The State Machine Pattern'

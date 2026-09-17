@@ -145,7 +145,10 @@ summary = "Letting a slow consumer slow its producers down — by making sends w
 aliases = ["flow control"]
 chapter = 5
 uses = ["bounded_channel"]
-pages = [["Go: A buffered channel is a bounded queue", "https://masiarek.github.io/go-learning-library/02_Channels/a_buffered_channel_is_a_bounded_queue/index.html"]]
+pages = [
+  ["Go: A buffered channel is a bounded queue", "https://masiarek.github.io/go-learning-library/02_Channels/a_buffered_channel_is_a_bounded_queue/index.html"],
+  ["Rust: Backpressure", "https://masiarek.github.io/rust-learning-library/35_Async/building_minidb/backpressure/index.html"],
+]
 [concept.languages]
 rust = "a bounded [`sync_channel`](https://doc.rust-lang.org/std/sync/mpsc/fn.sync_channel.html): `send` blocks until the buffer has room"
 go = "a buffered channel: a send proceeds without blocking only while the buffer is not full ([spec](https://go.dev/ref/spec#Channel_types))"
@@ -275,6 +278,9 @@ summary = "Actors are isolated units with a mailbox: each handles one message at
 aliases = ["actors", "mailbox"]
 chapter = 5
 is_a = ["message_passing"]
+pages = [
+  ["Rust: Who owns the state", "https://masiarek.github.io/rust-learning-library/35_Async/building_minidb/who_owns_the_state/index.html"],
+]
 notes = [["actors model", "https://docs.google.com/document/d/16H7fnXaNoPx-hEHHK6mY2ugHl1HXBljXvnYrIV-pNIc/edit?tab=t.0"]]
 reference = [["Wikipedia: Actor model", "https://en.wikipedia.org/wiki/Actor_model"]]
 [concept.languages]
@@ -292,6 +298,9 @@ aliases = ["supervision tree", "let it crash"]
 chapter = 5
 uses = ["actor_model"]
 related = ["structured_concurrency"]
+pages = [
+  ["Rust: Shutdown and supervision", "https://masiarek.github.io/rust-learning-library/35_Async/building_minidb/shutdown_and_supervision/index.html"],
+]
 [concept.languages]
 elixir_erlang = "OTP's [`supervisor`](https://www.erlang.org/doc/apps/stdlib/supervisor.html) keeps its children alive by restarting them, with strategies such as `one_for_one`; Elixir's [`Supervisor`](https://hexdocs.pm/elixir/Supervisor.html)"
 kotlin = "[`SupervisorJob` and `supervisorScope`](https://kotlinlang.org/docs/exception-handling.html#supervision): a failing child does not cancel the supervisor or its other children"

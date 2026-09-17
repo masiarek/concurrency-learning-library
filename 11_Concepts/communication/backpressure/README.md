@@ -37,6 +37,7 @@ flowchart LR
 ## Where to read more
 
 - **In a sibling library:** [Go: A buffered channel is a bounded queue ↗](https://masiarek.github.io/go-learning-library/02_Channels/a_buffered_channel_is_a_bounded_queue/index.html)
+- **In a sibling library:** [Rust: Backpressure ↗](https://masiarek.github.io/rust-learning-library/35_Async/building_minidb/backpressure/index.html)
 - **In the books:** [*Combine: Asynchronous Programming with Swift*](../../../10_Resources/books_swift/README.md#kodeco_combine_asynchronous_programming_swift), Shai Mishali, Florent Pillet, Marin Todorov, Scott Gardner — ch. 18, 'Custom Publishers & Handling Backpressure'
 - **In the books:** [*Concurrency in Go*](../../../10_Resources/books_go/README.md#cox_buday_concurrency_in_go), Katherine Cox-Buday — ch. 5, 'Concurrency at Scale' → 'Rate Limiting'
 - **In the books:** [*Effective Concurrency in Go*](../../../10_Resources/books_go/README.md#serdar_effective_concurrency_in_go), Burak Serdar — ch. 4, 'Some Well-Known Concurrency Problems' → 'Rate limiting'

@@ -35,6 +35,8 @@ flowchart LR
 
 - **In a sibling library:** [Go: `synctest` makes time virtual ↗](https://masiarek.github.io/go-learning-library/07_Testing_Concurrent_Code/synctest_makes_time_virtual/index.html)
 - **In a sibling library:** [Go: `synctest.Wait` instead of a sleep ↗](https://masiarek.github.io/go-learning-library/07_Testing_Concurrent_Code/synctest_wait/index.html)
+- **In a sibling library:** [Rust: Testing async code ↗](https://masiarek.github.io/rust-learning-library/35_Async/building_minidb/testing_async_code/index.html)
+- **In a sibling library:** [Rust: Testing against a hostile network ↗](https://masiarek.github.io/rust-learning-library/35_Async/building_minidb/testing_against_a_hostile_network/index.html)
 - **In the books:** [*Async Rust*](../../../10_Resources/books_rust/README.md#flitton_morton_async_rust), Maxwell Flitton, Caroline Morton — ch. 11, 'Testing' → 'Mocking Async Code'
 - **In the books:** [*Modern Multithreading*](../../../10_Resources/books_general/README.md#carver_tai_modern_multithreading), Richard H. Carver, Kuo-Chung Tai — ch. 2, 'The Critical Section Problem' → 'Tracing and Replay for Shared Variables'
 

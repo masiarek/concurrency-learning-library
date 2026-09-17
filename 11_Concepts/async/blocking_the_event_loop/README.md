@@ -37,6 +37,8 @@ flowchart LR
 
 ## Where to read more
 
+- **In a sibling library:** [Rust: Diagnosing a stuck runtime ↗](https://masiarek.github.io/rust-learning-library/35_Async/building_minidb/diagnosing_a_stuck_runtime/index.html)
+- **In a sibling library:** [Rust: Common async pitfalls ↗](https://masiarek.github.io/rust-learning-library/35_Async/common_async_pitfalls/index.html)
 - **In the books:** [*Parallel Programming and Concurrency with C# 10 and .NET 6*](../../../10_Resources/books_csharp_dotnet/README.md#ashcraft_parallel_programming_concurrency_csharp10), Alvin Ashcraft — ch. 4, 'User Interface Responsiveness and Threading'
 - **In the books:** [*Python Concurrency with asyncio*](../../../10_Resources/books_python/README.md#fowler_python_concurrency_with_asyncio), Matthew Fowler — ch. 6, 'Handling CPU-bound work'
 - **In the books:** [*asyncio Recipes*](../../../10_Resources/books_python/README.md#tahrioui_asyncio_recipes), Mohamed Mustapha Tahrioui — ch. 10, 'Preventing Common Asyncio Mistakes'

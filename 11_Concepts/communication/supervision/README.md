@@ -36,6 +36,7 @@ flowchart LR
 
 ## Where to read more
 
+- **In a sibling library:** [Rust: Shutdown and supervision ↗](https://masiarek.github.io/rust-learning-library/35_Async/building_minidb/shutdown_and_supervision/index.html)
 - **In the books:** [*The Little Elixir & OTP Guidebook*](../../../10_Resources/books_elixir_erlang/README.md#tan_little_elixir_otp_guidebook), Benjamin Tan Wei Hao — ch. 5, 'Concurrent error-handling and fault tolerance with links, monitors, and processes'
 - **In the books:** [*Concurrency in Go*](../../../10_Resources/books_go/README.md#cox_buday_concurrency_in_go), Katherine Cox-Buday — ch. 5, 'Concurrency at Scale' → 'Healing Unhealthy Goroutines'
 - **In the books:** [*Async Rust*](../../../10_Resources/books_rust/README.md#flitton_morton_async_rust), Maxwell Flitton, Caroline Morton — ch. 8, 'The Actor Model' → 'Creating Actor Supervision'

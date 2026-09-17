@@ -38,6 +38,7 @@ flowchart LR
 
 ## Where to read more
 
+- **In a sibling library:** [Rust: Streams, sinks, and pipelining ↗](https://masiarek.github.io/rust-learning-library/35_Async/building_minidb/streams_sinks_and_pipelining/index.html)
 - **In the books:** [*C++ Reactive Programming*](../../../10_Resources/books_cpp/README.md#pai_abraham_cpp_reactive_programming), Praseed Pai, Peter Abraham — ch. 6, 'Introduction to Event Stream Programming Using C++'
 - **In the books:** [*Concurrency in C# Cookbook*](../../../10_Resources/books_csharp_dotnet/README.md#cleary_concurrency_in_csharp_cookbook), Stephen Cleary — ch. 3, 'Asynchronous Streams'
 - **In the books:** [*asyncio Recipes*](../../../10_Resources/books_python/README.md#tahrioui_asyncio_recipes), Mohamed Mustapha Tahrioui — ch. 4, 'Working with Async Generators'

@@ -48,6 +48,7 @@ flowchart LR
 
 - **In this library:** [Getting a result back](../../../01_Threads/getting_a_result_back/README.md)
 - **In a sibling library:** [Go: A goroutine has no handle ↗](https://masiarek.github.io/go-learning-library/01_Goroutines/a_goroutine_has_no_handle/index.html)
+- **In a sibling library:** [Rust: What a future is ↗](https://masiarek.github.io/rust-learning-library/35_Async/what_a_future_is/index.html)
 - **In the books:** [*Learning Concurrent Programming in Scala*](../../../10_Resources/books_scala_jvm_functional/README.md#prokopec_learning_concurrent_programming_in_scala), Aleksandar Prokopec — ch. 4, 'Asynchronous Programming with Futures and Promises'
 - **In the books:** [*Parallel Programming with Python*](../../../10_Resources/books_python/README.md#palach_parallel_programming_with_python), Jan Palach — ch. 4, 'Using the threading and concurrent.futures Modules'
 - **In the books:** [*JavaScript Concurrency*](../../../10_Resources/books_javascript/README.md#boduch_javascript_concurrency), Adam Boduch — ch. 3, 'Synchronizing with Promises'

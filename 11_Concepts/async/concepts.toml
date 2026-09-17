@@ -44,7 +44,10 @@ aliases = ["future", "promise", "deferred", "Task"]
 chapter = 6
 related = ["join", "async_await"]
 lessons = ["01_Threads/getting_a_result_back"]
-pages = [["Go: A goroutine has no handle", "https://masiarek.github.io/go-learning-library/01_Goroutines/a_goroutine_has_no_handle/index.html"]]
+pages = [
+  ["Go: A goroutine has no handle", "https://masiarek.github.io/go-learning-library/01_Goroutines/a_goroutine_has_no_handle/index.html"],
+  ["Rust: What a future is", "https://masiarek.github.io/rust-learning-library/35_Async/what_a_future_is/index.html"],
+]
 notes = [
   ["future - promise - delay - deferred - general", "https://docs.google.com/document/d/1iqZZ4hXscxlN9ZjMpeangJ8CyWVVw3pFiJDCpYy4FHQ/edit?tab=t.0"],
   ["futures - rust - main", "https://docs.google.com/document/u/0/d/1OuH409o_MQsV3yRAMxznNr8EV4FRYUJ0-7M3hvq9tQw/edit"],
@@ -75,6 +78,9 @@ chapter = 6
 lessons = ["02_Shared_State/the_lost_update"]
 uses = ["future_and_promise", "suspension_point"]
 related = ["function_coloring"]
+pages = [
+  ["Rust: `async fn` and `.await`", "https://masiarek.github.io/rust-learning-library/35_Async/async_fn_and_await/index.html"],
+]
 notes = [
   ["Topics - async - how to teach async rust", "https://docs.google.com/document/u/0/d/1r-1z2MoDfVtR0gaz7ZypLhOzfmZrlme1BJs_Y6vx1IQ/edit"],
   ["async - rust - concurrency - main - idx", "https://docs.google.com/document/u/0/d/1V8gave_8PBAPOj3SgO91rktMc3u-3FLIExFu_0HNJsw/edit"],
@@ -106,6 +112,9 @@ summary = "A compiler turns an async function into a state machine whose states 
 chapter = 6
 uses = ["coroutine"]
 related = ["async_await", "pinning"]
+pages = [
+  ["Rust: `async fn` and `.await`", "https://masiarek.github.io/rust-learning-library/35_Async/async_fn_and_await/index.html"],
+]
 notes = [["async functions - state machines - rust", "https://docs.google.com/document/d/1mQYBLftNU6A4mo4hA5gsJVMOfvWY79dNFSagAlZETVU/edit?tab=t.0"]]
 [concept.languages]
 rust = "the compiler turns async code into an invisible state machine that a runtime drives ([Book](https://doc.rust-lang.org/book/ch17-01-futures-and-syntax.html))"
@@ -146,6 +155,7 @@ pages = [
   ["Go: One `cancel` reaches every goroutine", "https://masiarek.github.io/go-learning-library/05_Context/cancel_reaches_every_goroutine/index.html"],
   ["Go: Cancel with a cause", "https://masiarek.github.io/go-learning-library/05_Context/cancel_with_a_cause/index.html"],
   ["Go: The first error cancels the rest", "https://masiarek.github.io/go-learning-library/06_Patterns/first_error_cancels_the_rest/index.html"],
+  ["Rust: Cancellation", "https://masiarek.github.io/rust-learning-library/35_Async/building_minidb/cancellation/index.html"],
 ]
 [concept.languages]
 rust = "a future is cancelled by dropping it; tokio's [`select!`](https://docs.rs/tokio/latest/tokio/macro.select.html) cancels the branches that lose that way, which is why its docs discuss cancellation safety"
@@ -172,6 +182,7 @@ prevents = ["deadlock"]
 pages = [
   ["Go: A timeout is a channel", "https://masiarek.github.io/go-learning-library/03_Select/a_timeout_is_a_channel/index.html"],
   ["Go: A deadline is a cancel with a clock", "https://masiarek.github.io/go-learning-library/05_Context/a_deadline_is_a_cancel_with_a_clock/index.html"],
+  ["Rust: Cancellation", "https://masiarek.github.io/rust-learning-library/35_Async/building_minidb/cancellation/index.html"],
 ]
 [concept.languages]
 rust = "[`Receiver::recv_timeout`](https://doc.rust-lang.org/std/sync/mpsc/struct.Receiver.html#method.recv_timeout) on a channel; tokio's [`time::timeout`](https://docs.rs/tokio/latest/tokio/time/fn.timeout.html) requires a future to complete before a duration has elapsed"
@@ -238,6 +249,9 @@ summary = "An asynchronous iterator: a sequence whose items arrive over time, ea
 aliases = ["Stream", "async generator", "AsyncIterator", "Sink"]
 chapter = 6
 uses = ["future_and_promise"]
+pages = [
+  ["Rust: Streams, sinks, and pipelining", "https://masiarek.github.io/rust-learning-library/35_Async/building_minidb/streams_sinks_and_pipelining/index.html"],
+]
 notes = [["sink - rust - futures::sink::Sink", "https://docs.google.com/document/d/1CqiyECIqf2na7Xlkc3WqurQf5kQxHDm44qY8-n3g_9s/edit?tab=t.0"]]
 [concept.languages]
 rust = "no stable trait: std's [`AsyncIterator`](https://doc.rust-lang.org/std/async_iter/trait.AsyncIterator.html) is a nightly-only experimental API"
@@ -267,6 +281,10 @@ aliases = ["blocking in async code"]
 chapter = 6
 causes = ["starvation"]
 related = ["event_loop"]
+pages = [
+  ["Rust: Diagnosing a stuck runtime", "https://masiarek.github.io/rust-learning-library/35_Async/building_minidb/diagnosing_a_stuck_runtime/index.html"],
+  ["Rust: Common async pitfalls", "https://masiarek.github.io/rust-learning-library/35_Async/common_async_pitfalls/index.html"],
+]
 [concept.languages]
 rust = "tokio's [`spawn_blocking`](https://docs.rs/tokio/latest/tokio/task/fn.spawn_blocking.html) runs blocking work on a thread dedicated to it, because a future that does not yield keeps the executor from driving other futures"
 go = "there is no event loop to block, and since [Go 1.14](https://go.dev/doc/go1.14#runtime) goroutines are asynchronously preemptible, so even a loop without function calls cannot hold up the scheduler"

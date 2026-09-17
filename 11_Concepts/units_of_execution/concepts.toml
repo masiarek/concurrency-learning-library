@@ -177,6 +177,9 @@ aliases = ["task", "spawned future"]
 chapter = 6
 uses = ["future_and_promise"]
 related = ["async_runtime"]
+pages = [
+  ["Rust: Tasks", "https://masiarek.github.io/rust-learning-library/35_Async/building_minidb/tasks/index.html"],
+]
 [concept.languages]
 rust = "[`tokio::spawn`](https://docs.rs/tokio/latest/tokio/task/fn.spawn.html) hands a future to the Tokio runtime and returns a `JoinHandle`"
 python = "[`asyncio.create_task`](https://docs.python.org/3/library/asyncio-task.html#asyncio.create_task); keep a reference to the task, since the event loop holds only a weak one"

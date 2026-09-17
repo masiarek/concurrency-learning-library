@@ -39,6 +39,7 @@ flowchart LR
 ## Where to read more
 
 - **In a sibling library:** [Go: A buffered channel as a semaphore ↗](https://masiarek.github.io/go-learning-library/06_Patterns/a_buffered_channel_as_a_semaphore/index.html)
+- **In a sibling library:** [Rust: Backpressure ↗](https://masiarek.github.io/rust-learning-library/35_Async/building_minidb/backpressure/index.html)
 - **In the books:** [*Learn Concurrent Programming with Go*](../../../10_Resources/books_go/README.md#cutajar_learn_concurrent_programming_with_go), James Cutajar — ch. 5, 'Condition variables and semaphores'
 - **In the books:** [*Multi-Threaded Programming in C++*](../../../10_Resources/books_cpp/README.md#walmsley_multithreaded_programming_in_cpp), Mark Walmsley — ch. 5, 'Semaphores'
 - **In the books:** [*The Little Book of Semaphores*](../../../10_Resources/books_general/README.md#downey_little_book_of_semaphores), Allen B. Downey — ch. 2, 'Semaphores'

@@ -34,6 +34,8 @@ related = ["model_checking"]
 pages = [
   ["Go: `synctest` makes time virtual", "https://masiarek.github.io/go-learning-library/07_Testing_Concurrent_Code/synctest_makes_time_virtual/index.html"],
   ["Go: `synctest.Wait` instead of a sleep", "https://masiarek.github.io/go-learning-library/07_Testing_Concurrent_Code/synctest_wait/index.html"],
+  ["Rust: Testing async code", "https://masiarek.github.io/rust-learning-library/35_Async/building_minidb/testing_async_code/index.html"],
+  ["Rust: Testing against a hostile network", "https://masiarek.github.io/rust-learning-library/35_Async/building_minidb/testing_against_a_hostile_network/index.html"],
 ]
 [concept.languages]
 rust = "[loom](https://github.com/tokio-rs/loom) runs a test many times, permuting the possible concurrent executions of it"
