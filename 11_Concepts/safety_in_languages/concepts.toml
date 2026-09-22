@@ -130,3 +130,35 @@ reference = [["Wikipedia: Sequential consistency", "https://en.wikipedia.org/wik
 rust = "[`Ordering::SeqCst`](https://doc.rust-lang.org/std/sync/atomic/enum.Ordering.html#variant.SeqCst) additionally preserves a total order of such operations across all threads"
 c = "The generic [`atomic_compare_exchange`](https://en.cppreference.com/w/c/atomic/atomic_compare_exchange) functions use `memory_order_seq_cst` by default"
 cpp = "[`std::memory_order_seq_cst`](https://en.cppreference.com/w/cpp/atomic/memory_order): the default for all atomic operations, sequentially consistent ordering"
+
+[[concept]]
+slug = "object_lifetime"
+title = "Object lifetime"
+summary = "The span in which a value's storage is valid, and the question of who guarantees that every reference to it is dropped first — the compiler, the programmer, or a garbage collector."
+aliases = ["lifetime", "storage duration", "extent"]
+chapter = 1
+related = ["escape_analysis", "thread_confinement"]
+lessons = ["01_Threads/lending_a_local_to_a_thread"]
+reference = [["Wikipedia: Object lifetime", "https://en.wikipedia.org/wiki/Object_lifetime"]]
+[concept.languages]
+rust = "[Lifetimes](https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html) are part of a reference's type, and `'static` means the reference may outlive any caller"
+go = "Decided by the compiler: the [FAQ](https://go.dev/doc/faq#stack_or_heap) says a local whose address escapes is allocated on the heap, and the collector frees it"
+c = "[Lifetime](https://en.cppreference.com/w/c/language/lifetime): an automatic object's lifetime ends when its block does, and a pointer to it is then indeterminate"
+cpp = "[Lifetime](https://en.cppreference.com/w/cpp/language/lifetime), and [storage duration](https://en.cppreference.com/w/cpp/language/storage_duration) for where it comes from"
+java = "Decided by reachability: [JLS 12.6](https://docs.oracle.com/javase/specs/jls/se25/html/jls-12.html#jls-12.6) says an object is finalizable once it is no longer reachable"
+python = "[Reference counting and the cyclic collector](https://docs.python.org/3/library/gc.html); [`weakref`](https://docs.python.org/3/library/weakref.html) holds a reference that does not keep the object alive"
+
+[[concept]]
+slug = "escape_analysis"
+title = "Escape analysis"
+summary = "The compiler deciding whether a local's address can outlive its frame, and moving the local to the heap when it can — which is how a language with a garbage collector lets a thread capture a local safely."
+aliases = ["escapes to heap", "moved to heap"]
+chapter = 1
+prevents = ["dangling_pointer"]
+related = ["object_lifetime"]
+lessons = ["01_Threads/lending_a_local_to_a_thread"]
+reference = [["Wikipedia: Escape analysis", "https://en.wikipedia.org/wiki/Escape_analysis"]]
+[concept.languages]
+go = "[`go build -gcflags=-m`](https://pkg.go.dev/cmd/compile) reports each decision, including `moved to heap`; the [FAQ](https://go.dev/doc/faq#stack_or_heap) states the rule"
+java = "HotSpot may allocate a non-escaping object on the stack or split it into fields; [JEP 8221340](https://bugs.openjdk.org/browse/JDK-8221340) tracks the analysis"
+rust = "None is needed for safety: a reference that would outlive its referent is a compile error instead, so the placement is the programmer's choice"

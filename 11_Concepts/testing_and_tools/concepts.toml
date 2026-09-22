@@ -98,3 +98,17 @@ related = ["contention", "speedup_and_amdahls_law", "false_sharing"]
 go = "[`runtime/pprof`](https://pkg.go.dev/runtime/pprof) has `block` and `mutex` profiles beside the CPU profile"
 java = "[JDK Flight Recorder](https://docs.oracle.com/en/java/javase/25/docs/api/jdk.jfr/jdk/jfr/package-summary.html) records events such as lock contention from a running JVM"
 os = "[`perf`](https://man7.org/linux/man-pages/man1/perf.1.html) samples CPU time across every thread and the kernel"
+
+[[concept]]
+slug = "memory_error_detector"
+title = "Memory error detector"
+summary = "A tool that instruments allocations and stack frames so that reading or writing storage whose lifetime has ended is reported at run time — AddressSanitizer, Valgrind's Memcheck."
+aliases = ["AddressSanitizer", "ASan", "Valgrind", "Memcheck"]
+chapter = 9
+related = ["race_detector", "concurrency_debugging", "dangling_pointer"]
+lessons = ["01_Threads/lending_a_local_to_a_thread"]
+reference = [["AddressSanitizer", "https://clang.llvm.org/docs/AddressSanitizer.html"]]
+[concept.languages]
+c = "[`-fsanitize=address`](https://clang.llvm.org/docs/AddressSanitizer.html) in Clang and GCC alike; `ASAN_OPTIONS=detect_stack_use_after_return=1` adds the frames a function has already returned from"
+cpp = "The same flag, plus [`-fsanitize=undefined`](https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html) for the checks that are not about memory"
+rust = "[Miri](https://github.com/rust-lang/miri) interprets MIR and reports undefined behaviour in `unsafe` code, including dangling references"

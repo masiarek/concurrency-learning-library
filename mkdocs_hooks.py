@@ -73,6 +73,7 @@ NAV_ORDER: dict[str, list[str]] = {
         "README.md",
         "who_waits_when_main_returns",
         "getting_a_result_back",
+        "lending_a_local_to_a_thread",
     ],
     # The smallest shared state there is: a total that handlers add to. First
     # how an addition is lost, then the ways to keep it, then the same bug in a

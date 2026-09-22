@@ -20,7 +20,7 @@ flowchart LR
 ```
 
 - **Helps prevent:** [Data race](../../hazards/data_race/README.md)
-- **See also:** [Message passing](../../communication/message_passing/README.md), [Thread-local storage](../../units_of_execution/thread_local_storage/README.md), [UI thread](../../units_of_execution/ui_thread/README.md)
+- **See also:** [Message passing](../../communication/message_passing/README.md), [Object lifetime](../object_lifetime/README.md), [Thread-local storage](../../units_of_execution/thread_local_storage/README.md), [UI thread](../../units_of_execution/ui_thread/README.md)
 
 ## In each language
 

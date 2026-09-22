@@ -13,6 +13,8 @@ How languages and libraries promise that code is safe to share — thread safety
 - [Thread confinement](thread_confinement/README.md) — Keeping a piece of data reachable from one thread only — a GUI's main thread, a goroutine that owns its state — so that it needs no synchronization.
 - [Linearizability](linearizability/README.md) — A concurrent object is linearizable if every operation appears to take effect at a single instant between its start and its end, so it can be reasoned about as if it were sequential.
 - [Sequential consistency](sequential_consistency/README.md) — Operations appear to happen in some single order that respects each task's own order, though not necessarily real time — weaker than linearizability.
+- [Object lifetime](object_lifetime/README.md) — The span in which a value's storage is valid, and the question of who guarantees that every reference to it is dropped first — the compiler, the programmer, or a garbage collector.
+- [Escape analysis](escape_analysis/README.md) — The compiler deciding whether a local's address can outlive its frame, and moving the local to the heap when it can — which is how a language with a garbage collector lets a thread capture a local safely.
 
 ## Inside this category
 

@@ -21,7 +21,9 @@ flowchart LR
   n_shared_memory["Shared memory"]
   n_thread_confinement["Thread confinement"]
   n_thread_local_storage["Thread-local storage"]
+  n_undefined_behaviour["Undefined behaviour"]
   n_atomic_variable -->|prevents| n_data_race
+  n_data_race -->|can cause| n_undefined_behaviour
   n_data_race ---|vs| n_race_condition
   n_data_race -->|is a| n_safety_failure
   n_data_race_freedom -->|prevents| n_data_race
@@ -34,11 +36,12 @@ flowchart LR
   classDef center stroke-width:3px
   class n_data_race center
   classDef outside stroke-dasharray: 4 3
-  class n_atomic_variable,n_data_race_freedom,n_immutability,n_mutual_exclusion,n_race_condition,n_safety_failure,n_send_and_sync,n_shared_memory,n_thread_confinement,n_thread_local_storage outside
+  class n_atomic_variable,n_data_race_freedom,n_immutability,n_mutual_exclusion,n_race_condition,n_safety_failure,n_send_and_sync,n_shared_memory,n_thread_confinement,n_thread_local_storage,n_undefined_behaviour outside
 ```
 
 - **Is a kind of:** [Safety failure](../safety_failure/README.md)
 - **Is prevented by:** [Atomic variable](../../lock_free/atomic_variable/README.md), [Data-race freedom by construction](../../safety_in_languages/data_race_freedom/README.md), [Immutability](../../safety_in_languages/immutability/README.md), [Mutual exclusion](../../synchronization/mutual_exclusion/README.md), [Send and Sync](../../safety_in_languages/send_and_sync/README.md), [Thread confinement](../../safety_in_languages/thread_confinement/README.md), [Thread-local storage](../../units_of_execution/thread_local_storage/README.md)
+- **Can lead to:** [Undefined behaviour](../undefined_behaviour/README.md)
 - **Can be caused by:** [Shared memory](../../communication/shared_memory/README.md)
 - **Often confused with:** [Race condition](../race_condition/README.md)
 - **See also:** [Happens-before](../../lock_free/happens_before/README.md), [Race detector](../../testing_and_tools/race_detector/README.md), [Weak memory models and reordering](../weak_memory_model/README.md)

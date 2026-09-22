@@ -59,6 +59,8 @@ The things that run: processes, threads, and the lighter units — goroutines, v
         - [Goroutine](units_of_execution/goroutine/README.md) — Go's unit of concurrency: a function call started with the `go` statement and scheduled by the Go runtime onto a small pool of operating-system threads.
         - [Virtual thread](units_of_execution/virtual_thread/README.md) — Java's lightweight thread, final in JDK 21: a `Thread` that the JVM schedules onto a few carrier platform threads, cheap enough to start one per task.
     - [UI thread](units_of_execution/ui_thread/README.md) — The one thread a graphical toolkit allows to touch its widgets: long work goes to other threads or tasks, and its results are posted back to that thread.
+    - [Scoped thread](units_of_execution/scoped_thread/README.md) — A thread whose life is bounded by a block: the block cannot be left until the thread has been joined, which is what lets the thread borrow the block's own local variables.
+    - [Detached thread](units_of_execution/detached_thread/README.md) — A thread nobody will join: its result is unreachable, its end is unobserved, and whatever it borrowed must outlive it by some other argument.
 - [Coroutine](units_of_execution/coroutine/README.md) — A function that can suspend itself part-way through and be resumed later from the same point, keeping its local state in between.
     - [Fiber](units_of_execution/fiber/README.md) — A coroutine with its own stack that is switched to explicitly — the building block several green-thread runtimes are made of.
 - [Task (async)](units_of_execution/async_task/README.md) — A unit of async work handed to a runtime — a future being driven to completion — far cheaper than a thread because it holds no stack of its own while it waits.
@@ -92,6 +94,7 @@ What goes wrong: the failures that exist only because more than one thing runs a
         - [Time of check to time of use](hazards/toctou/README.md) — Checking a condition and then acting on it as two separate steps, so that the condition can change in between — the classic check-then-act race.
         - [ABA problem](hazards/aba_problem/README.md) — A compare-and-swap succeeds because a value changed from A to B and back to A, although what it stands for is no longer the same.
     - [Data race](hazards/data_race/README.md) — Two threads access the same memory at the same time, at least one of them writing, with nothing synchronizing them — undefined behaviour in C and C++, a compile error in safe Rust.
+    - [Dangling pointer](hazards/dangling_pointer/README.md) — A pointer or reference to storage whose lifetime has ended — the classic way for a thread to outlive the stack frame it was reading.
 - [Weak memory models and reordering](hazards/weak_memory_model/README.md) — CPUs and compilers may perform memory reads and writes in a different order from the source code, and without synchronization another thread can see that order.
 - [Liveness failure](hazards/liveness_failure/README.md) — A task that should make progress never does, though nothing has crashed: it waits for ever, spins for ever, or never gets its turn.
     - [Deadlock](hazards/deadlock/README.md) — Tasks each hold something another of them needs and wait for it, so none of them can ever continue.
@@ -102,6 +105,7 @@ What goes wrong: the failures that exist only because more than one thing runs a
 - [Heisenbug](hazards/heisenbug/README.md) — A bug that disappears or changes when you look for it — adding a print, attaching a debugger or changing the optimizer shifts the timing it depends on.
 - [Contention](hazards/contention/README.md) — Tasks competing for the same lock or resource, so their time goes to waiting instead of working — the reason adding threads can make a program slower.
 - [False sharing](hazards/false_sharing/README.md) — Threads writing unrelated variables that happen to sit on the same CPU cache line keep invalidating each other's cache, slowing down with no logical sharing at all.
+- [Undefined behaviour](hazards/undefined_behaviour/README.md) — A program the language standard stops describing: once it has one, no requirement is placed on what it does, so a right answer on this build is not evidence of anything.
 
 ## [Synchronization](synchronization/README.md)
 
@@ -219,6 +223,8 @@ How languages and libraries promise that code is safe to share — thread safety
 - [Thread confinement](safety_in_languages/thread_confinement/README.md) — Keeping a piece of data reachable from one thread only — a GUI's main thread, a goroutine that owns its state — so that it needs no synchronization.
 - [Linearizability](safety_in_languages/linearizability/README.md) — A concurrent object is linearizable if every operation appears to take effect at a single instant between its start and its end, so it can be reasoned about as if it were sequential.
 - [Sequential consistency](safety_in_languages/sequential_consistency/README.md) — Operations appear to happen in some single order that respects each task's own order, though not necessarily real time — weaker than linearizability.
+- [Object lifetime](safety_in_languages/object_lifetime/README.md) — The span in which a value's storage is valid, and the question of who guarantees that every reference to it is dropped first — the compiler, the programmer, or a garbage collector.
+- [Escape analysis](safety_in_languages/escape_analysis/README.md) — The compiler deciding whether a local's address can outlive its frame, and moving the local to the heap when it can — which is how a language with a garbage collector lets a thread capture a local safely.
 
 ## [Distributed systems](distributed/README.md)
 
@@ -254,5 +260,6 @@ Finding concurrency bugs on purpose: race detectors, deterministic schedulers, s
 - [Model checking](testing_and_tools/model_checking/README.md) — Exploring every state and interleaving of a model of a program — in TLA+, SPIN, or loom — to prove a property or produce a counterexample.
 - [Debugging concurrent programs](testing_and_tools/concurrency_debugging/README.md) — Thread dumps, deadlock detectors and tracing that show what every thread or task is waiting for at a given moment.
 - [Profiling concurrent programs](testing_and_tools/profiling_concurrency/README.md) — Measuring where the time goes when many threads run — waiting for locks, waiting to be scheduled, and bouncing cache lines — and not only which functions are hot.
+- [Memory error detector](testing_and_tools/memory_error_detector/README.md) — A tool that instruments allocations and stack frames so that reading or writing storage whose lifetime has ended is reported at run time — AddressSanitizer, Valgrind's Memcheck.
 
 <!-- /concepts:ontology -->

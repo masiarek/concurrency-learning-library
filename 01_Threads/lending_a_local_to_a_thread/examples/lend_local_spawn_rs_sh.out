@@ -1,0 +1,5 @@
+$ rustc --edition 2024 spawned.rs
+error[E0597]: `samples` does not live long enough
+    ...argument requires that `samples` is borrowed for `'static`
+rustc exit status 1
+no binary was built

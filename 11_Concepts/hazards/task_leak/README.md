@@ -11,20 +11,25 @@ Also called: goroutine leak, thread leak, memory leak, zombie thread.
 ```mermaid
 flowchart LR
   n_cancellation["Cancellation"]
+  n_detached_thread["Detached thread"]
   n_task_leak["Leaked tasks"]
   n_liveness_failure["Liveness failure"]
+  n_scoped_thread["Scoped thread"]
   n_structured_concurrency["Structured concurrency"]
   n_cancellation -->|prevents| n_task_leak
+  n_detached_thread -->|can cause| n_task_leak
+  n_scoped_thread -->|prevents| n_task_leak
   n_structured_concurrency -->|prevents| n_task_leak
   n_task_leak -->|is a| n_liveness_failure
   classDef center stroke-width:3px
   class n_task_leak center
   classDef outside stroke-dasharray: 4 3
-  class n_cancellation,n_liveness_failure,n_structured_concurrency outside
+  class n_cancellation,n_detached_thread,n_liveness_failure,n_scoped_thread,n_structured_concurrency outside
 ```
 
 - **Is a kind of:** [Liveness failure](../liveness_failure/README.md)
-- **Is prevented by:** [Cancellation](../../async/cancellation/README.md), [Structured concurrency](../../async/structured_concurrency/README.md)
+- **Is prevented by:** [Cancellation](../../async/cancellation/README.md), [Scoped thread](../../units_of_execution/scoped_thread/README.md), [Structured concurrency](../../async/structured_concurrency/README.md)
+- **Can be caused by:** [Detached thread](../../units_of_execution/detached_thread/README.md)
 
 ## In each language
 

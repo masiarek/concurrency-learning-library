@@ -12,6 +12,8 @@ The things that run: processes, threads, and the lighter units — goroutines, v
         - [Goroutine](goroutine/README.md) — Go's unit of concurrency: a function call started with the `go` statement and scheduled by the Go runtime onto a small pool of operating-system threads.
         - [Virtual thread](virtual_thread/README.md) — Java's lightweight thread, final in JDK 21: a `Thread` that the JVM schedules onto a few carrier platform threads, cheap enough to start one per task.
     - [UI thread](ui_thread/README.md) — The one thread a graphical toolkit allows to touch its widgets: long work goes to other threads or tasks, and its results are posted back to that thread.
+    - [Scoped thread](scoped_thread/README.md) — A thread whose life is bounded by a block: the block cannot be left until the thread has been joined, which is what lets the thread borrow the block's own local variables.
+    - [Detached thread](detached_thread/README.md) — A thread nobody will join: its result is unreachable, its end is unobserved, and whatever it borrowed must outlive it by some other argument.
 - [Coroutine](coroutine/README.md) — A function that can suspend itself part-way through and be resumed later from the same point, keeping its local state in between.
     - [Fiber](fiber/README.md) — A coroutine with its own stack that is switched to explicitly — the building block several green-thread runtimes are made of.
 - [Task (async)](async_task/README.md) — A unit of async work handed to a runtime — a future being driven to completion — far cheaper than a thread because it holds no stack of its own while it waits.
@@ -26,10 +28,12 @@ flowchart LR
   n_subprocess["Child process"]
   n_coroutine["Coroutine"]
   n_daemon_thread["Daemon and detached threads"]
+  n_detached_thread["Detached thread"]
   n_fiber["Fiber"]
   n_goroutine["Goroutine"]
   n_green_thread["Green threads and M:N scheduling"]
   n_process["Process"]
+  n_scoped_thread["Scoped thread"]
   n_async_task["Task (async)"]
   n_thread["Thread"]
   n_thread_pool["Thread pool and executor"]
@@ -37,10 +41,13 @@ flowchart LR
   n_virtual_thread["Virtual thread"]
   n_async_task ---|vs| n_thread
   n_daemon_thread -->|is a| n_thread
+  n_detached_thread ---|vs| n_scoped_thread
+  n_detached_thread -->|is a| n_thread
   n_fiber -->|is a| n_coroutine
   n_goroutine -->|is a| n_green_thread
   n_green_thread -->|is a| n_thread
   n_process ---|vs| n_thread
+  n_scoped_thread -->|is a| n_thread
   n_subprocess -->|is a| n_process
   n_thread_pool -->|uses| n_thread
   n_ui_thread -->|is a| n_thread

@@ -10,18 +10,20 @@ Also called: data inconsistency, lost update, torn read.
 
 ```mermaid
 flowchart LR
+  n_dangling_pointer["Dangling pointer"]
   n_data_race["Data race"]
   n_race_condition["Race condition"]
   n_safety_failure["Safety failure"]
+  n_dangling_pointer -->|is a| n_safety_failure
   n_data_race -->|is a| n_safety_failure
   n_race_condition -->|is a| n_safety_failure
   classDef center stroke-width:3px
   class n_safety_failure center
   classDef outside stroke-dasharray: 4 3
-  class n_data_race,n_race_condition outside
+  class n_dangling_pointer,n_data_race,n_race_condition outside
 ```
 
-- **Kinds:** [Data race](../data_race/README.md), [Race condition](../race_condition/README.md)
+- **Kinds:** [Dangling pointer](../dangling_pointer/README.md), [Data race](../data_race/README.md), [Race condition](../race_condition/README.md)
 - **See also:** [Safety and liveness](../safety_and_liveness/README.md)
 
 ## In each language

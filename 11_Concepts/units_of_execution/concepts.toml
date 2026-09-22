@@ -38,7 +38,7 @@ aliases = ["thread of execution", "OS thread", "platform thread", "multithreadin
 chapter = 1
 contrasts = ["async_task"]
 related = ["scheduler"]
-lessons = ["01_Threads/who_waits_when_main_returns", "01_Threads/getting_a_result_back"]
+lessons = ["01_Threads/who_waits_when_main_returns", "01_Threads/getting_a_result_back", "01_Threads/lending_a_local_to_a_thread"]
 notes = [
   ["threads - rust - main", "https://docs.google.com/document/d/1kxIk0nGkxOJ5lcybX_r2txaFTawZwYpOTyygywmHOlc/edit?tab=t.0"],
   ["Spawning threads - rust", "https://docs.google.com/document/u/0/d/1v208vCRPt1fkxIb2K49oL1p3pX5QJdpe87_Cvnper7M/edit"],
@@ -280,3 +280,39 @@ java = "Swing's event dispatch thread: [`SwingUtilities.invokeLater`](https://do
 csharp = "[`Control.Invoke`](https://learn.microsoft.com/en-us/dotnet/api/system.windows.forms.control.invoke) runs a delegate on the thread that owns a Windows Forms control"
 swift = "[`MainActor`](https://developer.apple.com/documentation/swift/mainactor), the global actor that performs its tasks on the main thread"
 javascript = "the [main thread](https://developer.mozilla.org/en-US/docs/Glossary/Main_thread), where the browser runs user code, handles events and renders; web workers run elsewhere"
+
+[[concept]]
+slug = "scoped_thread"
+title = "Scoped thread"
+summary = "A thread whose life is bounded by a block: the block cannot be left until the thread has been joined, which is what lets the thread borrow the block's own local variables."
+aliases = ["structured thread", "thread::scope"]
+chapter = 1
+is_a = ["thread"]
+contrasts = ["detached_thread"]
+prevents = ["dangling_pointer", "task_leak"]
+related = ["structured_concurrency", "join", "object_lifetime"]
+lessons = ["01_Threads/lending_a_local_to_a_thread"]
+reference = [["Wikipedia: Structured concurrency", "https://en.wikipedia.org/wiki/Structured_concurrency"]]
+[concept.languages]
+rust = "[`thread::scope`](https://doc.rust-lang.org/std/thread/fn.scope.html) joins every thread started inside it before returning, so a scoped thread may borrow the caller's locals and needs no `'static` bound"
+cpp = "[`std::jthread`](https://en.cppreference.com/w/cpp/thread/jthread) joins in its destructor, which bounds the thread by the enclosing block — but nothing checks what the thread captured"
+java = "[JEP 505: Structured Concurrency](https://openjdk.org/jeps/505) scopes a set of tasks to a block that does not exit until all of them have finished"
+python = "[`ThreadPoolExecutor`](https://docs.python.org/3/library/concurrent.futures.html#threadpoolexecutor) used as a context manager waits for its threads at the end of the `with` block"
+
+[[concept]]
+slug = "detached_thread"
+title = "Detached thread"
+summary = "A thread nobody will join: its result is unreachable, its end is unobserved, and whatever it borrowed must outlive it by some other argument."
+aliases = ["detach", "fire and forget"]
+chapter = 1
+is_a = ["thread"]
+causes = ["task_leak"]
+related = ["daemon_thread", "object_lifetime"]
+lessons = ["01_Threads/who_waits_when_main_returns", "01_Threads/lending_a_local_to_a_thread"]
+reference = [["POSIX: pthread_detach", "https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_detach.html"]]
+[concept.languages]
+rust = "Dropping a [`JoinHandle`](https://doc.rust-lang.org/std/thread/struct.JoinHandle.html) detaches its thread; the `'static` bound on [`thread::spawn`](https://doc.rust-lang.org/std/thread/fn.spawn.html) is what makes that safe"
+go = "Every goroutine is detached: a [go statement](https://go.dev/ref/spec#Go_statements) yields no handle, and a `sync.WaitGroup` or a channel is how a program waits"
+c = "[`pthread_detach`](https://pubs.opengroup.org/onlinepubs/9799919799/functions/pthread_detach.html) marks a thread unjoinable and lets its storage be reclaimed as it ends"
+cpp = "[`std::thread::detach`](https://en.cppreference.com/w/cpp/thread/thread/detach); a `std::thread` destroyed while still joinable calls [`std::terminate`](https://en.cppreference.com/w/cpp/error/terminate)"
+python = "[`Thread(daemon=True)`](https://docs.python.org/3/library/threading.html#threading.Thread.daemon) is not waited for at exit"

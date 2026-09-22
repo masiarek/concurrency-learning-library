@@ -253,3 +253,36 @@ reference = [["Wikipedia: False sharing", "https://en.wikipedia.org/wiki/False_s
 rust = "[`crossbeam_utils::CachePadded`](https://docs.rs/crossbeam-utils/latest/crossbeam_utils/struct.CachePadded.html) pads and aligns a value to the length of a cache line"
 go = "[`cpu.CacheLinePad`](https://pkg.go.dev/golang.org/x/sys/cpu#CacheLinePad) in `golang.org/x/sys` pads structs to avoid false sharing"
 cpp = "[`std::hardware_destructive_interference_size`](https://en.cppreference.com/w/cpp/thread/hardware_destructive_interference_size) (C++17): the minimum offset between two objects to avoid false sharing"
+
+[[concept]]
+slug = "dangling_pointer"
+title = "Dangling pointer"
+summary = "A pointer or reference to storage whose lifetime has ended — the classic way for a thread to outlive the stack frame it was reading."
+aliases = ["use after free", "use after return", "use after scope"]
+chapter = 1
+is_a = ["safety_failure"]
+causes = ["undefined_behaviour"]
+related = ["object_lifetime"]
+lessons = ["01_Threads/lending_a_local_to_a_thread"]
+reference = [["Wikipedia: Dangling pointer", "https://en.wikipedia.org/wiki/Dangling_pointer"]]
+[concept.languages]
+rust = "Rejected in safe code: the borrow checker requires a reference to be outlived by what it points at"
+c = "[Lifetime](https://en.cppreference.com/w/c/language/lifetime): using a pointer to an object whose lifetime has ended is undefined"
+cpp = "[Lifetime](https://en.cppreference.com/w/cpp/language/lifetime); a dangling [`std::string_view`](https://en.cppreference.com/w/cpp/string/basic_string_view) or captured reference is the common form"
+
+[[concept]]
+slug = "undefined_behaviour"
+title = "Undefined behaviour"
+summary = "A program the language standard stops describing: once it has one, no requirement is placed on what it does, so a right answer on this build is not evidence of anything."
+aliases = ["UB", "undefined behavior"]
+chapter = 2
+caused_by = ["data_race"]
+related = ["heisenbug", "weak_memory_model"]
+lessons = ["02_Shared_State/data_race_or_race_condition", "01_Threads/lending_a_local_to_a_thread"]
+reference = [["Wikipedia: Undefined behavior", "https://en.wikipedia.org/wiki/Undefined_behavior"]]
+[concept.languages]
+c = "[Undefined behaviour](https://en.cppreference.com/w/c/language/behavior): the standard imposes no requirements, and a data race or a dead-frame read is one"
+cpp = "[Undefined behaviour](https://en.cppreference.com/w/cpp/language/ub), with the same consequence"
+rust = "[Behavior considered undefined](https://doc.rust-lang.org/reference/behavior-considered-undefined.html) lists what `unsafe` code must not do; safe code cannot reach any of it"
+go = "There is none of this kind for a racing program: the [memory model](https://go.dev/ref/mem) defines what a racy read may observe rather than abandoning the program"
+java = "Also none: [JLS 17.4](https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html#jls-17.4) gives unsynchronized reads weak guarantees, not undefined ones"

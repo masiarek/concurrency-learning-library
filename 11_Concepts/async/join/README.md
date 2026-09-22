@@ -22,7 +22,7 @@ flowchart LR
 ```
 
 - **Is used by:** [Fork-join](../../parallelism/fork_join/README.md), [Structured concurrency](../structured_concurrency/README.md)
-- **See also:** [Daemon and detached threads](../../units_of_execution/daemon_thread/README.md), [Future and promise](../future_and_promise/README.md)
+- **See also:** [Daemon and detached threads](../../units_of_execution/daemon_thread/README.md), [Future and promise](../future_and_promise/README.md), [Scoped thread](../../units_of_execution/scoped_thread/README.md)
 
 ## In each language
 
@@ -45,6 +45,7 @@ flowchart LR
 
 - **In this library:** [Who waits when main returns?](../../../01_Threads/who_waits_when_main_returns/README.md)
 - **In this library:** [Getting a result back](../../../01_Threads/getting_a_result_back/README.md)
+- **In this library:** [Can a thread borrow a local variable?](../../../01_Threads/lending_a_local_to_a_thread/README.md)
 - **In a sibling library:** [Rust: Spawning a thread ↗](https://masiarek.github.io/rust-learning-library/09_Advanced/spawning_a_thread/index.html)
 - **In a sibling library:** [Go: A goroutine has no handle ↗](https://masiarek.github.io/go-learning-library/01_Goroutines/a_goroutine_has_no_handle/index.html)
 - **In a sibling library:** [Go: `main` does not wait ↗](https://masiarek.github.io/go-learning-library/01_Goroutines/main_does_not_wait/index.html)

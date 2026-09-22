@@ -9,7 +9,7 @@ Also called: ThreadSanitizer, TSan, go -race, Helgrind.
 ## How it connects
 
 
-- **See also:** [Data race](../../hazards/data_race/README.md), [Heisenbug](../../hazards/heisenbug/README.md)
+- **See also:** [Data race](../../hazards/data_race/README.md), [Heisenbug](../../hazards/heisenbug/README.md), [Memory error detector](../memory_error_detector/README.md)
 
 ## In each language
 

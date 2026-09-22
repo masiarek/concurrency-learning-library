@@ -11,25 +11,29 @@ Also called: thread of execution, OS thread, platform thread, multithreading.
 ```mermaid
 flowchart LR
   n_daemon_thread["Daemon and detached threads"]
+  n_detached_thread["Detached thread"]
   n_green_thread["Green threads and M:N scheduling"]
   n_process["Process"]
+  n_scoped_thread["Scoped thread"]
   n_async_task["Task (async)"]
   n_thread["Thread"]
   n_thread_pool["Thread pool and executor"]
   n_ui_thread["UI thread"]
   n_async_task ---|vs| n_thread
   n_daemon_thread -->|is a| n_thread
+  n_detached_thread -->|is a| n_thread
   n_green_thread -->|is a| n_thread
   n_process ---|vs| n_thread
+  n_scoped_thread -->|is a| n_thread
   n_thread_pool -->|uses| n_thread
   n_ui_thread -->|is a| n_thread
   classDef center stroke-width:3px
   class n_thread center
   classDef outside stroke-dasharray: 4 3
-  class n_daemon_thread,n_green_thread,n_process,n_async_task,n_thread_pool,n_ui_thread outside
+  class n_daemon_thread,n_detached_thread,n_green_thread,n_process,n_scoped_thread,n_async_task,n_thread_pool,n_ui_thread outside
 ```
 
-- **Kinds:** [Daemon and detached threads](../daemon_thread/README.md), [Green threads and M:N scheduling](../green_thread/README.md), [UI thread](../ui_thread/README.md)
+- **Kinds:** [Daemon and detached threads](../daemon_thread/README.md), [Detached thread](../detached_thread/README.md), [Green threads and M:N scheduling](../green_thread/README.md), [Scoped thread](../scoped_thread/README.md), [UI thread](../ui_thread/README.md)
 - **Is used by:** [Thread pool and executor](../thread_pool/README.md)
 - **Often confused with:** [Process](../process/README.md), [Task (async)](../async_task/README.md)
 - **See also:** [Concurrency primitives](../../foundations/concurrency_primitives/README.md), [Scheduler](../../scheduling/scheduler/README.md)
@@ -55,6 +59,7 @@ flowchart LR
 
 - **In this library:** [Who waits when main returns?](../../../01_Threads/who_waits_when_main_returns/README.md)
 - **In this library:** [Getting a result back](../../../01_Threads/getting_a_result_back/README.md)
+- **In this library:** [Can a thread borrow a local variable?](../../../01_Threads/lending_a_local_to_a_thread/README.md)
 - **In a sibling library:** [Rust: Spawning a thread ↗](https://masiarek.github.io/rust-learning-library/09_Advanced/spawning_a_thread/index.html)
 - **In a sibling library:** [Go: Goroutines are cheap ↗](https://masiarek.github.io/go-learning-library/01_Goroutines/goroutines_are_cheap/index.html)
 - **In the books:** [*Learn Concurrent Programming with Go*](../../../10_Resources/books_go/README.md#cutajar_learn_concurrent_programming_with_go), James Cutajar — ch. 2, 'Dealing with threads'

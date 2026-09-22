@@ -25,7 +25,7 @@ flowchart LR
 
 - **Is prevented by:** [Deterministic scheduling for tests](../../testing_and_tools/deterministic_testing/README.md)
 - **Can be caused by:** [Nondeterminism](../../foundations/nondeterminism/README.md), [Race condition](../race_condition/README.md)
-- **See also:** [Deterministic scheduling for tests](../../testing_and_tools/deterministic_testing/README.md), [Race detector](../../testing_and_tools/race_detector/README.md)
+- **See also:** [Deterministic scheduling for tests](../../testing_and_tools/deterministic_testing/README.md), [Race detector](../../testing_and_tools/race_detector/README.md), [Undefined behaviour](../undefined_behaviour/README.md)
 
 ## In each language
 

@@ -1,0 +1,8 @@
+$ go build -gcflags=-m -o lend lend.go
+moved to heap: a
+moved to heap: b
+moved to heap: samples
+moved to heap: wg
+$ ./lend
+left half 9 + right half 22
+the total is 31

@@ -10,5 +10,6 @@ Finding concurrency bugs on purpose: race detectors, deterministic schedulers, s
 - [Model checking](model_checking/README.md) — Exploring every state and interleaving of a model of a program — in TLA+, SPIN, or loom — to prove a property or produce a counterexample.
 - [Debugging concurrent programs](concurrency_debugging/README.md) — Thread dumps, deadlock detectors and tracing that show what every thread or task is waiting for at a given moment.
 - [Profiling concurrent programs](profiling_concurrency/README.md) — Measuring where the time goes when many threads run — waiting for locks, waiting to be scheduled, and bouncing cache lines — and not only which functions are hot.
+- [Memory error detector](memory_error_detector/README.md) — A tool that instruments allocations and stack frames so that reading or writing storage whose lifetime has ended is reported at run time — AddressSanitizer, Valgrind's Memcheck.
 
 <!-- Generated above this line by tools/build_concepts.py from TOML data — edit the data, not the page. Hand-written notes go below it and are kept. -->

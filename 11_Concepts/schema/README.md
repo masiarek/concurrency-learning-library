@@ -58,7 +58,7 @@ flowchart LR
   c_parallelism -->|1| c_synchronization
   c_parallelism -->|4| c_units_of_execution
   c_real_time -->|2| c_scheduling
-  c_safety_in_languages -->|4| c_hazards
+  c_safety_in_languages -->|5| c_hazards
   c_safety_in_languages -->|1| c_lock_free
   c_safety_in_languages -->|2| c_synchronization
   c_scheduling -->|1| c_async
@@ -69,7 +69,7 @@ flowchart LR
   c_synchronization -->|1| c_scheduling
   c_testing_and_tools -->|1| c_hazards
   c_units_of_execution -->|1| c_async
-  c_units_of_execution -->|1| c_hazards
+  c_units_of_execution -->|4| c_hazards
 ```
 
 ## Foundations
@@ -119,12 +119,15 @@ flowchart LR
   n_context_switch["Context switch"]
   n_coroutine["Coroutine"]
   n_daemon_thread["Daemon and detached threads"]
+  n_dangling_pointer["Dangling pointer"]
   n_data_race["Data race"]
+  n_detached_thread["Detached thread"]
   n_fiber["Fiber"]
   n_future_and_promise["Future and promise"]
   n_goroutine["Goroutine"]
   n_green_thread["Green threads and M:N scheduling"]
   n_ipc["Inter-process communication"]
+  n_task_leak["Leaked tasks"]
   n_mpi["MPI"]
   n_multiprocessing["Multiprocessing"]
   n_multitasking["Multitasking"]
@@ -132,6 +135,7 @@ flowchart LR
   n_parallel_iterators["Parallel iterators and streams"]
   n_process["Process"]
   n_scheduler["Scheduler"]
+  n_scoped_thread["Scoped thread"]
   n_async_task["Task (async)"]
   n_thread["Thread"]
   n_thread_pool["Thread pool and executor"]
@@ -142,6 +146,9 @@ flowchart LR
   n_async_task ---|vs| n_thread
   n_async_task -->|uses| n_future_and_promise
   n_daemon_thread -->|is a| n_thread
+  n_detached_thread -->|can cause| n_task_leak
+  n_detached_thread ---|vs| n_scoped_thread
+  n_detached_thread -->|is a| n_thread
   n_fiber -->|is a| n_coroutine
   n_goroutine -->|is a| n_green_thread
   n_green_thread -->|is a| n_thread
@@ -153,13 +160,16 @@ flowchart LR
   n_parallel_iterators -->|uses| n_thread_pool
   n_process ---|vs| n_thread
   n_scheduler -->|uses| n_context_switch
+  n_scoped_thread -->|is a| n_thread
+  n_scoped_thread -->|prevents| n_dangling_pointer
+  n_scoped_thread -->|prevents| n_task_leak
   n_subprocess -->|is a| n_process
   n_thread_local_storage -->|prevents| n_data_race
   n_thread_pool -->|uses| n_thread
   n_ui_thread -->|is a| n_thread
   n_virtual_thread -->|is a| n_green_thread
   classDef outside stroke-dasharray: 4 3
-  class n_async_state_machine,n_data_race,n_future_and_promise,n_ipc,n_mpi,n_multiprocessing,n_multitasking,n_openmp,n_parallel_iterators,n_scheduler outside
+  class n_async_state_machine,n_dangling_pointer,n_data_race,n_future_and_promise,n_ipc,n_task_leak,n_mpi,n_multiprocessing,n_multitasking,n_openmp,n_parallel_iterators,n_scheduler outside
 ```
 
 ## Scheduling
@@ -226,10 +236,13 @@ flowchart LR
   n_cancellation["Cancellation"]
   n_compare_and_swap["Compare-and-swap"]
   n_contention["Contention"]
+  n_dangling_pointer["Dangling pointer"]
   n_data_race["Data race"]
   n_data_race_freedom["Data-race freedom by construction"]
   n_deadlock["Deadlock"]
+  n_detached_thread["Detached thread"]
   n_deterministic_testing["Deterministic scheduling for tests"]
+  n_escape_analysis["Escape analysis"]
   n_hazard_pointers["Hazard pointers"]
   n_heisenbug["Heisenbug"]
   n_immutability["Immutability"]
@@ -248,6 +261,7 @@ flowchart LR
   n_read_write_lock["Read-write lock"]
   n_safety_failure["Safety failure"]
   n_scoped_lock["Scoped locking"]
+  n_scoped_thread["Scoped thread"]
   n_send_and_sync["Send and Sync"]
   n_shared_memory["Shared memory"]
   n_starvation["Starvation"]
@@ -257,19 +271,25 @@ flowchart LR
   n_toctou["Time of check to time of use"]
   n_timeout["Timeout"]
   n_transactional_memory["Transactional memory"]
+  n_undefined_behaviour["Undefined behaviour"]
   n_aba_problem -->|is a| n_race_condition
   n_atomic_variable -->|prevents| n_data_race
   n_blocking_the_event_loop -->|can cause| n_starvation
   n_cancellation -->|prevents| n_task_leak
   n_compare_and_swap -->|can cause| n_aba_problem
   n_compare_and_swap -->|prevents| n_toctou
+  n_dangling_pointer -->|can cause| n_undefined_behaviour
+  n_dangling_pointer -->|is a| n_safety_failure
+  n_data_race -->|can cause| n_undefined_behaviour
   n_data_race ---|vs| n_race_condition
   n_data_race -->|is a| n_safety_failure
   n_data_race_freedom -->|prevents| n_data_race
   n_deadlock ---|vs| n_livelock
   n_deadlock ---|vs| n_starvation
   n_deadlock -->|is a| n_liveness_failure
+  n_detached_thread -->|can cause| n_task_leak
   n_deterministic_testing -->|prevents| n_heisenbug
+  n_escape_analysis -->|prevents| n_dangling_pointer
   n_hazard_pointers -->|prevents| n_aba_problem
   n_immutability -->|prevents| n_data_race
   n_interleaving -->|can cause| n_race_condition
@@ -289,6 +309,8 @@ flowchart LR
   n_race_condition -->|is a| n_safety_failure
   n_read_write_lock -->|can cause| n_starvation
   n_scoped_lock -->|prevents| n_liveness_failure
+  n_scoped_thread -->|prevents| n_dangling_pointer
+  n_scoped_thread -->|prevents| n_task_leak
   n_send_and_sync -->|prevents| n_data_race
   n_shared_memory -->|can cause| n_data_race
   n_starvation -->|is a| n_liveness_failure
@@ -300,7 +322,7 @@ flowchart LR
   n_toctou -->|is a| n_race_condition
   n_transactional_memory -->|prevents| n_deadlock
   classDef outside stroke-dasharray: 4 3
-  class n_atomic_variable,n_blocking_the_event_loop,n_cancellation,n_compare_and_swap,n_data_race_freedom,n_deterministic_testing,n_hazard_pointers,n_immutability,n_interleaving,n_lock_ordering,n_lock_free,n_mutex,n_mutual_exclusion,n_nondeterminism,n_oversubscription,n_read_write_lock,n_scoped_lock,n_send_and_sync,n_shared_memory,n_structured_concurrency,n_thread_confinement,n_thread_local_storage,n_timeout,n_transactional_memory outside
+  class n_atomic_variable,n_blocking_the_event_loop,n_cancellation,n_compare_and_swap,n_data_race_freedom,n_detached_thread,n_deterministic_testing,n_escape_analysis,n_hazard_pointers,n_immutability,n_interleaving,n_lock_ordering,n_lock_free,n_mutex,n_mutual_exclusion,n_nondeterminism,n_oversubscription,n_read_write_lock,n_scoped_lock,n_scoped_thread,n_send_and_sync,n_shared_memory,n_structured_concurrency,n_thread_confinement,n_thread_local_storage,n_timeout,n_transactional_memory outside
 ```
 
 ## Synchronization
@@ -590,8 +612,10 @@ Dashed boxes belong to other categories.
 ```mermaid
 flowchart LR
   n_atomic_variable["Atomic variable"]
+  n_dangling_pointer["Dangling pointer"]
   n_data_race["Data race"]
   n_data_race_freedom["Data-race freedom by construction"]
+  n_escape_analysis["Escape analysis"]
   n_immutability["Immutability"]
   n_interior_mutability["Interior mutability"]
   n_linearizability["Linearizability"]
@@ -603,6 +627,7 @@ flowchart LR
   n_thread_confinement["Thread confinement"]
   n_data_race_freedom -->|prevents| n_data_race
   n_data_race_freedom -->|uses| n_send_and_sync
+  n_escape_analysis -->|prevents| n_dangling_pointer
   n_immutability -->|prevents| n_data_race
   n_interior_mutability -->|uses| n_atomic_variable
   n_interior_mutability -->|uses| n_mutex
@@ -611,7 +636,7 @@ flowchart LR
   n_send_and_sync -->|prevents| n_data_race
   n_thread_confinement -->|prevents| n_data_race
   classDef outside stroke-dasharray: 4 3
-  class n_atomic_variable,n_data_race,n_mutex,n_reentrant_lock outside
+  class n_atomic_variable,n_dangling_pointer,n_data_race,n_mutex,n_reentrant_lock outside
 ```
 
 ## Distributed systems
@@ -747,6 +772,7 @@ flowchart LR
 | [Concurrency](../foundations/concurrency/README.md) | see also | [Interleaving](../foundations/interleaving/README.md) |
 | [Concurrency](../foundations/concurrency/README.md) | see also | [Multitasking](../foundations/multitasking/README.md) |
 | [Debugging concurrent programs](../testing_and_tools/concurrency_debugging/README.md) | see also | [Deadlock](../hazards/deadlock/README.md) |
+| [Debugging concurrent programs](../testing_and_tools/concurrency_debugging/README.md) | see also | [Memory error detector](../testing_and_tools/memory_error_detector/README.md) |
 | [Concurrency models](../foundations/concurrency_models/README.md) | see also | [Communicating sequential processes](../communication/csp/README.md) |
 | [Concurrency models](../foundations/concurrency_models/README.md) | see also | [Data parallelism](../parallelism/data_parallelism/README.md) |
 | [Concurrency models](../foundations/concurrency_models/README.md) | see also | [Event loop](../scheduling/event_loop/README.md) |
@@ -786,12 +812,18 @@ flowchart LR
 | [Communicating sequential processes](../communication/csp/README.md) | see also | [Goroutine](../units_of_execution/goroutine/README.md) |
 | [Communicating sequential processes](../communication/csp/README.md) | is built on | [Unbuffered channel](../communication/unbuffered_channel/README.md) |
 | [Daemon and detached threads](../units_of_execution/daemon_thread/README.md) | is a kind of | [Thread](../units_of_execution/thread/README.md) |
+| [Daemon and detached threads](../units_of_execution/daemon_thread/README.md) | see also | [Detached thread](../units_of_execution/detached_thread/README.md) |
 | [Daemon and detached threads](../units_of_execution/daemon_thread/README.md) | see also | [Goroutine](../units_of_execution/goroutine/README.md) |
 | [Daemon and detached threads](../units_of_execution/daemon_thread/README.md) | see also | [Join](../async/join/README.md) |
 | [Daemon and detached threads](../units_of_execution/daemon_thread/README.md) | see also | [Virtual thread](../units_of_execution/virtual_thread/README.md) |
+| [Dangling pointer](../hazards/dangling_pointer/README.md) | can lead to | [Undefined behaviour](../hazards/undefined_behaviour/README.md) |
+| [Dangling pointer](../hazards/dangling_pointer/README.md) | is a kind of | [Safety failure](../hazards/safety_failure/README.md) |
+| [Dangling pointer](../hazards/dangling_pointer/README.md) | see also | [Memory error detector](../testing_and_tools/memory_error_detector/README.md) |
+| [Dangling pointer](../hazards/dangling_pointer/README.md) | see also | [Object lifetime](../safety_in_languages/object_lifetime/README.md) |
 | [Data parallelism](../parallelism/data_parallelism/README.md) | often confused with | [Task parallelism](../parallelism/task_parallelism/README.md) |
 | [Data parallelism](../parallelism/data_parallelism/README.md) | is a kind of | [Parallelism](../foundations/parallelism/README.md) |
 | [Data parallelism](../parallelism/data_parallelism/README.md) | see also | [Parallel algorithms](../parallelism/parallel_algorithms/README.md) |
+| [Data race](../hazards/data_race/README.md) | can lead to | [Undefined behaviour](../hazards/undefined_behaviour/README.md) |
 | [Data race](../hazards/data_race/README.md) | often confused with | [Race condition](../hazards/race_condition/README.md) |
 | [Data race](../hazards/data_race/README.md) | is a kind of | [Safety failure](../hazards/safety_failure/README.md) |
 | [Data race](../hazards/data_race/README.md) | see also | [Happens-before](../lock_free/happens_before/README.md) |
@@ -804,6 +836,10 @@ flowchart LR
 | [Deadlock](../hazards/deadlock/README.md) | often confused with | [Livelock](../hazards/livelock/README.md) |
 | [Deadlock](../hazards/deadlock/README.md) | often confused with | [Starvation](../hazards/starvation/README.md) |
 | [Deadlock](../hazards/deadlock/README.md) | is a kind of | [Liveness failure](../hazards/liveness_failure/README.md) |
+| [Detached thread](../units_of_execution/detached_thread/README.md) | can lead to | [Leaked tasks](../hazards/task_leak/README.md) |
+| [Detached thread](../units_of_execution/detached_thread/README.md) | often confused with | [Scoped thread](../units_of_execution/scoped_thread/README.md) |
+| [Detached thread](../units_of_execution/detached_thread/README.md) | is a kind of | [Thread](../units_of_execution/thread/README.md) |
+| [Detached thread](../units_of_execution/detached_thread/README.md) | see also | [Object lifetime](../safety_in_languages/object_lifetime/README.md) |
 | [Deterministic scheduling for tests](../testing_and_tools/deterministic_testing/README.md) | helps prevent | [Heisenbug](../hazards/heisenbug/README.md) |
 | [Deterministic scheduling for tests](../testing_and_tools/deterministic_testing/README.md) | see also | [Heisenbug](../hazards/heisenbug/README.md) |
 | [Deterministic scheduling for tests](../testing_and_tools/deterministic_testing/README.md) | see also | [Model checking](../testing_and_tools/model_checking/README.md) |
@@ -814,6 +850,8 @@ flowchart LR
 | [Earliest deadline first](../real_time/earliest_deadline_first/README.md) | often confused with | [Rate-monotonic scheduling](../real_time/rate_monotonic_scheduling/README.md) |
 | [Earliest deadline first](../real_time/earliest_deadline_first/README.md) | is a kind of | [Preemptive scheduling](../scheduling/preemptive_scheduling/README.md) |
 | [Earliest deadline first](../real_time/earliest_deadline_first/README.md) | is built on | [Worst-case execution time](../real_time/wcet/README.md) |
+| [Escape analysis](../safety_in_languages/escape_analysis/README.md) | helps prevent | [Dangling pointer](../hazards/dangling_pointer/README.md) |
+| [Escape analysis](../safety_in_languages/escape_analysis/README.md) | see also | [Object lifetime](../safety_in_languages/object_lifetime/README.md) |
 | [Event-driven programming](../async/event_driven_programming/README.md) | often confused with | [Reactive programming](../async/reactive_programming/README.md) |
 | [Event-driven programming](../async/event_driven_programming/README.md) | is built on | [Callback](../async/callback/README.md) |
 | [Event-driven programming](../async/event_driven_programming/README.md) | is built on | [Event loop](../scheduling/event_loop/README.md) |
@@ -849,6 +887,7 @@ flowchart LR
 | [Hazard pointers](../lock_free/hazard_pointers/README.md) | see also | [Lock-free](../lock_free/lock_free/README.md) |
 | [Hazard pointers](../lock_free/hazard_pointers/README.md) | see also | [Read-copy-update](../lock_free/rcu/README.md) |
 | [Heisenbug](../hazards/heisenbug/README.md) | see also | [Race detector](../testing_and_tools/race_detector/README.md) |
+| [Heisenbug](../hazards/heisenbug/README.md) | see also | [Undefined behaviour](../hazards/undefined_behaviour/README.md) |
 | [Idempotency](../distributed/idempotency/README.md) | see also | [Partial failure](../distributed/partial_failure/README.md) |
 | [Immutability](../safety_in_languages/immutability/README.md) | helps prevent | [Data race](../hazards/data_race/README.md) |
 | [Interior mutability](../safety_in_languages/interior_mutability/README.md) | is built on | [Atomic variable](../lock_free/atomic_variable/README.md) |
@@ -861,6 +900,7 @@ flowchart LR
 | [Inter-process communication](../communication/ipc/README.md) | see also | [Process](../units_of_execution/process/README.md) |
 | [Inter-process communication](../communication/ipc/README.md) | see also | [Child process](../units_of_execution/subprocess/README.md) |
 | [Inter-process communication](../communication/ipc/README.md) | is built on | [Process](../units_of_execution/process/README.md) |
+| [Join](../async/join/README.md) | see also | [Scoped thread](../units_of_execution/scoped_thread/README.md) |
 | [Latch](../synchronization/latch/README.md) | is a kind of | [Synchronization](../synchronization/synchronization/README.md) |
 | [Latch](../synchronization/latch/README.md) | see also | [Semaphore](../synchronization/semaphore/README.md) |
 | [Linearizability](../safety_in_languages/linearizability/README.md) | often confused with | [Sequential consistency](../safety_in_languages/sequential_consistency/README.md) |
@@ -873,6 +913,7 @@ flowchart LR
 | [Lock poisoning](../synchronization/lock_poisoning/README.md) | see also | [Mutex](../synchronization/mutex/README.md) |
 | [Lock poisoning](../synchronization/lock_poisoning/README.md) | see also | [Scoped locking](../synchronization/scoped_lock/README.md) |
 | [Map-reduce](../parallelism/map_reduce/README.md) | is a kind of | [Data parallelism](../parallelism/data_parallelism/README.md) |
+| [Memory error detector](../testing_and_tools/memory_error_detector/README.md) | see also | [Race detector](../testing_and_tools/race_detector/README.md) |
 | [Message passing](../communication/message_passing/README.md) | an alternative to | [Shared memory](../communication/shared_memory/README.md) |
 | [Message passing](../communication/message_passing/README.md) | see also | [Thread confinement](../safety_in_languages/thread_confinement/README.md) |
 | [Monitor](../synchronization/monitor/README.md) | is a kind of | [Synchronization](../synchronization/synchronization/README.md) |
@@ -900,6 +941,8 @@ flowchart LR
 | [Multi-version concurrency control](../distributed/mvcc/README.md) | see also | [Transactional memory](../lock_free/transactional_memory/README.md) |
 | [Nondeterminism](../foundations/nondeterminism/README.md) | can lead to | [Heisenbug](../hazards/heisenbug/README.md) |
 | [Nondeterminism](../foundations/nondeterminism/README.md) | see also | [Stress testing](../testing_and_tools/stress_testing/README.md) |
+| [Object lifetime](../safety_in_languages/object_lifetime/README.md) | see also | [Scoped thread](../units_of_execution/scoped_thread/README.md) |
+| [Object lifetime](../safety_in_languages/object_lifetime/README.md) | see also | [Thread confinement](../safety_in_languages/thread_confinement/README.md) |
 | [Run-once initialization](../synchronization/once_initialization/README.md) | is a kind of | [Synchronization](../synchronization/synchronization/README.md) |
 | [OpenMP](../parallelism/openmp/README.md) | is built on | [Thread pool and executor](../units_of_execution/thread_pool/README.md) |
 | [OTP behaviours](../communication/otp_behaviours/README.md) | is built on | [Actor model](../communication/actor_model/README.md) |
@@ -944,6 +987,10 @@ flowchart LR
 | [Scheduler](../scheduling/scheduler/README.md) | is built on | [Scheduling policy](../scheduling/scheduling_policy/README.md) |
 | [Scoped locking](../synchronization/scoped_lock/README.md) | helps prevent | [Liveness failure](../hazards/liveness_failure/README.md) |
 | [Scoped locking](../synchronization/scoped_lock/README.md) | is built on | [Mutex](../synchronization/mutex/README.md) |
+| [Scoped thread](../units_of_execution/scoped_thread/README.md) | is a kind of | [Thread](../units_of_execution/thread/README.md) |
+| [Scoped thread](../units_of_execution/scoped_thread/README.md) | helps prevent | [Dangling pointer](../hazards/dangling_pointer/README.md) |
+| [Scoped thread](../units_of_execution/scoped_thread/README.md) | helps prevent | [Leaked tasks](../hazards/task_leak/README.md) |
+| [Scoped thread](../units_of_execution/scoped_thread/README.md) | see also | [Structured concurrency](../async/structured_concurrency/README.md) |
 | [Select](../communication/select/README.md) | see also | [Timeout](../async/timeout/README.md) |
 | [Select](../communication/select/README.md) | is built on | [Channel](../communication/channel/README.md) |
 | [Semaphore](../synchronization/semaphore/README.md) | is a kind of | [Synchronization](../synchronization/synchronization/README.md) |
@@ -979,6 +1026,7 @@ flowchart LR
 | [Transactional memory](../lock_free/transactional_memory/README.md) | helps prevent | [Deadlock](../hazards/deadlock/README.md) |
 | [UI thread](../units_of_execution/ui_thread/README.md) | is a kind of | [Thread](../units_of_execution/thread/README.md) |
 | [Unbuffered channel](../communication/unbuffered_channel/README.md) | is a kind of | [Channel](../communication/channel/README.md) |
+| [Undefined behaviour](../hazards/undefined_behaviour/README.md) | see also | [Weak memory models and reordering](../hazards/weak_memory_model/README.md) |
 | [Virtual thread](../units_of_execution/virtual_thread/README.md) | is a kind of | [Green threads and M:N scheduling](../units_of_execution/green_thread/README.md) |
 | [Wait-free](../lock_free/wait_free/README.md) | is a kind of | [Lock-free](../lock_free/lock_free/README.md) |
 | [Work stealing](../scheduling/work_stealing/README.md) | is a kind of | [Scheduling policy](../scheduling/scheduling_policy/README.md) |

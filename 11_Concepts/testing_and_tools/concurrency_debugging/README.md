@@ -9,7 +9,7 @@ Also called: thread dump, deadlock detection, goroutine dump, stack dump.
 ## How it connects
 
 
-- **See also:** [Deadlock](../../hazards/deadlock/README.md)
+- **See also:** [Deadlock](../../hazards/deadlock/README.md), [Memory error detector](../memory_error_detector/README.md)
 
 ## In each language
 

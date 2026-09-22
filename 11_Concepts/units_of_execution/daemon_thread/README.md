@@ -20,7 +20,7 @@ flowchart LR
 ```
 
 - **Is a kind of:** [Thread](../thread/README.md)
-- **See also:** [Goroutine](../goroutine/README.md), [Join](../../async/join/README.md), [Virtual thread](../virtual_thread/README.md)
+- **See also:** [Detached thread](../detached_thread/README.md), [Goroutine](../goroutine/README.md), [Join](../../async/join/README.md), [Virtual thread](../virtual_thread/README.md)
 
 ## In each language
 

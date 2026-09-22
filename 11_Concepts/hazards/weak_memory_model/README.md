@@ -9,7 +9,7 @@ Also called: weak ordering, compiler reordering, store buffering.
 ## How it connects
 
 
-- **See also:** [Data race](../data_race/README.md), [Happens-before](../../lock_free/happens_before/README.md)
+- **See also:** [Data race](../data_race/README.md), [Happens-before](../../lock_free/happens_before/README.md), [Undefined behaviour](../undefined_behaviour/README.md)
 
 ## In each language
 

@@ -10,6 +10,7 @@ What goes wrong: the failures that exist only because more than one thing runs a
         - [Time of check to time of use](toctou/README.md) — Checking a condition and then acting on it as two separate steps, so that the condition can change in between — the classic check-then-act race.
         - [ABA problem](aba_problem/README.md) — A compare-and-swap succeeds because a value changed from A to B and back to A, although what it stands for is no longer the same.
     - [Data race](data_race/README.md) — Two threads access the same memory at the same time, at least one of them writing, with nothing synchronizing them — undefined behaviour in C and C++, a compile error in safe Rust.
+    - [Dangling pointer](dangling_pointer/README.md) — A pointer or reference to storage whose lifetime has ended — the classic way for a thread to outlive the stack frame it was reading.
 - [Weak memory models and reordering](weak_memory_model/README.md) — CPUs and compilers may perform memory reads and writes in a different order from the source code, and without synchronization another thread can see that order.
 - [Liveness failure](liveness_failure/README.md) — A task that should make progress never does, though nothing has crashed: it waits for ever, spins for ever, or never gets its turn.
     - [Deadlock](deadlock/README.md) — Tasks each hold something another of them needs and wait for it, so none of them can ever continue.
@@ -20,12 +21,14 @@ What goes wrong: the failures that exist only because more than one thing runs a
 - [Heisenbug](heisenbug/README.md) — A bug that disappears or changes when you look for it — adding a print, attaching a debugger or changing the optimizer shifts the timing it depends on.
 - [Contention](contention/README.md) — Tasks competing for the same lock or resource, so their time goes to waiting instead of working — the reason adding threads can make a program slower.
 - [False sharing](false_sharing/README.md) — Threads writing unrelated variables that happen to sit on the same CPU cache line keep invalidating each other's cache, slowing down with no logical sharing at all.
+- [Undefined behaviour](undefined_behaviour/README.md) — A program the language standard stops describing: once it has one, no requirement is placed on what it does, so a right answer on this build is not evidence of anything.
 
 ## Inside this category
 
 ```mermaid
 flowchart LR
   n_aba_problem["ABA problem"]
+  n_dangling_pointer["Dangling pointer"]
   n_data_race["Data race"]
   n_deadlock["Deadlock"]
   n_heisenbug["Heisenbug"]
@@ -37,7 +40,11 @@ flowchart LR
   n_safety_failure["Safety failure"]
   n_starvation["Starvation"]
   n_toctou["Time of check to time of use"]
+  n_undefined_behaviour["Undefined behaviour"]
   n_aba_problem -->|is a| n_race_condition
+  n_dangling_pointer -->|can cause| n_undefined_behaviour
+  n_dangling_pointer -->|is a| n_safety_failure
+  n_data_race -->|can cause| n_undefined_behaviour
   n_data_race ---|vs| n_race_condition
   n_data_race -->|is a| n_safety_failure
   n_deadlock ---|vs| n_livelock
