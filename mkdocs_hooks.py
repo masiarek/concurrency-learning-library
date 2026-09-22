@@ -83,6 +83,7 @@ NAV_ORDER: dict[str, list[str]] = {
         "keeping_every_update",
         "the_lost_update_in_a_database",
         "when_order_changes_a_sum",
+        "data_race_or_race_condition",
     ],
     # Using more cores to finish sooner. First the split itself: private partial
     # sums, and the two ways of combining them.

@@ -1,0 +1,4 @@
+$ rustc --edition 2024 same_value.rs
+error[E0499]: cannot borrow `shared` as mutable more than once at a time
+rustc exit status 1
+no binary was built

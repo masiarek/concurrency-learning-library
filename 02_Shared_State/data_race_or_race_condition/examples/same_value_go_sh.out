@@ -1,0 +1,9 @@
+$ go build -o plain same_value.go
+$ ./plain
+shared is 1
+exit status 0
+$ go build -race -o detector same_value.go
+$ ./detector
+shared is 1
+the race detector printed WARNING: DATA RACE
+exit status 66

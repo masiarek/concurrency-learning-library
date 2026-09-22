@@ -1,0 +1,4 @@
+$ cc -std=c17 -Wall -Wextra -pedantic -pthread same_value.c -o same_value
+the compiler printed nothing
+cc exit status 0
+a binary was built

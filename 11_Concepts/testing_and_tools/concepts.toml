@@ -9,7 +9,7 @@ title = "Race detector"
 summary = "A tool that instruments memory accesses as the program runs and reports the data races that actually happened in that run — ThreadSanitizer, Go's `-race`."
 aliases = ["ThreadSanitizer", "TSan", "go -race", "Helgrind"]
 chapter = 9
-lessons = ["02_Shared_State/the_lost_update"]
+lessons = ["02_Shared_State/the_lost_update", "02_Shared_State/data_race_or_race_condition"]
 pages = [
   ["Rust: Data races — ThreadSanitizer on a C counter", "https://masiarek.github.io/rust-learning-library/31_C_and_Cpp/data_races/index.html"],
   ["Go: The race detector", "https://masiarek.github.io/go-learning-library/07_Testing_Concurrent_Code/the_race_detector/index.html"],
