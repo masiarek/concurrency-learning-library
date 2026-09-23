@@ -67,3 +67,4 @@ The same house rule, one language or one subject at a time. [Resources](10_Resou
 - [**Python** ↗](https://masiarek.github.io/python-learning-library/) — text and bytes, including the one formatting call that changes process-wide state.
 - [**Java text** ↗](https://masiarek.github.io/java-text-learning-library/) — `char`, `String`, encodings and locales.
 - [**Linux** ↗](https://masiarek.github.io/linux-learning-library/) — pipelines, which are concurrent processes, and the signal that ends them.
+- [**JavaScript and TypeScript** ↗](https://masiarek.github.io/javascript-typescript-learning-library/) — one thread and an event loop: microtasks before timers, promises and `async`/`await`, cancellation with `AbortController`, and worker threads sharing memory through `Atomics`.
