@@ -42,6 +42,8 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [Who owns a value after it has been sent?](../../../05_Message_Passing/sending_a_value_moves_it/README.md)
+- **In this library:** [Can two processes share a variable after all?](../../../08_Processes/shared_memory_between_processes/README.md)
 - **In the books:** [*Learn Concurrent Programming with Go*](../../../10_Resources/books_go/README.md#cutajar_learn_concurrent_programming_with_go), James Cutajar — ch. 3, 'Thread communication using memory sharing'
 - **In the books:** [*C++ Concurrency in Action*](../../../10_Resources/books_cpp/README.md#williams_cpp_concurrency_in_action), Anthony Williams — ch. 3, 'Sharing data between threads'
 - **In the books:** [*Java Concurrency in Practice*](../../../10_Resources/books_java/README.md#goetz_java_concurrency_in_practice), Brian Goetz, Tim Peierls, Joshua Bloch, Joseph Bowbeer, David Holmes, Doug Lea — ch. 3, 'Sharing Objects'

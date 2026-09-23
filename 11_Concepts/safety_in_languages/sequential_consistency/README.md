@@ -32,6 +32,7 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [Can one thread see another's writes out of order?](../../../02_Shared_State/reordering_and_the_memory_model/README.md)
 - **In the books:** [*Rust Atomics and Locks*](../../../10_Resources/books_rust/README.md#bos_rust_atomics_and_locks), Mara Bos — ch. 3, 'Memory Ordering' → 'Sequentially Consistent Ordering'
 - **In the books:** [*The Art of Multiprocessor Programming*](../../../10_Resources/books_general/README.md#herlihy_shavit_art_of_multiprocessor_programming), Maurice Herlihy, Nir Shavit — ch. 3, 'Concurrent Objects' → 'Sequential Consistency'
 - **Notes:** [sequential consistency ↗](https://docs.google.com/document/d/1QQTW1NbrHYrrjaSAvPRkIFAJyq_VPOSrB0eS4duX4pc/edit?tab=t.0)

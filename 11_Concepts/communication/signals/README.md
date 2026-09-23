@@ -1,6 +1,6 @@
 # Signals
 
-**Category:** [Communication](../README.md) · **Status:** stub · **Lessons:** chapter 08, Processes *(planned)*
+**Category:** [Communication](../README.md) · **Status:** stub · **Lessons:** [chapter 08, Processes](../../../08_Processes/README.md)
 
 **One line:** Asynchronous notifications the operating system delivers to a process — an interrupt from the keyboard, a closed pipe, a child that exited — and which, in a threaded program, one thread has to be chosen to receive.
 
@@ -32,6 +32,9 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [How do two processes talk through a pipe?](../../../08_Processes/a_pipe_between_processes/README.md)
+- **In this library:** [Which thread gets the signal?](../../../08_Processes/a_signal_arrives_on_some_thread/README.md)
+- **In this library:** [What is a zombie process, and whose fault is it?](../../../08_Processes/a_zombie_and_an_orphan/README.md)
 - **In a sibling library:** [Python: Ctrl-C is a signal ↗](https://masiarek.github.io/python-learning-library/02_Projects_and_Environments/ctrl_c_is_a_signal/index.html)
 - **In a sibling library:** [Rust: Catching a signal ↗](https://masiarek.github.io/rust-learning-library/09_Advanced/catching_a_signal/index.html)
 - **In a sibling library:** [Linux: The signals you cannot catch ↗](https://masiarek.github.io/linux-learning-library/11_Signals/signals_you_cannot_catch/index.html)

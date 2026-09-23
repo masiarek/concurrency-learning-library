@@ -1,6 +1,6 @@
 # Priority inversion
 
-**Category:** [Hazards](../README.md) · **Status:** stub · **Lessons:** chapter 03, When locks go wrong *(planned)*
+**Category:** [Hazards](../README.md) · **Status:** stub · **Lessons:** [chapter 03, When locks go wrong](../../../03_When_Locks_Go_Wrong/README.md)
 
 **One line:** A high-priority task waits for a lock held by a low-priority task, which is itself preempted by medium-priority work, so the most important task effectively runs last.
 
@@ -31,6 +31,7 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [How does a low-priority thread block a high-priority one?](../../../03_When_Locks_Go_Wrong/priority_inversion/README.md)
 - **Reference:** [Wikipedia: Priority inversion ↗](https://en.wikipedia.org/wiki/Priority_inversion)
 
 <!-- Generated above this line by tools/build_concepts.py from TOML data — edit the data, not the page. Hand-written notes go below it and are kept. -->

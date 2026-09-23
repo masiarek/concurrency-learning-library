@@ -1,6 +1,6 @@
 # UI thread
 
-**Category:** [Units of execution](../README.md) · **Status:** stub · **Lessons:** chapter 06, Async *(planned)*
+**Category:** [Units of execution](../README.md) · **Status:** stub · **Lessons:** [chapter 06, Async](../../../06_Async/README.md)
 
 **One line:** The one thread a graphical toolkit allows to touch its widgets: long work goes to other threads or tasks, and its results are posted back to that thread.
 
@@ -33,6 +33,7 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [Why may only one thread touch the user interface?](../../../06_Async/the_ui_thread/README.md)
 - **In the books:** [*Java Concurrency in Practice*](../../../10_Resources/books_java/README.md#goetz_java_concurrency_in_practice), Brian Goetz, Tim Peierls, Joshua Bloch, Joseph Bowbeer, David Holmes, Doug Lea — ch. 9, 'GUI Applications'
 - **In the books:** [*Concurrent Programming on Windows*](../../../10_Resources/books_csharp_dotnet/README.md#duffy_concurrent_programming_on_windows), Joe Duffy — ch. 16, 'Graphical User Interfaces'
 - **In the books:** [*Parallel Programming and Concurrency with C# 10 and .NET 6*](../../../10_Resources/books_csharp_dotnet/README.md#ashcraft_parallel_programming_concurrency_csharp10), Alvin Ashcraft — ch. 4, 'User Interface Responsiveness and Threading'

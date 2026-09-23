@@ -35,6 +35,8 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [Can two atomics keep two values consistent?](../../../02_Shared_State/two_values_that_must_change_together/README.md)
+- **In this library:** [What may be handed to another thread?](../../../02_Shared_State/what_may_cross_a_thread_boundary/README.md)
 - **In the books:** [*Concurrency in .NET*](../../../10_Resources/books_csharp_dotnet/README.md#terrell_concurrency_in_dotnet), Riccardo Terrell — ch. 3, 'Functional data structures and immutability'
 - **In the books:** [*Java Concurrency in Practice*](../../../10_Resources/books_java/README.md#goetz_java_concurrency_in_practice), Brian Goetz, Tim Peierls, Joshua Bloch, Joseph Bowbeer, David Holmes, Doug Lea — ch. 3, 'Sharing Objects' → 'Immutability'
 - **In the books:** [*Programming Concurrency on the JVM*](../../../10_Resources/books_java/README.md#subramaniam_programming_concurrency_on_the_jvm), Venkat Subramaniam — ch. 3, 'Design Approaches' → 'Purely Immutable Design'

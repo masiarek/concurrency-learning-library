@@ -1,6 +1,6 @@
 # Blocking the event loop
 
-**Category:** [Async](../README.md) · **Status:** stub · **Lessons:** chapter 06, Async *(planned)*
+**Category:** [Async](../README.md) · **Status:** stub · **Lessons:** [chapter 06, Async](../../../06_Async/README.md)
 
 **One line:** A task that computes for a long time, or makes a blocking call, on the runtime's thread stops every other task on that thread until it is done.
 
@@ -37,6 +37,9 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [What does one blocking call do to every other task?](../../../06_Async/blocking_the_event_loop/README.md)
+- **In this library:** [Why can't a normal function call an async one?](../../../06_Async/function_coloring/README.md)
+- **In this library:** [Why may only one thread touch the user interface?](../../../06_Async/the_ui_thread/README.md)
 - **In a sibling library:** [Rust: Diagnosing a stuck runtime ↗](https://masiarek.github.io/rust-learning-library/35_Async/building_minidb/diagnosing_a_stuck_runtime/index.html)
 - **In a sibling library:** [Rust: Common async pitfalls ↗](https://masiarek.github.io/rust-learning-library/35_Async/common_async_pitfalls/index.html)
 - **In the books:** [*Parallel Programming and Concurrency with C# 10 and .NET 6*](../../../10_Resources/books_csharp_dotnet/README.md#ashcraft_parallel_programming_concurrency_csharp10), Alvin Ashcraft — ch. 4, 'User Interface Responsiveness and Threading'

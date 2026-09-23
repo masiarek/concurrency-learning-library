@@ -1,6 +1,6 @@
 # Dataflow programming
 
-**Category:** [Communication](../README.md) · **Status:** stub · **Lessons:** chapter 05, Message passing *(planned)*
+**Category:** [Communication](../README.md) · **Status:** stub · **Lessons:** [chapter 05, Message passing](../../../05_Message_Passing/README.md)
 
 **One line:** A program as a graph of blocks through which data flows, each block running when its inputs are ready — so the graph, not the programmer, decides what runs in parallel.
 
@@ -20,6 +20,7 @@ Also called: flow graph, TPL Dataflow.
 
 ## Where to read more
 
+- **In this library:** [How do three stages run at once on one stream of values?](../../../05_Message_Passing/a_pipeline_of_stages/README.md)
 - **In the books:** [*Pro TBB*](../../../10_Resources/books_cpp/README.md#voss_pro_tbb), Michael Voss, Rafael Asenjo, James Reinders — ch. 3, 'Flow Graphs'
 - **In the books:** [*Parallel and Concurrent Programming in Haskell*](../../../10_Resources/books_haskell/README.md#marlow_parallel_and_concurrent_programming_in_haskell), Simon Marlow — ch. 4, 'Dataflow Parallelism: The Par Monad'
 - **In the books:** [*Parallel Programming and Concurrency with C# 10 and .NET 6*](../../../10_Resources/books_csharp_dotnet/README.md#ashcraft_parallel_programming_concurrency_csharp10), Alvin Ashcraft — ch. 7, 'Task Parallel Library (TPL) and Dataflow'

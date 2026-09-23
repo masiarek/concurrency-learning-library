@@ -1,6 +1,6 @@
 # Model checking
 
-**Category:** [Testing and tools](../README.md) · **Status:** stub · **Lessons:** chapter 09, Testing and tools *(planned)*
+**Category:** [Testing and tools](../README.md) · **Status:** stub · **Lessons:** [chapter 09, Testing and tools](../../../09_Testing_and_Tools/README.md)
 
 **One line:** Exploring every state and interleaving of a model of a program — in TLA+, SPIN, or loom — to prove a property or produce a counterexample.
 
@@ -21,6 +21,7 @@ Also called: TLA+, SPIN, Lincheck.
 
 ## Where to read more
 
+- **In this library:** [Can every interleaving of a small program be checked?](../../../09_Testing_and_Tools/model_checking_a_small_program/README.md)
 - **In the books:** [*The Art of Concurrency*](../../../10_Resources/books_general/README.md#breshears_art_of_concurrency), Clay Breshears — ch. 3, 'Proving Correctness and Measuring Performance'
 - **Reference:** [Wikipedia: Model checking ↗](https://en.wikipedia.org/wiki/Model_checking)
 

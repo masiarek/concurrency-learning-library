@@ -1,6 +1,6 @@
 # Scoped locking
 
-**Category:** [Synchronization](../README.md) · **Status:** stub · **Lessons:** chapter 03, When locks go wrong *(planned)*
+**Category:** [Synchronization](../README.md) · **Status:** stub · **Lessons:** [chapter 03, When locks go wrong](../../../03_When_Locks_Go_Wrong/README.md)
 
 **One line:** Tying a lock's release to leaving a scope — a guard object, `defer`, `with`, `synchronized` — so that no path out of the code can forget to unlock.
 
@@ -40,6 +40,8 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [Why do two locks taken in different orders hang?](../../../03_When_Locks_Go_Wrong/two_locks_in_different_orders/README.md)
+- **In this library:** [Who unlocks when the function returns early?](../../../03_When_Locks_Go_Wrong/the_forgotten_unlock/README.md)
 - **In a sibling library:** [Rust: Forgotten unlock ↗](https://masiarek.github.io/rust-learning-library/31_C_and_Cpp/forgotten_unlock/index.html)
 - **In a sibling library:** [Go: A mutex guards a counter ↗](https://masiarek.github.io/go-learning-library/04_Sync/a_mutex_guards_a_counter/index.html)
 - **In the books:** [*Rust Atomics and Locks*](../../../10_Resources/books_rust/README.md#bos_rust_atomics_and_locks), Mara Bos — ch. 4, 'Building Our Own Spin Lock' → 'A Safe Interface Using a Lock Guard'

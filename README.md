@@ -18,15 +18,15 @@
 
 | | Chapter | What it covers | |
 |---|---|---|---|
-| 01 | [Threads](01_Threads/README.md) | who waits when `main` returns, getting a result back | 2 lessons |
-| 02 | [Shared state](02_Shared_State/README.md) | the lost update, and keeping every update with a lock, an atomic or one owner; the same bug in a database; when order changes a sum | 4 lessons |
-| 03 | When locks go wrong | deadlock and lock order, forgotten unlocks, poisoning | planned |
-| 04 | Waiting for each other | condition variables, semaphores, barriers, run-once initialization | planned |
-| 05 | Message passing | channels, closing a channel, `select`, bounded queues, actors | planned |
-| 06 | Async | event loops, futures, `async` and `await`, blocking the loop, cancellation | planned |
-| 07 | [Parallelism](07_Parallelism/README.md) | splitting a sum across workers and combining it as a tree; still planned: CPU-bound speedup, the GIL and free-threaded Python, Amdahl's law | 1 lesson |
-| 08 | Processes | `fork`, `multiprocessing`, pipes, signals | planned |
-| 09 | Testing and tools | ThreadSanitizer, Go's race detector, stress tests, deterministic schedulers | planned |
+| 01 | [Threads](01_Threads/README.md) | who waits when `main` returns, getting a result back, lending a local to a thread; then failures nobody waits for, thread counts, thread-locals, pools, goroutines against threads, sleep and yield | 3 lessons · 6 stubs |
+| 02 | [Shared state](02_Shared_State/README.md) | the lost update, and keeping every update with a lock, an atomic or one owner; the same bug in a database; when order changes a sum; data race or race condition; then pairs of values, read-write locks, torn reads, check-then-act, ABA, `Send`/`Sync`, memory ordering | 5 lessons · 7 stubs |
+| 03 | [When locks go wrong](03_When_Locks_Go_Wrong/README.md) | deadlock and lock order, a lock taken twice, forgotten unlocks, poisoning, livelock, starvation, priority inversion, spinlocks, finding the deadlock | 9 stubs |
+| 04 | [Waiting for each other](04_Waiting_For_Each_Other/README.md) | condition variables and the lost wakeup, semaphores, barriers and latches, run-once, monitors, the bounded buffer, dining philosophers, timed waits | 9 stubs |
+| 05 | [Message passing](05_Message_Passing/README.md) | who owns a sent value, unbuffered and bounded channels, closing, `select`, pipelines, fan-out and fan-in, worker pools, actors, publish-subscribe | 10 stubs |
+| 06 | [Async](06_Async/README.md) | the event loop, futures, `async` and `await`, blocking the loop, callbacks, cancellation and timeouts, function coloring, leaked tasks, streams, runtimes, I/O multiplexing, the UI thread | 13 stubs |
+| 07 | [Parallelism](07_Parallelism/README.md) | splitting a sum across workers; then real speedup, the GIL, Amdahl's law, false sharing, data against task parallelism, parallel iterators, fork-join, map-reduce, how many workers | 1 lesson · 9 stubs |
+| 08 | [Processes](08_Processes/README.md) | `fork`, exit statuses, pipes, signals, `multiprocessing`, shared memory, zombies and orphans | 7 stubs |
+| 09 | [Testing and tools](09_Testing_and_Tools/README.md) | race and memory error detectors, stress tests, virtual time, model checking, thread dumps, profiling, Heisenbugs | 8 stubs |
 | 10 | [Resources](10_Resources/README.md) | the documentation, the books by language, and the crosswalk to the sibling libraries | |
 | 11 | [Concepts](11_Concepts/README.md) | the map: over 150 concepts in 13 categories — an ontology, a schema of how they connect, abbreviations, and a page per concept with its name in each language | stubs |
 

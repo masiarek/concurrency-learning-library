@@ -1,6 +1,6 @@
 # Future and promise
 
-**Category:** [Async](../README.md) · **Status:** stub · **Lessons:** chapter 06, Async *(planned)*
+**Category:** [Async](../README.md) · **Status:** stub · **Lessons:** [chapter 06, Async](../../../06_Async/README.md)
 
 **One line:** A placeholder for a result that is not ready yet: the future is the side that waits for the value, the promise the side that supplies it.
 
@@ -47,6 +47,8 @@ flowchart LR
 ## Where to read more
 
 - **In this library:** [Getting a result back](../../../01_Threads/getting_a_result_back/README.md)
+- **In this library:** [What is a future before it has a value?](../../../06_Async/a_future_is_a_value_not_yet_there/README.md)
+- **In this library:** [What happens to the work when an await times out?](../../../06_Async/a_timeout_on_an_await/README.md)
 - **In a sibling library:** [Go: A goroutine has no handle ↗](https://masiarek.github.io/go-learning-library/01_Goroutines/a_goroutine_has_no_handle/index.html)
 - **In a sibling library:** [Rust: What a future is ↗](https://masiarek.github.io/rust-learning-library/35_Async/what_a_future_is/index.html)
 - **In the books:** [*Learning Concurrent Programming in Scala*](../../../10_Resources/books_scala_jvm_functional/README.md#prokopec_learning_concurrent_programming_in_scala), Aleksandar Prokopec — ch. 4, 'Asynchronous Programming with Futures and Promises'

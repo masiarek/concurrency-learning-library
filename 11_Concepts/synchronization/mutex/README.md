@@ -76,6 +76,19 @@ flowchart LR
 ## Where to read more
 
 - **In this library:** [Keeping every update](../../../02_Shared_State/keeping_every_update/README.md)
+- **In this library:** [Can two atomics keep two values consistent?](../../../02_Shared_State/two_values_that_must_change_together/README.md)
+- **In this library:** [When is a read-write lock faster than a mutex?](../../../02_Shared_State/readers_and_writers/README.md)
+- **In this library:** [Why do two locks taken in different orders hang?](../../../03_When_Locks_Go_Wrong/two_locks_in_different_orders/README.md)
+- **In this library:** [What happens when a thread takes a lock it already holds?](../../../03_When_Locks_Go_Wrong/a_lock_taken_twice/README.md)
+- **In this library:** [Who unlocks when the function returns early?](../../../03_When_Locks_Go_Wrong/the_forgotten_unlock/README.md)
+- **In this library:** [What state is the data in after a thread died holding the lock?](../../../03_When_Locks_Go_Wrong/a_panic_while_holding_the_lock/README.md)
+- **In this library:** [Can a thread wait forever for a lock that is always free eventually?](../../../03_When_Locks_Go_Wrong/starvation_and_fairness/README.md)
+- **In this library:** [How does a low-priority thread block a high-priority one?](../../../03_When_Locks_Go_Wrong/priority_inversion/README.md)
+- **In this library:** [What does a spinlock cost when there is nowhere to spin?](../../../03_When_Locks_Go_Wrong/a_spinlock_on_one_core/README.md)
+- **In this library:** [What happens when the signal comes before the wait?](../../../04_Waiting_For_Each_Other/the_lost_wakeup/README.md)
+- **In this library:** [What does a semaphore count?](../../../04_Waiting_For_Each_Other/a_semaphore_counts_permits/README.md)
+- **In this library:** [What is a monitor, and which languages have one?](../../../04_Waiting_For_Each_Other/a_monitor_bundles_lock_and_condition/README.md)
+- **In this library:** [Can two processes share a variable after all?](../../../08_Processes/shared_memory_between_processes/README.md)
 - **In a sibling library:** [Rust: Sharing across threads: Arc ↗](https://masiarek.github.io/rust-learning-library/18_Ownership/sharing_across_threads/index.html)
 - **In a sibling library:** [Go: A mutex guards a counter ↗](https://masiarek.github.io/go-learning-library/04_Sync/a_mutex_guards_a_counter/index.html)
 - **In the books:** [*Learn Concurrent Programming with Go*](../../../10_Resources/books_go/README.md#cutajar_learn_concurrent_programming_with_go), James Cutajar — ch. 4, 'Synchronization with mutexes'

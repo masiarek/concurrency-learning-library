@@ -1,6 +1,6 @@
 # Structured concurrency
 
-**Category:** [Async](../README.md) · **Status:** stub · **Lessons:** chapter 06, Async *(planned)*
+**Category:** [Async](../README.md) · **Status:** stub · **Lessons:** [chapter 06, Async](../../../06_Async/README.md)
 
 **One line:** Concurrent tasks are started inside a scope that does not end until all of them have, so no task outlives the code that started it and every error reaches that code.
 
@@ -44,6 +44,8 @@ flowchart LR
 
 - **In this library:** [Who waits when main returns?](../../../01_Threads/who_waits_when_main_returns/README.md)
 - **In this library:** [Can a thread borrow a local variable?](../../../01_Threads/lending_a_local_to_a_thread/README.md)
+- **In this library:** [How is a running task told to stop, and does it?](../../../06_Async/cancelling_an_async_task/README.md)
+- **In this library:** [What happens to a task that is started and never awaited?](../../../06_Async/a_task_nobody_awaits/README.md)
 - **In a sibling library:** [Go: The first error cancels the rest ↗](https://masiarek.github.io/go-learning-library/06_Patterns/first_error_cancels_the_rest/index.html)
 - **In the books:** [*Kotlin Coroutines by Tutorials*](../../../10_Resources/books_other/README.md#babic_srivastava_kotlin_coroutines_by_tutorials), Filip Babić, Nishant Srivastava — ch. 6, 'Coroutine Context'
 - **In the books:** [*Rust Atomics and Locks*](../../../10_Resources/books_rust/README.md#bos_rust_atomics_and_locks), Mara Bos — ch. 1, 'Basics of Rust Concurrency' → 'Scoped Threads'

@@ -1,6 +1,6 @@
 # Livelock
 
-**Category:** [Hazards](../README.md) · **Status:** stub · **Lessons:** chapter 03, When locks go wrong *(planned)*
+**Category:** [Hazards](../README.md) · **Status:** stub · **Lessons:** [chapter 03, When locks go wrong](../../../03_When_Locks_Go_Wrong/README.md)
 
 **One line:** Tasks keep changing state in response to each other — backing off, retrying, stepping aside — without any of them getting work done.
 
@@ -24,6 +24,7 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [Can two threads be busy forever and get nothing done?](../../../03_When_Locks_Go_Wrong/livelock/README.md)
 - **In the books:** [*Grokking Concurrency*](../../../10_Resources/books_general/README.md#bobrov_grokking_concurrency), Kirill Bobrov — ch. 9, 'Solving concurrency problems: Deadlocks and starvation' → 'Livelocks'
 - **In the books:** [*Modern Multithreading*](../../../10_Resources/books_general/README.md#carver_tai_modern_multithreading), Richard H. Carver, Kuo-Chung Tai — ch. 2, 'The Critical Section Problem' → 'Deadlock, Livelock, and Starvation'
 - **In the books:** [*Advanced Python Programming*](../../../10_Resources/books_python/README.md#nguyen_advanced_python_programming), Quan Nguyen — ch. 12, 'Deadlocks' → 'The concept of livelocks'

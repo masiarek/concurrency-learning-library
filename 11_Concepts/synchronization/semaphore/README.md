@@ -1,6 +1,6 @@
 # Semaphore
 
-**Category:** [Synchronization](../README.md) · **Status:** stub · **Lessons:** chapter 04, Waiting for each other *(planned)*
+**Category:** [Synchronization](../README.md) · **Status:** stub · **Lessons:** [chapter 04, Waiting for each other](../../../04_Waiting_For_Each_Other/README.md)
 
 **One line:** A counter of permits: taking one waits while none are left, and returning one lets a waiter in — a lock that up to n tasks may hold at once.
 
@@ -38,6 +38,8 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [What does a semaphore count?](../../../04_Waiting_For_Each_Other/a_semaphore_counts_permits/README.md)
+- **In this library:** [Why do five philosophers with five forks starve?](../../../04_Waiting_For_Each_Other/the_dining_philosophers/README.md)
 - **In a sibling library:** [Go: A buffered channel as a semaphore ↗](https://masiarek.github.io/go-learning-library/06_Patterns/a_buffered_channel_as_a_semaphore/index.html)
 - **In a sibling library:** [Rust: Backpressure ↗](https://masiarek.github.io/rust-learning-library/35_Async/building_minidb/backpressure/index.html)
 - **In the books:** [*Learn Concurrent Programming with Go*](../../../10_Resources/books_go/README.md#cutajar_learn_concurrent_programming_with_go), James Cutajar — ch. 5, 'Condition variables and semaphores'

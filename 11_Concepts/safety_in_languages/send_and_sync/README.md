@@ -33,6 +33,9 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [What may be handed to another thread?](../../../02_Shared_State/what_may_cross_a_thread_boundary/README.md)
+- **In this library:** [Who owns a value after it has been sent?](../../../05_Message_Passing/sending_a_value_moves_it/README.md)
+- **In this library:** [Who runs an async task, and on how many threads?](../../../06_Async/who_runs_the_tasks/README.md)
 - **In a sibling library:** [Rust: Send and Sync ↗](https://masiarek.github.io/rust-learning-library/09_Advanced/send_and_sync/index.html)
 - **In a sibling library:** [Rust: Sharing across threads: Arc ↗](https://masiarek.github.io/rust-learning-library/18_Ownership/sharing_across_threads/index.html)
 - **In the books:** [*Hands-On Concurrency with Rust*](../../../10_Resources/books_rust/README.md#troutwine_hands_on_concurrency_with_rust), Brian L. Troutwine — ch. 4, 'Sync and Send – the Foundation of Rust Concurrency'

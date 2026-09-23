@@ -1,6 +1,6 @@
 # OTP behaviours
 
-**Category:** [Communication](../README.md) · **Status:** stub · **Lessons:** chapter 05, Message passing *(planned)*
+**Category:** [Communication](../README.md) · **Status:** stub · **Lessons:** [chapter 05, Message passing](../../../05_Message_Passing/README.md)
 
 **One line:** Erlang/OTP's reusable process patterns — a generic server, a supervisor, an application — where the library owns the concurrency and your module supplies the callbacks.
 
@@ -31,6 +31,7 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [What if only one thread is allowed to touch the data?](../../../05_Message_Passing/one_owner_receives_the_numbers/README.md)
 - **In the books:** [*Erlang Programming*](../../../10_Resources/books_elixir_erlang/README.md#cesarini_thompson_erlang_programming), Francesco Cesarini, Simon Thompson — ch. 12, 'OTP Behaviors'
 - **In the books:** [*Programming Elixir ≥ 1.6*](../../../10_Resources/books_elixir_erlang/README.md#thomas_programming_elixir), Dave Thomas — ch. 17, 'OTP: Servers'
 - **In the books:** [*Programming Erlang*](../../../10_Resources/books_elixir_erlang/README.md#armstrong_programming_erlang), Joe Armstrong — ch. 22, 'Introducing OTP'

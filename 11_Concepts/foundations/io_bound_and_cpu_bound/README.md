@@ -24,6 +24,11 @@ Also called: I/O-bound, CPU-bound.
 
 ## Where to read more
 
+- **In this library:** [What does one blocking call do to every other task?](../../../06_Async/blocking_the_event_loop/README.md)
+- **In this library:** [How does one thread watch a thousand sockets?](../../../06_Async/io_multiplexing_under_the_loop/README.md)
+- **In this library:** [How much faster is real work on eight threads?](../../../07_Parallelism/cpu_bound_speedup/README.md)
+- **In this library:** [Why do Python threads take turns?](../../../07_Parallelism/the_gil_and_free_threaded_python/README.md)
+- **In this library:** [How many workers should a pool have?](../../../07_Parallelism/how_many_workers/README.md)
 - **In the books:** [*Asynchronous Programming in Rust*](../../../10_Resources/books_rust/README.md#samson_asynchronous_programming_in_rust), Carl Fredrik Samson — ch. 6, 'Futures in Rust' → 'I/O vs CPU-intensive tasks'
 - **In the books:** [*Python Concurrency with asyncio*](../../../10_Resources/books_python/README.md#fowler_python_concurrency_with_asyncio), Matthew Fowler — ch. 1, 'Getting to know asyncio' → 'What is I/O-bound and what is CPU-bound?'
 - **In the books:** [*Grokking Concurrency*](../../../10_Resources/books_general/README.md#bobrov_grokking_concurrency), Kirill Bobrov — ch. 6, 'Multitasking' → 'CPU-bound and I/O-bound applications'

@@ -31,6 +31,7 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [What does a spinlock cost when there is nowhere to spin?](../../../03_When_Locks_Go_Wrong/a_spinlock_on_one_core/README.md)
 - **In the books:** [*Learn Concurrent Programming with Go*](../../../10_Resources/books_go/README.md#cutajar_learn_concurrent_programming_with_go), James Cutajar — ch. 12, 'Atomics, spin locks, and futexes'
 - **Reference:** [Linux man page: futex(2) ↗](https://man7.org/linux/man-pages/man2/futex.2.html)
 

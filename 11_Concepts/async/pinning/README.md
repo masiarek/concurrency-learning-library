@@ -1,6 +1,6 @@
 # Pinning
 
-**Category:** [Async](../README.md) · **Status:** stub · **Lessons:** chapter 06, Async *(planned)*
+**Category:** [Async](../README.md) · **Status:** stub · **Lessons:** [chapter 06, Async](../../../06_Async/README.md)
 
 **One line:** Rust's guarantee that a value will not move in memory, needed because an async state machine may hold pointers into itself.
 

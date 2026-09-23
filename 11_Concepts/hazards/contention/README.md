@@ -35,6 +35,11 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [When is a read-write lock faster than a mutex?](../../../02_Shared_State/readers_and_writers/README.md)
+- **In this library:** [Can a thread wait forever for a lock that is always free eventually?](../../../03_When_Locks_Go_Wrong/starvation_and_fairness/README.md)
+- **In this library:** [Why are eight threads writing eight different variables slow?](../../../07_Parallelism/false_sharing/README.md)
+- **In this library:** [Why is a reduction the hard half of a parallel map?](../../../07_Parallelism/map_and_reduce/README.md)
+- **In this library:** [Where does a concurrent program spend its time?](../../../09_Testing_and_Tools/profiling_where_the_time_goes/README.md)
 - **In the books:** [*The Art of Multiprocessor Programming*](../../../10_Resources/books_general/README.md#herlihy_shavit_art_of_multiprocessor_programming), Maurice Herlihy, Nir Shavit — ch. 7, 'Spin Locks and Contention'
 - **In the books:** [*Java Concurrency in Practice*](../../../10_Resources/books_java/README.md#goetz_java_concurrency_in_practice), Brian Goetz, Tim Peierls, Joshua Bloch, Joseph Bowbeer, David Holmes, Doug Lea — ch. 11, 'Performance and Scalability' → 'Reducing Lock Contention'
 - **In the books:** [*Concurrent Programming: Algorithms, Principles, and Foundations*](../../../10_Resources/books_general/README.md#raynal_concurrent_programming_algorithms), Michel Raynal — ch. 6, 'Hybrid Concurrent Objects' → 'Contention-Sensitive Implementations'

@@ -43,6 +43,7 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [When is a read-write lock faster than a mutex?](../../../02_Shared_State/readers_and_writers/README.md)
 - **In a sibling library:** [Rust: RwLock and atomics ↗](https://masiarek.github.io/rust-learning-library/09_Advanced/rwlock_and_atomics/index.html)
 - **In the books:** [*Hands-On Concurrency with Rust*](../../../10_Resources/books_rust/README.md#troutwine_hands_on_concurrency_with_rust), Brian L. Troutwine — ch. 5, 'Locks – Mutex, Condvar, Barriers and RWLock'
 - **In the books:** [*Learn Concurrent Programming with Go*](../../../10_Resources/books_go/README.md#cutajar_learn_concurrent_programming_with_go), James Cutajar — ch. 4, 'Synchronization with mutexes' → 'Improving performance with readers–writer mutexes'

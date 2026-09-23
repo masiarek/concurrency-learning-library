@@ -39,6 +39,9 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [How do three stages run at once on one stream of values?](../../../05_Message_Passing/a_pipeline_of_stages/README.md)
+- **In this library:** [Same work on different data, or different work at once?](../../../07_Parallelism/data_parallel_or_task_parallel/README.md)
+- **In this library:** [How does a recursive job split itself across cores?](../../../07_Parallelism/fork_join/README.md)
 - **In the books:** [*Concurrent Programming on Windows*](../../../10_Resources/books_csharp_dotnet/README.md#duffy_concurrent_programming_on_windows), Joe Duffy — ch. 13, 'Data and Task Parallelism'
 - **In the books:** [*Pro Asynchronous Programming with .NET*](../../../10_Resources/books_csharp_dotnet/README.md#blewett_clymer_pro_asynchronous_programming_dotnet), Richard Blewett, Andrew Clymer — ch. 10, 'TPL Dataflow'
 - **In the books:** [*Pro TBB*](../../../10_Resources/books_cpp/README.md#voss_pro_tbb), Michael Voss, Rafael Asenjo, James Reinders — ch. 2, 'Generic Parallel Algorithms' → 'Functional / Task Parallelism'

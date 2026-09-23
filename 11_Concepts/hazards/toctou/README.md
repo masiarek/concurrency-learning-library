@@ -39,6 +39,8 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [Why is checking and then acting two steps too many?](../../../02_Shared_State/check_then_act/README.md)
+- **In this library:** [How does initialization run exactly once with many threads racing to it?](../../../04_Waiting_For_Each_Other/run_exactly_once/README.md)
 - **Notes:** [time of check to time of use bug (TOCTTOU) ↗](https://docs.google.com/document/d/1M9GFwMOuS4nCwMJugYkKT4fgPxCGEJbNvLidA-xOxH8/edit?tab=t.0)
 - **Reference:** [Wikipedia: Time-of-check to time-of-use ↗](https://en.wikipedia.org/wiki/Time-of-check_to_time-of-use)
 

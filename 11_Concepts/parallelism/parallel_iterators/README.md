@@ -39,6 +39,8 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [Same work on different data, or different work at once?](../../../07_Parallelism/data_parallel_or_task_parallel/README.md)
+- **In this library:** [Can a for loop be made parallel by changing one word?](../../../07_Parallelism/a_parallel_iterator/README.md)
 - **In the books:** [*Hands-On Concurrency with Rust*](../../../10_Resources/books_rust/README.md#troutwine_hands_on_concurrency_with_rust), Brian L. Troutwine — ch. 8, 'High-Level Parallelism – Threadpools, Parallel Iterators and Processes'
 - **In the books:** [*Concurrency in .NET*](../../../10_Resources/books_csharp_dotnet/README.md#terrell_concurrency_in_dotnet), Riccardo Terrell — ch. 5, 'PLINQ and MapReduce: data parallelism, part 2'
 - **In the books:** [*Parallel Loops in Python*](../../../10_Resources/books_python/README.md#brownlee_parallel_loops_in_python), Jason Brownlee — ch. 2, 'Parallel Loop with the Thread Class'

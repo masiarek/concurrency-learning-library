@@ -1,6 +1,6 @@
 # Stress testing
 
-**Category:** [Testing and tools](../README.md) · **Status:** stub · **Lessons:** chapter 09, Testing and tools *(planned)*
+**Category:** [Testing and tools](../README.md) · **Status:** stub · **Lessons:** [chapter 09, Testing and tools](../../../09_Testing_and_Tools/README.md)
 
 **One line:** Running concurrent code many times, under load and with many threads, so that rare interleavings get a chance to show up.
 
@@ -22,6 +22,8 @@ Also called: jcstress.
 
 ## Where to read more
 
+- **In this library:** [How do you write a test that provokes the race?](../../../09_Testing_and_Tools/a_stress_test_that_actually_races/README.md)
+- **In this library:** [How does a test wait an hour in a millisecond?](../../../09_Testing_and_Tools/virtual_time_in_tests/README.md)
 - **In the books:** [*Distributed Systems with Node.js*](../../../10_Resources/books_javascript/README.md#hunter_distributed_systems_with_nodejs), Thomas Hunter II — ch. 8, 'Resilience' → 'Resilience Testing'
 
 <!-- Generated above this line by tools/build_concepts.py from TOML data — edit the data, not the page. Hand-written notes go below it and are kept. -->

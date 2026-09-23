@@ -1,6 +1,6 @@
 # Select
 
-**Category:** [Communication](../README.md) · **Status:** stub · **Lessons:** chapter 05, Message passing *(planned)*
+**Category:** [Communication](../README.md) · **Status:** stub · **Lessons:** [chapter 05, Message passing](../../../05_Message_Passing/README.md)
 
 **One line:** Waiting on several channel operations or futures at once, and continuing with whichever becomes ready first.
 
@@ -40,6 +40,8 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [What does a wait return when the time runs out?](../../../04_Waiting_For_Each_Other/waiting_with_a_timeout/README.md)
+- **In this library:** [How does one thread wait on several channels at once?](../../../05_Message_Passing/waiting_on_several_channels/README.md)
 - **In a sibling library:** [Go: `select` waits on many channels ↗](https://masiarek.github.io/go-learning-library/03_Select/select_waits_on_many/index.html)
 - **In a sibling library:** [Go: `select` chooses at random ↗](https://masiarek.github.io/go-learning-library/03_Select/select_chooses_at_random/index.html)
 - **In a sibling library:** [Go: A nil channel disables a case ↗](https://masiarek.github.io/go-learning-library/03_Select/a_nil_channel_disables_a_case/index.html)

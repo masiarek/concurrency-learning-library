@@ -1,6 +1,6 @@
 # Multiprocessing
 
-**Category:** [Parallelism](../README.md) · **Status:** stub · **Lessons:** chapter 08, Processes *(planned)*
+**Category:** [Parallelism](../README.md) · **Status:** stub · **Lessons:** [chapter 08, Processes](../../../08_Processes/README.md)
 
 **One line:** Using several processes instead of several threads — for isolation, or to get parallelism in a runtime whose threads share one global lock.
 
@@ -32,6 +32,10 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [Why do Python threads take turns?](../../../07_Parallelism/the_gil_and_free_threaded_python/README.md)
+- **In this library:** [What does the child get when a process forks?](../../../08_Processes/fork_copies_the_process/README.md)
+- **In this library:** [When are processes the better workers?](../../../08_Processes/multiprocessing_instead_of_threads/README.md)
+- **In this library:** [Can two processes share a variable after all?](../../../08_Processes/shared_memory_between_processes/README.md)
 - **In the books:** [*Parallel Loops in Python*](../../../10_Resources/books_python/README.md#brownlee_parallel_loops_in_python), Jason Brownlee — ch. 5, 'Parallel Loop with the Process Class'
 - **In the books:** [*Python Parallel Programming Cookbook*](../../../10_Resources/books_python/README.md#zaccone_python_parallel_programming_cookbook), Giancarlo Zaccone — ch. 3, 'Process-based Parallelism'
 - **In the books:** [*Parallel Programming with Python*](../../../10_Resources/books_python/README.md#palach_parallel_programming_with_python), Jan Palach — ch. 5, 'Using Multiprocessing and ProcessPoolExecutor'

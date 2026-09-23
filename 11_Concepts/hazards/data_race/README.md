@@ -63,6 +63,8 @@ flowchart LR
 
 - **In this library:** [Is total += n safe on two threads?](../../../02_Shared_State/the_lost_update/README.md)
 - **In this library:** [Data race or race condition?](../../../02_Shared_State/data_race_or_race_condition/README.md)
+- **In this library:** [Can a read see half of a write?](../../../02_Shared_State/a_torn_read/README.md)
+- **In this library:** [What does a race detector see, and what does it miss?](../../../09_Testing_and_Tools/a_race_detector_finds_what_happened/README.md)
 - **In a sibling library:** [Rust: Data races (for C and C++ programmers) ↗](https://masiarek.github.io/rust-learning-library/31_C_and_Cpp/data_races/index.html)
 - **In a sibling library:** [Go: A mutex guards a counter ↗](https://masiarek.github.io/go-learning-library/04_Sync/a_mutex_guards_a_counter/index.html)
 - **In a sibling library:** [Go: The race detector ↗](https://masiarek.github.io/go-learning-library/07_Testing_Concurrent_Code/the_race_detector/index.html)

@@ -30,6 +30,7 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [Can a for loop be made parallel by changing one word?](../../../07_Parallelism/a_parallel_iterator/README.md)
 - **In the books:** [*Parallel Programming with Intel Parallel Studio XE*](../../../10_Resources/books_cpp/README.md#blair_chappell_intel_parallel_studio_xe), Stephen Blair-Chappell, Andrew Stokes — ch. 3, 'Parallel Studio XE for the Impatient' → 'Example 2: Working with OpenMP'
 - **In the books:** [*Advanced Python Programming*](../../../10_Resources/books_python/README.md#nguyen_advanced_python_programming), Quan Nguyen — ch. 8, 'Parallel Processing' → 'Parallel Cython with OpenMP'
 - **In the books:** [*An Introduction to Parallel Programming*](../../../10_Resources/books_general/README.md#pacheco_malensek_introduction_to_parallel_programming), Peter S. Pacheco, Matthew Malensek — ch. 5, 'Shared-memory programming with OpenMP'

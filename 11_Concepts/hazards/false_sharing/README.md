@@ -21,6 +21,7 @@ Also called: cache line contention.
 
 ## Where to read more
 
+- **In this library:** [Why are eight threads writing eight different variables slow?](../../../07_Parallelism/false_sharing/README.md)
 - **In the books:** [*Concurrency with Modern C++*](../../../10_Resources/books_cpp/README.md#grimm_concurrency_with_modern_cpp), Rainer Grimm — ch. 13, 'Challenges' → 'False Sharing'
 - **Reference:** [Wikipedia: False sharing ↗](https://en.wikipedia.org/wiki/False_sharing)
 

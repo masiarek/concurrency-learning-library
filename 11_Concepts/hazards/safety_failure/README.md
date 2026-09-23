@@ -38,6 +38,11 @@ flowchart LR
 
 - **In this library:** [Is total += n safe on two threads?](../../../02_Shared_State/the_lost_update/README.md)
 - **In this library:** [The lost update in a database](../../../02_Shared_State/the_lost_update_in_a_database/README.md)
+- **In this library:** [What does a failure on a thread do when nobody is waiting for it?](../../../01_Threads/a_failure_nobody_is_waiting_for/README.md)
+- **In this library:** [Can two atomics keep two values consistent?](../../../02_Shared_State/two_values_that_must_change_together/README.md)
+- **In this library:** [Can a read see half of a write?](../../../02_Shared_State/a_torn_read/README.md)
+- **In this library:** [What state is the data in after a thread died holding the lock?](../../../03_When_Locks_Go_Wrong/a_panic_while_holding_the_lock/README.md)
+- **In this library:** [What happens to a task that is started and never awaited?](../../../06_Async/a_task_nobody_awaits/README.md)
 - **In a sibling library:** [Go: A mutex guards a counter ↗](https://masiarek.github.io/go-learning-library/04_Sync/a_mutex_guards_a_counter/index.html)
 - **Notes:** [data inconsistencies - async - concurrency - general ↗](https://docs.google.com/document/d/137RrmeoW8FsI52Lqn5uZOZB_i3fai6RqbppI3h6cOuc/edit?tab=t.0)
 

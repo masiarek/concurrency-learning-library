@@ -24,6 +24,8 @@ Also called: memory model, Java Memory Model, Go memory model, synchronized befo
 
 ## Where to read more
 
+- **In this library:** [Can one thread see another's writes out of order?](../../../02_Shared_State/reordering_and_the_memory_model/README.md)
+- **In this library:** [What does a race detector see, and what does it miss?](../../../09_Testing_and_Tools/a_race_detector_finds_what_happened/README.md)
 - **In the books:** [*Effective Concurrency in Go*](../../../10_Resources/books_go/README.md#serdar_effective_concurrency_in_go), Burak Serdar — ch. 3, 'The Go Memory Model' → 'The happened-before relationship between memory operations'
 - **In the books:** [*Rust Atomics and Locks*](../../../10_Resources/books_rust/README.md#bos_rust_atomics_and_locks), Mara Bos — ch. 3, 'Memory Ordering' → 'Happens-Before Relationship'
 - **In the books:** [*Hands-On Concurrency with Rust*](../../../10_Resources/books_rust/README.md#troutwine_hands_on_concurrency_with_rust), Brian L. Troutwine — ch. 6, 'Atomics – the Primitives of Synchronization' → 'Memory ordering – happens-before and synchronizes-with'

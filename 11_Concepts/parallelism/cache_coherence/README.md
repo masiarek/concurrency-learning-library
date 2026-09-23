@@ -13,6 +13,8 @@ Also called: cache invalidation, write-back.
 
 ## Where to read more
 
+- **In this library:** [Can one thread see another's writes out of order?](../../../02_Shared_State/reordering_and_the_memory_model/README.md)
+- **In this library:** [Why are eight threads writing eight different variables slow?](../../../07_Parallelism/false_sharing/README.md)
 - **Notes:** [Cache coherence ↗](https://docs.google.com/document/d/11AUT-9ZiaDLML1DHaKz41nj_dmzj0-fSXxHyxMGj_4U/edit?tab=t.0)
 - **Notes:** [cache invalidation ↗](https://docs.google.com/document/d/1DHSM56i69dzhauCUMym3o5DfyA1RJkichLYl4KFKn9Q/edit?tab=t.0)
 - **Notes:** [write-back with invalidation ↗](https://docs.google.com/document/d/1MYeif5pOPcuarLG0aae17yq8oqPFZwY3_y9j17h-NFU/edit?tab=t.0)

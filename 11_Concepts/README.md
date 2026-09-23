@@ -18,6 +18,7 @@ A sequential program does one thing after another and, if it fails, fails as a w
 
 - **The ontology** — this page. Thirteen categories; inside each, concepts nested under what they are a kind of.
 - **[The schema](schema/README.md)** — every other connection: what a concept is built on, what it helps prevent, what it can lead to, what it is an alternative to, and what it is often confused with, drawn as diagrams.
+- **[Keywords](keywords/README.md)** — every title and alias, alphabetically, pointing at its concept.
 - **[Abbreviations](abbreviations/README.md)** — CAS, RCU, TLS and the rest, each with a source.
 
 **Concurrency primitives** — the building blocks languages provide — fall into four groups, and each group has a home here: *synchronization* primitives (mutex, semaphore, read-write lock, condition variable) are in [Synchronization](synchronization/README.md); *communication* primitives (channels, futures and promises, signals, shared memory) in [Communication](communication/README.md) and [Async](async/README.md); *thread and task management* (threads, tasks, pools) in [Units of execution](units_of_execution/README.md); *atomic* primitives (atomic variables, compare-and-swap) in [Lock-free](lock_free/README.md). See [Concurrency primitives](foundations/concurrency_primitives/README.md).

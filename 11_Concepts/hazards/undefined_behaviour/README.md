@@ -38,6 +38,7 @@ flowchart LR
 
 - **In this library:** [Data race or race condition?](../../../02_Shared_State/data_race_or_race_condition/README.md)
 - **In this library:** [Can a thread borrow a local variable?](../../../01_Threads/lending_a_local_to_a_thread/README.md)
+- **In this library:** [What does AddressSanitizer find that the race detector cannot?](../../../09_Testing_and_Tools/a_memory_error_detector/README.md)
 - **Reference:** [Wikipedia: Undefined behavior ↗](https://en.wikipedia.org/wiki/Undefined_behavior)
 
 <!-- Generated above this line by tools/build_concepts.py from TOML data — edit the data, not the page. Hand-written notes go below it and are kept. -->

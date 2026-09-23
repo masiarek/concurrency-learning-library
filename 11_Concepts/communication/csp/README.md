@@ -1,6 +1,6 @@
 # Communicating sequential processes
 
-**Category:** [Communication](../README.md) · **Status:** stub · **Lessons:** chapter 05, Message passing *(planned)*
+**Category:** [Communication](../README.md) · **Status:** stub · **Lessons:** [chapter 05, Message passing](../../../05_Message_Passing/README.md)
 
 **One line:** Tony Hoare's model of independent processes that interact only through synchronous channels — the idea behind Go's goroutines and channels.
 
@@ -38,6 +38,8 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [Who owns a value after it has been sent?](../../../05_Message_Passing/sending_a_value_moves_it/README.md)
+- **In this library:** [What if only one thread is allowed to touch the data?](../../../05_Message_Passing/one_owner_receives_the_numbers/README.md)
 - **In the books:** [*Concurrency in Go*](../../../10_Resources/books_go/README.md#cox_buday_concurrency_in_go), Katherine Cox-Buday — ch. 2, 'Modeling Your Code: Communicating Sequential Processes'
 - **In the books:** [*Seven Concurrency Models in Seven Weeks*](../../../10_Resources/books_general/README.md#butcher_seven_concurrency_models), Paul Butcher — ch. 6, 'Communicating Sequential Processes'
 - **In the books:** [*Python Parallel Programming Cookbook*](../../../10_Resources/books_python/README.md#zaccone_python_parallel_programming_cookbook), Giancarlo Zaccone — ch. 5, 'Distributed Python' → 'Communicating sequential processes with PyCSP'

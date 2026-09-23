@@ -1,6 +1,6 @@
 # Liveness failure
 
-**Category:** [Hazards](../README.md) · **Status:** stub · **Lessons:** chapter 03, When locks go wrong *(planned)*
+**Category:** [Hazards](../README.md) · **Status:** stub · **Lessons:** [chapter 03, When locks go wrong](../../../03_When_Locks_Go_Wrong/README.md)
 
 **One line:** A task that should make progress never does, though nothing has crashed: it waits for ever, spins for ever, or never gets its turn.
 
@@ -38,5 +38,16 @@ flowchart LR
 | Rust | [The Rustonomicon ↗](https://doc.rust-lang.org/nomicon/races.html) counts getting deadlocked as safe: the compiler checks memory safety, not progress |
 | Java | [JLS §17.1 ↗](https://docs.oracle.com/javase/specs/jls/se25/html/jls-17.html#jls-17.1): the language neither prevents nor requires detection of deadlock |
 | Haskell | [`BlockedIndefinitelyOnMVar` ↗](https://hackage.haskell.org/package/base/docs/Control-Exception.html) is the exception for a thread blocked on an `MVar` that nothing else references, so it can never continue |
+
+## Where to read more
+
+- **In this library:** [What does a failure on a thread do when nobody is waiting for it?](../../../01_Threads/a_failure_nobody_is_waiting_for/README.md)
+- **In this library:** [Why do two locks taken in different orders hang?](../../../03_When_Locks_Go_Wrong/two_locks_in_different_orders/README.md)
+- **In this library:** [Can two threads be busy forever and get nothing done?](../../../03_When_Locks_Go_Wrong/livelock/README.md)
+- **In this library:** [Can a thread wait forever for a lock that is always free eventually?](../../../03_When_Locks_Go_Wrong/starvation_and_fairness/README.md)
+- **In this library:** [How do you find out where a deadlocked program is stuck?](../../../03_When_Locks_Go_Wrong/detecting_a_deadlock/README.md)
+- **In this library:** [What happens when the signal comes before the wait?](../../../04_Waiting_For_Each_Other/the_lost_wakeup/README.md)
+- **In this library:** [How does a receiver learn that no more values will come?](../../../05_Message_Passing/closing_a_channel/README.md)
+- **In this library:** [How do you read a thread dump?](../../../09_Testing_and_Tools/reading_a_thread_dump/README.md)
 
 <!-- Generated above this line by tools/build_concepts.py from TOML data — edit the data, not the page. Hand-written notes go below it and are kept. -->

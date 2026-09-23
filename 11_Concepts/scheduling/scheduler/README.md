@@ -39,6 +39,9 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [What is a goroutine, if not a thread?](../../../01_Threads/a_goroutine_is_not_a_thread/README.md)
+- **In this library:** [What does a sleep promise, and what does a yield?](../../../01_Threads/sleep_and_yield/README.md)
+- **In this library:** [Who runs an async task, and on how many threads?](../../../06_Async/who_runs_the_tasks/README.md)
 - **In the books:** [*Concurrency in C# Cookbook*](../../../10_Resources/books_csharp_dotnet/README.md#cleary_concurrency_in_csharp_cookbook), Stephen Cleary — ch. 13, 'Scheduling'
 - **In the books:** [*Combine: Asynchronous Programming with Swift*](../../../10_Resources/books_swift/README.md#kodeco_combine_asynchronous_programming_swift), Shai Mishali, Florent Pillet, Marin Todorov, Scott Gardner — ch. 17, 'Schedulers'
 - **In the books:** [*Programming with POSIX Threads*](../../../10_Resources/books_c/README.md#butenhof_programming_with_posix_threads), David R. Butenhof — ch. 5, 'Advanced Threaded Programming' → 'Realtime scheduling'

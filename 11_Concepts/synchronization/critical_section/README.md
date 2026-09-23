@@ -26,6 +26,10 @@ Also called: critical region.
 ## Where to read more
 
 - **In this library:** [Keeping every update](../../../02_Shared_State/keeping_every_update/README.md)
+- **In this library:** [Can two atomics keep two values consistent?](../../../02_Shared_State/two_values_that_must_change_together/README.md)
+- **In this library:** [Who unlocks when the function returns early?](../../../03_When_Locks_Go_Wrong/the_forgotten_unlock/README.md)
+- **In this library:** [What state is the data in after a thread died holding the lock?](../../../03_When_Locks_Go_Wrong/a_panic_while_holding_the_lock/README.md)
+- **In this library:** [What is a monitor, and which languages have one?](../../../04_Waiting_For_Each_Other/a_monitor_bundles_lock_and_condition/README.md)
 - **In a sibling library:** [Go: A mutex guards a counter ↗](https://masiarek.github.io/go-learning-library/04_Sync/a_mutex_guards_a_counter/index.html)
 - **In the books:** [*Modern Multithreading*](../../../10_Resources/books_general/README.md#carver_tai_modern_multithreading), Richard H. Carver, Kuo-Chung Tai — ch. 2, 'The Critical Section Problem'
 - **In the books:** [*Learn Concurrent Programming with Go*](../../../10_Resources/books_go/README.md#cutajar_learn_concurrent_programming_with_go), James Cutajar — ch. 4, 'Synchronization with mutexes' → 'Protecting critical sections with mutexes'

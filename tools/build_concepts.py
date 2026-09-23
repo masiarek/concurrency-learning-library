@@ -466,6 +466,32 @@ def render_abbreviations(d: dict) -> str:
     return "\n".join(out)
 
 
+def render_keywords(d: dict) -> str:
+    """Every concept title and alias, alphabetically, pointing at its concept page."""
+    page = CONCEPTS / "keywords" / "README.md"
+    cat_title = {c["slug"]: c["title"] for c in d["categories"]}
+    rows = []
+    for slug, c in d["concepts"].items():
+        rows.append((c["title"], slug, ""))
+        for alias in c.get("aliases", []):
+            rows.append((alias, slug, c["title"]))
+    rows.sort(key=lambda r: (r[0].lower().lstrip("`"), r[1]))
+    out = ["# Keywords", "",
+           f"Every name a concept goes by — {len(d['concepts'])} titles and {len(rows) - len(d['concepts'])} aliases, "
+           "one row each — pointing at the concept's page, which has the definition, the diagram of what it connects to, "
+           "its name in each language and the lessons that measure it. The [abbreviations](../abbreviations/README.md) page "
+           "has the short forms; this page has the words.", "",
+           "| Keyword | Concept | Category |", "|---|---|---|"]
+    for word, slug, canonical in rows:
+        c = d["concepts"][slug]
+        target = clink(d, page, slug) if not canonical else f"{clink(d, page, slug)}"
+        cat = f"[{cat_title[c['category']]}](../{c['category']}/README.md)"
+        label = external(word) if canonical else f"**{external(word)}**"
+        out.append(f"| {label} | {target} | {cat} |")
+    out.append("")
+    return "\n".join(out)
+
+
 def render_books_index(d: dict) -> str:
     page = RESOURCES / "README.md"
     rows = ["| Focus | Books | On the shelf | Whole-book concurrency titles |", "|---|---|---|---|"]
@@ -563,6 +589,8 @@ def planned(d: dict) -> dict[Path, str]:
     if d["abbreviations"]:
         path = CONCEPTS / "abbreviations" / "README.md"
         files[path] = with_hand(render_abbreviations(d), path)
+    path = CONCEPTS / "keywords" / "README.md"
+    files[path] = with_hand(render_keywords(d), path)
     for focus, title in FOCUS:
         if any(b["focus"] == focus for b in d["books"].values()):
             path = books_page(focus)

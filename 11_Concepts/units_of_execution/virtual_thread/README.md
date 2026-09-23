@@ -32,6 +32,9 @@ flowchart LR
 ## Where to read more
 
 - **In this library:** [Who waits when main returns?](../../../01_Threads/who_waits_when_main_returns/README.md)
+- **In this library:** [How many threads can you start?](../../../01_Threads/how_many_threads_can_you_start/README.md)
+- **In this library:** [What is a goroutine, if not a thread?](../../../01_Threads/a_goroutine_is_not_a_thread/README.md)
+- **In this library:** [Why can't a normal function call an async one?](../../../06_Async/function_coloring/README.md)
 - **Reference:** [JEP 444: Virtual Threads ↗](https://openjdk.org/jeps/444)
 
 <!-- Generated above this line by tools/build_concepts.py from TOML data — edit the data, not the page. Hand-written notes go below it and are kept. -->

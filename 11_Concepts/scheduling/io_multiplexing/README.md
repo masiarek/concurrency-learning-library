@@ -1,6 +1,6 @@
 # I/O multiplexing
 
-**Category:** [Scheduling](../README.md) · **Status:** stub · **Lessons:** chapter 06, Async *(planned)*
+**Category:** [Scheduling](../README.md) · **Status:** stub · **Lessons:** [chapter 06, Async](../../../06_Async/README.md)
 
 **One line:** Asking the operating system to watch many sockets or file descriptors at once and report which are ready, so that one thread can serve thousands of connections.
 
@@ -36,6 +36,9 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [How does one thread wait on several channels at once?](../../../05_Message_Passing/waiting_on_several_channels/README.md)
+- **In this library:** [What does an event loop do all day?](../../../06_Async/what_an_event_loop_does/README.md)
+- **In this library:** [How does one thread watch a thousand sockets?](../../../06_Async/io_multiplexing_under_the_loop/README.md)
 - **In the books:** [*Asynchronous Programming in Rust*](../../../10_Resources/books_rust/README.md#samson_asynchronous_programming_in_rust), Carl Fredrik Samson — ch. 3, 'Understanding OS-Backed Event Queues, System Calls, and Cross-Platform Abstractions'
 - **In the books:** [*Python Concurrency with asyncio*](../../../10_Resources/books_python/README.md#fowler_python_concurrency_with_asyncio), Matthew Fowler — ch. 3, 'A first asyncio application' → 'Using the selectors module to build a socket event loop'
 - **In the books:** [*Grokking Concurrency*](../../../10_Resources/books_general/README.md#bobrov_grokking_concurrency), Kirill Bobrov — ch. 11, 'Event-based concurrency' → 'I/O multiplexing'

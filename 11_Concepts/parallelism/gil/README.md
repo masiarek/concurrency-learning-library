@@ -31,6 +31,9 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [How much faster is real work on eight threads?](../../../07_Parallelism/cpu_bound_speedup/README.md)
+- **In this library:** [Why do Python threads take turns?](../../../07_Parallelism/the_gil_and_free_threaded_python/README.md)
+- **In this library:** [When are processes the better workers?](../../../08_Processes/multiprocessing_instead_of_threads/README.md)
 - **In the books:** [*Python Concurrency with asyncio*](../../../10_Resources/books_python/README.md#fowler_python_concurrency_with_asyncio), Matthew Fowler — ch. 1, 'Getting to know asyncio' → 'Understanding the global interpreter lock'
 - **In the books:** [*Parallel Programming with Python*](../../../10_Resources/books_python/README.md#palach_parallel_programming_with_python), Jan Palach — ch. 1, 'Contextualizing Parallel, Concurrent, and Distributed Programming' → 'Taking care of Python GIL'
 - **In the books:** [*Advanced Python Programming*](../../../10_Resources/books_python/README.md#nguyen_advanced_python_programming), Quan Nguyen — ch. 15, 'The Global Interpreter Lock'

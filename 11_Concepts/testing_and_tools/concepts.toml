@@ -9,7 +9,7 @@ title = "Race detector"
 summary = "A tool that instruments memory accesses as the program runs and reports the data races that actually happened in that run — ThreadSanitizer, Go's `-race`."
 aliases = ["ThreadSanitizer", "TSan", "go -race", "Helgrind"]
 chapter = 9
-lessons = ["02_Shared_State/the_lost_update", "02_Shared_State/data_race_or_race_condition"]
+lessons = ["02_Shared_State/the_lost_update", "02_Shared_State/data_race_or_race_condition", "09_Testing_and_Tools/a_race_detector_finds_what_happened"]
 pages = [
   ["Rust: Data races — ThreadSanitizer on a C counter", "https://masiarek.github.io/rust-learning-library/31_C_and_Cpp/data_races/index.html"],
   ["Go: The race detector", "https://masiarek.github.io/go-learning-library/07_Testing_Concurrent_Code/the_race_detector/index.html"],
@@ -29,6 +29,7 @@ title = "Deterministic scheduling for tests"
 summary = "Running concurrent code under a controlled scheduler or a fake clock, so that an interleaving or a timeout can be reproduced on demand — Rust's loom, Go's `testing/synctest`."
 aliases = ["loom", "synctest", "deterministic simulation", "virtual time"]
 chapter = 9
+lessons = ["09_Testing_and_Tools/a_stress_test_that_actually_races", "09_Testing_and_Tools/virtual_time_in_tests", "09_Testing_and_Tools/model_checking_a_small_program"]
 prevents = ["heisenbug"]
 related = ["model_checking"]
 pages = [
@@ -49,6 +50,7 @@ title = "Stress testing"
 summary = "Running concurrent code many times, under load and with many threads, so that rare interleavings get a chance to show up."
 aliases = ["jcstress"]
 chapter = 9
+lessons = ["09_Testing_and_Tools/a_stress_test_that_actually_races", "09_Testing_and_Tools/virtual_time_in_tests"]
 related = ["nondeterminism"]
 [concept.languages]
 go = "[`go test -count n -cpu 1,2,4`](https://pkg.go.dev/cmd/go#hdr-Testing_flags) repeats each test under several `GOMAXPROCS` values; [`stress`](https://pkg.go.dev/golang.org/x/tools/cmd/stress) runs a process in parallel in a loop to catch sporadic failures"
@@ -62,6 +64,7 @@ title = "Model checking"
 summary = "Exploring every state and interleaving of a model of a program — in TLA+, SPIN, or loom — to prove a property or produce a counterexample."
 aliases = ["TLA+", "SPIN", "Lincheck"]
 chapter = 9
+lessons = ["09_Testing_and_Tools/model_checking_a_small_program"]
 reference = [["Wikipedia: Model checking", "https://en.wikipedia.org/wiki/Model_checking"]]
 [concept.languages]
 rust = "[loom](https://docs.rs/loom/latest/loom/) simulates the operating system's scheduler and Rust's memory model so that all possible valid behaviours are explored"
@@ -74,6 +77,7 @@ title = "Debugging concurrent programs"
 summary = "Thread dumps, deadlock detectors and tracing that show what every thread or task is waiting for at a given moment."
 aliases = ["thread dump", "deadlock detection", "goroutine dump", "stack dump"]
 chapter = 9
+lessons = ["03_When_Locks_Go_Wrong/detecting_a_deadlock", "09_Testing_and_Tools/reading_a_thread_dump", "09_Testing_and_Tools/profiling_where_the_time_goes", "09_Testing_and_Tools/a_heisenbug"]
 related = ["deadlock"]
 notes = [["tools for concurrent programming", "https://docs.google.com/document/d/1SC1yU8oBqvxoAsZZ2AdoaCnHFR8apqvzSoNh4U2tX0U/edit?tab=t.0"]]
 pages = [
@@ -93,6 +97,7 @@ title = "Profiling concurrent programs"
 summary = "Measuring where the time goes when many threads run — waiting for locks, waiting to be scheduled, and bouncing cache lines — and not only which functions are hot."
 aliases = ["performance tuning", "contention profiling", "mutex profile"]
 chapter = 9
+lessons = ["09_Testing_and_Tools/profiling_where_the_time_goes", "09_Testing_and_Tools/a_heisenbug"]
 related = ["contention", "speedup_and_amdahls_law", "false_sharing"]
 [concept.languages]
 go = "[`runtime/pprof`](https://pkg.go.dev/runtime/pprof) has `block` and `mutex` profiles beside the CPU profile"
@@ -106,7 +111,7 @@ summary = "A tool that instruments allocations and stack frames so that reading 
 aliases = ["AddressSanitizer", "ASan", "Valgrind", "Memcheck"]
 chapter = 9
 related = ["race_detector", "concurrency_debugging", "dangling_pointer"]
-lessons = ["01_Threads/lending_a_local_to_a_thread"]
+lessons = ["01_Threads/lending_a_local_to_a_thread", "09_Testing_and_Tools/a_memory_error_detector"]
 reference = [["AddressSanitizer", "https://clang.llvm.org/docs/AddressSanitizer.html"]]
 [concept.languages]
 c = "[`-fsanitize=address`](https://clang.llvm.org/docs/AddressSanitizer.html) in Clang and GCC alike; `ASAN_OPTIONS=detect_stack_use_after_return=1` adds the frames a function has already returned from"

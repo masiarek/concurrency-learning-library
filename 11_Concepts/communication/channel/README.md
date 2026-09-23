@@ -1,6 +1,6 @@
 # Channel
 
-**Category:** [Communication](../README.md) · **Status:** stub · **Lessons:** chapter 05, Message passing *(planned)*
+**Category:** [Communication](../README.md) · **Status:** stub · **Lessons:** [chapter 05, Message passing](../../../05_Message_Passing/README.md)
 
 **One line:** A typed conduit between tasks: one side sends values, the other receives them, in order.
 
@@ -57,6 +57,16 @@ flowchart LR
 
 - **In this library:** [Getting a result back](../../../01_Threads/getting_a_result_back/README.md)
 - **In this library:** [Keeping every update](../../../02_Shared_State/keeping_every_update/README.md)
+- **In this library:** [Who owns a value after it has been sent?](../../../05_Message_Passing/sending_a_value_moves_it/README.md)
+- **In this library:** [Does a send return before anyone receives?](../../../05_Message_Passing/an_unbuffered_send_waits/README.md)
+- **In this library:** [What stops a fast producer from filling memory?](../../../05_Message_Passing/a_bounded_queue_pushes_back/README.md)
+- **In this library:** [How does a receiver learn that no more values will come?](../../../05_Message_Passing/closing_a_channel/README.md)
+- **In this library:** [How does one thread wait on several channels at once?](../../../05_Message_Passing/waiting_on_several_channels/README.md)
+- **In this library:** [How do three stages run at once on one stream of values?](../../../05_Message_Passing/a_pipeline_of_stages/README.md)
+- **In this library:** [How does one stream split across workers and merge back?](../../../05_Message_Passing/fan_out_fan_in/README.md)
+- **In this library:** [How do N workers share one queue of jobs?](../../../05_Message_Passing/a_worker_pool/README.md)
+- **In this library:** [How does one event reach every subscriber?](../../../05_Message_Passing/publish_and_subscribe/README.md)
+- **In this library:** [How does a loop await a sequence of values that arrive over time?](../../../06_Async/an_async_stream/README.md)
 - **In a sibling library:** [Rust: Channels ↗](https://masiarek.github.io/rust-learning-library/09_Advanced/channels/index.html)
 - **In a sibling library:** [Go: An unbuffered send waits for a receiver ↗](https://masiarek.github.io/go-learning-library/02_Channels/an_unbuffered_send_waits_for_a_receiver/index.html)
 - **In a sibling library:** [Go: Closing a channel ends a range ↗](https://masiarek.github.io/go-learning-library/02_Channels/closing_a_channel_ends_a_range/index.html)

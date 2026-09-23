@@ -23,6 +23,7 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [Why does the ninth core help less than the second?](../../../07_Parallelism/amdahls_law/README.md)
 - **In the books:** [*Hands-On Concurrency with Rust*](../../../10_Resources/books_rust/README.md#troutwine_hands_on_concurrency_with_rust), Brian L. Troutwine — ch. 2, 'Sequential Rust Performance and Testing'
 - **In the books:** [*Grokking Concurrency*](../../../10_Resources/books_general/README.md#bobrov_grokking_concurrency), Kirill Bobrov — ch. 2, 'Serial and parallel execution'
 - **In the books:** [*Multi-Threaded Programming in C++*](../../../10_Resources/books_cpp/README.md#walmsley_multithreaded_programming_in_cpp), Mark Walmsley — ch. 1, 'Introduction' → 'Single Threaded Programming'

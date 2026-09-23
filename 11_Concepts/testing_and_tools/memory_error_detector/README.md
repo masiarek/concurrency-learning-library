@@ -1,6 +1,6 @@
 # Memory error detector
 
-**Category:** [Testing and tools](../README.md) · **Status:** stub · **Lessons:** chapter 09, Testing and tools *(planned)*
+**Category:** [Testing and tools](../README.md) · **Status:** stub · **Lessons:** [chapter 09, Testing and tools](../../../09_Testing_and_Tools/README.md)
 
 **One line:** A tool that instruments allocations and stack frames so that reading or writing storage whose lifetime has ended is reported at run time — AddressSanitizer, Valgrind's Memcheck.
 
@@ -22,6 +22,7 @@ Also called: AddressSanitizer, ASan, Valgrind, Memcheck.
 ## Where to read more
 
 - **In this library:** [Can a thread borrow a local variable?](../../../01_Threads/lending_a_local_to_a_thread/README.md)
+- **In this library:** [What does AddressSanitizer find that the race detector cannot?](../../../09_Testing_and_Tools/a_memory_error_detector/README.md)
 - **Reference:** [AddressSanitizer ↗](https://clang.llvm.org/docs/AddressSanitizer.html)
 
 <!-- Generated above this line by tools/build_concepts.py from TOML data — edit the data, not the page. Hand-written notes go below it and are kept. -->

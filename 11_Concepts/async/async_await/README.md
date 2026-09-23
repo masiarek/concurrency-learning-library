@@ -1,6 +1,6 @@
 # Async and await
 
-**Category:** [Async](../README.md) · **Status:** stub · **Lessons:** chapter 06, Async *(planned)*
+**Category:** [Async](../README.md) · **Status:** stub · **Lessons:** [chapter 06, Async](../../../06_Async/README.md)
 
 **One line:** Syntax that lets asynchronous code read like sequential code: an async function returns a future, and await pauses the caller until that future resolves, without blocking the thread.
 
@@ -41,6 +41,9 @@ flowchart LR
 ## Where to read more
 
 - **In this library:** [Is total += n safe on two threads?](../../../02_Shared_State/the_lost_update/README.md)
+- **In this library:** [What happens at an await?](../../../06_Async/async_and_await/README.md)
+- **In this library:** [Where does a callback keep its state?](../../../06_Async/a_callback_and_its_state/README.md)
+- **In this library:** [Why can't a normal function call an async one?](../../../06_Async/function_coloring/README.md)
 - **In a sibling library:** [Rust: `async fn` and `.await` ↗](https://masiarek.github.io/rust-learning-library/35_Async/async_fn_and_await/index.html)
 - **In the books:** [*Asynchronous Programming in Rust*](../../../10_Resources/books_rust/README.md#samson_asynchronous_programming_in_rust), Carl Fredrik Samson — ch. 7, 'Coroutines and async/await'
 - **In the books:** [*Pro Asynchronous Programming with .NET*](../../../10_Resources/books_csharp_dotnet/README.md#blewett_clymer_pro_asynchronous_programming_dotnet), Richard Blewett, Andrew Clymer — ch. 7, 'async and await'

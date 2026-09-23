@@ -1,6 +1,6 @@
 # Condition variable
 
-**Category:** [Synchronization](../README.md) · **Status:** stub · **Lessons:** chapter 04, Waiting for each other *(planned)*
+**Category:** [Synchronization](../README.md) · **Status:** stub · **Lessons:** [chapter 04, Waiting for each other](../../../04_Waiting_For_Each_Other/README.md)
 
 **One line:** Lets a thread that holds a lock sleep until another thread signals that what it waits for may now be true; wake-ups can be spurious, so the condition is checked again in a loop.
 
@@ -47,6 +47,11 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [How does a thread wait for something to become true?](../../../04_Waiting_For_Each_Other/waiting_for_a_condition/README.md)
+- **In this library:** [What happens when the signal comes before the wait?](../../../04_Waiting_For_Each_Other/the_lost_wakeup/README.md)
+- **In this library:** [What is a monitor, and which languages have one?](../../../04_Waiting_For_Each_Other/a_monitor_bundles_lock_and_condition/README.md)
+- **In this library:** [How does a producer wait for room and a consumer wait for an item?](../../../04_Waiting_For_Each_Other/the_bounded_buffer/README.md)
+- **In this library:** [What does a wait return when the time runs out?](../../../04_Waiting_For_Each_Other/waiting_with_a_timeout/README.md)
 - **In the books:** [*Learn Concurrent Programming with Go*](../../../10_Resources/books_go/README.md#cutajar_learn_concurrent_programming_with_go), James Cutajar — ch. 5, 'Condition variables and semaphores'
 - **In the books:** [*Hands-On Concurrency with Rust*](../../../10_Resources/books_rust/README.md#troutwine_hands_on_concurrency_with_rust), Brian L. Troutwine — ch. 5, 'Locks – Mutex, Condvar, Barriers and RWLock'
 - **In the books:** [*Pthreads Programming*](../../../10_Resources/books_c/README.md#nichols_pthreads_programming), Bradford Nichols, Dick Buttlar, Jacqueline Proulx Farrell — ch. 3, 'Synchronizing Pthreads' → 'Condition Variables'

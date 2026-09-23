@@ -1,6 +1,6 @@
 # Blocking and non-blocking calls
 
-**Category:** [Foundations](../README.md) · **Status:** stub · **Lessons:** chapter 06, Async *(planned)*
+**Category:** [Foundations](../README.md) · **Status:** stub · **Lessons:** [chapter 06, Async](../../../06_Async/README.md)
 
 **One line:** A blocking call does not return until its work is done, holding the caller's thread the whole time; a non-blocking call returns at once and reports that the work is not ready yet or will finish later.
 
@@ -26,6 +26,8 @@ Also called: synchronous and asynchronous calls, blocking I/O, non-blocking I/O.
 
 ## Where to read more
 
+- **In this library:** [What does one blocking call do to every other task?](../../../06_Async/blocking_the_event_loop/README.md)
+- **In this library:** [How does one thread watch a thousand sockets?](../../../06_Async/io_multiplexing_under_the_loop/README.md)
 - **In the books:** [*Java Concurrency in Practice*](../../../10_Resources/books_java/README.md#goetz_java_concurrency_in_practice), Brian Goetz, Tim Peierls, Joshua Bloch, Joseph Bowbeer, David Holmes, Doug Lea — ch. 15, 'Atomic Variables and Nonblocking Synchronization'
 - **In the books:** [*Grokking Concurrency*](../../../10_Resources/books_general/README.md#bobrov_grokking_concurrency), Kirill Bobrov — ch. 10, 'Nonblocking I/O'
 - **In the books:** [*Rust Atomics and Locks*](../../../10_Resources/books_rust/README.md#bos_rust_atomics_and_locks), Mara Bos — ch. 5, 'Building Our Own Channels' → 'Blocking'

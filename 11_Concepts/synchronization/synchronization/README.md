@@ -1,6 +1,6 @@
 # Synchronization
 
-**Category:** [Synchronization](../README.md) · **Status:** stub · **Lessons:** chapter 04, Waiting for each other *(planned)*
+**Category:** [Synchronization](../README.md) · **Status:** stub · **Lessons:** [chapter 04, Waiting for each other](../../../04_Waiting_For_Each_Other/README.md)
 
 **One line:** Coordinating concurrent tasks so that their interactions happen safely — only one at a time, or one waiting until another is ready.
 
@@ -50,6 +50,10 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [How does a thread wait for something to become true?](../../../04_Waiting_For_Each_Other/waiting_for_a_condition/README.md)
+- **In this library:** [What does a semaphore count?](../../../04_Waiting_For_Each_Other/a_semaphore_counts_permits/README.md)
+- **In this library:** [How do N threads wait for each other?](../../../04_Waiting_For_Each_Other/a_barrier_and_a_latch/README.md)
+- **In this library:** [How does initialization run exactly once with many threads racing to it?](../../../04_Waiting_For_Each_Other/run_exactly_once/README.md)
 - **Notes:** [synchronization mechanisms - coordinating multiple processes ↗](https://docs.google.com/document/d/1VAUhAJm1sdVCJvLVWwL1my9jNCqUu93dxxlfS6vwbSw/edit?tab=t.0)
 - **Notes:** [coordination (managing interactions between concurrent - parallel tasks) ↗](https://docs.google.com/document/d/1shqvAb6zs3lOBd7lXRyvBP12C5TdcJCEe4zTge9T-pE/edit?tab=t.0)
 - **Reference:** [Wikipedia: Synchronization (computer science) ↗](https://en.wikipedia.org/wiki/Synchronization_(computer_science))

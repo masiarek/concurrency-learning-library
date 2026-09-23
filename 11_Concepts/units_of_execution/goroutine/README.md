@@ -35,6 +35,8 @@ flowchart LR
 
 - **In this library:** [Who waits when main returns?](../../../01_Threads/who_waits_when_main_returns/README.md)
 - **In this library:** [Getting a result back](../../../01_Threads/getting_a_result_back/README.md)
+- **In this library:** [How many threads can you start?](../../../01_Threads/how_many_threads_can_you_start/README.md)
+- **In this library:** [What is a goroutine, if not a thread?](../../../01_Threads/a_goroutine_is_not_a_thread/README.md)
 - **In a sibling library:** [Go: `main` does not wait ↗](https://masiarek.github.io/go-learning-library/01_Goroutines/main_does_not_wait/index.html)
 - **In a sibling library:** [Go: A goroutine has no handle ↗](https://masiarek.github.io/go-learning-library/01_Goroutines/a_goroutine_has_no_handle/index.html)
 - **In a sibling library:** [Go: A panic ends the whole program ↗](https://masiarek.github.io/go-learning-library/01_Goroutines/a_panic_ends_the_whole_program/index.html)

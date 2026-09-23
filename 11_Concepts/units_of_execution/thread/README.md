@@ -60,6 +60,9 @@ flowchart LR
 - **In this library:** [Who waits when main returns?](../../../01_Threads/who_waits_when_main_returns/README.md)
 - **In this library:** [Getting a result back](../../../01_Threads/getting_a_result_back/README.md)
 - **In this library:** [Can a thread borrow a local variable?](../../../01_Threads/lending_a_local_to_a_thread/README.md)
+- **In this library:** [How many threads can you start?](../../../01_Threads/how_many_threads_can_you_start/README.md)
+- **In this library:** [Is a thread-local variable really one per thread?](../../../01_Threads/a_variable_per_thread/README.md)
+- **In this library:** [Which thread gets the signal?](../../../08_Processes/a_signal_arrives_on_some_thread/README.md)
 - **In a sibling library:** [Rust: Spawning a thread ↗](https://masiarek.github.io/rust-learning-library/09_Advanced/spawning_a_thread/index.html)
 - **In a sibling library:** [Go: Goroutines are cheap ↗](https://masiarek.github.io/go-learning-library/01_Goroutines/goroutines_are_cheap/index.html)
 - **In the books:** [*Learn Concurrent Programming with Go*](../../../10_Resources/books_go/README.md#cutajar_learn_concurrent_programming_with_go), James Cutajar — ch. 2, 'Dealing with threads'

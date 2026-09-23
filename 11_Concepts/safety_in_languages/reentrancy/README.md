@@ -31,6 +31,7 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [What happens when a thread takes a lock it already holds?](../../../03_When_Locks_Go_Wrong/a_lock_taken_twice/README.md)
 - **Reference:** [Wikipedia: Reentrancy (computing) ↗](https://en.wikipedia.org/wiki/Reentrancy_(computing))
 
 <!-- Generated above this line by tools/build_concepts.py from TOML data — edit the data, not the page. Hand-written notes go below it and are kept. -->

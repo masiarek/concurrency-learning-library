@@ -35,6 +35,9 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [What does a sleep promise, and what does a yield?](../../../01_Threads/sleep_and_yield/README.md)
+- **In this library:** [What does a spinlock cost when there is nowhere to spin?](../../../03_When_Locks_Go_Wrong/a_spinlock_on_one_core/README.md)
+- **In this library:** [How does a thread wait for something to become true?](../../../04_Waiting_For_Each_Other/waiting_for_a_condition/README.md)
 - **In the books:** [*Learn Concurrent Programming with Go*](../../../10_Resources/books_go/README.md#cutajar_learn_concurrent_programming_with_go), James Cutajar — ch. 12, 'Atomics, spin locks, and futexes' → 'Improving on spin locking'
 - **Notes:** [busy-waiting ↗](https://docs.google.com/document/u/0/d/1VSUTXXyFhpf6E3ZTYXWKmkOTU-Dq73aqa6kX4EFRiNY/edit)
 - **Reference:** [Wikipedia: Busy waiting ↗](https://en.wikipedia.org/wiki/Busy_waiting)

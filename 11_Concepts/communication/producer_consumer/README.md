@@ -1,6 +1,6 @@
 # Producer-consumer
 
-**Category:** [Communication](../README.md) · **Status:** stub · **Lessons:** chapter 05, Message passing *(planned)*
+**Category:** [Communication](../README.md) · **Status:** stub · **Lessons:** [chapter 05, Message passing](../../../05_Message_Passing/README.md)
 
 **One line:** One or more tasks make work items and one or more take them from a shared queue, each side running at its own speed.
 
@@ -38,6 +38,9 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [How does a thread wait for something to become true?](../../../04_Waiting_For_Each_Other/waiting_for_a_condition/README.md)
+- **In this library:** [How does a producer wait for room and a consumer wait for an item?](../../../04_Waiting_For_Each_Other/the_bounded_buffer/README.md)
+- **In this library:** [What stops a fast producer from filling memory?](../../../05_Message_Passing/a_bounded_queue_pushes_back/README.md)
 - **In a sibling library:** [Go: A buffered channel is a bounded queue ↗](https://masiarek.github.io/go-learning-library/02_Channels/a_buffered_channel_is_a_bounded_queue/index.html)
 - **In a sibling library:** [Go: A worker pool ↗](https://masiarek.github.io/go-learning-library/06_Patterns/a_worker_pool/index.html)
 - **In the books:** [*Kotlin Coroutines by Tutorials*](../../../10_Resources/books_other/README.md#babic_srivastava_kotlin_coroutines_by_tutorials), Filip Babić, Nishant Srivastava — ch. 13, 'Producer & Actors'

@@ -46,6 +46,8 @@ flowchart LR
 ## Where to read more
 
 - **In this library:** [The lost update in a database](../../../02_Shared_State/the_lost_update_in_a_database/README.md)
+- **In this library:** [Why is checking and then acting two steps too many?](../../../02_Shared_State/check_then_act/README.md)
+- **In this library:** [Can a compare-and-swap succeed when it should have failed?](../../../02_Shared_State/the_aba_problem/README.md)
 - **In a sibling library:** [Go: Atomic counters ↗](https://masiarek.github.io/go-learning-library/04_Sync/atomic_counters/index.html)
 - **In the books:** [*Effective Concurrency in Go*](../../../10_Resources/books_go/README.md#serdar_effective_concurrency_in_go), Burak Serdar — ch. 9, 'Atomic Memory Operations' → 'Compare and swap'
 - **In the books:** [*Rust Atomics and Locks*](../../../10_Resources/books_rust/README.md#bos_rust_atomics_and_locks), Mara Bos — ch. 2, 'Atomics' → 'Compare-and-Exchange Operations'

@@ -1,6 +1,6 @@
 # Event loop
 
-**Category:** [Scheduling](../README.md) · **Status:** stub · **Lessons:** chapter 06, Async *(planned)*
+**Category:** [Scheduling](../README.md) · **Status:** stub · **Lessons:** [chapter 06, Async](../../../06_Async/README.md)
 
 **One line:** A loop on one thread that waits for events — a socket ready, a timer due, work finished — and runs the callbacks or resumes the tasks waiting on each.
 
@@ -40,6 +40,11 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [What does an event loop do all day?](../../../06_Async/what_an_event_loop_does/README.md)
+- **In this library:** [What does one blocking call do to every other task?](../../../06_Async/blocking_the_event_loop/README.md)
+- **In this library:** [Who runs an async task, and on how many threads?](../../../06_Async/who_runs_the_tasks/README.md)
+- **In this library:** [How does one thread watch a thousand sockets?](../../../06_Async/io_multiplexing_under_the_loop/README.md)
+- **In this library:** [Why may only one thread touch the user interface?](../../../06_Async/the_ui_thread/README.md)
 - **In the books:** [*Asynchronous Programming in Rust*](../../../10_Resources/books_rust/README.md#samson_asynchronous_programming_in_rust), Carl Fredrik Samson — ch. 3, 'Understanding OS-Backed Event Queues, System Calls, and Cross-Platform Abstractions'
 - **In the books:** [*asyncio Recipes*](../../../10_Resources/books_python/README.md#tahrioui_asyncio_recipes), Mohamed Mustapha Tahrioui — ch. 2, 'Working with Event Loops'
 - **In the books:** [*JavaScript Concurrency*](../../../10_Resources/books_javascript/README.md#boduch_javascript_concurrency), Adam Boduch — ch. 8, 'Evented IO with NodeJS'

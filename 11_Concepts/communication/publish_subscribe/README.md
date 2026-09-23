@@ -1,6 +1,6 @@
 # Publish-subscribe and broadcast
 
-**Category:** [Communication](../README.md) · **Status:** stub · **Lessons:** chapter 05, Message passing *(planned)*
+**Category:** [Communication](../README.md) · **Status:** stub · **Lessons:** [chapter 05, Message passing](../../../05_Message_Passing/README.md)
 
 **One line:** A sender publishes to a topic and every subscriber gets its own copy, without the sender knowing who the subscribers are.
 
@@ -37,6 +37,7 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [How does one event reach every subscriber?](../../../05_Message_Passing/publish_and_subscribe/README.md)
 - **In the books:** [*Async JavaScript*](../../../10_Resources/books_javascript/README.md#burnham_async_javascript), Trevor Burnham — ch. 2, 'Distributing Events'
 - **In the books:** [*Combine: Asynchronous Programming with Swift*](../../../10_Resources/books_swift/README.md#kodeco_combine_asynchronous_programming_swift), Shai Mishali, Florent Pillet, Marin Todorov, Scott Gardner — ch. 2, 'Publishers & Subscribers'
 - **In the books:** [*Kotlin Coroutines by Tutorials*](../../../10_Resources/books_other/README.md#babic_srivastava_kotlin_coroutines_by_tutorials), Filip Babić, Nishant Srivastava — ch. 12, 'Broadcast Channels'

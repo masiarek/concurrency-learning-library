@@ -1,6 +1,6 @@
 # Inter-process communication
 
-**Category:** [Communication](../README.md) · **Status:** stub · **Lessons:** chapter 08, Processes *(planned)*
+**Category:** [Communication](../README.md) · **Status:** stub · **Lessons:** [chapter 08, Processes](../../../08_Processes/README.md)
 
 **One line:** The ways separate processes exchange data: pipes, sockets, shared-memory segments, signals and message queues.
 
@@ -44,6 +44,10 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [How do two processes talk through a pipe?](../../../08_Processes/a_pipe_between_processes/README.md)
+- **In this library:** [Which thread gets the signal?](../../../08_Processes/a_signal_arrives_on_some_thread/README.md)
+- **In this library:** [When are processes the better workers?](../../../08_Processes/multiprocessing_instead_of_threads/README.md)
+- **In this library:** [Can two processes share a variable after all?](../../../08_Processes/shared_memory_between_processes/README.md)
 - **In a sibling library:** [Linux: head closes the pipe early ↗](https://masiarek.github.io/linux-learning-library/01_Pipelines/head_closes_the_pipe_early/index.html)
 - **In the books:** [*Grokking Concurrency*](../../../10_Resources/books_general/README.md#bobrov_grokking_concurrency), Kirill Bobrov — ch. 5, 'Interprocess communication'
 - **In the books:** [*Parallel Programming with Python*](../../../10_Resources/books_python/README.md#palach_parallel_programming_with_python), Jan Palach — ch. 6, 'Utilizing Parallel Python' → 'Understanding interprocess communication'

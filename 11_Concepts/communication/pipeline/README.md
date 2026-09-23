@@ -1,6 +1,6 @@
 # Pipeline
 
-**Category:** [Communication](../README.md) · **Status:** stub · **Lessons:** chapter 05, Message passing *(planned)*
+**Category:** [Communication](../README.md) · **Status:** stub · **Lessons:** [chapter 05, Message passing](../../../05_Message_Passing/README.md)
 
 **One line:** A chain of stages, each a task that reads from the previous stage's channel and writes to the next one's.
 
@@ -35,6 +35,8 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [How do three stages run at once on one stream of values?](../../../05_Message_Passing/a_pipeline_of_stages/README.md)
+- **In this library:** [How does one stream split across workers and merge back?](../../../05_Message_Passing/fan_out_fan_in/README.md)
 - **In a sibling library:** [Go: A pipeline of stages ↗](https://masiarek.github.io/go-learning-library/06_Patterns/a_pipeline_of_stages/index.html)
 - **In a sibling library:** [Rust: Channels ↗](https://masiarek.github.io/rust-learning-library/09_Advanced/channels/index.html)
 - **In the books:** [*Effective Concurrency in Go*](../../../10_Resources/books_go/README.md#serdar_effective_concurrency_in_go), Burak Serdar — ch. 5, 'Worker Pools and Pipelines'

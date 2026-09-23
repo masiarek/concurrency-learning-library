@@ -40,6 +40,8 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [How many threads can you start?](../../../01_Threads/how_many_threads_can_you_start/README.md)
+- **In this library:** [What is a goroutine, if not a thread?](../../../01_Threads/a_goroutine_is_not_a_thread/README.md)
 - **In a sibling library:** [Go: Goroutines are cheap ↗](https://masiarek.github.io/go-learning-library/01_Goroutines/goroutines_are_cheap/index.html)
 - **In the books:** [*Asynchronous Programming in Rust*](../../../10_Resources/books_rust/README.md#samson_asynchronous_programming_in_rust), Carl Fredrik Samson — ch. 2, 'How Programming Languages Model Asynchronous Program Flow' → 'Fibers and green threads'
 - **In the books:** [*Systems Programming in Unix/Linux*](../../../10_Resources/books_c/README.md#wang_systems_programming_unix_linux), K. C. Wang — ch. 4, 'Concurrent Programming' → 'Programming Project: User-Level Threads'

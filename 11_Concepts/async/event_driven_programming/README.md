@@ -1,6 +1,6 @@
 # Event-driven programming
 
-**Category:** [Async](../README.md) · **Status:** stub · **Lessons:** chapter 06, Async *(planned)*
+**Category:** [Async](../README.md) · **Status:** stub · **Lessons:** [chapter 06, Async](../../../06_Async/README.md)
 
 **One line:** A program built as handlers that run when events arrive — a click, a message, a ready socket — instead of as one flow from top to bottom.
 
@@ -38,6 +38,9 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [How does one event reach every subscriber?](../../../05_Message_Passing/publish_and_subscribe/README.md)
+- **In this library:** [What does an event loop do all day?](../../../06_Async/what_an_event_loop_does/README.md)
+- **In this library:** [Where does a callback keep its state?](../../../06_Async/a_callback_and_its_state/README.md)
 - **In the books:** [*Grokking Concurrency*](../../../10_Resources/books_general/README.md#bobrov_grokking_concurrency), Kirill Bobrov — ch. 11, 'Event-based concurrency'
 - **In the books:** [*JavaScript Concurrency*](../../../10_Resources/books_javascript/README.md#boduch_javascript_concurrency), Adam Boduch — ch. 8, 'Evented IO with NodeJS'
 - **In the books:** [*Asynchronous Programming*](../../../10_Resources/books_general/README.md#edet_asynchronous_programming), Theophilus Edet — ch. 5, 'Real-time Applications and Event-driven Architectures'

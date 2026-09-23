@@ -1,6 +1,6 @@
 # Message passing
 
-**Category:** [Communication](../README.md) · **Status:** stub · **Lessons:** chapter 05, Message passing *(planned)*
+**Category:** [Communication](../README.md) · **Status:** stub · **Lessons:** [chapter 05, Message passing](../../../05_Message_Passing/README.md)
 
 **One line:** Tasks share nothing and interact only by sending each other values, so that each value has one owner at a time.
 
@@ -50,6 +50,10 @@ flowchart LR
 ## Where to read more
 
 - **In this library:** [Keeping every update](../../../02_Shared_State/keeping_every_update/README.md)
+- **In this library:** [Who owns a value after it has been sent?](../../../05_Message_Passing/sending_a_value_moves_it/README.md)
+- **In this library:** [Does a send return before anyone receives?](../../../05_Message_Passing/an_unbuffered_send_waits/README.md)
+- **In this library:** [How does a receiver learn that no more values will come?](../../../05_Message_Passing/closing_a_channel/README.md)
+- **In this library:** [What if only one thread is allowed to touch the data?](../../../05_Message_Passing/one_owner_receives_the_numbers/README.md)
 - **In the books:** [*Learn Concurrent Programming with Go*](../../../10_Resources/books_go/README.md#cutajar_learn_concurrent_programming_with_go), James Cutajar — ch. 7, 'Communication using message passing'
 - **In the books:** [*Modern Multithreading*](../../../10_Resources/books_general/README.md#carver_tai_modern_multithreading), Richard H. Carver, Kuo-Chung Tai — ch. 5, 'Message Passing'
 - **In the books:** [*Concurrent Programming on Windows*](../../../10_Resources/books_csharp_dotnet/README.md#duffy_concurrent_programming_on_windows), Joe Duffy — ch. 13, 'Data and Task Parallelism' → 'Message-Based Parallelism'

@@ -1,6 +1,6 @@
 # Lock poisoning
 
-**Category:** [Synchronization](../README.md) · **Status:** stub · **Lessons:** chapter 03, When locks go wrong *(planned)*
+**Category:** [Synchronization](../README.md) · **Status:** stub · **Lessons:** [chapter 03, When locks go wrong](../../../03_When_Locks_Go_Wrong/README.md)
 
 **One line:** Marking a lock as suspect when a thread panics while holding it, so that the next thread to take it learns the data may be half-updated.
 
@@ -23,6 +23,7 @@ Also called: poisoned mutex, abandoned mutex.
 
 ## Where to read more
 
+- **In this library:** [What state is the data in after a thread died holding the lock?](../../../03_When_Locks_Go_Wrong/a_panic_while_holding_the_lock/README.md)
 - **In a sibling library:** [Rust: Lock poisoning ↗](https://masiarek.github.io/rust-learning-library/09_Advanced/mutex_poisoning/index.html)
 - **In a sibling library:** [Go: A mutex guards a counter ↗](https://masiarek.github.io/go-learning-library/04_Sync/a_mutex_guards_a_counter/index.html)
 - **Reference:** [Rust std: Mutex poisoning ↗](https://doc.rust-lang.org/std/sync/struct.Mutex.html#poisoning)

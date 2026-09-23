@@ -21,6 +21,7 @@ Also called: hard real-time, soft real-time, mission-critical system.
 
 ## Where to read more
 
+- **In this library:** [How does a low-priority thread block a high-priority one?](../../../03_When_Locks_Go_Wrong/priority_inversion/README.md)
 - **Notes:** [Real-time systems - mission-critical applications - real-time processing ↗](https://docs.google.com/document/d/1Yz-VeK0_FKg1JSwXPg4iLpbATBv_Z6SLG2TxozCqHvw/edit?tab=t.0)
 - **Notes:** [mission-critical systems ↗](https://docs.google.com/document/d/1Zxa9uwKIHR_RfZoWVMvM_aAiYt4PAIS-tKXwJVeWzpM/edit?tab=t.0)
 - **Notes:** [Embedded systems - Raspberry Pi Pico ↗](https://docs.google.com/document/d/1CPx6OlSkYbOKRMLNuW0hs-lrKYGhk4JQ8hQa4z94b_Q/edit)

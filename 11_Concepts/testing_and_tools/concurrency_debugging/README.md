@@ -1,6 +1,6 @@
 # Debugging concurrent programs
 
-**Category:** [Testing and tools](../README.md) · **Status:** stub · **Lessons:** chapter 09, Testing and tools *(planned)*
+**Category:** [Testing and tools](../README.md) · **Status:** stub · **Lessons:** [chapter 09, Testing and tools](../../../09_Testing_and_Tools/README.md)
 
 **One line:** Thread dumps, deadlock detectors and tracing that show what every thread or task is waiting for at a given moment.
 
@@ -23,6 +23,10 @@ Also called: thread dump, deadlock detection, goroutine dump, stack dump.
 
 ## Where to read more
 
+- **In this library:** [How do you find out where a deadlocked program is stuck?](../../../03_When_Locks_Go_Wrong/detecting_a_deadlock/README.md)
+- **In this library:** [How do you read a thread dump?](../../../09_Testing_and_Tools/reading_a_thread_dump/README.md)
+- **In this library:** [Where does a concurrent program spend its time?](../../../09_Testing_and_Tools/profiling_where_the_time_goes/README.md)
+- **In this library:** [Why did the bug disappear when you added a print?](../../../09_Testing_and_Tools/a_heisenbug/README.md)
 - **In a sibling library:** [Rust: Instrumenting async code ↗](https://masiarek.github.io/rust-learning-library/21_Observability/instrumenting_async/index.html)
 - **In a sibling library:** [Go: All goroutines are asleep ↗](https://masiarek.github.io/go-learning-library/02_Channels/all_goroutines_are_asleep/index.html)
 - **In the books:** [*Effective Concurrency in Go*](../../../10_Resources/books_go/README.md#serdar_effective_concurrency_in_go), Burak Serdar — ch. 10, 'Troubleshooting Concurrency Issues'

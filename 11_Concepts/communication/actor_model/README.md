@@ -1,6 +1,6 @@
 # Actor model
 
-**Category:** [Communication](../README.md) · **Status:** stub · **Lessons:** chapter 05, Message passing *(planned)*
+**Category:** [Communication](../README.md) · **Status:** stub · **Lessons:** [chapter 05, Message passing](../../../05_Message_Passing/README.md)
 
 **One line:** Actors are isolated units with a mailbox: each handles one message at a time, and can send messages, create actors and change its own state.
 
@@ -42,6 +42,7 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [What if only one thread is allowed to touch the data?](../../../05_Message_Passing/one_owner_receives_the_numbers/README.md)
 - **In a sibling library:** [Rust: Who owns the state ↗](https://masiarek.github.io/rust-learning-library/35_Async/building_minidb/who_owns_the_state/index.html)
 - **In the books:** [*Async Rust*](../../../10_Resources/books_rust/README.md#flitton_morton_async_rust), Maxwell Flitton, Caroline Morton — ch. 8, 'The Actor Model'
 - **In the books:** [*Learning Concurrent Programming in Scala*](../../../10_Resources/books_scala_jvm_functional/README.md#prokopec_learning_concurrent_programming_in_scala), Aleksandar Prokopec — ch. 8, 'Actors'

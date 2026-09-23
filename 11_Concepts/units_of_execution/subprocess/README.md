@@ -1,6 +1,6 @@
 # Child process
 
-**Category:** [Units of execution](../README.md) · **Status:** stub · **Lessons:** chapter 08, Processes *(planned)*
+**Category:** [Units of execution](../README.md) · **Status:** stub · **Lessons:** [chapter 08, Processes](../../../08_Processes/README.md)
 
 **One line:** A process started by another program, which can pass it input, read its output, wait for it and learn how it ended.
 
@@ -36,6 +36,9 @@ flowchart LR
 ## Where to read more
 
 - **In this library:** [Who waits when main returns?](../../../01_Threads/who_waits_when_main_returns/README.md)
+- **In this library:** [What does the child get when a process forks?](../../../08_Processes/fork_copies_the_process/README.md)
+- **In this library:** [How does a parent learn how its child ended?](../../../08_Processes/a_child_process_and_its_exit_status/README.md)
+- **In this library:** [What is a zombie process, and whose fault is it?](../../../08_Processes/a_zombie_and_an_orphan/README.md)
 - **In the books:** [*Python Concurrency with asyncio*](../../../10_Resources/books_python/README.md#fowler_python_concurrency_with_asyncio), Matthew Fowler — ch. 13, 'Managing subprocesses'
 - **In the books:** [*Python Asyncio Jump-Start*](../../../10_Resources/books_python/README.md#brownlee_python_asyncio_jump_start), Jason Brownlee — ch. 6, 'Subprocesses and Streams'
 - **In the books:** [*JavaScript Concurrency*](../../../10_Resources/books_javascript/README.md#boduch_javascript_concurrency), Adam Boduch — ch. 9, 'Advanced NodeJS Concurrency' → 'Child Processes'

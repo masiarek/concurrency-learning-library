@@ -36,6 +36,9 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [What is a goroutine, if not a thread?](../../../01_Threads/a_goroutine_is_not_a_thread/README.md)
+- **In this library:** [What does a spinlock cost when there is nowhere to spin?](../../../03_When_Locks_Go_Wrong/a_spinlock_on_one_core/README.md)
+- **In this library:** [How many workers should a pool have?](../../../07_Parallelism/how_many_workers/README.md)
 - **In the books:** [*Java Concurrency in Practice*](../../../10_Resources/books_java/README.md#goetz_java_concurrency_in_practice), Brian Goetz, Tim Peierls, Joshua Bloch, Joseph Bowbeer, David Holmes, Doug Lea — ch. 11, 'Performance and Scalability' → 'Reducing Context Switch Overhead'
 - **Notes:** [Difference between Thread Context Switch and Process Context Switch ↗](https://docs.google.com/document/u/0/d/1SCJjKfXjd-HhXqBSUDNCobjTHcrqmYURRgZUtaJSCbw/edit)
 - **Notes:** [context switching - general ↗](https://docs.google.com/document/u/0/d/1o8StLlChfE11FyBBzKiqNBbu2xAUz2RfX-w_nwmqhQY/edit)

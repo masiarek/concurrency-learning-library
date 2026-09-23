@@ -42,6 +42,8 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [What does a sleep promise, and what does a yield?](../../../01_Threads/sleep_and_yield/README.md)
+- **In this library:** [How does a low-priority thread block a high-priority one?](../../../03_When_Locks_Go_Wrong/priority_inversion/README.md)
 - **In the books:** [*Pro TBB*](../../../10_Resources/books_cpp/README.md#voss_pro_tbb), Michael Voss, Rafael Asenjo, James Reinders — ch. 14, 'Using Task Priorities' → 'Support for Non-Preemptive Priorities in the TBB Task Class'
 - **Reference:** [Wikipedia: Preemption (computing) ↗](https://en.wikipedia.org/wiki/Preemption_(computing))
 

@@ -1,6 +1,6 @@
 # Latch
 
-**Category:** [Synchronization](../README.md) · **Status:** stub · **Lessons:** chapter 04, Waiting for each other *(planned)*
+**Category:** [Synchronization](../README.md) · **Status:** stub · **Lessons:** [chapter 04, Waiting for each other](../../../04_Waiting_For_Each_Other/README.md)
 
 **One line:** A one-shot gate: tasks wait on it until a set number of other tasks have each signalled, then every waiter proceeds and the gate stays open.
 
@@ -38,6 +38,7 @@ flowchart LR
 ## Where to read more
 
 - **In this library:** [Is total += n safe on two threads?](../../../02_Shared_State/the_lost_update/README.md)
+- **In this library:** [How do N threads wait for each other?](../../../04_Waiting_For_Each_Other/a_barrier_and_a_latch/README.md)
 - **In the books:** [*Concurrency with Modern C++*](../../../10_Resources/books_cpp/README.md#grimm_concurrency_with_modern_cpp), Rainer Grimm — ch. 6, 'The Future: C++20/23' → 'Latches and Barriers'
 - **In the books:** [*Functional and Concurrent Programming*](../../../10_Resources/books_scala_jvm_functional/README.md#charpentier_functional_and_concurrent_programming), Michel Charpentier — ch. 23, 'Common Synchronizers' → 'Latches and Barriers'
 - **Notes:** [Latches - C++ ↗](https://docs.google.com/document/d/1WpU_f2wtATL4GFhpqVgWLe5M2FxI5XXYh9vwtzRDIEY/edit?tab=t.0)

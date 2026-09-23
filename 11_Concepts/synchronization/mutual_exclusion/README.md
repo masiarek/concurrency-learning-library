@@ -43,6 +43,7 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [Why is checking and then acting two steps too many?](../../../02_Shared_State/check_then_act/README.md)
 - **In the books:** [*Concurrent Programming: Algorithms, Principles, and Foundations*](../../../10_Resources/books_general/README.md#raynal_concurrent_programming_algorithms), Michel Raynal — ch. 1, 'The Mutual Exclusion Problem'
 - **In the books:** [*The Art of Multiprocessor Programming*](../../../10_Resources/books_general/README.md#herlihy_shavit_art_of_multiprocessor_programming), Maurice Herlihy, Nir Shavit — ch. 2, 'Mutual Exclusion'
 - **In the books:** [*Distributed Computing*](../../../10_Resources/books_general/README.md#kshemkalyani_singhal_distributed_computing), Ajay D. Kshemkalyani, Mukesh Singhal — ch. 9, 'Distributed Mutual Exclusion Algorithms'

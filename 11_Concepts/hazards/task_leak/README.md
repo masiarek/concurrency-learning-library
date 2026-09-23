@@ -1,6 +1,6 @@
 # Leaked tasks
 
-**Category:** [Hazards](../README.md) · **Status:** stub · **Lessons:** chapter 06, Async *(planned)*
+**Category:** [Hazards](../README.md) · **Status:** stub · **Lessons:** [chapter 06, Async](../../../06_Async/README.md)
 
 **One line:** A thread, goroutine or task blocked for ever on something nobody will provide, holding its memory until the process ends.
 
@@ -45,6 +45,10 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [How does a receiver learn that no more values will come?](../../../05_Message_Passing/closing_a_channel/README.md)
+- **In this library:** [How is a running task told to stop, and does it?](../../../06_Async/cancelling_an_async_task/README.md)
+- **In this library:** [What happens to a task that is started and never awaited?](../../../06_Async/a_task_nobody_awaits/README.md)
+- **In this library:** [What is a zombie process, and whose fault is it?](../../../08_Processes/a_zombie_and_an_orphan/README.md)
 - **In a sibling library:** [Go: A leaked goroutine never ends ↗](https://masiarek.github.io/go-learning-library/05_Context/a_leaked_goroutine_never_ends/index.html)
 - **In the books:** [*Concurrency in Go*](../../../10_Resources/books_go/README.md#cox_buday_concurrency_in_go), Katherine Cox-Buday — ch. 4, 'Concurrency Patterns in Go' → 'Preventing Goroutine Leaks'
 - **In the books:** [*Parallel and Concurrent Programming in Haskell*](../../../10_Resources/books_haskell/README.md#marlow_parallel_and_concurrent_programming_in_haskell), Simon Marlow — ch. 11, 'Higher-Level Concurrency Abstractions' → 'Avoiding Thread Leakage'

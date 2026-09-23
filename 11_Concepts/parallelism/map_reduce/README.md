@@ -34,6 +34,8 @@ flowchart LR
 ## Where to read more
 
 - **In this library:** [Splitting a sum across workers](../../../07_Parallelism/splitting_a_sum_across_workers/README.md)
+- **In this library:** [Same work on different data, or different work at once?](../../../07_Parallelism/data_parallel_or_task_parallel/README.md)
+- **In this library:** [Why is a reduction the hard half of a parallel map?](../../../07_Parallelism/map_and_reduce/README.md)
 - **In the books:** [*Concurrency in .NET*](../../../10_Resources/books_csharp_dotnet/README.md#terrell_concurrency_in_dotnet), Riccardo Terrell — ch. 5, 'PLINQ and MapReduce: data parallelism, part 2'
 - **In the books:** [*The Art of Concurrency*](../../../10_Resources/books_general/README.md#breshears_art_of_concurrency), Clay Breshears — ch. 7, 'MapReduce'
 - **In the books:** [*Python Concurrency with asyncio*](../../../10_Resources/books_python/README.md#fowler_python_concurrency_with_asyncio), Matthew Fowler — ch. 6, 'Handling CPU-bound work' → 'Solving a problem with MapReduce using asyncio'

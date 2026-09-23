@@ -37,6 +37,9 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [How do N threads wait for each other?](../../../04_Waiting_For_Each_Other/a_barrier_and_a_latch/README.md)
+- **In this library:** [Same work on different data, or different work at once?](../../../07_Parallelism/data_parallel_or_task_parallel/README.md)
+- **In this library:** [How does a recursive job split itself across cores?](../../../07_Parallelism/fork_join/README.md)
 - **In the books:** [*Pro TBB*](../../../10_Resources/books_cpp/README.md#voss_pro_tbb), Michael Voss, Rafael Asenjo, James Reinders — ch. 8, 'Mapping Parallel Patterns to TBB' → 'Fork-Join Pattern'
 - **In the books:** [*Programming Concurrency on the JVM*](../../../10_Resources/books_java/README.md#subramaniam_programming_concurrency_on_the_jvm), Venkat Subramaniam — ch. 4, 'Scalability and Thread Safety' → 'Java 7 Fork-Join API'
 - **In the books:** [*Programming Rust*](../../../10_Resources/books_rust/README.md#blandy_programming_rust), Jim Blandy, Jason Orendorff, Leonora F. S. Tindall — ch. 19, 'Concurrency' → 'Fork-Join Parallelism'

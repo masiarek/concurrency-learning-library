@@ -37,6 +37,8 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [How does one event reach every subscriber?](../../../05_Message_Passing/publish_and_subscribe/README.md)
+- **In this library:** [How does a loop await a sequence of values that arrive over time?](../../../06_Async/an_async_stream/README.md)
 - **In the books:** [*Async Rust*](../../../10_Resources/books_rust/README.md#flitton_morton_async_rust), Maxwell Flitton, Caroline Morton — ch. 6, 'Reactive Programming'
 - **In the books:** [*C++ Reactive Programming*](../../../10_Resources/books_cpp/README.md#pai_abraham_cpp_reactive_programming), Praseed Pai, Peter Abraham — ch. 1, 'Reactive Programming Model – Overview and History'
 - **In the books:** [*Learning Concurrent Programming in Scala*](../../../10_Resources/books_scala_jvm_functional/README.md#prokopec_learning_concurrent_programming_in_scala), Aleksandar Prokopec — ch. 6, 'Concurrent Programming with Reactive Extensions'

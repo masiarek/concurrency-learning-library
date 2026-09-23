@@ -22,6 +22,8 @@ Also called: parallel sort, parallel search.
 ## Where to read more
 
 - **In this library:** [Splitting a sum across workers](../../../07_Parallelism/splitting_a_sum_across_workers/README.md)
+- **In this library:** [Can a for loop be made parallel by changing one word?](../../../07_Parallelism/a_parallel_iterator/README.md)
+- **In this library:** [Why is a reduction the hard half of a parallel map?](../../../07_Parallelism/map_and_reduce/README.md)
 - **In the books:** [*An Introduction to Parallel Programming*](../../../10_Resources/books_general/README.md#pacheco_malensek_introduction_to_parallel_programming), Peter S. Pacheco, Matthew Malensek — ch. 1, 'Why parallel computing'
 - **In the books:** [*C++ Concurrency in Action*](../../../10_Resources/books_cpp/README.md#williams_cpp_concurrency_in_action), Anthony Williams — ch. 10, 'Parallel algorithms'
 - **In the books:** [*Pro TBB*](../../../10_Resources/books_cpp/README.md#voss_pro_tbb), Michael Voss, Rafael Asenjo, James Reinders — ch. 2, 'Generic Parallel Algorithms'

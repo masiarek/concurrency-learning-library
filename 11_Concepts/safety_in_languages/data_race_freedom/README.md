@@ -35,6 +35,8 @@ flowchart LR
 ## Where to read more
 
 - **In this library:** [Is total += n safe on two threads?](../../../02_Shared_State/the_lost_update/README.md)
+- **In this library:** [What may be handed to another thread?](../../../02_Shared_State/what_may_cross_a_thread_boundary/README.md)
+- **In this library:** [What does AddressSanitizer find that the race detector cannot?](../../../09_Testing_and_Tools/a_memory_error_detector/README.md)
 - **In the books:** [*Rust Atomics and Locks*](../../../10_Resources/books_rust/README.md#bos_rust_atomics_and_locks), Mara Bos — ch. 1, 'Basics of Rust Concurrency' → 'Borrowing and Data Races'
 - **In the books:** [*The Rust Programming Language*](../../../10_Resources/books_rust/README.md#klabnik_nichols_rust_programming_language), Steve Klabnik, Carol Nichols — ch. 16, 'Fearless Concurrency'
 - **In the books:** [*Rust for Rustaceans*](../../../10_Resources/books_rust/README.md#gjengset_rust_for_rustaceans), Jon Gjengset — ch. 10, 'Concurrency (and Parallelism)' → 'Sane Concurrency'

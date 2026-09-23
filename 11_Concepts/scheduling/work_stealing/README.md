@@ -39,6 +39,8 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [Who runs an async task, and on how many threads?](../../../06_Async/who_runs_the_tasks/README.md)
+- **In this library:** [How does a recursive job split itself across cores?](../../../07_Parallelism/fork_join/README.md)
 - **In the books:** [*Concurrency in Go*](../../../10_Resources/books_go/README.md#cox_buday_concurrency_in_go), Katherine Cox-Buday — ch. 6, 'Goroutines and the Go Runtime' → 'Work Stealing'
 - **In the books:** [*Async Rust*](../../../10_Resources/books_rust/README.md#flitton_morton_async_rust), Maxwell Flitton, Caroline Morton — ch. 3, 'Building Our Own Async Queues' → 'Task Stealing'
 - **In the books:** [*The Art of Multiprocessor Programming*](../../../10_Resources/books_general/README.md#herlihy_shavit_art_of_multiprocessor_programming), Maurice Herlihy, Nir Shavit — ch. 16, 'Futures, Scheduling, and Work Distribution' → 'Work-Stealing Dequeues'

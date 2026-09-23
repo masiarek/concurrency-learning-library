@@ -36,6 +36,8 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [Can a thread wait forever for a lock that is always free eventually?](../../../03_When_Locks_Go_Wrong/starvation_and_fairness/README.md)
+- **In this library:** [How does a low-priority thread block a high-priority one?](../../../03_When_Locks_Go_Wrong/priority_inversion/README.md)
 - **Reference:** [Wikipedia: Scheduling (computing) — scheduling disciplines ↗](https://en.wikipedia.org/wiki/Scheduling_(computing)#Scheduling_disciplines)
 
 <!-- Generated above this line by tools/build_concepts.py from TOML data — edit the data, not the page. Hand-written notes go below it and are kept. -->

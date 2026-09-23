@@ -1,6 +1,6 @@
 # Starvation
 
-**Category:** [Hazards](../README.md) · **Status:** stub · **Lessons:** chapter 03, When locks go wrong *(planned)*
+**Category:** [Hazards](../README.md) · **Status:** stub · **Lessons:** [chapter 03, When locks go wrong](../../../03_When_Locks_Go_Wrong/README.md)
 
 **One line:** A task that is ready never gets to run, or never gets the lock, because others keep being chosen ahead of it.
 
@@ -45,6 +45,9 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [When is a read-write lock faster than a mutex?](../../../02_Shared_State/readers_and_writers/README.md)
+- **In this library:** [Can a thread wait forever for a lock that is always free eventually?](../../../03_When_Locks_Go_Wrong/starvation_and_fairness/README.md)
+- **In this library:** [Why do five philosophers with five forks starve?](../../../04_Waiting_For_Each_Other/the_dining_philosophers/README.md)
 - **In a sibling library:** [Go: `select` chooses at random ↗](https://masiarek.github.io/go-learning-library/03_Select/select_chooses_at_random/index.html)
 - **In the books:** [*Grokking Concurrency*](../../../10_Resources/books_general/README.md#bobrov_grokking_concurrency), Kirill Bobrov — ch. 9, 'Solving concurrency problems: Deadlocks and starvation'
 - **In the books:** [*Effective Concurrency in Go*](../../../10_Resources/books_go/README.md#serdar_effective_concurrency_in_go), Burak Serdar — ch. 1, 'Concurrency – A High-Level Overview' → 'Atomicity, race, deadlocks, and starvation'

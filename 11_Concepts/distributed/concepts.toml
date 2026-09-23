@@ -25,6 +25,7 @@ elixir_erlang = "[distributed Erlang](https://www.erlang.org/doc/system/distribu
 slug = "partial_failure"
 title = "Partial failure"
 summary = "In a distributed system one component can fail while the others continue, and a caller often cannot tell a slow peer from a dead one."
+lessons = ["08_Processes/multiprocessing_instead_of_threads"]
 related = ["idempotency", "durable_execution", "timeout"]
 reference = [["Dominik Tornow: Distributed Async Await (NDC talk)", "https://www.youtube.com/watch?v=lfSIunYUsSg"]]
 [concept.languages]

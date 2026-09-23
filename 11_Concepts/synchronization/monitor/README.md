@@ -1,6 +1,6 @@
 # Monitor
 
-**Category:** [Synchronization](../README.md) · **Status:** stub · **Lessons:** chapter 04, Waiting for each other *(planned)*
+**Category:** [Synchronization](../README.md) · **Status:** stub · **Lessons:** [chapter 04, Waiting for each other](../../../04_Waiting_For_Each_Other/README.md)
 
 **One line:** An object whose methods all run under one built-in lock, with condition variables for waiting inside it — Java's `synchronized` with `wait` and `notify`.
 
@@ -39,6 +39,8 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [How does a thread wait for something to become true?](../../../04_Waiting_For_Each_Other/waiting_for_a_condition/README.md)
+- **In this library:** [What is a monitor, and which languages have one?](../../../04_Waiting_For_Each_Other/a_monitor_bundles_lock_and_condition/README.md)
 - **In the books:** [*The Art of Multiprocessor Programming*](../../../10_Resources/books_general/README.md#herlihy_shavit_art_of_multiprocessor_programming), Maurice Herlihy, Nir Shavit — ch. 8, 'Monitors and Blocking Synchronization'
 - **In the books:** [*Modern Multithreading*](../../../10_Resources/books_general/README.md#carver_tai_modern_multithreading), Richard H. Carver, Kuo-Chung Tai — ch. 4, 'Monitors'
 - **In the books:** [*Concurrency with Modern C++*](../../../10_Resources/books_cpp/README.md#grimm_concurrency_with_modern_cpp), Rainer Grimm — ch. 9, 'Concurrent Architecture' → 'Monitor Object'

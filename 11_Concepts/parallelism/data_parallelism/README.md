@@ -49,6 +49,10 @@ flowchart LR
 ## Where to read more
 
 - **In this library:** [Splitting a sum across workers](../../../07_Parallelism/splitting_a_sum_across_workers/README.md)
+- **In this library:** [Why are eight threads writing eight different variables slow?](../../../07_Parallelism/false_sharing/README.md)
+- **In this library:** [Same work on different data, or different work at once?](../../../07_Parallelism/data_parallel_or_task_parallel/README.md)
+- **In this library:** [Can a for loop be made parallel by changing one word?](../../../07_Parallelism/a_parallel_iterator/README.md)
+- **In this library:** [Why is a reduction the hard half of a parallel map?](../../../07_Parallelism/map_and_reduce/README.md)
 - **In a sibling library:** [Go: Fan-out, fan-in ↗](https://masiarek.github.io/go-learning-library/06_Patterns/fan_out_fan_in/index.html)
 - **In the books:** [*Data Parallel C++*](../../../10_Resources/books_cpp/README.md#reinders_data_parallel_cpp), James Reinders, Ben Ashbaugh, James Brodman, Michael Kinsner, John Pennycook, Xinmin Tian — ch. 4, 'Expressing Parallelism'
 - **In the books:** [*Learning Concurrent Programming in Scala*](../../../10_Resources/books_scala_jvm_functional/README.md#prokopec_learning_concurrent_programming_in_scala), Aleksandar Prokopec — ch. 5, 'Data-Parallel Collections'

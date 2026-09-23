@@ -26,6 +26,8 @@ Also called: thread-safe, MT-safe.
 
 ## Where to read more
 
+- **In this library:** [What may be handed to another thread?](../../../02_Shared_State/what_may_cross_a_thread_boundary/README.md)
+- **In this library:** [How does initialization run exactly once with many threads racing to it?](../../../04_Waiting_For_Each_Other/run_exactly_once/README.md)
 - **In a sibling library:** [Python: The format mini-language — a formatting call that changes process-wide state ↗](https://masiarek.github.io/python-learning-library/01_Text_and_Bytes/the_format_mini_language/index.html)
 - **In the books:** [*Java Concurrency in Practice*](../../../10_Resources/books_java/README.md#goetz_java_concurrency_in_practice), Brian Goetz, Tim Peierls, Joshua Bloch, Joseph Bowbeer, David Holmes, Doug Lea — ch. 2, 'Thread Safety'
 - **In the books:** [*Pro Asynchronous Programming with .NET*](../../../10_Resources/books_csharp_dotnet/README.md#blewett_clymer_pro_asynchronous_programming_dotnet), Richard Blewett, Andrew Clymer — ch. 4, 'Basic Thread Safety'

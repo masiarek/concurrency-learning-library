@@ -1,6 +1,6 @@
 # Async stream
 
-**Category:** [Async](../README.md) · **Status:** stub · **Lessons:** chapter 06, Async *(planned)*
+**Category:** [Async](../README.md) · **Status:** stub · **Lessons:** [chapter 06, Async](../../../06_Async/README.md)
 
 **One line:** An asynchronous iterator: a sequence whose items arrive over time, each one awaited in turn.
 
@@ -38,6 +38,7 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [How does a loop await a sequence of values that arrive over time?](../../../06_Async/an_async_stream/README.md)
 - **In a sibling library:** [Rust: Streams, sinks, and pipelining ↗](https://masiarek.github.io/rust-learning-library/35_Async/building_minidb/streams_sinks_and_pipelining/index.html)
 - **In the books:** [*C++ Reactive Programming*](../../../10_Resources/books_cpp/README.md#pai_abraham_cpp_reactive_programming), Praseed Pai, Peter Abraham — ch. 6, 'Introduction to Event Stream Programming Using C++'
 - **In the books:** [*Concurrency in C# Cookbook*](../../../10_Resources/books_csharp_dotnet/README.md#cleary_concurrency_in_csharp_cookbook), Stephen Cleary — ch. 3, 'Asynchronous Streams'

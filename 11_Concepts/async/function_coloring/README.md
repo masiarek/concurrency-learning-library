@@ -1,6 +1,6 @@
 # Function coloring
 
-**Category:** [Async](../README.md) · **Status:** stub · **Lessons:** chapter 06, Async *(planned)*
+**Category:** [Async](../README.md) · **Status:** stub · **Lessons:** [chapter 06, Async](../../../06_Async/README.md)
 
 **One line:** An async function can call a sync one, but not the other way round without help, so async-ness spreads up the call graph and splits libraries into two colors.
 
@@ -24,6 +24,8 @@ Also called: what color is your function, sync and async functions.
 
 ## Where to read more
 
+- **In this library:** [What happens at an await?](../../../06_Async/async_and_await/README.md)
+- **In this library:** [Why can't a normal function call an async one?](../../../06_Async/function_coloring/README.md)
 - **Notes:** [async and ffi - async & FFI - not exactly a love story ↗](https://docs.google.com/document/d/1vBvNkxdRh2b88PkKupNiZssYZAyUFY3IFQ1UEgbfa-Y/edit?tab=t.0)
 - **Reference:** [Bob Nystrom: What Color is Your Function? ↗](https://journal.stuffwithstuff.com/2015/02/01/what-color-is-your-function/)
 

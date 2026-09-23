@@ -1,6 +1,6 @@
 # Safety and liveness
 
-**Category:** [Hazards](../README.md) · **Status:** stub · **Lessons:** chapter 03, When locks go wrong *(planned)*
+**Category:** [Hazards](../README.md) · **Status:** stub · **Lessons:** [chapter 03, When locks go wrong](../../../03_When_Locks_Go_Wrong/README.md)
 
 **One line:** The two kinds of correctness for a concurrent program: safety means nothing bad ever happens, liveness means something good eventually does.
 

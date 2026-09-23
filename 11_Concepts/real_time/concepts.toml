@@ -7,6 +7,7 @@ blurb = "When a late answer is a wrong answer: deadlines, worst-case timing, and
 slug = "real_time_system"
 title = "Real-time system"
 summary = "A system whose correctness depends on when results arrive as well as on what they are: a hard real-time system must never miss a deadline, a soft one should rarely."
+lessons = ["03_When_Locks_Go_Wrong/priority_inversion"]
 aliases = ["hard real-time", "soft real-time", "mission-critical system"]
 related = ["priority_inversion", "wcet"]
 notes = [

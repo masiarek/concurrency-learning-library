@@ -1,6 +1,6 @@
 # Run-once initialization
 
-**Category:** [Synchronization](../README.md) · **Status:** stub · **Lessons:** chapter 04, Waiting for each other *(planned)*
+**Category:** [Synchronization](../README.md) · **Status:** stub · **Lessons:** [chapter 04, Waiting for each other](../../../04_Waiting_For_Each_Other/README.md)
 
 **One line:** Running an initializer exactly once however many threads ask for it at the same moment, and handing all of them the same result.
 
@@ -37,6 +37,7 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [How does initialization run exactly once with many threads racing to it?](../../../04_Waiting_For_Each_Other/run_exactly_once/README.md)
 - **In a sibling library:** [Go: `sync.Once` runs exactly once ↗](https://masiarek.github.io/go-learning-library/04_Sync/once_runs_exactly_once/index.html)
 - **In the books:** [*Programming with POSIX Threads*](../../../10_Resources/books_c/README.md#butenhof_programming_with_posix_threads), David R. Butenhof — ch. 5, 'Advanced Threaded Programming' → 'One-time initialization'
 - **In the books:** [*Multi-Threaded Programming in C++*](../../../10_Resources/books_cpp/README.md#walmsley_multithreaded_programming_in_cpp), Mark Walmsley — ch. 7, 'Keys' → 'One-Time Initialization'

@@ -36,6 +36,10 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [Is a thread-local variable really one per thread?](../../../01_Threads/a_variable_per_thread/README.md)
+- **In this library:** [What may be handed to another thread?](../../../02_Shared_State/what_may_cross_a_thread_boundary/README.md)
+- **In this library:** [What if only one thread is allowed to touch the data?](../../../05_Message_Passing/one_owner_receives_the_numbers/README.md)
+- **In this library:** [Why may only one thread touch the user interface?](../../../06_Async/the_ui_thread/README.md)
 - **In the books:** [*Pro TBB*](../../../10_Resources/books_cpp/README.md#voss_pro_tbb), Michael Voss, Rafael Asenjo, James Reinders — ch. 12, 'Using Work Isolation for Correctness and Performance'
 - **In the books:** [*Programming Concurrency on the JVM*](../../../10_Resources/books_java/README.md#subramaniam_programming_concurrency_on_the_jvm), Venkat Subramaniam — ch. 8, 'Favoring Isolated Mutability'
 - **In the books:** [*Concurrency in Go*](../../../10_Resources/books_go/README.md#cox_buday_concurrency_in_go), Katherine Cox-Buday — ch. 4, 'Concurrency Patterns in Go' → 'Confinement'

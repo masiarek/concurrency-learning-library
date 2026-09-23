@@ -1,6 +1,6 @@
 # Backpressure
 
-**Category:** [Communication](../README.md) · **Status:** stub · **Lessons:** chapter 05, Message passing *(planned)*
+**Category:** [Communication](../README.md) · **Status:** stub · **Lessons:** [chapter 05, Message passing](../../../05_Message_Passing/README.md)
 
 **One line:** Letting a slow consumer slow its producers down — by making sends wait or fail — instead of letting unprocessed work pile up without limit.
 
@@ -36,6 +36,12 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [How does a producer wait for room and a consumer wait for an item?](../../../04_Waiting_For_Each_Other/the_bounded_buffer/README.md)
+- **In this library:** [What stops a fast producer from filling memory?](../../../05_Message_Passing/a_bounded_queue_pushes_back/README.md)
+- **In this library:** [How do three stages run at once on one stream of values?](../../../05_Message_Passing/a_pipeline_of_stages/README.md)
+- **In this library:** [How does one event reach every subscriber?](../../../05_Message_Passing/publish_and_subscribe/README.md)
+- **In this library:** [How does a loop await a sequence of values that arrive over time?](../../../06_Async/an_async_stream/README.md)
+- **In this library:** [How do two processes talk through a pipe?](../../../08_Processes/a_pipe_between_processes/README.md)
 - **In a sibling library:** [Go: A buffered channel is a bounded queue ↗](https://masiarek.github.io/go-learning-library/02_Channels/a_buffered_channel_is_a_bounded_queue/index.html)
 - **In a sibling library:** [Rust: Backpressure ↗](https://masiarek.github.io/rust-learning-library/35_Async/building_minidb/backpressure/index.html)
 - **In the books:** [*Combine: Asynchronous Programming with Swift*](../../../10_Resources/books_swift/README.md#kodeco_combine_asynchronous_programming_swift), Shai Mishali, Florent Pillet, Marin Todorov, Scott Gardner — ch. 18, 'Custom Publishers & Handling Backpressure'

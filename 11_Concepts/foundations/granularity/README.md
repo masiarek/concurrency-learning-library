@@ -22,6 +22,11 @@ Also called: task granularity, coarse-grained, fine-grained.
 
 ## Where to read more
 
+- **In this library:** [How much faster is real work on eight threads?](../../../07_Parallelism/cpu_bound_speedup/README.md)
+- **In this library:** [Why does the ninth core help less than the second?](../../../07_Parallelism/amdahls_law/README.md)
+- **In this library:** [How does a recursive job split itself across cores?](../../../07_Parallelism/fork_join/README.md)
+- **In this library:** [How many workers should a pool have?](../../../07_Parallelism/how_many_workers/README.md)
+- **In this library:** [Where does a concurrent program spend its time?](../../../09_Testing_and_Tools/profiling_where_the_time_goes/README.md)
 - **In the books:** [*Pro TBB*](../../../10_Resources/books_cpp/README.md#voss_pro_tbb), Michael Voss, Rafael Asenjo, James Reinders — ch. 16, 'Tuning TBB Algorithms: Granularity, Locality, Parallelism, and Determinism'
 - **In the books:** [*Grokking Concurrency*](../../../10_Resources/books_general/README.md#bobrov_grokking_concurrency), Kirill Bobrov — ch. 7, 'Decomposition' → 'Granularity'
 - **Notes:** [granularity - async ↗](https://docs.google.com/document/d/1maQmN7P6048Px5MIhHitgYvO3M688VMIJkIZkifuS14/edit?tab=t.0)

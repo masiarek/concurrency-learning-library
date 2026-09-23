@@ -38,6 +38,7 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [Is a thread-local variable really one per thread?](../../../01_Threads/a_variable_per_thread/README.md)
 - **In the books:** [*Async Rust*](../../../10_Resources/books_rust/README.md#flitton_morton_async_rust), Maxwell Flitton, Caroline Morton — ch. 7, 'Customizing Tokio' → 'Getting Unsafe with Thread Data'
 - **In the books:** [*Pthreads Programming*](../../../10_Resources/books_c/README.md#nichols_pthreads_programming), Bradford Nichols, Dick Buttlar, Jacqueline Proulx Farrell — ch. 4, 'Managing Pthreads' → 'Keys: Using Thread-Specific Data'
 - **In the books:** [*Concurrency with Modern C++*](../../../10_Resources/books_cpp/README.md#grimm_concurrency_with_modern_cpp), Rainer Grimm — ch. 3, 'Multithreading' → 'Thread-Local Data'

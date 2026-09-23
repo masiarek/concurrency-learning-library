@@ -37,6 +37,8 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [How do you write a test that provokes the race?](../../../09_Testing_and_Tools/a_stress_test_that_actually_races/README.md)
+- **In this library:** [Why did the bug disappear when you added a print?](../../../09_Testing_and_Tools/a_heisenbug/README.md)
 - **In a sibling library:** [Go: `synctest` makes time virtual ↗](https://masiarek.github.io/go-learning-library/07_Testing_Concurrent_Code/synctest_makes_time_virtual/index.html)
 - **In a sibling library:** [Go: `synctest.Wait` instead of a sleep ↗](https://masiarek.github.io/go-learning-library/07_Testing_Concurrent_Code/synctest_wait/index.html)
 - **Notes:** [heisenbug ↗](https://docs.google.com/document/d/1U0NuN9NO02_e_oNutiNPs-TcWk6Ar11xNreOBCCJU7Q/edit)

@@ -1,6 +1,6 @@
 # Suspension point
 
-**Category:** [Scheduling](../README.md) · **Status:** stub · **Lessons:** chapter 06, Async *(planned)*
+**Category:** [Scheduling](../README.md) · **Status:** stub · **Lessons:** [chapter 06, Async](../../../06_Async/README.md)
 
 **One line:** A place where a coroutine or async function can pause and hand control back — an await, a yield — and where other tasks may run before it resumes.
 
@@ -39,6 +39,8 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [What happens at an await?](../../../06_Async/async_and_await/README.md)
+- **In this library:** [How is a running task told to stop, and does it?](../../../06_Async/cancelling_an_async_task/README.md)
 - **In the books:** [*Kotlin Coroutines by Tutorials*](../../../10_Resources/books_other/README.md#babic_srivastava_kotlin_coroutines_by_tutorials), Filip Babić, Nishant Srivastava — ch. 4, 'Suspending Functions'
 - **In the books:** [*Programming with C++20*](../../../10_Resources/books_cpp/README.md#fertig_programming_with_cpp20), Andreas Fertig — ch. 2, 'Coroutines: Suspending functions'
 - **Notes:** [suspension point - concurrent - async - general ↗](https://docs.google.com/document/d/152N9fY5IrgOSHLjxj08re2_IKtUVU9LpV_FjbpEhh2k/edit?tab=t.0)

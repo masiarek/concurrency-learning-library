@@ -34,6 +34,9 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [How many threads can you start?](../../../01_Threads/how_many_threads_can_you_start/README.md)
+- **In this library:** [Why reuse a thread at all?](../../../01_Threads/reusing_threads_in_a_pool/README.md)
+- **In this library:** [How many workers should a pool have?](../../../07_Parallelism/how_many_workers/README.md)
 - **In the books:** [*Pro TBB*](../../../10_Resources/books_cpp/README.md#voss_pro_tbb), Michael Voss, Rafael Asenjo, James Reinders — ch. 11, 'Controlling the Number of Threads Used for Execution'
 - **In the books:** [*C++ Concurrency in Action*](../../../10_Resources/books_cpp/README.md#williams_cpp_concurrency_in_action), Anthony Williams — ch. 2, 'Managing threads' → 'Choosing the number of threads at runtime'
 - **In the books:** [*Functional and Concurrent Programming*](../../../10_Resources/books_scala_jvm_functional/README.md#charpentier_functional_and_concurrent_programming), Michel Charpentier — ch. 24, 'Case Study: Parallel Execution' → 'Bounded Number of Threads'

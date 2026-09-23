@@ -1,6 +1,6 @@
 # Process
 
-**Category:** [Units of execution](../README.md) · **Status:** stub · **Lessons:** chapter 08, Processes *(planned)*
+**Category:** [Units of execution](../README.md) · **Status:** stub · **Lessons:** [chapter 08, Processes](../../../08_Processes/README.md)
 
 **One line:** A running program with its own address space, open files and at least one thread; two processes share nothing unless they arrange to.
 
@@ -48,6 +48,12 @@ flowchart LR
 ## Where to read more
 
 - **In this library:** [Who waits when main returns?](../../../01_Threads/who_waits_when_main_returns/README.md)
+- **In this library:** [What does the child get when a process forks?](../../../08_Processes/fork_copies_the_process/README.md)
+- **In this library:** [How does a parent learn how its child ended?](../../../08_Processes/a_child_process_and_its_exit_status/README.md)
+- **In this library:** [How do two processes talk through a pipe?](../../../08_Processes/a_pipe_between_processes/README.md)
+- **In this library:** [Which thread gets the signal?](../../../08_Processes/a_signal_arrives_on_some_thread/README.md)
+- **In this library:** [When are processes the better workers?](../../../08_Processes/multiprocessing_instead_of_threads/README.md)
+- **In this library:** [What is a zombie process, and whose fault is it?](../../../08_Processes/a_zombie_and_an_orphan/README.md)
 - **In a sibling library:** [Linux: head closes the pipe early ↗](https://masiarek.github.io/linux-learning-library/01_Pipelines/head_closes_the_pipe_early/index.html)
 - **In the books:** [*The Little Elixir & OTP Guidebook*](../../../10_Resources/books_elixir_erlang/README.md#tan_little_elixir_otp_guidebook), Benjamin Tan Wei Hao — ch. 3, 'Processes 101'
 - **In the books:** [*Learn Concurrent Programming with Go*](../../../10_Resources/books_go/README.md#cutajar_learn_concurrent_programming_with_go), James Cutajar — ch. 2, 'Dealing with threads' → 'Abstracting concurrency with processes and threads'

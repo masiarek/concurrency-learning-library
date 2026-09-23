@@ -13,6 +13,8 @@ Also called: Amdahl's law, Gustafson's law, speedup.
 
 ## Where to read more
 
+- **In this library:** [How much faster is real work on eight threads?](../../../07_Parallelism/cpu_bound_speedup/README.md)
+- **In this library:** [Why does the ninth core help less than the second?](../../../07_Parallelism/amdahls_law/README.md)
 - **In the books:** [*The Art of Concurrency*](../../../10_Resources/books_general/README.md#breshears_art_of_concurrency), Clay Breshears — ch. 1, 'Want to Go Faster? Raise Your Hands if You Want to Go Faster!'
 - **In the books:** [*Learn Concurrent Programming with Go*](../../../10_Resources/books_go/README.md#cutajar_learn_concurrent_programming_with_go), James Cutajar — ch. 1, 'Stepping into concurrent programming' → 'Increasing throughput'
 - **In the books:** [*Hands-On Concurrency with Rust*](../../../10_Resources/books_rust/README.md#troutwine_hands_on_concurrency_with_rust), Brian L. Troutwine — ch. 2, 'Sequential Rust Performance and Testing' → 'Diminishing returns'

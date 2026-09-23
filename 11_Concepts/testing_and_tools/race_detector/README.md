@@ -1,6 +1,6 @@
 # Race detector
 
-**Category:** [Testing and tools](../README.md) · **Status:** stub · **Lessons:** chapter 09, Testing and tools *(planned)*
+**Category:** [Testing and tools](../README.md) · **Status:** stub · **Lessons:** [chapter 09, Testing and tools](../../../09_Testing_and_Tools/README.md)
 
 **One line:** A tool that instruments memory accesses as the program runs and reports the data races that actually happened in that run — ThreadSanitizer, Go's `-race`.
 
@@ -26,6 +26,7 @@ Also called: ThreadSanitizer, TSan, go -race, Helgrind.
 
 - **In this library:** [Is total += n safe on two threads?](../../../02_Shared_State/the_lost_update/README.md)
 - **In this library:** [Data race or race condition?](../../../02_Shared_State/data_race_or_race_condition/README.md)
+- **In this library:** [What does a race detector see, and what does it miss?](../../../09_Testing_and_Tools/a_race_detector_finds_what_happened/README.md)
 - **In a sibling library:** [Rust: Data races — ThreadSanitizer on a C counter ↗](https://masiarek.github.io/rust-learning-library/31_C_and_Cpp/data_races/index.html)
 - **In a sibling library:** [Go: The race detector ↗](https://masiarek.github.io/go-learning-library/07_Testing_Concurrent_Code/the_race_detector/index.html)
 - **In the books:** [*Async Rust*](../../../10_Resources/books_rust/README.md#flitton_morton_async_rust), Maxwell Flitton, Caroline Morton — ch. 11, 'Testing' → 'Testing for Race Conditions'

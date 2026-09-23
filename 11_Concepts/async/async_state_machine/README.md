@@ -1,6 +1,6 @@
 # Async functions as state machines
 
-**Category:** [Async](../README.md) · **Status:** stub · **Lessons:** chapter 06, Async *(planned)*
+**Category:** [Async](../README.md) · **Status:** stub · **Lessons:** [chapter 06, Async](../../../06_Async/README.md)
 
 **One line:** A compiler turns an async function into a state machine whose states are its suspension points, storing the local variables that live across each await.
 
@@ -31,6 +31,8 @@ flowchart LR
 
 ## Where to read more
 
+- **In this library:** [What happens at an await?](../../../06_Async/async_and_await/README.md)
+- **In this library:** [Where does a callback keep its state?](../../../06_Async/a_callback_and_its_state/README.md)
 - **In a sibling library:** [Rust: `async fn` and `.await` ↗](https://masiarek.github.io/rust-learning-library/35_Async/async_fn_and_await/index.html)
 - **In the books:** [*Asynchronous Programming in Rust*](../../../10_Resources/books_rust/README.md#samson_asynchronous_programming_in_rust), Carl Fredrik Samson — ch. 7, 'Coroutines and async/await' → 'Introduction to stackless coroutines'
 - **In the books:** [*asyncio Recipes*](../../../10_Resources/books_python/README.md#tahrioui_asyncio_recipes), Mohamed Mustapha Tahrioui — ch. 4, 'Working with Async Generators' → 'Writing a State Machine with an Async Generator'

@@ -23,6 +23,8 @@ flowchart LR
 ## Where to read more
 
 - **In this library:** [Is total += n safe on two threads?](../../../02_Shared_State/the_lost_update/README.md)
+- **In this library:** [How do you write a test that provokes the race?](../../../09_Testing_and_Tools/a_stress_test_that_actually_races/README.md)
+- **In this library:** [Can every interleaving of a small program be checked?](../../../09_Testing_and_Tools/model_checking_a_small_program/README.md)
 - **In a sibling library:** [Go: Fan-out, fan-in ↗](https://masiarek.github.io/go-learning-library/06_Patterns/fan_out_fan_in/index.html)
 - **Notes:** [interleaving actions across threads ↗](https://docs.google.com/document/d/1JqRl9gJCA_tmJQPkipzg0sG5p773x-PuPIel-Nx5HdM/edit?tab=t.0)
 

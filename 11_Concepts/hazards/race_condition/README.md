@@ -50,6 +50,11 @@ flowchart LR
 - **In this library:** [Is total += n safe on two threads?](../../../02_Shared_State/the_lost_update/README.md)
 - **In this library:** [The lost update in a database](../../../02_Shared_State/the_lost_update_in_a_database/README.md)
 - **In this library:** [Data race or race condition?](../../../02_Shared_State/data_race_or_race_condition/README.md)
+- **In this library:** [Why is checking and then acting two steps too many?](../../../02_Shared_State/check_then_act/README.md)
+- **In this library:** [What happens when the signal comes before the wait?](../../../04_Waiting_For_Each_Other/the_lost_wakeup/README.md)
+- **In this library:** [What does a wait return when the time runs out?](../../../04_Waiting_For_Each_Other/waiting_with_a_timeout/README.md)
+- **In this library:** [What does a race detector see, and what does it miss?](../../../09_Testing_and_Tools/a_race_detector_finds_what_happened/README.md)
+- **In this library:** [Why did the bug disappear when you added a print?](../../../09_Testing_and_Tools/a_heisenbug/README.md)
 - **In the books:** [*Grokking Concurrency*](../../../10_Resources/books_general/README.md#bobrov_grokking_concurrency), Kirill Bobrov — ch. 8, 'Solving concurrency problems: Race conditions and synchronization'
 - **In the books:** [*Learn Concurrent Programming with Go*](../../../10_Resources/books_go/README.md#cutajar_learn_concurrent_programming_with_go), James Cutajar — ch. 3, 'Thread communication using memory sharing' → 'Race conditions'
 - **In the books:** [*Async Rust*](../../../10_Resources/books_rust/README.md#flitton_morton_async_rust), Maxwell Flitton, Caroline Morton — ch. 11, 'Testing' → 'Testing for Race Conditions'

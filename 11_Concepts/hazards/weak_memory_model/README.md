@@ -22,6 +22,8 @@ Also called: weak ordering, compiler reordering, store buffering.
 
 ## Where to read more
 
+- **In this library:** [Can a read see half of a write?](../../../02_Shared_State/a_torn_read/README.md)
+- **In this library:** [Can one thread see another's writes out of order?](../../../02_Shared_State/reordering_and_the_memory_model/README.md)
 - **In a sibling library:** [Rust: Data races — the -O2 build that hides one ↗](https://masiarek.github.io/rust-learning-library/31_C_and_Cpp/data_races/index.html)
 - **In the books:** [*Effective Concurrency in Go*](../../../10_Resources/books_go/README.md#serdar_effective_concurrency_in_go), Burak Serdar — ch. 3, 'The Go Memory Model'
 - **In the books:** [*Rust Atomics and Locks*](../../../10_Resources/books_rust/README.md#bos_rust_atomics_and_locks), Mara Bos — ch. 3, 'Memory Ordering'
